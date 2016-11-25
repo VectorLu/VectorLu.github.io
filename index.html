@@ -377,9 +377,8 @@
 <p>如果没有安装，可以用多种方法安装，比如<a href="https://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="external">安装程序</a>、<a href="http://brew.sh/" target="_blank" rel="external">Homebrew</a> 安装。</p>
 <h3 id="Step0-Node-js-安装"><a href="#Step0-Node-js-安装" class="headerlink" title="Step0-Node.js 安装"></a>Step0-Node.js 安装</h3><p>个人认为最好是用 Node.js 的<a href="https://nodejs.org/en/" target="_blank" rel="external">官网安装包</a>直接安装。一直确定就好了。</p>
 <h3 id="Step1-hexo-安装"><a href="#Step1-hexo-安装" class="headerlink" title="Step1-hexo 安装"></a>Step1-hexo 安装</h3><p>官网上给出的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div><div class="line">``` </div><div class="line"></div><div class="line">mac 应该**不能**成功安装，**需要使用**</div><div class="line"></div><div class="line">```shell</div><div class="line">$ sudo npm install -g hexo-cli</div></pre></td></tr></table></figure>
-<p>没有什么 error 应该就没问题了。</p>
- <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">   <span class="attr">android:id</span>=<span class="string">"@+id/title_text_view"</span></div><div class="line">   <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">   <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">   <span class="attr">android:text</span>=<span class="string">"@string/my_photos"</span></div><div class="line">   <span class="attr">android:textAppearance</span>=<span class="string">"?android:textAppearanceLarge"</span></div><div class="line">   <span class="attr">android:textColor</span>=<span class="string">"#4689C8"</span></div><div class="line">   <span class="attr">android:textStyle</span>=<span class="string">"bold"</span> /&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div><div class="line">``` </div><div class="line">mac 应该**不能**成功安装，**需要使用**</div></pre></td></tr></table></figure>
+<p>$ sudo npm install -g hexo-cli<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">没有什么 error 应该就没问题了。</div><div class="line"></div><div class="line">```XML</div><div class="line"> &lt;TextView</div><div class="line">    android:id=&quot;@+id/title_text_view&quot;</div><div class="line">    android:layout_width=&quot;wrap_content&quot;</div><div class="line">    android:layout_height=&quot;wrap_content&quot;</div><div class="line">    android:text=&quot;@string/my_photos&quot;</div><div class="line">    android:textAppearance=&quot;?android:textAppearanceLarge&quot;</div><div class="line">    android:textColor=&quot;#4689C8&quot;</div><div class="line">    android:textStyle=&quot;bold&quot; /&gt;</div></pre></td></tr></table></figure></p>
 <h2 id="托管到-github"><a href="#托管到-github" class="headerlink" title="托管到 github"></a>托管到 github</h2><h2 id="托管到-coding"><a href="#托管到-coding" class="headerlink" title="托管到 coding"></a>托管到 coding</h2><h2 id="个性域名设置"><a href="#个性域名设置" class="headerlink" title="个性域名设置"></a>个性域名设置</h2>
           
         
@@ -623,28 +622,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
-
 
   
 
