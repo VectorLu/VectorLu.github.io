@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans,en,default">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -456,7 +456,13 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate --watch</div></pre></td></tr></table></figure>
 <h3 id="完成后部署"><a href="#完成后部署" class="headerlink" title="完成后部署"></a>完成后部署</h3><p>执行下列的其中一个命令，让 Hexo 在生成完毕后自动部署网站，两个命令的作用是相同的。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate --deploy</div><div class="line">$ hexo deploy --generate</div></pre></td></tr></table></figure>
+<p>//TODO: !!!coding &amp; github 后台部署</p>
 <h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>详见</p>
+<h2 id="多语种支持"><a href="#多语种支持" class="headerlink" title="多语种支持"></a>多语种支持</h2><p>在<strong>站点配置文件</strong> <code>_config.yml</code> 中修改 new_post_name 和 permalink 参数，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">new_post_name: :lang/:title.md</div><div class="line">permalink: :lang/:title/</div></pre></td></tr></table></figure>
+<p>建立新文章时，文章会被存储到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo new &quot;Hello World&quot; --lang tw</div><div class="line"># =&gt; source/_posts/tw/Hello-World.md</div></pre></td></tr></table></figure>
+<p>而网址会是<code>http://localhost:4000/tw/hello-world/</code></p>
 
           
         
