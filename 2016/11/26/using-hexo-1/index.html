@@ -90,16 +90,25 @@
 
 
 
-<meta name="description" content="#">
+<meta name="description" content="就是根据Hexo官方文档NexT官方文档来配置一些细节，在这里用图文记录一下具体过程。
+基本操作写作创建新文章1$ hexo new [layout] &amp;lt;title&amp;gt;
+创建了新文章之后打开，会在文章开头看到类似以下内容的东西。
+123456789---title: 使用 Hexo 搭建博客的细节配置 1date: 2016-11-26 00:03:44categories:- KITt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用 Hexo 搭建博客的细节配置">
+<meta property="og:title" content="使用 Hexo 搭建博客的细节配置 1">
 <meta property="og:url" content="http://vectorlu.com/2016/11/26/using-hexo-1/index.html">
 <meta property="og:site_name" content="Vector">
-<meta property="og:description" content="#">
-<meta property="og:updated_time" content="2016-11-25T16:05:18.000Z">
+<meta property="og:description" content="就是根据Hexo官方文档NexT官方文档来配置一些细节，在这里用图文记录一下具体过程。
+基本操作写作创建新文章1$ hexo new [layout] &amp;lt;title&amp;gt;
+创建了新文章之后打开，会在文章开头看到类似以下内容的东西。
+123456789---title: 使用 Hexo 搭建博客的细节配置 1date: 2016-11-26 00:03:44categories:- KITt">
+<meta property="og:updated_time" content="2016-11-26T01:37:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用 Hexo 搭建博客的细节配置">
-<meta name="twitter:description" content="#">
+<meta name="twitter:title" content="使用 Hexo 搭建博客的细节配置 1">
+<meta name="twitter:description" content="就是根据Hexo官方文档NexT官方文档来配置一些细节，在这里用图文记录一下具体过程。
+基本操作写作创建新文章1$ hexo new [layout] &amp;lt;title&amp;gt;
+创建了新文章之后打开，会在文章开头看到类似以下内容的东西。
+123456789---title: 使用 Hexo 搭建博客的细节配置 1date: 2016-11-26 00:03:44categories:- KITt">
 
 
 
@@ -133,7 +142,7 @@
 
 
 
-  <title> 使用 Hexo 搭建博客的细节配置 | Vector </title>
+  <title> 使用 Hexo 搭建博客的细节配置 1 | Vector </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -298,7 +307,7 @@
             
             
               
-                使用 Hexo 搭建博客的细节配置
+                使用 Hexo 搭建博客的细节配置 1
               
             
           </h1>
@@ -365,7 +374,79 @@
       
 
       
-        <p># </p>
+        <p>就是根据<br><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo官方文档</a><br><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">NexT官方文档</a><br>来配置一些细节，在这里用图文记录一下具体过程。</p>
+<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><h2 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h2><h3 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new [layout] &lt;title&gt;</div></pre></td></tr></table></figure>
+<p>创建了新文章之后打开，会在文章开头看到类似以下内容的东西。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: 使用 Hexo 搭建博客的细节配置 1</div><div class="line">date: 2016-11-26 00:03:44</div><div class="line">categories:</div><div class="line">- KIT</div><div class="line">tags:</div><div class="line">- blog</div><div class="line">- hexo</div><div class="line">---</div></pre></td></tr></table></figure>
+<p>这个部分是用来指定该文章的各种变量哒：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>layout</code></td>
+<td>布局</td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>title</td>
+<td></td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>建立日期</td>
+<td>文件建立日期</td>
+</tr>
+<tr>
+<td>updated</td>
+<td>更新日期</td>
+<td>文件更新日期</td>
+</tr>
+<tr>
+<td><code>comments</code></td>
+<td>开启文章的评论功能</td>
+<td>true</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>标签（不适用于分页）</td>
+<td></td>
+</tr>
+<tr>
+<td><code>categories</code></td>
+<td>分类（不适用于分页)</td>
+<td></td>
+</tr>
+<tr>
+<td>permalink</td>
+<td>覆盖文章网址</td>
+</tr>
+</tbody>
+</table>
+<p>只有文章支持分类和标签，page 不支持，标签没有顺序和层次。</p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><h4 id="md-本身有自己的引用语法"><a href="#md-本身有自己的引用语法" class="headerlink" title="md 本身有自己的引用语法"></a>md 本身有自己的引用语法</h4><blockquote>
+<p>这是第一行引用<br>这是第二行引用<br>引用方式非常简单，但是引用的样式比较单一，如果要显示引用源的相关信息就力不从心了。</p>
+</blockquote>
+<p>以下来自<a href="https://hexo.io/zh-cn/docs/tag-plugins.html" target="_blank" rel="external">标签插件</a>，摘录到本地方便查阅。</p>
+<h4 id="引用网络上的文章"><a href="#引用网络上的文章" class="headerlink" title="引用网络上的文章"></a>引用网络上的文章</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% blockquote Seth Godin http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html Welcome to Island Marketing %&#125;</div><div class="line">Every interaction is both precious and an opportunity to delight.</div><div class="line">&#123;% endblockquote %&#125;</div></pre></td></tr></table></figure>
+<p>效果：</p>
+<blockquote><p>Every interaction is both precious and an opportunity to delight.</p>
+<footer><strong>Seth Godin</strong><cite><a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html" target="_blank" rel="external">Welcome to Island Marketing</a></cite></footer></blockquote>
+<h4 id="引用-Twitter"><a href="#引用-Twitter" class="headerlink" title="引用 Twitter"></a>引用 Twitter</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% blockquote @DevDocs https://twitter.com/devdocs/status/356095192085962752 %&#125;</div><div class="line">NEW: DevDocs now comes with syntax highlighting. http://devdocs.io</div><div class="line">&#123;% endblockquote %&#125;</div></pre></td></tr></table></figure>
+<blockquote><p>NEW: DevDocs now comes with syntax highlighting. <a href="http://devdocs.io" target="_blank" rel="external">http://devdocs.io</a></p>
+<footer><strong>@DevDocs</strong><cite><a href="https://twitter.com/devdocs/status/356095192085962752" target="_blank" rel="external">twitter.com/devdocs/status/356095192085962752</a></cite></footer></blockquote>
+<h4 id="引用网络上的文章-1"><a href="#引用网络上的文章-1" class="headerlink" title="引用网络上的文章"></a>引用网络上的文章</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% blockquote David Levithan, Wide Awake %&#125;</div><div class="line">Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</div><div class="line">&#123;% endblockquote %&#125;</div></pre></td></tr></table></figure>
+<blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
+<footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote>
+<h4 id="没有提供参数，则只输出普通的-blockquote"><a href="#没有提供参数，则只输出普通的-blockquote" class="headerlink" title="没有提供参数，则只输出普通的 blockquote"></a>没有提供参数，则只输出普通的 blockquote</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% blockquote %&#125;</div><div class="line">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</div><div class="line">&#123;% endblockquote %&#125;</div></pre></td></tr></table></figure>
+<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</p>
+</blockquote>
 
       
     </div>
@@ -476,8 +557,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -530,6 +620,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本操作"><span class="nav-number">1.</span> <span class="nav-text">基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#写作"><span class="nav-number">1.1.</span> <span class="nav-text">写作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建新文章"><span class="nav-number">1.1.1.</span> <span class="nav-text">创建新文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用"><span class="nav-number">1.1.2.</span> <span class="nav-text">引用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#md-本身有自己的引用语法"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">md 本身有自己的引用语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用网络上的文章"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">引用网络上的文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用-Twitter"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">引用 Twitter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用网络上的文章-1"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">引用网络上的文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#没有提供参数，则只输出普通的-blockquote"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">没有提供参数，则只输出普通的 blockquote</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
