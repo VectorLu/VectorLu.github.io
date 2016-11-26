@@ -275,7 +275,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/11/26/using-hexo-1/">
+  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/11/26/Hexo-3-writing-update-blog/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="VectorLu">
@@ -300,8 +300,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/11/26/using-hexo-1/" itemprop="url">
-                  使用 Hexo 搭建博客的细节配置 1
+                <a class="post-title-link" href="/2016/11/26/Hexo-3-writing-update-blog/" itemprop="url">
+                  Hexo_3_写作与更新的细节
                 </a>
               
             
@@ -371,7 +371,7 @@
       
         
           
-            <p>就是根据<br><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo官方文档</a><br><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">NexT官方文档</a><br>来配置一些细节，在这里用图文记录一下具体过程。</p>
+            <p>就是根据<br><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo官方文档</a><br><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">NexT官方文档</a><br>来配置一些细节，在这里记录一下具体过程和比较常用的命令。</p>
 <h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><h2 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h2><h3 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new [layout] &lt;title&gt;</div></pre></td></tr></table></figure>
 <p>创建了新文章之后打开，会在文章开头看到类似以下内容的东西。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: 使用 Hexo 搭建博客的细节配置 1</div><div class="line">date: 2016-11-26 00:03:44</div><div class="line">categories:</div><div class="line">- KIT</div><div class="line">tags:</div><div class="line">- blog</div><div class="line">- hexo</div><div class="line">---</div></pre></td></tr></table></figure>
@@ -445,6 +445,18 @@
 <h4 id="没有提供参数，则只输出普通的-blockquote"><a href="#没有提供参数，则只输出普通的-blockquote" class="headerlink" title="没有提供参数，则只输出普通的 blockquote"></a>没有提供参数，则只输出普通的 blockquote</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% blockquote %&#125;</div><div class="line">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</div><div class="line">&#123;% endblockquote %&#125;</div></pre></td></tr></table></figure>
 <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</p>
 </blockquote>
+<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><h3 id="hexo-server"><a href="#hexo-server" class="headerlink" title="hexo-server"></a>hexo-server</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-server --save</div></pre></td></tr></table></figure>
+<h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><p>安装完成后，输入以下命令以启动服务器，您的网站会在 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 下启动。在服务器启动期间，Hexo 会监视文件变动并自动更新，您无须重启服务器。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure></p>
+<p>或</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s</div></pre></td></tr></table></figure>
+<h4 id="更改端口"><a href="#更改端口" class="headerlink" title="更改端口"></a>更改端口</h4><p>想要更改端口，或是在执行时遇到了 EADDRINUSE 错误，可以在执行时使用 -p 选项指定其他端口，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server -p 5000</div></pre></td></tr></table></figure>
+<h2 id="生成文件"><a href="#生成文件" class="headerlink" title="生成文件"></a>生成文件</h2><p><code>hexo generate</code> 或 <code>hexo g</code></p>
+<h3 id="监视文件变动"><a href="#监视文件变动" class="headerlink" title="监视文件变动"></a>监视文件变动</h3><p>Hexo 能够监视文件变动并立即重新生成静态文件，在生成时会比对文件的 SHA1 checksum，只有变动的文件才会写入。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate --watch</div></pre></td></tr></table></figure>
+<h3 id="完成后部署"><a href="#完成后部署" class="headerlink" title="完成后部署"></a>完成后部署</h3><p>执行下列的其中一个命令，让 Hexo 在生成完毕后自动部署网站，两个命令的作用是相同的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate --deploy</div><div class="line">$ hexo deploy --generate</div></pre></td></tr></table></figure>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>详见</p>
 
           
         
@@ -483,7 +495,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/11/24/use-hexo-github-coding-to-build-blog-0/">
+  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/11/24/Hexo-0-mac-build-blog/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="VectorLu">
@@ -508,8 +520,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/11/24/use-hexo-github-coding-to-build-blog-0/" itemprop="url">
-                  Mac 用 Hexo 搭建自己的博客图文详解 0
+                <a class="post-title-link" href="/2016/11/24/Hexo-0-mac-build-blog/" itemprop="url">
+                  Hexo_0_Mac 下搭建自己的博客图文详解
                 </a>
               
             
@@ -600,7 +612,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div><div class="line">$ hexo s</div></pre></td></tr></table></figure>
 <p>就可以生成博客所需的文件，并启动本地服务器。</p>
 <p>打开本地浏览器，输入 <code>localhost:4000</code>，如下图，就能看到 Hexo 的 <code>Hello World</code> 界面。当然你的界面和我的还不一样，不过别着急，你马上就可以配置自己的个性界面了：）</p>
-<p><img src="https://dn-coding-net-production-pp.qbox.me/0e6850b3-3d94-41f1-b32f-794d183ac22c.png" alt="图片"> </p>
+<p><img src="https://dn-coding-net-production-pp.qbox.me/0e6850b3-3d94-41f1-b32f-794d183ac22c.png" alt="图片"></p>
 <h2 id="安装主题-NexT"><a href="#安装主题-NexT" class="headerlink" title="安装主题 NexT"></a>安装主题 NexT</h2><p>逛了一圈 Hexo 的主题，每种主题都有各自的惊艳之处和不足之点。也打算自己写个主题，但是看了一下日程表，大概一年内都没有时间学习开发，关键是之后的文档支持和维护，都有点麻烦。</p>
 <p>最后就选择了 <a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">NexT</a> 的 Pisces。</p>
 <p>在终端下进入之前用 Hexo 初始化的文件夹，比如我的是 <code>myBlog</code>，<code>cd myBlog</code>然后：</p>
