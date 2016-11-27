@@ -92,20 +92,22 @@
 
 <meta name="description" content="安装好了 Hexo，下一步就是：将自己的博客放到网上，让每个人都能访问。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo-1-Github-Pages">
+<meta property="og:title" content="Hexo-1-用 Github Pages 部署 Hexo 博客">
 <meta property="og:url" content="http://vectorlu.com/2016/11/26/Hexo-1-github-pages/index.html">
 <meta property="og:site_name" content="Vector">
 <meta property="og:description" content="安装好了 Hexo，下一步就是：将自己的博客放到网上，让每个人都能访问。">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1213502-016f722d6347c428.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1213502-366f1a75f62e82ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1213502-f91109674c831ec1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1213502-27e90f7af2fb6124?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1213502-aea5c2f6d6d1a09b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://dn-coding-net-production-pp.qbox.me/3394bcd7-cbde-4643-8ca8-8851c9ca3ab3.png">
 <meta property="og:image" content="https://dn-coding-net-production-pp.qbox.me/4d631a41-dd56-4147-84f7-06c9bf4ea204.png">
-<meta property="og:updated_time" content="2016-11-27T04:44:15.000Z">
+<meta property="og:updated_time" content="2016-11-27T05:09:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo-1-Github-Pages">
+<meta name="twitter:title" content="Hexo-1-用 Github Pages 部署 Hexo 博客">
 <meta name="twitter:description" content="安装好了 Hexo，下一步就是：将自己的博客放到网上，让每个人都能访问。">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1213502-f91109674c831ec1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1213502-016f722d6347c428.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -139,7 +141,7 @@
 
 
 
-  <title> Hexo-1-Github-Pages | Vector </title>
+  <title> Hexo-1-用 Github Pages 部署 Hexo 博客 | Vector </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -317,7 +319,7 @@
             
             
               
-                Hexo-1-Github-Pages
+                Hexo-1-用 Github Pages 部署 Hexo 博客
               
             
           </h1>
@@ -400,14 +402,21 @@
 <a id="more"></a>
 <p>介绍一下如何用 Github 的 Pages 服务来支持静态博客。<br>如果你对 Git 还不熟悉，那么建议你先阅读一下（不阅读也没有关系，因为 Hexo 不需要太多 Git 的知识）：<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/" target="_blank" rel="external">廖雪峰的Git教程</a></p>
 <h1 id="Step-0-注册Github"><a href="#Step-0-注册Github" class="headerlink" title="Step-0-注册Github"></a>Step-0-注册Github</h1><p>在 <a href="https://www.github.com" target="_blank" rel="external">Github官网</a> 中 sign up 就好了。</p>
-<h1 id="Step-1-管理远程仓库"><a href="#Step-1-管理远程仓库" class="headerlink" title="Step-1-管理远程仓库"></a>Step-1-管理远程仓库</h1><h2 id="相关命令概览与说明"><a href="#相关命令概览与说明" class="headerlink" title="相关命令概览与说明"></a>相关命令概览与说明</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C (<span class="string">"youremail@example.com"</span>)</div><div class="line"><span class="comment">#创建ssh key</span></div><div class="line"></div><div class="line">git remote add origin (repository address on github)</div><div class="line"><span class="comment">#关联远程仓库</span></div><div class="line"></div><div class="line">git remote -help</div><div class="line"> <span class="comment">#用来查看帮助</span></div><div class="line"></div><div class="line">git push -u origin <span class="keyword">master</span></div><div class="line"><span class="title">#第一次推送本地内容到远程仓库要加 -u</span>参数</div><div class="line"></div><div class="line">git push origin <span class="keyword">master</span></div><div class="line"><span class="title">#以后就可以直接推送内容了</span></div><div class="line"></div><div class="line">git <span class="keyword">clone</span> <span class="title">(repository</span> address on github)</div><div class="line"><span class="comment">#将repository克隆到本地</span></div></pre></td></tr></table></figure>
+<h1 id="Step-1-管理远程仓库"><a href="#Step-1-管理远程仓库" class="headerlink" title="Step-1-管理远程仓库"></a>Step-1-管理远程仓库</h1><h2 id="相关命令概览与说明"><a href="#相关命令概览与说明" class="headerlink" title="相关命令概览与说明"></a>相关命令概览与说明</h2><p>其实用不到这么多 git 的知识，只是顺带介绍一下，可跳过。</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C (<span class="string">"youremail@example.com"</span>)</div><div class="line"><span class="comment">#创建ssh key</span></div><div class="line"></div><div class="line">git remote add origin (repository address on github)</div><div class="line"><span class="comment">#关联远程仓库</span></div><div class="line"></div><div class="line">git remote -help</div><div class="line"> <span class="comment">#用来查看帮助</span></div><div class="line"></div><div class="line">git push -u origin <span class="keyword">master</span></div><div class="line"><span class="title">#第一次推送本地内容到远程仓库要加 -u</span>参数</div><div class="line"></div><div class="line">git push origin <span class="keyword">master</span></div><div class="line"><span class="title">#以后就可以直接推送内容了</span></div><div class="line"></div><div class="line">git <span class="keyword">clone</span> <span class="title">(repository</span> address on github)</div><div class="line"><span class="comment">#将repository克隆到本地</span></div></pre></td></tr></table></figure>
 <p>##添加远程仓库</p>
 <blockquote>
 <p>SSH 为建立在应用层和传输层基础上的安全协议。SSH 是目前较可靠，专为<a href="http://baike.baidu.com/view/59099.htm" target="_blank" rel="external">远程登录</a>会话和其他网络服务提供安全性的协议。利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题。</p>
 </blockquote>
 <p>由于你的本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，所以，需要一点设置：</p>
-<p>第1步：创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：<br><figure class="highlight plain"><figcaption><span>ssh-keygen -t rsa -C "youremail@example.com"```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">需要把邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可。如果一切顺利的话，可以在用户主目录里找到.ssh</div><div class="line">目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub</div><div class="line">是公钥，可以放心地告诉任何人。</div><div class="line"></div><div class="line">**用文本编辑器打开 id_rsa.pub ，比如atom（如果安装了atom），vi等**</div><div class="line"></div><div class="line">![进入.ssh文件夹](http://upload-images.jianshu.io/upload_images/1213502-016f722d6347c428.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div><div class="line"></div><div class="line">![用atom打开id_rsa.pub](http://upload-images.jianshu.io/upload_images/1213502-366f1a75f62e82ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div><div class="line">**也可以用这样方法打开id_rsa文件**</div><div class="line">如果没有安装atom，可以用vi打开</div><div class="line">```$ vi id_rsa</div></pre></td></tr></table></figure></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1213502-f91109674c831ec1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="用vi打开"><br>第2步：登陆GitHub，打开“Account settings”，“SSH Keys”页面：<br>然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容：<br><img src="http://upload-images.jianshu.io/upload_images/1213502-27e90f7af2fb6124?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="github-addkey-1"><br>点“Add Key”，你就应该看到已经添加的Key：<br><img src="http://upload-images.jianshu.io/upload_images/1213502-aea5c2f6d6d1a09b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="github-addkey-2"><br>以上两张图片来自<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰的git教程</a></p>
+<h3 id="创建SSH-Key"><a href="#创建SSH-Key" class="headerlink" title="创建SSH Key"></a>创建SSH Key</h3><p>在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span></div></pre></td></tr></table></figure>
+<p>需要把邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可。如果一切顺利的话，可以在用户主目录里找到.ssh<br>目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub<br>是公钥，可以放心地告诉任何人。</p>
+<p><strong>用文本编辑器打开 id_rsa.pub ，比如atom（如果安装了atom），vi等</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1213502-016f722d6347c428.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="进入.ssh文件夹"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1213502-366f1a75f62e82ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="用atom打开id_rsa.pub"></p>
+<p><strong>也可以用这样方法打开id_rsa文件</strong><br>如果没有安装atom，可以用vi打开<code>$ vi id_rsa</code><br><img src="http://upload-images.jianshu.io/upload_images/1213502-f91109674c831ec1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="用vi打开"></p>
+<h3 id="登陆Github"><a href="#登陆Github" class="headerlink" title="登陆Github"></a>登陆Github</h3><p>打开“Account settings”，“SSH Keys”页面：<br>然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容：<br><img src="http://upload-images.jianshu.io/upload_images/1213502-27e90f7af2fb6124?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="github-addkey-1"><br>点“Add Key”，你就应该看到已经添加的Key：<br><img src="http://upload-images.jianshu.io/upload_images/1213502-aea5c2f6d6d1a09b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="github-addkey-2"><br>以上两张图片来自<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰的git教程</a></p>
 <p>测试一下</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ssh</span> <span class="selector-tag">-T</span> <span class="selector-tag">git</span>@<span class="keyword">github</span>.<span class="keyword">com</span></div></pre></td></tr></table></figure>
 <p>可能会有警告，不过没关系，输入<code>yes</code>就好。</p>
@@ -426,6 +435,7 @@
 <p>保存，进入终端。</p>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>npm install hexo-deployer-git --save <span class="comment"># 安装相关组件</span></div><div class="line"><span class="variable">$ </span>hexo clean</div><div class="line"><span class="variable">$ </span>hexo g</div><div class="line"><span class="variable">$ </span>hexo d</div></pre></td></tr></table></figure>
 <p>应该一会就部署好了，在浏览器中输入<code>username.github.io</code>就可以访问你的博客了。如果没有刷出来，可能是网络问题，多等一会就可以刷出来了。</p>
+<h1 id="Step-3-绑定个人域名（非必需）"><a href="#Step-3-绑定个人域名（非必需）" class="headerlink" title="Step-3-绑定个人域名（非必需）"></a>Step-3-绑定个人域名（非必需）</h1><p>有很多网站出售域名，比如<a href="https://wanwang.aliyun.com" target="_blank" rel="external">万网</a>。</p>
 
       
     </div>
@@ -493,8 +503,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/11/26/Hexo-2-coding-pages/" rel="prev" title="Hexo-2-coding-pages">
-                Hexo-2-coding-pages <i class="fa fa-chevron-right"></i>
+              <a href="/2016/11/26/Hexo-2-coding-pages/" rel="prev" title="Hexo-2-用 Coding Pages 部署 Hexo 博客">
+                Hexo-2-用 Coding Pages 部署 Hexo 博客 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -511,7 +521,7 @@
     <div class="post-spread">
       
         <div class="ds-share flat" data-thread-key="2016/11/26/Hexo-1-github-pages/"
-     data-title="Hexo-1-Github-Pages"
+     data-title="Hexo-1-用 Github Pages 部署 Hexo 博客"
      data-content=""
      data-url="http://vectorlu.com/2016/11/26/Hexo-1-github-pages/">
   <div class="ds-share-inline">
@@ -544,7 +554,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/11/26/Hexo-1-github-pages/"
-           data-title="Hexo-1-Github-Pages" data-url="http://vectorlu.com/2016/11/26/Hexo-1-github-pages/">
+           data-title="Hexo-1-用 Github Pages 部署 Hexo 博客" data-url="http://vectorlu.com/2016/11/26/Hexo-1-github-pages/">
       </div>
     
   </div>
@@ -702,7 +712,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-0-注册Github"><span class="nav-number">1.</span> <span class="nav-text">Step-0-注册Github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-1-管理远程仓库"><span class="nav-number">2.</span> <span class="nav-text">Step-1-管理远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#相关命令概览与说明"><span class="nav-number">2.1.</span> <span class="nav-text">相关命令概览与说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加远程库"><span class="nav-number">2.2.</span> <span class="nav-text">添加远程库</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-0-注册Github"><span class="nav-number">1.</span> <span class="nav-text">Step-0-注册Github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-1-管理远程仓库"><span class="nav-number">2.</span> <span class="nav-text">Step-1-管理远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#相关命令概览与说明"><span class="nav-number">2.1.</span> <span class="nav-text">相关命令概览与说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建SSH-Key"><span class="nav-number">2.1.1.</span> <span class="nav-text">创建SSH Key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登陆Github"><span class="nav-number">2.1.2.</span> <span class="nav-text">登陆Github</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加远程库"><span class="nav-number">2.2.</span> <span class="nav-text">添加远程库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-3-绑定个人域名（非必需）"><span class="nav-number">3.</span> <span class="nav-text">Step-3-绑定个人域名（非必需）</span></a></li></ol></div>
             
 
           </div>
