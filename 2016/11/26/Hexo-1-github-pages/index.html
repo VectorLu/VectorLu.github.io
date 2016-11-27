@@ -103,7 +103,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1213502-aea5c2f6d6d1a09b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://dn-coding-net-production-pp.qbox.me/3394bcd7-cbde-4643-8ca8-8851c9ca3ab3.png">
 <meta property="og:image" content="https://dn-coding-net-production-pp.qbox.me/4d631a41-dd56-4147-84f7-06c9bf4ea204.png">
-<meta property="og:updated_time" content="2016-11-27T05:09:51.000Z">
+<meta property="og:updated_time" content="2016-11-27T09:54:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-1-用 Github Pages 部署 Hexo 博客">
 <meta name="twitter:description" content="安装好了 Hexo，下一步就是：将自己的博客放到网上，让每个人都能访问。">
@@ -404,8 +404,7 @@
 <h1 id="Step-0-注册Github"><a href="#Step-0-注册Github" class="headerlink" title="Step-0-注册Github"></a>Step-0-注册Github</h1><p>在 <a href="https://www.github.com" target="_blank" rel="external">Github官网</a> 中 sign up 就好了。</p>
 <h1 id="Step-1-管理远程仓库"><a href="#Step-1-管理远程仓库" class="headerlink" title="Step-1-管理远程仓库"></a>Step-1-管理远程仓库</h1><h2 id="相关命令概览与说明"><a href="#相关命令概览与说明" class="headerlink" title="相关命令概览与说明"></a>相关命令概览与说明</h2><p>其实用不到这么多 git 的知识，只是顺带介绍一下，可跳过。</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C (<span class="string">"youremail@example.com"</span>)</div><div class="line"><span class="comment">#创建ssh key</span></div><div class="line"></div><div class="line">git remote add origin (repository address on github)</div><div class="line"><span class="comment">#关联远程仓库</span></div><div class="line"></div><div class="line">git remote -help</div><div class="line"> <span class="comment">#用来查看帮助</span></div><div class="line"></div><div class="line">git push -u origin <span class="keyword">master</span></div><div class="line"><span class="title">#第一次推送本地内容到远程仓库要加 -u</span>参数</div><div class="line"></div><div class="line">git push origin <span class="keyword">master</span></div><div class="line"><span class="title">#以后就可以直接推送内容了</span></div><div class="line"></div><div class="line">git <span class="keyword">clone</span> <span class="title">(repository</span> address on github)</div><div class="line"><span class="comment">#将repository克隆到本地</span></div></pre></td></tr></table></figure>
-<p>##添加远程仓库</p>
-<blockquote>
+<h2 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h2><blockquote>
 <p>SSH 为建立在应用层和传输层基础上的安全协议。SSH 是目前较可靠，专为<a href="http://baike.baidu.com/view/59099.htm" target="_blank" rel="external">远程登录</a>会话和其他网络服务提供安全性的协议。利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题。</p>
 </blockquote>
 <p>由于你的本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，所以，需要一点设置：</p>
@@ -422,7 +421,7 @@
 <p>可能会有警告，不过没关系，输入<code>yes</code>就好。</p>
 <p><strong>在GitHub上免费托管的Git仓库，任何人都可以看到喔（但只有你自己才能改）。所以，不要把敏感信息放进去。</strong></p>
 <hr>
-<h2 id="添加远程库"><a href="#添加远程库" class="headerlink" title="添加远程库"></a>添加远程库</h2><p>首先，登陆GitHub，然后，在右上角找到一个加号，点击“ New repository”按钮，创建一个新的仓库，仓库名用<code>username.github.io</code>。比如我的用户名是VectorLu，那么新建的仓库名（<code>Repository name</code>）就是<code>VectorLu.github.io</code>。</p>
+<h2 id="添加-Repository"><a href="#添加-Repository" class="headerlink" title="添加 Repository"></a>添加 Repository</h2><p>首先，登陆GitHub，然后，在右上角找到一个加号，点击“ New repository”按钮，创建一个新的仓库，仓库名用<code>username.github.io</code>。比如我的用户名是VectorLu，那么新建的仓库名（<code>Repository name</code>）就是<code>VectorLu.github.io</code>。</p>
 <p>下面的 Description 随便写就好了，比如写 </p>
 <blockquote>
 <p>My blog repository.</p>
@@ -436,6 +435,7 @@
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>npm install hexo-deployer-git --save <span class="comment"># 安装相关组件</span></div><div class="line"><span class="variable">$ </span>hexo clean</div><div class="line"><span class="variable">$ </span>hexo g</div><div class="line"><span class="variable">$ </span>hexo d</div></pre></td></tr></table></figure>
 <p>应该一会就部署好了，在浏览器中输入<code>username.github.io</code>就可以访问你的博客了。如果没有刷出来，可能是网络问题，多等一会就可以刷出来了。</p>
 <h1 id="Step-3-绑定个人域名（非必需）"><a href="#Step-3-绑定个人域名（非必需）" class="headerlink" title="Step-3-绑定个人域名（非必需）"></a>Step-3-绑定个人域名（非必需）</h1><p>有很多网站出售域名，比如<a href="https://wanwang.aliyun.com" target="_blank" rel="external">万网</a>。</p>
+<p>//TODO: !!!</p>
 
       
     </div>
@@ -712,7 +712,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-0-注册Github"><span class="nav-number">1.</span> <span class="nav-text">Step-0-注册Github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-1-管理远程仓库"><span class="nav-number">2.</span> <span class="nav-text">Step-1-管理远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#相关命令概览与说明"><span class="nav-number">2.1.</span> <span class="nav-text">相关命令概览与说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建SSH-Key"><span class="nav-number">2.1.1.</span> <span class="nav-text">创建SSH Key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登陆Github"><span class="nav-number">2.1.2.</span> <span class="nav-text">登陆Github</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加远程库"><span class="nav-number">2.2.</span> <span class="nav-text">添加远程库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-3-绑定个人域名（非必需）"><span class="nav-number">3.</span> <span class="nav-text">Step-3-绑定个人域名（非必需）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-0-注册Github"><span class="nav-number">1.</span> <span class="nav-text">Step-0-注册Github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-1-管理远程仓库"><span class="nav-number">2.</span> <span class="nav-text">Step-1-管理远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#相关命令概览与说明"><span class="nav-number">2.1.</span> <span class="nav-text">相关命令概览与说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加远程仓库"><span class="nav-number">2.2.</span> <span class="nav-text">添加远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建SSH-Key"><span class="nav-number">2.2.1.</span> <span class="nav-text">创建SSH Key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登陆Github"><span class="nav-number">2.2.2.</span> <span class="nav-text">登陆Github</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加-Repository"><span class="nav-number">2.3.</span> <span class="nav-text">添加 Repository</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-3-绑定个人域名（非必需）"><span class="nav-number">3.</span> <span class="nav-text">Step-3-绑定个人域名（非必需）</span></a></li></ol></div>
             
 
           </div>
