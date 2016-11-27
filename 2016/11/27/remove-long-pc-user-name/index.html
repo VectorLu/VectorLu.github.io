@@ -99,7 +99,8 @@
 <meta property="og:image" content="https://dn-coding-net-production-pp.qbox.me/eeda09b4-f2c3-4759-b15d-11477f09b6ac.png">
 <meta property="og:image" content="https://dn-coding-net-production-pp.qbox.me/d7c35b0d-0150-4b7e-a296-73ab94ecccdf.png">
 <meta property="og:image" content="https://dn-coding-net-production-pp.qbox.me/be614074-f195-49fa-bf05-ef11fc77f0c1.png">
-<meta property="og:updated_time" content="2016-11-27T10:47:04.000Z">
+<meta property="og:image" content="https://dn-coding-net-production-pp.qbox.me/897c5d2a-28c4-4f47-9694-f912e5d4ac64.png">
+<meta property="og:updated_time" content="2016-11-27T10:58:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="去掉 mac 终端下长长的电脑名和用户名">
 <meta name="twitter:description" content="在Linux 或 macOS 下用 bash 的时候，当然如果你是 zsh 用户，一般不会有这种困扰——终端每一行前面有好长的一串——“本机名 当前路径 用户名”，再是表示等待输入指令的$。在 bash 下要如何去掉这些冗长的信息呢？">
@@ -405,11 +406,14 @@
 <blockquote>
 <p>‘\h’ 指的是主机<br>‘\W’ 指的是当前工作目录<br>‘\u’ 指的是当前用户</p>
 </blockquote>
-<p>修改成你喜欢的样子就好了，一般保留<code>\W</code>。[^source]</p>
-<p>[^source]: <a href="http://www.liuxiaojia.cc/" target="_blank" rel="external">去掉（隐藏）mac终端前面的计算机名</a> ta 的博客中 20161028的那一篇</p>
+<p>修改成你喜欢的样子就好了，一般保留<code>\W</code>。该方法来自这个博客中<a href="http://www.liuxiaojia.cc/" target="_blank" rel="external">去掉（隐藏）mac终端前面的计算机名</a> ta 的博客中 20161028的那一篇。那篇博文的 URL 有问题，黏贴过来之后无法正常访问 Orz 。</p>
 <p><img src="https://dn-coding-net-production-pp.qbox.me/d7c35b0d-0150-4b7e-a296-73ab94ecccdf.png" alt="修改bashrc"></p>
-<p>感谢 <a href="https://coding.net/u/liuxiaojia" target="_blank" rel="external">liuxiaojia</a> 这位朋友的提醒，同时，诚恳建议 Hexo 博客的文件名中不要包涵特殊的中文符号，比如中文括号，给正确复制博客网址带来了莫大的困难 Orz 。建议新建 Hexo 博客可以全部用英文，因为中文在复制过程中容易乱码，中文符号也会带来一些麻烦 Orz 。Hexo 生成博客的 URL 完全根据文件名生成。至于博客的题目<code>title</code>字段就无所谓了，对中文及相关符号很友好。设置成你喜欢的中文名就好了，</p>
 <p>效果如下<br><img src="https://dn-coding-net-production-pp.qbox.me/be614074-f195-49fa-bf05-ef11fc77f0c1.png" alt="修改效果图"></p>
+<p>感谢 <a href="https://coding.net/u/liuxiaojia" target="_blank" rel="external">liuxiaojia</a> 这位朋友的提醒。</p>
+<p>同时，诚恳建议 Hexo 博客的文件名中不要包涵特殊的中文符号，比如中文括号，给正确复制博客网址带来了莫大的困难 Orz 。<br>建议新建 Hexo 博客可以全部用英文，Hexo 生成博客的 URL 完全根据文件名生成，中文在复制过程中容易乱码，中文符号也会带来一些麻烦 Orz 。参考博客的 URL 就是因为包含中文括号，所以在复制 URL 后无法访问到正确的地址。</p>
+<p>博客的题目<code>title</code>字段就无所谓了，对中文及相关符号很友好。Hexo 会自动设置为文件名，但是可以手动修改，不会影响 URL，设置成你喜欢的中文名就好了。</p>
+<p>如下图，文件名用英文，生成 md 文件后把题目手动改成中文</p>
+<p> <img src="https://dn-coding-net-production-pp.qbox.me/897c5d2a-28c4-4f47-9694-f912e5d4ac64.png" alt="图片"> </p>
 
       
     </div>
