@@ -90,18 +90,18 @@
 
 
 
-<meta name="description" content="Hexo 安装与建站分享一下 2016-11 在 Mac 下使用 Hexo &amp;amp; github &amp;amp; coding &amp;amp; 万网 搭建博客的经验、技巧、注意事项。">
+<meta name="description" content="Hexo 安装与建站分享一下 2016-11 在 Mac 下使用 Hexo3 &amp;amp; github &amp;amp; coding &amp;amp; 万网 搭建博客的经验、技巧、注意事项。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo_0_Mac 下搭建自己的博客图文详解">
 <meta property="og:url" content="http://vectorlu.com/2016/11/26/Hexo-0-mac-build-blog/index.html">
 <meta property="og:site_name" content="Vector">
-<meta property="og:description" content="Hexo 安装与建站分享一下 2016-11 在 Mac 下使用 Hexo &amp;amp; github &amp;amp; coding &amp;amp; 万网 搭建博客的经验、技巧、注意事项。">
+<meta property="og:description" content="Hexo 安装与建站分享一下 2016-11 在 Mac 下使用 Hexo3 &amp;amp; github &amp;amp; coding &amp;amp; 万网 搭建博客的经验、技巧、注意事项。">
 <meta property="og:image" content="https://dn-coding-net-production-pp.qbox.me/eeda09b4-f2c3-4759-b15d-11477f09b6ac.png">
 <meta property="og:image" content="https://dn-coding-net-production-pp.qbox.me/0e6850b3-3d94-41f1-b32f-794d183ac22c.png">
-<meta property="og:updated_time" content="2016-11-26T16:23:21.000Z">
+<meta property="og:updated_time" content="2016-11-27T04:37:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo_0_Mac 下搭建自己的博客图文详解">
-<meta name="twitter:description" content="Hexo 安装与建站分享一下 2016-11 在 Mac 下使用 Hexo &amp;amp; github &amp;amp; coding &amp;amp; 万网 搭建博客的经验、技巧、注意事项。">
+<meta name="twitter:description" content="Hexo 安装与建站分享一下 2016-11 在 Mac 下使用 Hexo3 &amp;amp; github &amp;amp; coding &amp;amp; 万网 搭建博客的经验、技巧、注意事项。">
 <meta name="twitter:image" content="https://dn-coding-net-production-pp.qbox.me/eeda09b4-f2c3-4759-b15d-11477f09b6ac.png">
 
 
@@ -327,7 +327,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-26T11:18:34+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-26T00:18:34+08:00">
                 2016-11-26
               </time>
             
@@ -393,11 +393,11 @@
       
 
       
-        <h1 id="Hexo-安装与建站"><a href="#Hexo-安装与建站" class="headerlink" title="Hexo 安装与建站"></a>Hexo 安装与建站</h1><p>分享一下 2016-11 在 Mac 下使用 Hexo &amp; github &amp; coding &amp; 万网 搭建博客的经验、技巧、注意事项。</p>
+        <h1 id="Hexo-安装与建站"><a href="#Hexo-安装与建站" class="headerlink" title="Hexo 安装与建站"></a>Hexo 安装与建站</h1><p>分享一下 2016-11 在 Mac 下使用 Hexo3 &amp; github &amp; coding &amp; 万网 搭建博客的经验、技巧、注意事项。</p>
 <a id="more"></a>
 <h2 id="用-Hexo-建站命令行概览"><a href="#用-Hexo-建站命令行概览" class="headerlink" title="用 Hexo 建站命令行概览"></a>用 Hexo 建站命令行概览</h2><p><strong>注意！</strong><br><code>HexoBlogFolder</code>这个文件名仅作为提示，选择任何你喜欢的文件名就好，以后这个文件夹中包含所有部署博客的相关文件，你也会在这个文件夹里存放你的<del>思想结晶</del>博客。</p>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>hexo init HexoBlogFolder</div><div class="line"><span class="variable">$ </span>cd HexoBlogFolder</div><div class="line"><span class="variable">$ </span>npm install</div><div class="line"><span class="variable">$ </span>hexo g <span class="comment"># 等于 hexo generate</span></div><div class="line"><span class="variable">$ </span>hexo s <span class="comment"># 等于 hexo server</span></div></pre></td></tr></table></figure>
-<h2 id="Hexo-安装"><a href="#Hexo-安装" class="headerlink" title="Hexo 安装"></a>Hexo 安装</h2><p>安装 Hexo 时常容易出问题，原因一般是没有<code>sudo</code>授权。以前装过 Hexo，感觉麻烦不少，老是报错，但是这次（20161124），正好在 Hexo 重大更新之后，安装过程还比较顺利。<br><strong>需要注意的是：</strong><br>在 macOS 和 Linux 下 Hexo 安装时需要<code>root</code>权限，官方文档上给出的命令行没有用<code>sudo</code>实在有点坑 Orz。<br>不过<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">官方文档</a>还是得看看，毕竟是最权威的资料，虽然有时候不够详细。</p>
+<h2 id="Hexo-安装"><a href="#Hexo-安装" class="headerlink" title="Hexo 安装"></a>Hexo 安装</h2><p>安装 Hexo 时常容易出问题，原因一般是没有<code>sudo</code>授权。以前装过 Hexo，感觉麻烦不少，老是报错，但是这次（20161124），正好在 Hexo 重大更新到 Hexo3 之后，安装过程还比较顺利。<br><strong>需要注意的是：</strong><br>在 macOS 和 Linux 下 Hexo 安装时需要<code>root</code>权限，官方文档上给出的命令行没有用<code>sudo</code>实在有点坑 Orz。<br>不过<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">官方文档</a>还是得看看，毕竟是最权威的资料，虽然有时候不够详细。</p>
 <h3 id="Step0-Git-安装"><a href="#Step0-Git-安装" class="headerlink" title="Step0-Git 安装"></a>Step0-Git 安装</h3><p>首先需要有<code>Git</code>，如果已经安装 Xcode ，那么<code>Git</code>应该已经安装好了。因为 Hexo 需要用到 Xcode，所以在 AppStore 中下载安装就好了。<br>如果不确定<code>mac</code>上是否有<code>Git</code>，可以在命令行中输入<code>git --version</code>查看。</p>
 <p>如果已经安装，会显示出<code>Git</code>的版本。<br> <img src="https://dn-coding-net-production-pp.qbox.me/eeda09b4-f2c3-4759-b15d-11477f09b6ac.png" alt="Git版本"></p>
 <p>如果没有安装，可以用多种方法安装，比如<a href="https://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="external">安装程序</a>、<a href="http://brew.sh/" target="_blank" rel="external">Homebrew</a> 安装。</p>
@@ -429,7 +429,7 @@
 <p>在终端进入<code>myBlog</code>文件夹</p>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>hexo clean</div><div class="line"><span class="variable">$ </span>hexo g</div><div class="line"><span class="variable">$ </span>hexo s</div></pre></td></tr></table></figure>
 <p>打开浏览器，输入<br><a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a><br>就会看到 Pisces 主题的界面了。</p>
-<p>//TODO: !!! NexT 主题详细配置<br>当然还有很多细节需要配置，我在后面的博文中也会陆续分享自己的经验。如果有好的建议，请不吝赐教。</p>
+<p>当然还有很多细节需要配置，我在后面的博文中也会陆续分享自己的经验。如果有好的建议，请不吝赐教。</p>
 <p><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo官方文档</a><br><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">NexT官方文档</a></p>
 
       
@@ -496,8 +496,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/11/26/Hexo-3-writing-update-blog/" rel="prev" title="Hexo_3_写作与更新的细节">
-                Hexo_3_写作与更新的细节 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/11/26/Hexo-1-github-pages/" rel="prev" title="Hexo-1-Github-Pages">
+                Hexo-1-Github-Pages <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
