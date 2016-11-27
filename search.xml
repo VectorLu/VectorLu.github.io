@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[去掉 mac 终端下长长的电脑名和用户名]]></title>
       <url>%2F2016%2F11%2F27%2Fremove-long-pc-user-name%2F</url>
-      <content type="text"><![CDATA[在Linux 或 macOS 下用 bash 的时候，当然如果你是 zsh 用户，一般不会有这种困扰——终端每一行前面有好长的一串——“本机名 当前路径 用户名”，再是表示等待输入指令的$。在 bash 下要如何去掉这些冗长的信息呢？ 在终端下进入/etc目录，这个目录是类 Unix 系统存放一些零碎的系统配置文件的文件夹。 用文本编辑器打开bashrc，我习惯用 Atom 。 1$ atom /etc/bashrc PS1: 控制默认命令行提示符的格式。在终端下用echo $PS1命令显示当前提示符设置。 Richard BlomLinux 命令行与 Shell 脚本编程大全第2版 所以，修改bashrc文件中的PS1的值就可以了 ‘\h’ 指的是主机‘\W’ 指的是当前工作目录‘\u’ 指的是当前用户 修改成你喜欢的样子就好了，一般保留\W。[^source] [^source]: 去掉（隐藏）mac终端前面的计算机名 ta 的博客中 20161028的那一篇 效果如下]]></content>
+      <content type="text"><![CDATA[在Linux 或 macOS 下用 bash 的时候，当然如果你是 zsh 用户，一般不会有这种困扰——终端每一行前面有好长的一串——“本机名 当前路径 用户名”，再是表示等待输入指令的$。在 bash 下要如何去掉这些冗长的信息呢？ 在终端下进入/etc目录，这个目录是类 Unix 系统存放一些零碎的系统配置文件的文件夹。 用文本编辑器打开bashrc，我习惯用 Atom 。 1$ atom /etc/bashrc PS1: 控制默认命令行提示符的格式。在终端下用echo $PS1命令显示当前提示符设置。 Richard BlomLinux 命令行与 Shell 脚本编程大全第2版 所以，修改bashrc文件中的PS1的值就可以了 ‘\h’ 指的是主机‘\W’ 指的是当前工作目录‘\u’ 指的是当前用户 修改成你喜欢的样子就好了，一般保留\W。[^source] [^source]: 去掉（隐藏）mac终端前面的计算机名 ta 的博客中 20161028的那一篇 感谢 liuxiaojia 这位朋友的提醒，同时，诚恳建议 Hexo 博客的文件名中不要包涵特殊的中文符号，比如中文括号，给正确复制博客网址带来了莫大的困难 Orz 。建议新建 Hexo 博客可以全部用英文，因为中文在复制过程中容易乱码，中文符号也会带来一些麻烦 Orz 。Hexo 生成博客的 URL 完全根据文件名生成。至于博客的题目title字段就无所谓了，对中文及相关符号很友好。设置成你喜欢的中文名就好了， 效果如下]]></content>
     </entry>
 
     
