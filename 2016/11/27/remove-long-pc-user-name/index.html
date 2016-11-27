@@ -90,16 +90,20 @@
 
 
 
-<meta name="description" content="灯火万家城四畔，星河一道水中央。">
+<meta name="description" content="在Linux 或 macOS 下用 bash 的时候，当然如果你是 zsh 用户，一般不会有这种困扰——终端每一行前面有好长的一串——“本机名 当前路径 用户名”，再是表示等待输入指令的$。在 bash 下要如何去掉这些冗长的信息呢？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hide-long-pc_user_name">
-<meta property="og:url" content="http://vectorlu.com/2016/11/27/hide-long-pc-user-name/index.html">
+<meta property="og:title" content="去掉 mac 终端下长长的电脑名和用户名">
+<meta property="og:url" content="http://vectorlu.com/2016/11/27/remove-long-pc-user-name/index.html">
 <meta property="og:site_name" content="Vector">
-<meta property="og:description" content="灯火万家城四畔，星河一道水中央。">
-<meta property="og:updated_time" content="2016-11-27T02:59:28.000Z">
+<meta property="og:description" content="在Linux 或 macOS 下用 bash 的时候，当然如果你是 zsh 用户，一般不会有这种困扰——终端每一行前面有好长的一串——“本机名 当前路径 用户名”，再是表示等待输入指令的$。在 bash 下要如何去掉这些冗长的信息呢？">
+<meta property="og:image" content="https://dn-coding-net-production-pp.qbox.me/eeda09b4-f2c3-4759-b15d-11477f09b6ac.png">
+<meta property="og:image" content="https://dn-coding-net-production-pp.qbox.me/d7c35b0d-0150-4b7e-a296-73ab94ecccdf.png">
+<meta property="og:image" content="https://dn-coding-net-production-pp.qbox.me/be614074-f195-49fa-bf05-ef11fc77f0c1.png">
+<meta property="og:updated_time" content="2016-11-27T10:37:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hide-long-pc_user_name">
-<meta name="twitter:description" content="灯火万家城四畔，星河一道水中央。">
+<meta name="twitter:title" content="去掉 mac 终端下长长的电脑名和用户名">
+<meta name="twitter:description" content="在Linux 或 macOS 下用 bash 的时候，当然如果你是 zsh 用户，一般不会有这种困扰——终端每一行前面有好长的一串——“本机名 当前路径 用户名”，再是表示等待输入指令的$。在 bash 下要如何去掉这些冗长的信息呢？">
+<meta name="twitter:image" content="https://dn-coding-net-production-pp.qbox.me/eeda09b4-f2c3-4759-b15d-11477f09b6ac.png">
 
 
 
@@ -127,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://vectorlu.com/2016/11/27/hide-long-pc-user-name/"/>
+  <link rel="canonical" href="http://vectorlu.com/2016/11/27/remove-long-pc-user-name/"/>
 
 
 
 
 
-  <title> hide-long-pc_user_name | Vector </title>
+  <title> 去掉 mac 终端下长长的电脑名和用户名 | Vector </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -287,7 +291,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/11/27/hide-long-pc-user-name/">
+  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/11/27/remove-long-pc-user-name/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="VectorLu">
@@ -311,7 +315,7 @@
             
             
               
-                hide-long-pc_user_name
+                去掉 mac 终端下长长的电脑名和用户名
               
             
           </h1>
@@ -358,8 +362,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/11/27/hide-long-pc-user-name/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/27/hide-long-pc-user-name/" itemprop="commentCount"></span>
+                <a href="/2016/11/27/remove-long-pc-user-name/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/27/remove-long-pc-user-name/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -390,7 +394,22 @@
       
 
       
-        
+        <p><img src="https://dn-coding-net-production-pp.qbox.me/eeda09b4-f2c3-4759-b15d-11477f09b6ac.png" alt="长长的用户名和电脑名"><br>在Linux 或 macOS 下用 bash 的时候，当然如果你是 zsh 用户，一般不会有这种困扰——终端每一行前面有好长的一串——“本机名 当前路径 用户名”，再是表示等待输入指令的<code>$</code>。<br>在 bash 下要如何去掉这些冗长的信息呢？</p>
+<a id="more"></a>
+<p>在终端下进入<code>/etc</code>目录，这个目录是类 Unix 系统存放一些零碎的系统配置文件的文件夹。</p>
+<p>用文本编辑器打开<code>bashrc</code>，我习惯用 Atom 。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ atom <span class="regexp">/etc/</span>bashrc</div></pre></td></tr></table></figure>
+<blockquote><p>PS1: 控制默认命令行提示符的格式。<br>在终端下用<code>echo $PS1</code>命令显示当前提示符设置。</p>
+<footer><strong>Richard Blom</strong><cite>Linux 命令行与 Shell 脚本编程大全第2版</cite></footer></blockquote>
+<p>所以，修改<code>bashrc</code>文件中的<code>PS1</code>的值就可以了</p>
+<blockquote>
+<p>‘\h’ 指的是主机<br>‘\W’ 指的是当前工作目录<br>‘\u’ 指的是当前用户</p>
+</blockquote>
+<p>修改成你喜欢的样子就好了，一般保留<code>\W</code>。[^source]</p>
+<p>[^source]: <a href="http://www.liuxiaojia.cc/" target="_blank" rel="external">去掉（隐藏）mac终端前面的计算机名</a> ta 的博客中 20161028的那一篇</p>
+<p><img src="https://dn-coding-net-production-pp.qbox.me/d7c35b0d-0150-4b7e-a296-73ab94ecccdf.png" alt="修改bashrc"></p>
+<p>效果如下<br><img src="https://dn-coding-net-production-pp.qbox.me/be614074-f195-49fa-bf05-ef11fc77f0c1.png" alt="修改效果图"></p>
+
       
     </div>
 
@@ -470,10 +489,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/11/27/hide-long-pc-user-name/"
-     data-title="hide-long-pc_user_name"
+        <div class="ds-share flat" data-thread-key="2016/11/27/remove-long-pc-user-name/"
+     data-title="去掉 mac 终端下长长的电脑名和用户名"
      data-content=""
-     data-url="http://vectorlu.com/2016/11/27/hide-long-pc-user-name/">
+     data-url="http://vectorlu.com/2016/11/27/remove-long-pc-user-name/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -503,8 +522,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/27/hide-long-pc-user-name/"
-           data-title="hide-long-pc_user_name" data-url="http://vectorlu.com/2016/11/27/hide-long-pc-user-name/">
+      <div class="ds-thread" data-thread-key="2016/11/27/remove-long-pc-user-name/"
+           data-title="去掉 mac 终端下长长的电脑名和用户名" data-url="http://vectorlu.com/2016/11/27/remove-long-pc-user-name/">
       </div>
     
   </div>
@@ -548,7 +567,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -557,7 +576,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
