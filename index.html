@@ -288,6 +288,259 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/11/28/C-Compiler-by-C/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="VectorLu">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Vector">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Vector" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/28/C-Compiler-by-C/" itemprop="url">
+                  C_Compiler_by_C
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-28T00:43:08+08:00">
+                2016-11-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/" itemprop="url" rel="index">
+                    <span itemprop="name">CS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/11/28/C-Compiler-by-C/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/28/C-Compiler-by-C/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="CH1-编译概述"><a href="#CH1-编译概述" class="headerlink" title="CH1 编译概述"></a>CH1 编译概述</h1><p>TODO</p>
+<h1 id="CH2-文法和语法的基础知识"><a href="#CH2-文法和语法的基础知识" class="headerlink" title="CH2 文法和语法的基础知识"></a>CH2 文法和语法的基础知识</h1><h2 id="TODO-6-文法和语言的分类"><a href="#TODO-6-文法和语言的分类" class="headerlink" title="TODO:6 文法和语言的分类"></a>TODO:6 文法和语言的分类</h2><h3 id="0-型文法（无限制文法）"><a href="#0-型文法（无限制文法）" class="headerlink" title="0 型文法（无限制文法）"></a>0 型文法（无限制文法）</h3><p>关键在于<code>𝜷</code>可以为空</p>
+<h3 id="1-型文法（上下文有关文法）"><a href="#1-型文法（上下文有关文法）" class="headerlink" title="1 型文法（上下文有关文法）"></a>1 型文法（上下文有关文法）</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">𝜶𝑨𝜷 → 𝜶𝑢𝜷</div></pre></td></tr></table></figure>
+<h3 id="2型文法（上下文无关文法）"><a href="#2型文法（上下文无关文法）" class="headerlink" title="2型文法（上下文无关文法）"></a>2型文法（上下文无关文法）</h3><h1 id="CH3-词法分析与有穷自动机"><a href="#CH3-词法分析与有穷自动机" class="headerlink" title="CH3 词法分析与有穷自动机"></a>CH3 词法分析与有穷自动机</h1><h2 id="词法分析程序的功能"><a href="#词法分析程序的功能" class="headerlink" title="词法分析程序的功能"></a>词法分析程序的功能</h2><p>对<strong>字符串</strong>表示的源程序从左到右进行扫描和分解，根据语言的词法规则识别出一个一个具有独立意义的单词符号。</p>
+<h2 id="单词符号及输出单词的形式"><a href="#单词符号及输出单词的形式" class="headerlink" title="单词符号及输出单词的形式"></a>单词符号及输出单词的形式</h2><p>词法分析程序的：</p>
+<ul>
+<li>输入：字符串形式的源程序</li>
+<li>输出：单词符号 or 单词符号表示的源程序</li>
+</ul>
+<h3 id="语言的单词符号-token"><a href="#语言的单词符号-token" class="headerlink" title="语言的单词符号 token"></a>语言的单词符号 token</h3><p>语言中具有独立意义的最小语法单位，分为以下 5 种：</p>
+<ol>
+<li><p><strong>关键字</strong><code>if else while do</code> 等</p>
+</li>
+<li><p><strong>标识符</strong>,比如变量名、常量名、数组名、函数名等等</p>
+</li>
+<li><p><strong>常数</strong>，比如</p>
+<ul>
+<li>整型常数 125</li>
+<li>实型常数 0.718</li>
+<li><p>布尔型常数 <code>TRUE</code></p>
+<p>等等</p>
+</li>
+</ul>
+</li>
+<li><p><strong>运算符</strong><code>+ - * / &lt;</code> 等等</p>
+</li>
+<li><p><strong>界符</strong><br><code>, ; ( ) :</code> 等等</p>
+</li>
+</ol>
+<p>一个程序语言的关键字、运算符和界符的个数是确定的，而对于标识符或常数的使用个数通常是不确定的。</p>
+<h3 id="词法分析程序输出单词的形式"><a href="#词法分析程序输出单词的形式" class="headerlink" title="词法分析程序输出单词的形式"></a>词法分析程序输出单词的形式</h3><p>二元式：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">（单词种别，单词自身的值）</div></pre></td></tr></table></figure>
+<h4 id="单词种别"><a href="#单词种别" class="headerlink" title="单词种别"></a>单词种别</h4><p><strong>单词种别</strong>表示单词的种类，是<strong>语法分析</strong>需要的信息。</p>
+<p>一个语言的单词符号如何划分种类、分成几个种类、怎样编码，取决于处理方便。通常让每种单词对应一个整数码，最大限度地把各个单词区别开。</p>
+<ol>
+<li>关键字：全体视为一种，但一般一字一种（个数确定）</li>
+<li>运算符：同关键字</li>
+<li>界符：同关键字</li>
+<li>标识符：统归为一种</li>
+<li><p>常数：可按类型（整型、实型、布尔型等等），也可统归为一种，比如</p>
+ <figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(+|<span class="string">-</span>|<span class="string">ɛ)dd*(.dd*</span>|<span class="string">ɛ)(e(+</span>|<span class="string">-</span>|<span class="string">ɛ)dd*</span>|<span class="string">ɛ)</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="单词自身的值"><a href="#单词自身的值" class="headerlink" title="单词自身的值"></a>单词自身的值</h4><p>单词自身的值是编译中其他阶段所需要的信息。</p>
+<p>用以下方法确定其值：</p>
+<ol>
+<li>如果一个种别只含一个单词符号，那么对于这个单词符号，种别编码完全代表其自身的值。</li>
+<li><p>如果一个种别又多个单词符号，那么对于它的每个单词符号，除了给出种别编码之外，还应</p>
+<ol>
+<li><p>给出单词符号的<strong>自身值</strong>，以便把同一种类的单词区分开来。</p>
+<blockquote>
+<p>标识符的自身值：标识符自身的字符串</p>
+<p>常数自身值：常数本身的二进制数值</p>
+</blockquote>
+</li>
+<li><p>用指向某类表格中一个特定项目的指针值来区分同类中不同单词</p>
+<blockquote>
+<p>标识符：在符号表的入口指针作为它自身的值</p>
+<p>常数：在常数表的入口指针作为自身值</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ol>
+<p>假设关键字、运算符和界符都是一符一种，标识符自身的值用自身的字符串表示，常数自身的值用标准二进制形式表示，则程序段<code>if (a &gt; 1) b = 100;</code>在经词法分析程序扫描后，它所输出的单词符号串是：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">二元式</th>
+<th style="text-align:left">表示的意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">(2, )</td>
+<td style="text-align:left">基本字<code>if</code></td>
+</tr>
+<tr>
+<td style="text-align:left">(29, )</td>
+<td style="text-align:left">左括号<code>(</code></td>
+</tr>
+<tr>
+<td style="text-align:left">(10, ‘a’)</td>
+<td style="text-align:left">标识符<code>a</code></td>
+</tr>
+<tr>
+<td style="text-align:left">(11, ‘1’的二进制)</td>
+<td style="text-align:left">常数<code>1</code></td>
+</tr>
+<tr>
+<td style="text-align:left">(30, )</td>
+<td style="text-align:left">右括号<code>)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">(10, ‘b’)</td>
+<td style="text-align:left">标识符<code>b</code></td>
+</tr>
+<tr>
+<td style="text-align:left">(17, )</td>
+<td style="text-align:left">赋值号<code>=</code></td>
+</tr>
+<tr>
+<td style="text-align:left">(11, ‘100’的二进制)</td>
+<td style="text-align:left">常数<code>100</code></td>
+</tr>
+<tr>
+<td style="text-align:left">(26, )</td>
+<td style="text-align:left">分号<code>;</code></td>
+</tr>
+</tbody>
+</table>
+<p>其中，假设标识符种类编码为整数 10，常数的种类编码为整数 11，基本字<code>if</code>种类编码为 2，赋值号种类编码为……</p>
+<h2 id="语言单词符号的两种定义方式"><a href="#语言单词符号的两种定义方式" class="headerlink" title="语言单词符号的两种定义方式"></a>语言单词符号的两种定义方式</h2>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/11/27/remove-long-pc-user-name/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -390,7 +643,7 @@
 
       
         
-          <p><img src="https://dn-coding-net-production-pp.qbox.me/eeda09b4-f2c3-4759-b15d-11477f09b6ac.png" alt="长长的用户名和电脑名"><br>在Linux 或 macOS 下用 bash 的时候，当然如果你是 zsh 用户，一般不会有这种困扰——终端每一行前面有好长的一串——“本机名 当前路径 用户名”，再是表示等待输入指令的<code>$</code>。<br>在 bash 下要如何去掉这些冗长的信息呢？</p>
+          <p><img src="https://dn-coding-net-production-pp.qbox.me/eeda09b4-f2c3-4759-b15d-11477f09b6ac.png" alt="长长的用户名和电脑名"><br>在 Linux 或 macOS 下用 bash 的时候，当然如果你是 zsh 用户，一般不会有这种困扰——终端每一行前面有好长的一串——“本机名 当前路径 用户名”，再是表示等待输入指令的<code>$</code>。<br>在 bash 下要如何去掉这些冗长的信息呢？</p>
           <!--noindex-->
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/11/27/remove-long-pc-user-name/#more" rel="contents">
@@ -1196,7 +1449,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1213,7 +1466,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

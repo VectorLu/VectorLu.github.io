@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="blog,hexo," />
+  <meta name="keywords" content="Compiler,C," />
 
 
 
@@ -90,16 +90,28 @@
 
 
 
-<meta name="description" content="基本操作就是根据Hexo官方文档NexT官方文档来配置一些细节，在这里用图文记录一下具体过程和比较常用的命令。">
+<meta name="description" content="CH1 编译概述TODO
+CH2 文法和语法的基础知识TODO:6 文法和语言的分类0 型文法（无限制文法）关键在于𝜷可以为空
+1 型文法（上下文有关文法）1𝜶𝑨𝜷 → 𝜶𝑢𝜷
+2型文法（上下文无关文法）CH3 词法分析与有穷自动机词法分析程序的功能对字符串表示的源程序从左到右进行扫描和分解，根据语言的词法规则识别出一个一个具有独立意义的单词符号。
+单词符号及输出单词的形式词法分析程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo_3_写作与更新的细节">
-<meta property="og:url" content="http://vectorlu.com/2016/11/26/Hexo-3-writing-update-blog/index.html">
+<meta property="og:title" content="C_Compiler_by_C">
+<meta property="og:url" content="http://vectorlu.com/2016/11/28/C-Compiler-by-C/index.html">
 <meta property="og:site_name" content="Vector">
-<meta property="og:description" content="基本操作就是根据Hexo官方文档NexT官方文档来配置一些细节，在这里用图文记录一下具体过程和比较常用的命令。">
-<meta property="og:updated_time" content="2016-11-27T13:12:29.000Z">
+<meta property="og:description" content="CH1 编译概述TODO
+CH2 文法和语法的基础知识TODO:6 文法和语言的分类0 型文法（无限制文法）关键在于𝜷可以为空
+1 型文法（上下文有关文法）1𝜶𝑨𝜷 → 𝜶𝑢𝜷
+2型文法（上下文无关文法）CH3 词法分析与有穷自动机词法分析程序的功能对字符串表示的源程序从左到右进行扫描和分解，根据语言的词法规则识别出一个一个具有独立意义的单词符号。
+单词符号及输出单词的形式词法分析程">
+<meta property="og:updated_time" content="2016-11-28T14:26:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo_3_写作与更新的细节">
-<meta name="twitter:description" content="基本操作就是根据Hexo官方文档NexT官方文档来配置一些细节，在这里用图文记录一下具体过程和比较常用的命令。">
+<meta name="twitter:title" content="C_Compiler_by_C">
+<meta name="twitter:description" content="CH1 编译概述TODO
+CH2 文法和语法的基础知识TODO:6 文法和语言的分类0 型文法（无限制文法）关键在于𝜷可以为空
+1 型文法（上下文有关文法）1𝜶𝑨𝜷 → 𝜶𝑢𝜷
+2型文法（上下文无关文法）CH3 词法分析与有穷自动机词法分析程序的功能对字符串表示的源程序从左到右进行扫描和分解，根据语言的词法规则识别出一个一个具有独立意义的单词符号。
+单词符号及输出单词的形式词法分析程">
 
 
 
@@ -127,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://vectorlu.com/2016/11/26/Hexo-3-writing-update-blog/"/>
+  <link rel="canonical" href="http://vectorlu.com/2016/11/28/C-Compiler-by-C/"/>
 
 
 
 
 
-  <title> Hexo_3_写作与更新的细节 | Vector </title>
+  <title> C_Compiler_by_C | Vector </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -287,7 +299,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/11/26/Hexo-3-writing-update-blog/">
+  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/11/28/C-Compiler-by-C/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="VectorLu">
@@ -311,7 +323,7 @@
             
             
               
-                Hexo_3_写作与更新的细节
+                C_Compiler_by_C
               
             
           </h1>
@@ -324,8 +336,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-26T03:19:35+08:00">
-                2016-11-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-28T00:43:08+08:00">
+                2016-11-28
               </time>
             
 
@@ -343,8 +355,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/KIT/" itemprop="url" rel="index">
-                    <span itemprop="name">KIT</span>
+                  <a href="/categories/CS/" itemprop="url" rel="index">
+                    <span itemprop="name">CS</span>
                   </a>
                 </span>
 
@@ -358,8 +370,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/11/26/Hexo-3-writing-update-blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/26/Hexo-3-writing-update-blog/" itemprop="commentCount"></span>
+                <a href="/2016/11/28/C-Compiler-by-C/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/28/C-Compiler-by-C/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -390,98 +402,119 @@
       
 
       
-        <h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><p>就是根据<br><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo官方文档</a><br><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">NexT官方文档</a><br>来配置一些细节，在这里用图文记录一下具体过程和比较常用的命令。<br><a id="more"></a></p>
-<h2 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h2><h3 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h3><figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo <span class="keyword">new</span> [layout] &lt;<span class="built_in">title</span>&gt;</div></pre></td></tr></table></figure>
-<p>创建了新文章之后打开，会在文章开头看到类似以下内容的东西。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">---</span></div><div class="line"><span class="attr">title:</span> 使用 Hexo 搭建博客的细节配置 <span class="number">1</span></div><div class="line"><span class="attr">date:</span> <span class="number">2016</span><span class="bullet">-11</span><span class="bullet">-26</span> <span class="number">00</span>:<span class="number">03</span>:<span class="number">44</span></div><div class="line"><span class="attr">categories:</span></div><div class="line"><span class="bullet">-</span> KIT</div><div class="line"><span class="attr">tags:</span></div><div class="line"><span class="bullet">-</span> blog</div><div class="line"><span class="bullet">-</span> hexo</div><div class="line"><span class="meta">---</span></div></pre></td></tr></table></figure>
-<p>这个部分是用来指定该文章的各种变量哒：</p>
+        <h1 id="CH1-编译概述"><a href="#CH1-编译概述" class="headerlink" title="CH1 编译概述"></a>CH1 编译概述</h1><p>TODO</p>
+<h1 id="CH2-文法和语法的基础知识"><a href="#CH2-文法和语法的基础知识" class="headerlink" title="CH2 文法和语法的基础知识"></a>CH2 文法和语法的基础知识</h1><h2 id="TODO-6-文法和语言的分类"><a href="#TODO-6-文法和语言的分类" class="headerlink" title="TODO:6 文法和语言的分类"></a>TODO:6 文法和语言的分类</h2><h3 id="0-型文法（无限制文法）"><a href="#0-型文法（无限制文法）" class="headerlink" title="0 型文法（无限制文法）"></a>0 型文法（无限制文法）</h3><p>关键在于<code>𝜷</code>可以为空</p>
+<h3 id="1-型文法（上下文有关文法）"><a href="#1-型文法（上下文有关文法）" class="headerlink" title="1 型文法（上下文有关文法）"></a>1 型文法（上下文有关文法）</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">𝜶𝑨𝜷 → 𝜶𝑢𝜷</div></pre></td></tr></table></figure>
+<h3 id="2型文法（上下文无关文法）"><a href="#2型文法（上下文无关文法）" class="headerlink" title="2型文法（上下文无关文法）"></a>2型文法（上下文无关文法）</h3><h1 id="CH3-词法分析与有穷自动机"><a href="#CH3-词法分析与有穷自动机" class="headerlink" title="CH3 词法分析与有穷自动机"></a>CH3 词法分析与有穷自动机</h1><h2 id="词法分析程序的功能"><a href="#词法分析程序的功能" class="headerlink" title="词法分析程序的功能"></a>词法分析程序的功能</h2><p>对<strong>字符串</strong>表示的源程序从左到右进行扫描和分解，根据语言的词法规则识别出一个一个具有独立意义的单词符号。</p>
+<h2 id="单词符号及输出单词的形式"><a href="#单词符号及输出单词的形式" class="headerlink" title="单词符号及输出单词的形式"></a>单词符号及输出单词的形式</h2><p>词法分析程序的：</p>
+<ul>
+<li>输入：字符串形式的源程序</li>
+<li>输出：单词符号 or 单词符号表示的源程序</li>
+</ul>
+<h3 id="语言的单词符号-token"><a href="#语言的单词符号-token" class="headerlink" title="语言的单词符号 token"></a>语言的单词符号 token</h3><p>语言中具有独立意义的最小语法单位，分为以下 5 种：</p>
+<ol>
+<li><p><strong>关键字</strong><code>if else while do</code> 等</p>
+</li>
+<li><p><strong>标识符</strong>,比如变量名、常量名、数组名、函数名等等</p>
+</li>
+<li><p><strong>常数</strong>，比如</p>
+<ul>
+<li>整型常数 125</li>
+<li>实型常数 0.718</li>
+<li><p>布尔型常数 <code>TRUE</code></p>
+<p>等等</p>
+</li>
+</ul>
+</li>
+<li><p><strong>运算符</strong><code>+ - * / &lt;</code> 等等</p>
+</li>
+<li><p><strong>界符</strong><br><code>, ; ( ) :</code> 等等</p>
+</li>
+</ol>
+<p>一个程序语言的关键字、运算符和界符的个数是确定的，而对于标识符或常数的使用个数通常是不确定的。</p>
+<h3 id="词法分析程序输出单词的形式"><a href="#词法分析程序输出单词的形式" class="headerlink" title="词法分析程序输出单词的形式"></a>词法分析程序输出单词的形式</h3><p>二元式：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">（单词种别，单词自身的值）</div></pre></td></tr></table></figure>
+<h4 id="单词种别"><a href="#单词种别" class="headerlink" title="单词种别"></a>单词种别</h4><p><strong>单词种别</strong>表示单词的种类，是<strong>语法分析</strong>需要的信息。</p>
+<p>一个语言的单词符号如何划分种类、分成几个种类、怎样编码，取决于处理方便。通常让每种单词对应一个整数码，最大限度地把各个单词区别开。</p>
+<ol>
+<li>关键字：全体视为一种，但一般一字一种（个数确定）</li>
+<li>运算符：同关键字</li>
+<li>界符：同关键字</li>
+<li>标识符：统归为一种</li>
+<li><p>常数：可按类型（整型、实型、布尔型等等），也可统归为一种，比如</p>
+ <figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(+|<span class="string">-</span>|<span class="string">ɛ)dd*(.dd*</span>|<span class="string">ɛ)(e(+</span>|<span class="string">-</span>|<span class="string">ɛ)dd*</span>|<span class="string">ɛ)</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="单词自身的值"><a href="#单词自身的值" class="headerlink" title="单词自身的值"></a>单词自身的值</h4><p>单词自身的值是编译中其他阶段所需要的信息。</p>
+<p>用以下方法确定其值：</p>
+<ol>
+<li>如果一个种别只含一个单词符号，那么对于这个单词符号，种别编码完全代表其自身的值。</li>
+<li><p>如果一个种别又多个单词符号，那么对于它的每个单词符号，除了给出种别编码之外，还应</p>
+<ol>
+<li><p>给出单词符号的<strong>自身值</strong>，以便把同一种类的单词区分开来。</p>
+<blockquote>
+<p>标识符的自身值：标识符自身的字符串</p>
+<p>常数自身值：常数本身的二进制数值</p>
+</blockquote>
+</li>
+<li><p>用指向某类表格中一个特定项目的指针值来区分同类中不同单词</p>
+<blockquote>
+<p>标识符：在符号表的入口指针作为它自身的值</p>
+<p>常数：在常数表的入口指针作为自身值</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ol>
+<p>假设关键字、运算符和界符都是一符一种，标识符自身的值用自身的字符串表示，常数自身的值用标准二进制形式表示，则程序段<code>if (a &gt; 1) b = 100;</code>在经词法分析程序扫描后，它所输出的单词符号串是：</p>
 <table>
 <thead>
 <tr>
-<th>参数</th>
-<th>描述</th>
-<th>默认值</th>
+<th style="text-align:left">二元式</th>
+<th style="text-align:left">表示的意义</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>layout</code></td>
-<td>布局</td>
-<td></td>
+<td style="text-align:left">(2, )</td>
+<td style="text-align:left">基本字<code>if</code></td>
 </tr>
 <tr>
-<td>title</td>
-<td>title</td>
-<td></td>
+<td style="text-align:left">(29, )</td>
+<td style="text-align:left">左括号<code>(</code></td>
 </tr>
 <tr>
-<td><code>date</code></td>
-<td>建立日期</td>
-<td>文件建立日期</td>
+<td style="text-align:left">(10, ‘a’)</td>
+<td style="text-align:left">标识符<code>a</code></td>
 </tr>
 <tr>
-<td>updated</td>
-<td>更新日期</td>
-<td>文件更新日期</td>
+<td style="text-align:left">(11, ‘1’的二进制)</td>
+<td style="text-align:left">常数<code>1</code></td>
 </tr>
 <tr>
-<td><code>comments</code></td>
-<td>开启文章的评论功能</td>
-<td>true</td>
+<td style="text-align:left">(30, )</td>
+<td style="text-align:left">右括号<code>)</code></td>
 </tr>
 <tr>
-<td>tags</td>
-<td>标签（不适用于分页）</td>
-<td></td>
+<td style="text-align:left">(10, ‘b’)</td>
+<td style="text-align:left">标识符<code>b</code></td>
 </tr>
 <tr>
-<td><code>categories</code></td>
-<td>分类（不适用于分页)</td>
-<td></td>
+<td style="text-align:left">(17, )</td>
+<td style="text-align:left">赋值号<code>=</code></td>
 </tr>
 <tr>
-<td>permalink</td>
-<td>覆盖文章网址</td>
-<td>－</td>
+<td style="text-align:left">(11, ‘100’的二进制)</td>
+<td style="text-align:left">常数<code>100</code></td>
+</tr>
+<tr>
+<td style="text-align:left">(26, )</td>
+<td style="text-align:left">分号<code>;</code></td>
 </tr>
 </tbody>
 </table>
-<p>只有文章支持分类和标签，page 不支持，标签没有顺序和层次。</p>
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><h4 id="md-本身有自己的引用语法"><a href="#md-本身有自己的引用语法" class="headerlink" title="md 本身有自己的引用语法"></a>md 本身有自己的引用语法</h4><blockquote>
-<p>这是第一行引用<br>这是第二行引用<br>引用方式非常简单，但是引用的样式比较单一，如果要显示引用源的相关信息就力不从心了。</p>
-</blockquote>
-<p>以下来自<a href="https://hexo.io/zh-cn/docs/tag-plugins.html" target="_blank" rel="external">标签插件</a>，摘录到本地方便查阅。</p>
-<h4 id="引用网络上的文章"><a href="#引用网络上的文章" class="headerlink" title="引用网络上的文章"></a>引用网络上的文章</h4><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% blockquote Seth Godin http://sethgodin.typepad.<span class="keyword">com</span>/seths_blog/<span class="number">2009</span>/<span class="number">07</span>/welcome-<span class="keyword">to</span>-island-marketing.html Welcome <span class="keyword">to</span> Island Marketing %&#125;</div><div class="line">Every interaction <span class="keyword">is</span> both precious <span class="built_in">and</span> <span class="keyword">an</span> opportunity <span class="keyword">to</span> delight.</div><div class="line">&#123;% endblockquote %&#125;</div></pre></td></tr></table></figure>
-<p>效果：</p>
-<blockquote><p>Every interaction is both precious and an opportunity to delight.</p>
-<footer><strong>Seth Godin</strong><cite><a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html" target="_blank" rel="external">Welcome to Island Marketing</a></cite></footer></blockquote>
-<h4 id="引用-Twitter"><a href="#引用-Twitter" class="headerlink" title="引用 Twitter"></a>引用 Twitter</h4><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% blockquote <span class="meta">@DevDocs</span> <span class="string">https:</span><span class="comment">//twitter.com/devdocs/status/356095192085962752 %&#125;</span></div><div class="line"><span class="string">NEW:</span> DevDocs now comes with syntax highlighting. <span class="string">http:</span><span class="comment">//devdocs.io</span></div><div class="line">&#123;% endblockquote %&#125;</div></pre></td></tr></table></figure>
-<blockquote><p>NEW: DevDocs now comes with syntax highlighting. <a href="http://devdocs.io" target="_blank" rel="external">http://devdocs.io</a></p>
-<footer><strong>@DevDocs</strong><cite><a href="https://twitter.com/devdocs/status/356095192085962752" target="_blank" rel="external">twitter.com/devdocs/status/356095192085962752</a></cite></footer></blockquote>
-<h4 id="引用书上的句子"><a href="#引用书上的句子" class="headerlink" title="引用书上的句子"></a>引用书上的句子</h4><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% blockquote David Levithan, Wide Awake %&#125;</div><div class="line"><span class="keyword">Do</span> <span class="keyword">not</span> just seek happiness <span class="keyword">for</span> yourself. Seek happiness <span class="keyword">for</span> <span class="keyword">all</span>. Through kindness. Through mercy.</div><div class="line">&#123;% endblockquote %&#125;</div></pre></td></tr></table></figure>
-<blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
-<footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote>
-<h4 id="没有提供参数，则只输出普通的-blockquote"><a href="#没有提供参数，则只输出普通的-blockquote" class="headerlink" title="没有提供参数，则只输出普通的 blockquote"></a>没有提供参数，则只输出普通的 blockquote</h4><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">blockquote</span> %&#125;</span><span class="xml"></span></div><div class="line">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</div><div class="line"><span class="template-tag">&#123;% <span class="name">endblockquote</span> %&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
-<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</p>
-</blockquote>
-<h3 id="创建新页面"><a href="#创建新页面" class="headerlink" title="创建新页面"></a>创建新页面</h3><p>比如新建<code>about</code>页面</p>
-<figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="type">page</span> about</div></pre></td></tr></table></figure>
-<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><h3 id="hexo-server"><a href="#hexo-server" class="headerlink" title="hexo-server"></a>hexo-server</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm <span class="keyword">install</span> hexo-<span class="keyword">server</span> <span class="comment">--save</span></div></pre></td></tr></table></figure>
-<h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><p>安装完成后，输入以下命令以启动服务器，您的网站会在 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 下启动。在服务器启动期间，Hexo 会监视文件变动并自动更新，您无须重启服务器。<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo <span class="keyword">server</span></div></pre></td></tr></table></figure></p>
-<p>或</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>hexo s</div></pre></td></tr></table></figure>
-<h4 id="更改端口"><a href="#更改端口" class="headerlink" title="更改端口"></a>更改端口</h4><p>想要更改端口，或是在执行时遇到了 EADDRINUSE 错误，可以在执行时使用 -p 选项指定其他端口，如下：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server -<span class="selector-tag">p</span> <span class="number">5000</span></div></pre></td></tr></table></figure>
-<h2 id="生成文件"><a href="#生成文件" class="headerlink" title="生成文件"></a>生成文件</h2><p><code>hexo generate</code> 或 <code>hexo g</code></p>
-<h3 id="完成后部署"><a href="#完成后部署" class="headerlink" title="完成后部署"></a>完成后部署</h3><p>执行下列的其中一个命令，让 Hexo 在生成完毕后自动部署网站，两个命令的作用是相同的。</p>
-<figure class="highlight verilog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo <span class="keyword">generate</span> --deploy</div><div class="line">$ hexo deploy --<span class="keyword">generate</span></div></pre></td></tr></table></figure>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>详见</p>
-<h2 id="多语种支持"><a href="#多语种支持" class="headerlink" title="多语种支持"></a>多语种支持</h2><p>在<strong>站点配置文件</strong> <code>_config.yml</code> 中修改 new_post_name 和 permalink 参数，如下：</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">new_post_name:</span> <span class="symbol">:lang/</span><span class="symbol">:title</span>.md</div><div class="line"><span class="symbol">permalink:</span> <span class="symbol">:lang/</span><span class="symbol">:title/</span></div></pre></td></tr></table></figure>
-<p>建立新文章时，文章会被存储到：</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo <span class="keyword">new</span> <span class="string">"Hello World"</span> --lang tw</div><div class="line"># =&gt; <span class="keyword">source</span><span class="regexp">/_posts/</span>tw<span class="regexp">/Hello-World.md</span></div></pre></td></tr></table></figure>
-<p>而网址会是<code>http://localhost:4000/tw/hello-world/</code></p>
-
+<p>其中，假设标识符种类编码为整数 10，常数的种类编码为整数 11，基本字<code>if</code>种类编码为 2，赋值号种类编码为……</p>
+<h2 id="语言单词符号的两种定义方式"><a href="#语言单词符号的两种定义方式" class="headerlink" title="语言单词符号的两种定义方式"></a>语言单词符号的两种定义方式</h2>
       
     </div>
 
@@ -525,9 +558,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/blog/" rel="tag"># blog</a>
+            <a href="/tags/Compiler/" rel="tag"># Compiler</a>
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/C/" rel="tag"># C</a>
           
         </div>
       
@@ -536,8 +569,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/26/Hexo-2-coding-pages/" rel="next" title="Hexo-2-用 Coding Pages 部署 Hexo 博客">
-                <i class="fa fa-chevron-left"></i> Hexo-2-用 Coding Pages 部署 Hexo 博客
+              <a href="/2016/11/27/remove-long-pc-user-name/" rel="next" title="去掉 mac 终端下长长的电脑名和用户名">
+                <i class="fa fa-chevron-left"></i> 去掉 mac 终端下长长的电脑名和用户名
               </a>
             
           </div>
@@ -545,10 +578,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/26/Hexo-4-theme-NexT-Pisces-details/" rel="prev" title="Hexo_4_NexT_Pisces_主题配置细节">
-                Hexo_4_NexT_Pisces_主题配置细节 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -563,10 +592,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/11/26/Hexo-3-writing-update-blog/"
-     data-title="Hexo_3_写作与更新的细节"
+        <div class="ds-share flat" data-thread-key="2016/11/28/C-Compiler-by-C/"
+     data-title="C_Compiler_by_C"
      data-content=""
-     data-url="http://vectorlu.com/2016/11/26/Hexo-3-writing-update-blog/">
+     data-url="http://vectorlu.com/2016/11/28/C-Compiler-by-C/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -596,8 +625,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/26/Hexo-3-writing-update-blog/"
-           data-title="Hexo_3_写作与更新的细节" data-url="http://vectorlu.com/2016/11/26/Hexo-3-writing-update-blog/">
+      <div class="ds-thread" data-thread-key="2016/11/28/C-Compiler-by-C/"
+           data-title="C_Compiler_by_C" data-url="http://vectorlu.com/2016/11/28/C-Compiler-by-C/">
       </div>
     
   </div>
@@ -755,7 +784,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本操作"><span class="nav-number">1.</span> <span class="nav-text">基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#写作"><span class="nav-number">1.1.</span> <span class="nav-text">写作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建新文章"><span class="nav-number">1.1.1.</span> <span class="nav-text">创建新文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用"><span class="nav-number">1.1.2.</span> <span class="nav-text">引用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#md-本身有自己的引用语法"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">md 本身有自己的引用语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用网络上的文章"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">引用网络上的文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用-Twitter"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">引用 Twitter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用书上的句子"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">引用书上的句子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#没有提供参数，则只输出普通的-blockquote"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">没有提供参数，则只输出普通的 blockquote</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建新页面"><span class="nav-number">1.1.3.</span> <span class="nav-text">创建新页面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器"><span class="nav-number">1.2.</span> <span class="nav-text">服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-server"><span class="nav-number">1.2.1.</span> <span class="nav-text">hexo-server</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更改端口"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">更改端口</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成文件"><span class="nav-number">1.3.</span> <span class="nav-text">生成文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#完成后部署"><span class="nav-number">1.3.1.</span> <span class="nav-text">完成后部署</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署"><span class="nav-number">1.4.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多语种支持"><span class="nav-number">1.5.</span> <span class="nav-text">多语种支持</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CH1-编译概述"><span class="nav-number">1.</span> <span class="nav-text">CH1 编译概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CH2-文法和语法的基础知识"><span class="nav-number">2.</span> <span class="nav-text">CH2 文法和语法的基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TODO-6-文法和语言的分类"><span class="nav-number">2.1.</span> <span class="nav-text">TODO:6 文法和语言的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0-型文法（无限制文法）"><span class="nav-number">2.1.1.</span> <span class="nav-text">0 型文法（无限制文法）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-型文法（上下文有关文法）"><span class="nav-number">2.1.2.</span> <span class="nav-text">1 型文法（上下文有关文法）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2型文法（上下文无关文法）"><span class="nav-number">2.1.3.</span> <span class="nav-text">2型文法（上下文无关文法）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CH3-词法分析与有穷自动机"><span class="nav-number">3.</span> <span class="nav-text">CH3 词法分析与有穷自动机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#词法分析程序的功能"><span class="nav-number">3.1.</span> <span class="nav-text">词法分析程序的功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单词符号及输出单词的形式"><span class="nav-number">3.2.</span> <span class="nav-text">单词符号及输出单词的形式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语言的单词符号-token"><span class="nav-number">3.2.1.</span> <span class="nav-text">语言的单词符号 token</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#词法分析程序输出单词的形式"><span class="nav-number">3.2.2.</span> <span class="nav-text">词法分析程序输出单词的形式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单词种别"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">单词种别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单词自身的值"><span class="nav-number">3.2.2.2.</span> <span class="nav-text">单词自身的值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语言单词符号的两种定义方式"><span class="nav-number">3.3.</span> <span class="nav-text">语言单词符号的两种定义方式</span></a></li></ol></li></ol></div>
             
 
           </div>
