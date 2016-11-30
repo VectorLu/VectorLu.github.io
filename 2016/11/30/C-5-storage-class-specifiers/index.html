@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://vectorlu.com/2016/11/30/C-5-storage-class-specifiers/index.html">
 <meta property="og:site_name" content="Vector">
 <meta property="og:description" content="C 语言中有 5 个作为存储类说明符 (storage class specifier) 的关键字，它们是auto register static extern以及typedef。">
-<meta property="og:updated_time" content="2016-11-30T15:15:31.000Z">
+<meta property="og:updated_time" content="2016-11-30T15:24:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C 语言存储类详解">
 <meta name="twitter:description" content="C 语言中有 5 个作为存储类说明符 (storage class specifier) 的关键字，它们是auto register static extern以及typedef。">
@@ -474,7 +474,7 @@
 </tbody>
 </table>
 <h2 id="自动变量"><a href="#自动变量" class="headerlink" title="自动变量"></a>自动变量</h2><p>默认情况下，在代码块或函数的头部定义的任意变量（没有用 static 显示声明）都属于自动存储类。可用关键字 <code>auto</code>显示定义存储类型。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">mani</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">auto</span> <span class="keyword">int</span> plox;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">auto</span> <span class="keyword">int</span> plox;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>再来仔细看一下嵌套代码块。只有定义变量的代码块及其内部的任何代码块可以访问这个变量，这是一个：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">loop</span> <span class="params">(<span class="keyword">int</span> n)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> m;			<span class="comment">// m 的作用域</span></div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;m);</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = m; i &lt; n; i++)</div><div class="line">	&#123;</div><div class="line">		<span class="comment">// m 和 i 的作用域</span></div><div class="line">		<span class="built_in">puts</span>(<span class="string">"i is local to a sub-block\n"</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> m; 	<span class="comment">// m 的作用域，i 已经消失</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>变量 i 仅在内层花括号中可见，如果试图在内层代码块之前或之后使用该变量，将得到一个编译错误。变量 n 和 m 在函数头部和外层代码块中定义，在整个函数中可用，一直存在到函数终止。</p>
@@ -485,6 +485,7 @@
 </blockquote>
 <h2 id="自动变量的初始化"><a href="#自动变量的初始化" class="headerlink" title="自动变量的初始化"></a>自动变量的初始化</h2><p><strong>除非显示地初始化自动变量，否则它不会被自动初始化。</strong>考虑如下声明：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> repid;</div><div class="line">	<span class="keyword">int</span> tents = <span class="number">5</span>;</div><div class="line">	...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>变量<code>tents</code>初始化为 5，而变量<code>repid</code>的初值则是占用分配给它的空间的任意值。</p>
 
       
     </div>
