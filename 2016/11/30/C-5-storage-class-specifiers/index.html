@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="blog,hexo,Github," />
+  <meta name="keywords" content="C," />
 
 
 
@@ -90,24 +90,16 @@
 
 
 
-<meta name="description" content="安装好了 Hexo，下一步就是：将自己的博客放到网上，让每个人都能访问。">
+<meta name="description" content="C 语言中有 5 个作为存储类说明符的关键字，它们是auto register static extern以及typedef。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo-1-用 Github Pages 部署 Hexo 博客">
-<meta property="og:url" content="http://vectorlu.com/2016/11/26/Hexo-1-github-pages/index.html">
+<meta property="og:title" content="C 语言存储类详解">
+<meta property="og:url" content="http://vectorlu.com/2016/11/30/C-5-storage-class-specifiers/index.html">
 <meta property="og:site_name" content="Vector">
-<meta property="og:description" content="安装好了 Hexo，下一步就是：将自己的博客放到网上，让每个人都能访问。">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1213502-016f722d6347c428.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1213502-366f1a75f62e82ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1213502-f91109674c831ec1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1213502-27e90f7af2fb6124?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1213502-aea5c2f6d6d1a09b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://dn-coding-net-production-pp.qbox.me/3394bcd7-cbde-4643-8ca8-8851c9ca3ab3.png">
-<meta property="og:image" content="https://dn-coding-net-production-pp.qbox.me/4d631a41-dd56-4147-84f7-06c9bf4ea204.png">
-<meta property="og:updated_time" content="2016-11-30T07:14:09.000Z">
+<meta property="og:description" content="C 语言中有 5 个作为存储类说明符的关键字，它们是auto register static extern以及typedef。">
+<meta property="og:updated_time" content="2016-11-30T08:55:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo-1-用 Github Pages 部署 Hexo 博客">
-<meta name="twitter:description" content="安装好了 Hexo，下一步就是：将自己的博客放到网上，让每个人都能访问。">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1213502-016f722d6347c428.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="C 语言存储类详解">
+<meta name="twitter:description" content="C 语言中有 5 个作为存储类说明符的关键字，它们是auto register static extern以及typedef。">
 
 
 
@@ -135,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://vectorlu.com/2016/11/26/Hexo-1-github-pages/"/>
+  <link rel="canonical" href="http://vectorlu.com/2016/11/30/C-5-storage-class-specifiers/"/>
 
 
 
 
 
-  <title> Hexo-1-用 Github Pages 部署 Hexo 博客 | Vector </title>
+  <title> C 语言存储类详解 | Vector </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -295,7 +287,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/11/26/Hexo-1-github-pages/">
+  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/11/30/C-5-storage-class-specifiers/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="VectorLu">
@@ -319,7 +311,7 @@
             
             
               
-                Hexo-1-用 Github Pages 部署 Hexo 博客
+                C 语言存储类详解
               
             
           </h1>
@@ -332,8 +324,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-26T01:00:23+08:00">
-                2016-11-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-30T16:38:24+08:00">
+                2016-11-30
               </time>
             
 
@@ -351,8 +343,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/KIT/" itemprop="url" rel="index">
-                    <span itemprop="name">KIT</span>
+                  <a href="/categories/CS-Basic/" itemprop="url" rel="index">
+                    <span itemprop="name">CS Basic</span>
                   </a>
                 </span>
 
@@ -366,8 +358,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/11/26/Hexo-1-github-pages/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/26/Hexo-1-github-pages/" itemprop="commentCount"></span>
+                <a href="/2016/11/30/C-5-storage-class-specifiers/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/30/C-5-storage-class-specifiers/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -398,44 +390,86 @@
       
 
       
-        <p>安装好了 Hexo，下一步就是：将自己的博客放到网上，让每个人都能访问。</p>
+        <p>C 语言中有 5 个作为存储类说明符的关键字，它们是<code>auto</code> <code>register</code> <code>static</code> <code>extern</code>以及<code>typedef</code>。</p>
 <a id="more"></a>
-<p>介绍一下如何用 Github 的 Pages 服务来支持静态博客。<br>如果你对 Git 还不熟悉，那么建议你先阅读一下（不阅读也没有关系，因为 Hexo 不需要太多 Git 的知识）：<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/" target="_blank" rel="external">廖雪峰的Git教程</a></p>
-<h1 id="Step-0-注册Github"><a href="#Step-0-注册Github" class="headerlink" title="Step-0-注册Github"></a>Step-0-注册Github</h1><p>在 <a href="https://www.github.com" target="_blank" rel="external">Github官网</a> 中 sign up 就好了。</p>
-<h1 id="Step-1-管理远程仓库"><a href="#Step-1-管理远程仓库" class="headerlink" title="Step-1-管理远程仓库"></a>Step-1-管理远程仓库</h1><h2 id="相关命令概览与说明"><a href="#相关命令概览与说明" class="headerlink" title="相关命令概览与说明"></a>相关命令概览与说明</h2><p>其实用不到这么多 git 的知识，只是顺带介绍一下，可跳过。</p>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C (<span class="string">"youremail@example.com"</span>)</div><div class="line"><span class="comment">#创建ssh key</span></div><div class="line"></div><div class="line">git remote add origin (repository address on github)</div><div class="line"><span class="comment">#关联远程仓库</span></div><div class="line"></div><div class="line">git remote -help</div><div class="line"> <span class="comment">#用来查看帮助</span></div><div class="line"></div><div class="line">git push -u origin <span class="keyword">master</span></div><div class="line"><span class="title">#第一次推送本地内容到远程仓库要加 -u</span>参数</div><div class="line"></div><div class="line">git push origin <span class="keyword">master</span></div><div class="line"><span class="title">#以后就可以直接推送内容了</span></div><div class="line"></div><div class="line">git <span class="keyword">clone</span> <span class="title">(repository</span> address on github)</div><div class="line"><span class="comment">#将repository克隆到本地</span></div></pre></td></tr></table></figure>
-<h2 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h2><blockquote>
-<p>SSH 为建立在应用层和传输层基础上的安全协议。SSH 是目前较可靠，专为<a href="http://baike.baidu.com/view/59099.htm" target="_blank" rel="external">远程登录</a>会话和其他网络服务提供安全性的协议。利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题。</p>
+<h1 id="存储类、链接和内存管理"><a href="#存储类、链接和内存管理" class="headerlink" title="存储类、链接和内存管理"></a>存储类、链接和内存管理</h1><p>C 使用作用域、链接和存储时期来定义 5 种存储类，首先来认识一下这三个术语。</p>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>——程序中可以访问一个标识符的一个或多个区域。</p>
+<h3 id="代码块作用域-block-scope"><a href="#代码块作用域-block-scope" class="headerlink" title="代码块作用域 block scope"></a>代码块作用域 block scope</h3><p>在代码块（一对花括号中包含的代码）中定义的变量具有代码块作用域，从该变量被定义的地方到相应代码块的结尾，该变量均可见。</p>
+<p>另外，函数的形式参量尽管在函数的开始花括号前进行定义，同样也具有代码块作用域，隶属于包含函数体的代码块。</p>
+<p>下列代码中变量 cleo 和 patrick 都有直到结束花括号的代码块作用域。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">blocky</span><span class="params">(<span class="keyword">double</span> cleo)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">double</span> patrick = <span class="number">0.0</span>;</div><div class="line">	...</div><div class="line">	<span class="keyword">return</span> patrick;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在一个内部代码代码块中声明的变量，其作用域只局限于该代码块：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">blocky</span><span class="params">(<span class="keyword">double</span> cleo)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">double</span> patrick = <span class="number">0.0</span>;</div><div class="line">	<span class="keyword">int</span> i;</div><div class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">double</span> q = cleo * i; <span class="comment">// q 作用域的开始</span></div><div class="line">		...</div><div class="line">		patrick *= q;</div><div class="line">	&#125;							  <span class="comment">// q 作用域的结束</span></div><div class="line">	...</div><div class="line">	<span class="keyword">return</span> patrick;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在这个例子中，q 的作用域被限制在内部代码块内，只有该代码块内的代码可以访问 q。</p>
+<p>C99 之前（你用的 Xcode 完全支持 C99），具有代码作用域的变量都必须在代码块开始处进行声明，C99 开始允许在一个代码块中任何位置声明变量。</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</div><div class="line">&#123;<span class="keyword">printf</span>(<span class="string">"A C99 feature: i = %d"</span>, i);&#125;</div></pre></td></tr></table></figure>
+<p>作为这一新功能的一部分，C99 把代码块的概念扩大到包括由 <code>for</code>循环、<code>while</code> 循环或者<code>if</code>语句所控制的代码——即使这些代码没有用花括号括起来。</p>
+<h3 id="文件作用域-file-scope"><a href="#文件作用域-file-scope" class="headerlink" title="文件作用域 file scope"></a>文件作用域 file scope</h3><p>一个在所有函数之外定义的变量具有文件作用域。具有文件作用域的变量从它定义处到包含该定义的文件 结尾处都是可见的。除非被同名的局部变量屏蔽。</p>
+<h3 id="函数原型作用域-function-prototype-scope"><a href="#函数原型作用域-function-prototype-scope" class="headerlink" title="函数原型作用域 function prototype scope"></a>函数原型作用域 function prototype scope</h3><p>适用于函数原型中使用的变量名。函数原型作用域从变量定义处一直到原型声明的末尾。这意味着编译器在处理一个函数原型的参数时，它所关心的只是该参数的类型。名字通常是无关紧要的，名字起作用的一种情形是变长数组参量：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">void use<span class="emphasis">_a_</span>VLA(int n, int m, ar[<span class="string">n</span>][<span class="symbol">m</span>]);</div></pre></td></tr></table></figure>
+<p>如果在方括号中使用了变量名，则该变量名必须是在原型中已经声明了的。</p>
+<h2 id="链接，一个-C-变量具有下列链接之一："><a href="#链接，一个-C-变量具有下列链接之一：" class="headerlink" title="链接，一个 C 变量具有下列链接之一："></a>链接，一个 C 变量具有下列链接之一：</h2><h3 id="外部链接-external-linkage"><a href="#外部链接-external-linkage" class="headerlink" title="外部链接 external linkage"></a>外部链接 external linkage</h3><p>具有外部链接的变量可以在一个 <strong>多文件程序</strong> 的 <strong>任何</strong> 地方使用。</p>
+<h3 id="内部链接-internal-linkage"><a href="#内部链接-internal-linkage" class="headerlink" title="内部链接 internal linkage"></a>内部链接 internal linkage</h3><p>在定义时使用了存储类说明符<code>static</code>，可以在定义该变量的文件的任何地方使用。</p>
+<h3 id="空链接-no-linkage"><a href="#空链接-no-linkage" class="headerlink" title="空链接 no linkage"></a>空链接 no linkage</h3><p>具有代码块作用域和函数原型作用域的变量有空链接。意味着它们由其定义所在的代码块或函数原型所私有。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> giants = <span class="number">5</span>;			<span class="comment">// 文件作用域，外部链接</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">int</span> dodgers = <span class="number">5</span>;		<span class="comment">// 文件作用域，内部链接</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;		<span class="comment">// 空链接</span></div><div class="line">	...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="存储时期"><a href="#存储时期" class="headerlink" title="存储时期"></a>存储时期</h2><p>一个 C 变量有以下两种存储时期之一：</p>
+<h3 id="静态存储时期-static-storage-duration"><a href="#静态存储时期-static-storage-duration" class="headerlink" title="静态存储时期 static storage duration"></a>静态存储时期 static storage duration</h3><ol>
+<li>具有文件作用域的变量，具有静态存储时期。<blockquote>
+<p>注意对于具有文件作用域的变量，关键词 static 表明链接类型，并非存储时期。一个使用 <code>static</code> 声明了的文件作用域变量具有内部链接，而所有文件作用域变量，无论它是具有内部链接，还是具有外部链接，都具有静态存储时期。</p>
 </blockquote>
-<p>由于你的本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，所以，需要一点设置：</p>
-<h3 id="创建SSH-Key"><a href="#创建SSH-Key" class="headerlink" title="创建SSH Key"></a>创建SSH Key</h3><p>在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span></div></pre></td></tr></table></figure>
-<p>需要把邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可。如果一切顺利的话，可以在用户主目录里找到.ssh<br>目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub<br>是公钥，可以放心地告诉任何人。</p>
-<p><strong>用文本编辑器打开 id_rsa.pub ，比如atom（如果安装了atom），vi等</strong></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1213502-016f722d6347c428.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="进入.ssh文件夹"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1213502-366f1a75f62e82ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="用atom打开id_rsa.pub"></p>
-<p><strong>也可以用这样方法打开id_rsa文件</strong><br>如果没有安装atom，可以用vi打开<code>$ vi id_rsa</code><br><img src="http://upload-images.jianshu.io/upload_images/1213502-f91109674c831ec1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="用vi打开"></p>
-<h3 id="登陆Github"><a href="#登陆Github" class="headerlink" title="登陆Github"></a>登陆Github</h3><p>打开“Account settings”，“SSH Keys”页面：<br>然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容：<br><img src="http://upload-images.jianshu.io/upload_images/1213502-27e90f7af2fb6124?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="github-addkey-1"><br>点“Add Key”，你就应该看到已经添加的Key：<br><img src="http://upload-images.jianshu.io/upload_images/1213502-aea5c2f6d6d1a09b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="github-addkey-2"><br>以上两张图片来自<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰的git教程</a></p>
-<p>测试一下</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ssh</span> <span class="selector-tag">-T</span> <span class="selector-tag">git</span>@<span class="keyword">github</span>.<span class="keyword">com</span></div></pre></td></tr></table></figure>
-<p>可能会有警告，不过没关系，输入<code>yes</code>就好。</p>
-<p><strong>在GitHub上免费托管的Git仓库，任何人都可以看到喔（但只有你自己才能改）。所以，不要把敏感信息放进去。</strong></p>
-<hr>
-<h2 id="添加-Repository"><a href="#添加-Repository" class="headerlink" title="添加 Repository"></a>添加 Repository</h2><p>首先，登陆GitHub，然后，在右上角找到一个加号，点击“ New repository”按钮，创建一个新的仓库，仓库名用<code>username.github.io</code>。比如我的用户名是VectorLu，那么新建的仓库名（<code>Repository name</code>）就是<code>VectorLu.github.io</code>。</p>
-<p>下面的 Description 随便写就好了，比如写 </p>
-<blockquote>
-<p>My blog repository.</p>
-</blockquote>
-<p>其他的都不用管，点下面的绿色按钮<code>Create repository</code>就好了。</p>
-<h1 id="Step-2-部署本地的-Hexo-博客到-Github"><a href="#Step-2-部署本地的-Hexo-博客到-Github" class="headerlink" title="Step-2-部署本地的 Hexo 博客到 Github"></a>Step-2-部署本地的 Hexo 博客到 Github</h1><p>还记得在 Hexo-0 中用 <code>hexo init foldname</code> 那个文件夹吗？<br><img src="https://dn-coding-net-production-pp.qbox.me/3394bcd7-cbde-4643-8ca8-8851c9ca3ab3.png" alt="打开站点配置文件"><br>进入文件夹，用文本编辑器打开<code>_config.yml</code>，我习惯用<code>atom</code>打开，或者用自带的<code>vi</code>打开也可以。</p>
-<p>也许你没有<code>atom</code>，也不会用<code>vim</code>。那就在<code>Finder</code>中找到这个文件，双击，应该会默认用<code>Xcode</code>打开。<br><img src="https://dn-coding-net-production-pp.qbox.me/4d631a41-dd56-4147-84f7-06c9bf4ea204.png" alt="在图形界面下打开"></p>
-<p>用<code>command+f</code>快捷键，或者直接在这个文件的最后（一般是放在最后）找到<code>deploy</code>字段。修改成如下样式，注意把所有 VectorLu 换成你的 Github 用户名。</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">deploy</span>:</div><div class="line">  <span class="attribute">type</span>: git</div><div class="line">  <span class="attribute">repo</span>:</div><div class="line">      <span class="attribute">github</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:VectorLu/VectorLu.github.io.git</div><div class="line">  <span class="attribute">branch</span>: master</div></pre></td></tr></table></figure>
-<p>保存，进入终端。</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>npm install hexo-deployer-git --save <span class="comment"># 安装相关组件</span></div><div class="line"><span class="variable">$ </span>hexo clean</div><div class="line"><span class="variable">$ </span>hexo g</div><div class="line"><span class="variable">$ </span>hexo d</div></pre></td></tr></table></figure>
-<p>应该一会就部署好了，在浏览器中输入<code>username.github.io</code>就可以访问你的博客了。如果没有刷出来，可能是网络问题，多等一会就可以刷出来了。</p>
-<h1 id="Step-3-绑定个人域名（非必需）"><a href="#Step-3-绑定个人域名（非必需）" class="headerlink" title="Step-3-绑定个人域名（非必需）"></a>Step-3-绑定个人域名（非必需）</h1><p>有很多网站出售域名，比如<a href="https://wanwang.aliyun.com" target="_blank" rel="external">万网</a>。</p>
-<p>//TODO: !!!</p>
+</li>
+<li>在函数内，定义时，声明为 <code>static</code> 的变量。</li>
+</ol>
+<h3 id="动态存储时期"><a href="#动态存储时期" class="headerlink" title="动态存储时期"></a>动态存储时期</h3><p>在代码块内，在定义时，没有用关键字`static｀声明的变量具有自动存储时期。在程序进入定义这些变量的代码块时，将为这些变量分配内存；当退出这个代码块时，分配的内存将被释放。该思想吧自动变量使用的内存视为一个可以重复使用的工作区或者暂态内存。例如，在一个函数调用结束后，它的变量所占用的内存可以被用来存储下一个被调用函数的变量。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>C 使用作用域、链接和存储时期来定义 5 种存储类，见下表：</p>
+<table>
+<thead>
+<tr>
+<th>存储类</th>
+<th>存储时期</th>
+<th>作用域</th>
+<th>链接</th>
+<th>声明方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自动</td>
+<td>自动</td>
+<td>代码块</td>
+<td>空</td>
+<td>代码块内</td>
+</tr>
+<tr>
+<td>寄存器</td>
+<td>自动</td>
+<td>代码块</td>
+<td>空</td>
+<td>代码块内，使用 关键字 <code>register</code></td>
+</tr>
+<tr>
+<td>空链接的静态</td>
+<td>静态</td>
+<td>代码块</td>
+<td>空</td>
+<td>代码块内，使用关键字 <code>static</code></td>
+</tr>
+<tr>
+<td>具有外部链接的静态</td>
+<td>静态</td>
+<td>文件</td>
+<td>外部</td>
+<td>所有函数之外</td>
+</tr>
+<tr>
+<td>具有内部链接的静态</td>
+<td>静态</td>
+<td>文件</td>
+<td>内部</td>
+<td>所有函数之外，使用关键字 <code>static</code></td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -480,11 +514,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/blog/" rel="tag"># blog</a>
-          
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
-          
-            <a href="/tags/Github/" rel="tag"># Github</a>
+            <a href="/tags/C/" rel="tag"># C</a>
           
         </div>
       
@@ -493,8 +523,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/26/Hexo-0-mac-build-blog/" rel="next" title="Hexo_0_Mac 下搭建自己的博客图文详解">
-                <i class="fa fa-chevron-left"></i> Hexo_0_Mac 下搭建自己的博客图文详解
+              <a href="/2016/11/30/Objectiv-C-Program/" rel="next" title="Objectiv-C 学习笔记">
+                <i class="fa fa-chevron-left"></i> Objectiv-C 学习笔记
               </a>
             
           </div>
@@ -502,10 +532,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/26/Hexo-2-coding-pages/" rel="prev" title="Hexo-2-用 Coding Pages 部署 Hexo 博客">
-                Hexo-2-用 Coding Pages 部署 Hexo 博客 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -520,10 +546,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/11/26/Hexo-1-github-pages/"
-     data-title="Hexo-1-用 Github Pages 部署 Hexo 博客"
+        <div class="ds-share flat" data-thread-key="2016/11/30/C-5-storage-class-specifiers/"
+     data-title="C 语言存储类详解"
      data-content=""
-     data-url="http://vectorlu.com/2016/11/26/Hexo-1-github-pages/">
+     data-url="http://vectorlu.com/2016/11/30/C-5-storage-class-specifiers/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -553,8 +579,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/26/Hexo-1-github-pages/"
-           data-title="Hexo-1-用 Github Pages 部署 Hexo 博客" data-url="http://vectorlu.com/2016/11/26/Hexo-1-github-pages/">
+      <div class="ds-thread" data-thread-key="2016/11/30/C-5-storage-class-specifiers/"
+           data-title="C 语言存储类详解" data-url="http://vectorlu.com/2016/11/30/C-5-storage-class-specifiers/">
       </div>
     
   </div>
@@ -712,7 +738,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-0-注册Github"><span class="nav-number">1.</span> <span class="nav-text">Step-0-注册Github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-1-管理远程仓库"><span class="nav-number">2.</span> <span class="nav-text">Step-1-管理远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#相关命令概览与说明"><span class="nav-number">2.1.</span> <span class="nav-text">相关命令概览与说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加远程仓库"><span class="nav-number">2.2.</span> <span class="nav-text">添加远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建SSH-Key"><span class="nav-number">2.2.1.</span> <span class="nav-text">创建SSH Key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登陆Github"><span class="nav-number">2.2.2.</span> <span class="nav-text">登陆Github</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加-Repository"><span class="nav-number">2.3.</span> <span class="nav-text">添加 Repository</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-2-部署本地的-Hexo-博客到-Github"><span class="nav-number">3.</span> <span class="nav-text">Step-2-部署本地的 Hexo 博客到 Github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-3-绑定个人域名（非必需）"><span class="nav-number">4.</span> <span class="nav-text">Step-3-绑定个人域名（非必需）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#存储类、链接和内存管理"><span class="nav-number">1.</span> <span class="nav-text">存储类、链接和内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#作用域"><span class="nav-number">1.1.</span> <span class="nav-text">作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码块作用域-block-scope"><span class="nav-number">1.1.1.</span> <span class="nav-text">代码块作用域 block scope</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件作用域-file-scope"><span class="nav-number">1.1.2.</span> <span class="nav-text">文件作用域 file scope</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数原型作用域-function-prototype-scope"><span class="nav-number">1.1.3.</span> <span class="nav-text">函数原型作用域 function prototype scope</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链接，一个-C-变量具有下列链接之一："><span class="nav-number">1.2.</span> <span class="nav-text">链接，一个 C 变量具有下列链接之一：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#外部链接-external-linkage"><span class="nav-number">1.2.1.</span> <span class="nav-text">外部链接 external linkage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内部链接-internal-linkage"><span class="nav-number">1.2.2.</span> <span class="nav-text">内部链接 internal linkage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空链接-no-linkage"><span class="nav-number">1.2.3.</span> <span class="nav-text">空链接 no linkage</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储时期"><span class="nav-number">1.3.</span> <span class="nav-text">存储时期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#静态存储时期-static-storage-duration"><span class="nav-number">1.3.1.</span> <span class="nav-text">静态存储时期 static storage duration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态存储时期"><span class="nav-number">1.3.2.</span> <span class="nav-text">动态存储时期</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
             
 
           </div>

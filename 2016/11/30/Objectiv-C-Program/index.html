@@ -90,16 +90,19 @@
 
 
 
-<meta name="description" content="虽然已经有了 Swift，但是还是有很多 Objective-C 的项目，这门语言还是有必要学一学。如果已经有 C 语言的基础，相信你能很快上手。OC 是完全兼容 C99 的，所以也会先稍微回顾一下 C 语言。">
+<meta name="description" content="初学者要明白，目的不是学习一门语言，而是学会用一门语言编写程序。基础语法非常要，但不要陷于其中，学着学着就丧失兴趣，没有成就感。所以语法需多次学习，不要一次吃下一个大胖子：在初学时浏览，写了程序出错后分析、再次仔细学习，总结时能将抽象的语法点与实践中遇到的问题融会贯通。
+虽然已经有了 Swift，但是还是有很多 Objective-C 的项目，这门语言还是有必要学一学。如果已经有 C 语言的基础，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Objectiv-C 学习笔记">
 <meta property="og:url" content="http://vectorlu.com/2016/11/30/Objectiv-C-Program/index.html">
 <meta property="og:site_name" content="Vector">
-<meta property="og:description" content="虽然已经有了 Swift，但是还是有很多 Objective-C 的项目，这门语言还是有必要学一学。如果已经有 C 语言的基础，相信你能很快上手。OC 是完全兼容 C99 的，所以也会先稍微回顾一下 C 语言。">
-<meta property="og:updated_time" content="2016-11-30T07:34:52.000Z">
+<meta property="og:description" content="初学者要明白，目的不是学习一门语言，而是学会用一门语言编写程序。基础语法非常要，但不要陷于其中，学着学着就丧失兴趣，没有成就感。所以语法需多次学习，不要一次吃下一个大胖子：在初学时浏览，写了程序出错后分析、再次仔细学习，总结时能将抽象的语法点与实践中遇到的问题融会贯通。
+虽然已经有了 Swift，但是还是有很多 Objective-C 的项目，这门语言还是有必要学一学。如果已经有 C 语言的基础，">
+<meta property="og:updated_time" content="2016-11-30T08:39:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Objectiv-C 学习笔记">
-<meta name="twitter:description" content="虽然已经有了 Swift，但是还是有很多 Objective-C 的项目，这门语言还是有必要学一学。如果已经有 C 语言的基础，相信你能很快上手。OC 是完全兼容 C99 的，所以也会先稍微回顾一下 C 语言。">
+<meta name="twitter:description" content="初学者要明白，目的不是学习一门语言，而是学会用一门语言编写程序。基础语法非常要，但不要陷于其中，学着学着就丧失兴趣，没有成就感。所以语法需多次学习，不要一次吃下一个大胖子：在初学时浏览，写了程序出错后分析、再次仔细学习，总结时能将抽象的语法点与实践中遇到的问题融会贯通。
+虽然已经有了 Swift，但是还是有很多 Objective-C 的项目，这门语言还是有必要学一学。如果已经有 C 语言的基础，">
 
 
 
@@ -390,7 +393,8 @@
       
 
       
-        <p>虽然已经有了 Swift，但是还是有很多 Objective-C 的项目，这门语言还是有必要学一学。如果已经有 C 语言的基础，相信你能很快上手。OC 是完全兼容 C99 的，所以也会先稍微回顾一下 C 语言。</p>
+        <p>初学者要明白，目的不是学习一门语言，而是学会用一门语言编写程序。基础语法非常要，但不要陷于其中，学着学着就丧失兴趣，没有成就感。所以语法需多次学习，不要一次吃下一个大胖子：在初学时浏览，写了程序出错后分析、再次仔细学习，总结时能将抽象的语法点与实践中遇到的问题融会贯通。</p>
+<p>虽然已经有了 Swift，但是还是有很多 Objective-C 的项目，这门语言还是有必要学一学。如果已经有 C 语言的基础，相信你能很快上手。OC 是完全兼容 C99 的，所以也会先稍微回顾一下 C 语言。</p>
 <a id="more"></a>
 <h1 id="C-语言基础回顾"><a href="#C-语言基础回顾" class="headerlink" title="C 语言基础回顾"></a>C 语言基础回顾</h1><h2 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h2><p>Xcode 中，在一个 C 函数中使用布尔值，必须包含相应头文件</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;objc/objc.h&gt;</span></span></div></pre></td></tr></table></figure>
@@ -421,9 +425,15 @@
 <h3 id="链接，一个-C-变量具有下列链接之一："><a href="#链接，一个-C-变量具有下列链接之一：" class="headerlink" title="链接，一个 C 变量具有下列链接之一："></a>链接，一个 C 变量具有下列链接之一：</h3><h4 id="外部链接-external-linkage"><a href="#外部链接-external-linkage" class="headerlink" title="外部链接 external linkage"></a>外部链接 external linkage</h4><p>具有外部链接的变量可以在一个 <strong>多文件程序</strong> 的 <strong>任何</strong> 地方使用。</p>
 <h4 id="内部链接-internal-linkage"><a href="#内部链接-internal-linkage" class="headerlink" title="内部链接 internal linkage"></a>内部链接 internal linkage</h4><p>在定义时使用了存储类说明符<code>static</code>，可以在定义该变量的文件的任何地方使用。</p>
 <h4 id="空链接-no-linkage"><a href="#空链接-no-linkage" class="headerlink" title="空链接 no linkage"></a>空链接 no linkage</h4><p>具有代码块作用域和函数原型作用域的变量有空链接。意味着它们由其定义所在的代码块或函数原型所私有。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> giants = <span class="number">5</span>;			<span class="comment">// 文件作用域，外部链接</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">int</span> dodgers = <span class="number">5</span>;		<span class="comment">// 文件作用域，内部链接</span></div></pre></td></tr></table></figure>
-<h3 id="存储时期"><a href="#存储时期" class="headerlink" title="存储时期"></a>存储时期</h3><h4 id="静态存储时期"><a href="#静态存储时期" class="headerlink" title="静态存储时期"></a>静态存储时期</h4><p>具有文件作用域</p>
-<h4 id="动态存储时期"><a href="#动态存储时期" class="headerlink" title="动态存储时期"></a>动态存储时期</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> giants = <span class="number">5</span>;			<span class="comment">// 文件作用域，外部链接</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">int</span> dodgers = <span class="number">5</span>;		<span class="comment">// 文件作用域，内部链接</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;		<span class="comment">// 空链接</span></div><div class="line">	...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="存储时期"><a href="#存储时期" class="headerlink" title="存储时期"></a>存储时期</h3><p>一个 C 变量有以下两种存储时期之一：</p>
+<h4 id="静态存储时期-static-storage-duration"><a href="#静态存储时期-static-storage-duration" class="headerlink" title="静态存储时期 static storage duration"></a>静态存储时期 static storage duration</h4><p>具有文件作用域的变量，具有静态存储时期。</p>
+<blockquote>
+<p>注意对于具有文件作用域的变量，关键词 static 表明链接类型，并非存储时期。一个使用 <code>static</code> 声明了的文件作用域变量具有内部链接，而所有文件作用域变量，无论它是具有内部链接，还是具有外部链接，都具有静态存储时期。</p>
+</blockquote>
+<p>具有代码块作用域的变量一般情况下具有自动存储时期。在程序进入定义这些变量的代码块时，将为这些变量分配内存；当退出这个代码块时，分配的内存将被释放。该思想吧自动变量使用的内存视为一个可以重复使用的工作区或者暂态内存。例如，在一个函数调用结束后，它的变量所占用的内存可以被用来存储下一个被调用函数的变量。</p>
+<h4 id="动态存储时期"><a href="#动态存储时期" class="headerlink" title="动态存储时期"></a>动态存储时期</h4><p>在代码块内，在定义时，没有用关键字`static｀声明</p>
+
       
     </div>
 
@@ -495,6 +505,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/30/C-5-storage-class-specifiers/" rel="prev" title="C 语言存储类详解">
+                C 语言存储类详解 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -588,7 +602,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -701,7 +715,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-语言基础回顾"><span class="nav-number">1.</span> <span class="nav-text">C 语言基础回顾</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#布尔值"><span class="nav-number">1.1.</span> <span class="nav-text">布尔值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">1.2.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#局部变量、帧和栈"><span class="nav-number">1.2.1.</span> <span class="nav-text">局部变量、帧和栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局变量与静态变量"><span class="nav-number">1.2.2.</span> <span class="nav-text">全局变量与静态变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储类、链接和内存管理"><span class="nav-number">1.3.</span> <span class="nav-text">存储类、链接和内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域"><span class="nav-number">1.3.1.</span> <span class="nav-text">作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码块作用域-block-scope"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">代码块作用域 block scope</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件作用域-file-scope"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">文件作用域 file scope</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数原型作用域-function-prototype-scope"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">函数原型作用域 function prototype scope</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接，一个-C-变量具有下列链接之一："><span class="nav-number">1.3.2.</span> <span class="nav-text">链接，一个 C 变量具有下列链接之一：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#外部链接-external-linkage"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">外部链接 external linkage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内部链接-internal-linkage"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">内部链接 internal linkage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#空链接-no-linkage"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">空链接 no linkage</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存储时期"><span class="nav-number">1.3.3.</span> <span class="nav-text">存储时期</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#静态存储时期"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">静态存储时期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态存储时期"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">动态存储时期</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-语言基础回顾"><span class="nav-number">1.</span> <span class="nav-text">C 语言基础回顾</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#布尔值"><span class="nav-number">1.1.</span> <span class="nav-text">布尔值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">1.2.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#局部变量、帧和栈"><span class="nav-number">1.2.1.</span> <span class="nav-text">局部变量、帧和栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局变量与静态变量"><span class="nav-number">1.2.2.</span> <span class="nav-text">全局变量与静态变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储类、链接和内存管理"><span class="nav-number">1.3.</span> <span class="nav-text">存储类、链接和内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域"><span class="nav-number">1.3.1.</span> <span class="nav-text">作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码块作用域-block-scope"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">代码块作用域 block scope</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件作用域-file-scope"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">文件作用域 file scope</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数原型作用域-function-prototype-scope"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">函数原型作用域 function prototype scope</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接，一个-C-变量具有下列链接之一："><span class="nav-number">1.3.2.</span> <span class="nav-text">链接，一个 C 变量具有下列链接之一：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#外部链接-external-linkage"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">外部链接 external linkage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内部链接-internal-linkage"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">内部链接 internal linkage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#空链接-no-linkage"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">空链接 no linkage</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存储时期"><span class="nav-number">1.3.3.</span> <span class="nav-text">存储时期</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#静态存储时期-static-storage-duration"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">静态存储时期 static storage duration</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态存储时期"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">动态存储时期</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
