@@ -90,34 +90,16 @@
 
 
 
-<meta name="description" content="C 语言基础回顾布尔值Xcode 中，在一个 C 函数中使用布尔值，必须包含相应头文件
-1#include &amp;lt;objc/objc.h&amp;gt;
-函数
-如果变量是“与某块数据相关联的名称”，那么函数就是“与某块代码相关联的名称”。
-
-发现代码中的重复，提取具有共通性的部分并将其用独立的函数处理，接着添加参数处理差异部分。
-局部变量、帧和栈函数可以有很多局部变量，这些局部变量都保存在函数的帧 (f">
+<meta name="description" content="虽然已经有了 Swift，但是 Objective-C 还是有必要学一学。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Objectiv-C 学习笔记">
 <meta property="og:url" content="http://vectorlu.com/2016/11/30/Objectiv-C-Program/index.html">
 <meta property="og:site_name" content="Vector">
-<meta property="og:description" content="C 语言基础回顾布尔值Xcode 中，在一个 C 函数中使用布尔值，必须包含相应头文件
-1#include &amp;lt;objc/objc.h&amp;gt;
-函数
-如果变量是“与某块数据相关联的名称”，那么函数就是“与某块代码相关联的名称”。
-
-发现代码中的重复，提取具有共通性的部分并将其用独立的函数处理，接着添加参数处理差异部分。
-局部变量、帧和栈函数可以有很多局部变量，这些局部变量都保存在函数的帧 (f">
-<meta property="og:updated_time" content="2016-11-30T07:19:37.000Z">
+<meta property="og:description" content="虽然已经有了 Swift，但是 Objective-C 还是有必要学一学。">
+<meta property="og:updated_time" content="2016-11-30T07:23:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Objectiv-C 学习笔记">
-<meta name="twitter:description" content="C 语言基础回顾布尔值Xcode 中，在一个 C 函数中使用布尔值，必须包含相应头文件
-1#include &amp;lt;objc/objc.h&amp;gt;
-函数
-如果变量是“与某块数据相关联的名称”，那么函数就是“与某块代码相关联的名称”。
-
-发现代码中的重复，提取具有共通性的部分并将其用独立的函数处理，接着添加参数处理差异部分。
-局部变量、帧和栈函数可以有很多局部变量，这些局部变量都保存在函数的帧 (f">
+<meta name="twitter:description" content="虽然已经有了 Swift，但是 Objective-C 还是有必要学一学。">
 
 
 
@@ -408,7 +390,9 @@
       
 
       
-        <h1 id="C-语言基础回顾"><a href="#C-语言基础回顾" class="headerlink" title="C 语言基础回顾"></a>C 语言基础回顾</h1><h2 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h2><p>Xcode 中，在一个 C 函数中使用布尔值，必须包含相应头文件</p>
+        <p>虽然已经有了 Swift，但是 Objective-C 还是有必要学一学。</p>
+<a id="more"></a>
+<h1 id="C-语言基础回顾"><a href="#C-语言基础回顾" class="headerlink" title="C 语言基础回顾"></a>C 语言基础回顾</h1><h2 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h2><p>Xcode 中，在一个 C 函数中使用布尔值，必须包含相应头文件</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;objc/objc.h&gt;</span></span></div></pre></td></tr></table></figure>
 <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><blockquote>
 <p>如果变量是“与某块数据相关联的名称”，那么函数就是“与某块代码相关联的名称”。</p>
@@ -427,11 +411,9 @@
 <p>在一个内部代码代码块中声明的变量，其作用域只局限于该代码块：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">blocky</span><span class="params">(<span class="keyword">double</span> cleo)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">double</span> patrick = <span class="number">0.0</span>;</div><div class="line">	<span class="keyword">int</span> i;</div><div class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">double</span> q = cleo * i; <span class="comment">// q 作用域的开始</span></div><div class="line">		...</div><div class="line">		patrick *= q;</div><div class="line">	&#125;							  <span class="comment">// q 作用域的结束</span></div><div class="line">	...</div><div class="line">	<span class="keyword">return</span> patrick;</div><div class="line">&#125;</div><div class="line">在这个例子中，q 的作用域被限制在内部代码块内，只有该代码块内的代码可以访问 q。</div><div class="line"></div><div class="line">C99 之前（你用的 Xcode 完全支持 C99），具有代码作用域的变量都必须在代码块开始处进行声明，C99 开始允许在一个代码块中任何位置声明变量。</div></pre></td></tr></table></figure>
 <p>for (int i = 0; i &lt; 10; i++)<br>{printf(“A C99 feature: i = %d”, i);}<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">作为这一新功能的一部分，C99 把代码块的概念扩大到包括由 `for`循环、`while` 循环或者`<span class="keyword">if</span>`语句所控制的代码——即使这些代码没有用花括号括起来。</div><div class="line"></div><div class="line">#### 文件作用域 file scope</div><div class="line">一个在所有函数之外定义的变量具有文件作用域。具有文件作用域的变量从它定义处到包含该定义的文件 结尾处都是可见的。除非被同名的局部变量屏蔽。</div><div class="line"></div><div class="line">#### 函数原型作用域 function prototype scope</div><div class="line">适用于函数原型中使用的变量名。函数原型作用域从变量定义处一直到原型声明的末尾。这意味着编译器在处理一个函数原型的参数时，它所关心的只是该参数的类型。名字通常是无关紧要的，名字起作用的一种情形是变长数组参量：</div></pre></td></tr></table></figure></p>
-<p>void use_a_VLA(int n, int m, ar[n][m]);<br>```</p>
-<p>如果在方括号中使用了变量名，则该变量名必须是在原型中已经声明了的。</p>
-<h3 id="链接，一个-C-变量具有下列链接之一："><a href="#链接，一个-C-变量具有下列链接之一：" class="headerlink" title="链接，一个 C 变量具有下列链接之一："></a>链接，一个 C 变量具有下列链接之一：</h3><h4 id="外部链接-external-linkage"><a href="#外部链接-external-linkage" class="headerlink" title="外部链接 external linkage"></a>外部链接 external linkage</h4><p>具有外部链接的变量可以在一个 <strong>多文件程序</strong> 的 <strong>任何</strong> 地方使用。</p>
-<h4 id="内部链接-internal-linkage"><a href="#内部链接-internal-linkage" class="headerlink" title="内部链接 internal linkage"></a>内部链接 internal linkage</h4><p>在定义时使用了存储类说明符<code>static</code>，可以在定义该变量的文件的任何地方使用。</p>
-<h4 id="空链接-no-linkage"><a href="#空链接-no-linkage" class="headerlink" title="空链接 no linkage"></a>空链接 no linkage</h4><p>具有代码块作用域和函数原型作用域的变量有空链接。意味着它们由其定义所在的代码块或函数原型所私有。</p>
+<p>void use_a_VLA(int n, int m, ar[n][m]);<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">如果在方括号中使用了变量名，则该变量名必须是在原型中已经声明了的。</div><div class="line"></div><div class="line"></div><div class="line">### 链接，一个 C 变量具有下列链接之一：</div><div class="line"></div><div class="line">#### 外部链接 external linkage</div><div class="line">具有外部链接的变量可以在一个 **多文件程序** 的 **任何** 地方使用。</div><div class="line">#### 内部链接 internal linkage</div><div class="line">在定义时使用了存储类说明符`static`，可以在定义该变量的文件的任何地方使用。</div><div class="line">#### 空链接 no linkage</div><div class="line">具有代码块作用域和函数原型作用域的变量有空链接。意味着它们由其定义所在的代码块或函数原型所私有。</div></pre></td></tr></table></figure></p>
+<p>int giants = 5;            // 文件作用域，外部链接<br>static int dodgers = 5;        // 文件作用域，内部链接</p>
+<p>```</p>
 
       
     </div>
@@ -710,7 +692,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-语言基础回顾"><span class="nav-number">1.</span> <span class="nav-text">C 语言基础回顾</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#布尔值"><span class="nav-number">1.1.</span> <span class="nav-text">布尔值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">1.2.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#局部变量、帧和栈"><span class="nav-number">1.2.1.</span> <span class="nav-text">局部变量、帧和栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局变量与静态变量"><span class="nav-number">1.2.2.</span> <span class="nav-text">全局变量与静态变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储类、链接和内存管理"><span class="nav-number">1.3.</span> <span class="nav-text">存储类、链接和内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域"><span class="nav-number">1.3.1.</span> <span class="nav-text">作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码块作用域-block-scope"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">代码块作用域 block scope</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接，一个-C-变量具有下列链接之一："><span class="nav-number">1.3.2.</span> <span class="nav-text">链接，一个 C 变量具有下列链接之一：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#外部链接-external-linkage"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">外部链接 external linkage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内部链接-internal-linkage"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">内部链接 internal linkage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#空链接-no-linkage"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">空链接 no linkage</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-语言基础回顾"><span class="nav-number">1.</span> <span class="nav-text">C 语言基础回顾</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#布尔值"><span class="nav-number">1.1.</span> <span class="nav-text">布尔值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">1.2.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#局部变量、帧和栈"><span class="nav-number">1.2.1.</span> <span class="nav-text">局部变量、帧和栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局变量与静态变量"><span class="nav-number">1.2.2.</span> <span class="nav-text">全局变量与静态变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储类、链接和内存管理"><span class="nav-number">1.3.</span> <span class="nav-text">存储类、链接和内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域"><span class="nav-number">1.3.1.</span> <span class="nav-text">作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码块作用域-block-scope"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">代码块作用域 block scope</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
