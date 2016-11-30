@@ -103,7 +103,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1213502-aea5c2f6d6d1a09b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://dn-coding-net-production-pp.qbox.me/3394bcd7-cbde-4643-8ca8-8851c9ca3ab3.png">
 <meta property="og:image" content="https://dn-coding-net-production-pp.qbox.me/4d631a41-dd56-4147-84f7-06c9bf4ea204.png">
-<meta property="og:updated_time" content="2016-11-27T09:54:05.000Z">
+<meta property="og:updated_time" content="2016-11-30T07:14:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-1-用 Github Pages 部署 Hexo 博客">
 <meta name="twitter:description" content="安装好了 Hexo，下一步就是：将自己的博客放到网上，让每个人都能访问。">
@@ -427,7 +427,7 @@
 <p>My blog repository.</p>
 </blockquote>
 <p>其他的都不用管，点下面的绿色按钮<code>Create repository</code>就好了。</p>
-<p>#Step-2-部署本地的 Hexo 博客到 Github<br>还记得在 Hexo-0 中用 <code>hexo init foldname</code> 那个文件夹吗？<br><img src="https://dn-coding-net-production-pp.qbox.me/3394bcd7-cbde-4643-8ca8-8851c9ca3ab3.png" alt="打开站点配置文件"><br>进入文件夹，用文本编辑器打开<code>_config.yml</code>，我习惯用<code>atom</code>打开，或者用自带的<code>vi</code>打开也可以。</p>
+<h1 id="Step-2-部署本地的-Hexo-博客到-Github"><a href="#Step-2-部署本地的-Hexo-博客到-Github" class="headerlink" title="Step-2-部署本地的 Hexo 博客到 Github"></a>Step-2-部署本地的 Hexo 博客到 Github</h1><p>还记得在 Hexo-0 中用 <code>hexo init foldname</code> 那个文件夹吗？<br><img src="https://dn-coding-net-production-pp.qbox.me/3394bcd7-cbde-4643-8ca8-8851c9ca3ab3.png" alt="打开站点配置文件"><br>进入文件夹，用文本编辑器打开<code>_config.yml</code>，我习惯用<code>atom</code>打开，或者用自带的<code>vi</code>打开也可以。</p>
 <p>也许你没有<code>atom</code>，也不会用<code>vim</code>。那就在<code>Finder</code>中找到这个文件，双击，应该会默认用<code>Xcode</code>打开。<br><img src="https://dn-coding-net-production-pp.qbox.me/4d631a41-dd56-4147-84f7-06c9bf4ea204.png" alt="在图形界面下打开"></p>
 <p>用<code>command+f</code>快捷键，或者直接在这个文件的最后（一般是放在最后）找到<code>deploy</code>字段。修改成如下样式，注意把所有 VectorLu 换成你的 Github 用户名。</p>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">deploy</span>:</div><div class="line">  <span class="attribute">type</span>: git</div><div class="line">  <span class="attribute">repo</span>:</div><div class="line">      <span class="attribute">github</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:VectorLu/VectorLu.github.io.git</div><div class="line">  <span class="attribute">branch</span>: master</div></pre></td></tr></table></figure>
@@ -599,7 +599,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -712,7 +712,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-0-注册Github"><span class="nav-number">1.</span> <span class="nav-text">Step-0-注册Github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-1-管理远程仓库"><span class="nav-number">2.</span> <span class="nav-text">Step-1-管理远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#相关命令概览与说明"><span class="nav-number">2.1.</span> <span class="nav-text">相关命令概览与说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加远程仓库"><span class="nav-number">2.2.</span> <span class="nav-text">添加远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建SSH-Key"><span class="nav-number">2.2.1.</span> <span class="nav-text">创建SSH Key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登陆Github"><span class="nav-number">2.2.2.</span> <span class="nav-text">登陆Github</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加-Repository"><span class="nav-number">2.3.</span> <span class="nav-text">添加 Repository</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-3-绑定个人域名（非必需）"><span class="nav-number">3.</span> <span class="nav-text">Step-3-绑定个人域名（非必需）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-0-注册Github"><span class="nav-number">1.</span> <span class="nav-text">Step-0-注册Github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-1-管理远程仓库"><span class="nav-number">2.</span> <span class="nav-text">Step-1-管理远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#相关命令概览与说明"><span class="nav-number">2.1.</span> <span class="nav-text">相关命令概览与说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加远程仓库"><span class="nav-number">2.2.</span> <span class="nav-text">添加远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建SSH-Key"><span class="nav-number">2.2.1.</span> <span class="nav-text">创建SSH Key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登陆Github"><span class="nav-number">2.2.2.</span> <span class="nav-text">登陆Github</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加-Repository"><span class="nav-number">2.3.</span> <span class="nav-text">添加 Repository</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-2-部署本地的-Hexo-博客到-Github"><span class="nav-number">3.</span> <span class="nav-text">Step-2-部署本地的 Hexo 博客到 Github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-3-绑定个人域名（非必需）"><span class="nav-number">4.</span> <span class="nav-text">Step-3-绑定个人域名（非必需）</span></a></li></ol></div>
             
 
           </div>
