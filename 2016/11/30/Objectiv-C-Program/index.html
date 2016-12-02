@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="macOS,C 语言,iOS,Xcode7,Xcode8,Objective-C," />
+  <meta name="keywords" content="macOS,iOS,Xcode7,Xcode8,Objective-C,C 语言," />
 
 
 
@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://vectorlu.com/2016/11/30/Objectiv-C-Program/index.html">
 <meta property="og:site_name" content="Vector">
 <meta property="og:description" content="虽然已经有了 Swift，但是还是有很多 Objective-C 的项目，这门语言还是有必要学一学。如果已经有 C 语言的基础，相信你能很快上手。OC 是完全兼容 C99 的，所以也会先稍微回顾一下 C 语言。">
-<meta property="og:updated_time" content="2016-12-02T04:10:36.000Z">
+<meta property="og:updated_time" content="2016-12-02T10:55:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Objectiv-C 学习笔记">
 <meta name="twitter:description" content="虽然已经有了 Swift，但是还是有很多 Objective-C 的项目，这门语言还是有必要学一学。如果已经有 C 语言的基础，相信你能很快上手。OC 是完全兼容 C99 的，所以也会先稍微回顾一下 C 语言。">
@@ -465,6 +465,7 @@
 <figure class="highlight aspectj"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 如果 measureGravityPtr 是空值，则计算重力值</span></div><div class="line"></div><div class="line"><span class="keyword">float</span> actualGravity = measureGravityPtr? *measuredGravityPtr : estimatedGravity(planetRadius);</div></pre></td></tr></table></figure>
 <h2 id="通过引用传递"><a href="#通过引用传递" class="headerlink" title="通过引用传递"></a>通过引用传递</h2><p>通过一个实例来学习，其中调用<code>modf()</code>函数并传入一个<code>double</code>类型数，可以得到该浮点数的整数部分和小数部分。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;math.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">double</span> pi = <span class="number">3.14</span>;</div><div class="line">    <span class="keyword">double</span> integerPart;</div><div class="line">    <span class="keyword">double</span> fractionPart;</div><div class="line">    </div><div class="line">    <span class="comment">// 将 integerPart 的地址作为实参传入</span></div><div class="line">    fractionPart = <span class="built_in">modf</span>(pi, &amp;integerPart);</div><div class="line">    </div><div class="line">    <span class="comment">// 获取 integer 地址上的值</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"integerPart = %.0f, fractionPart = %.2f\n"</span>, integerPart,</div><div class="line">           fractionPart);</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 运行结果</span></div><div class="line"><span class="comment">// integerPart = 3, fractionPart = 0.14</span></div><div class="line"><span class="comment">// Program ended with exit code: 0</span></div></pre></td></tr></table></figure>
+<p>jjijijfaijsidfjfiefje hg  f hsf su</p>
 
       
     </div>
@@ -511,8 +512,6 @@
           
             <a href="/tags/macOS/" rel="tag"># macOS</a>
           
-            <a href="/tags/C-语言/" rel="tag"># C 语言</a>
-          
             <a href="/tags/iOS/" rel="tag"># iOS</a>
           
             <a href="/tags/Xcode7/" rel="tag"># Xcode7</a>
@@ -520,6 +519,8 @@
             <a href="/tags/Xcode8/" rel="tag"># Xcode8</a>
           
             <a href="/tags/Objective-C/" rel="tag"># Objective-C</a>
+          
+            <a href="/tags/C-语言/" rel="tag"># C 语言</a>
           
         </div>
       
