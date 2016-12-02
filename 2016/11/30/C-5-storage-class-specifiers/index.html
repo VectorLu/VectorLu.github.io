@@ -108,7 +108,7 @@
 静态变量 static variable 中的静态究竟指什么？是指值不能改变吗？
 一个 C 语言变量会存放在哪里，可以指定它的存放位置吗？
 为什么有些算法书建议，将很大的数组放在所有函">
-<meta property="og:updated_time" content="2016-12-01T16:26:47.000Z">
+<meta property="og:updated_time" content="2016-12-02T01:06:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C 语言存储类详解">
 <meta name="twitter:description" content="如果对以下问题有疑惑，不妨看看全文。
@@ -532,7 +532,7 @@
 <p>静态变量<code>stay</code>记得它的值曾被加 1，而变量<code>fade</code>每次都重新开始。这表明初始化的不同：在每次调用<code>trystat()</code>时<code>fade</code>都被初始化，而<code>stay</code>只在编译<code>trystat()</code>时被初始化一次。</p>
 <p><strong>如果不显式地对静态变量进行初始化，它们将被初始化为 0。</strong><br>以下两个声明看起来很相似：</p>
 <figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">int fade = <span class="number">1</span>;</div><div class="line">static int stay = <span class="number">1</span>;</div><div class="line">``` </div><div class="line"></div><div class="line">然而，第一个语句确实是函数`trystat()`的一部分，每次调用该函数时都会执行它——运行时动作。而第二个语句不是该函数的一部分。如果用调试程序逐步运行改程序，会发现，程序看起来跳过了那一步。那是因为静态变量和外部变量在程序调入内存时已经就位了。把这个语句放在`trystat()`函数中是为了告诉编译器只有函数`trystat()`可以看到该变量。它不是在运行时执行的语句。</div><div class="line"></div><div class="line">对函数参量不能使用`static`</div></pre></td></tr></table></figure>
-<p>int wontwork(static int flu); // 不允许<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">## 具有外部链接的静态变量</div><div class="line">具有外部链接的静态变量具有文件作用域、外部链接和静态存储时期。这一类型被称为外部存储类 (external storage <span class="keyword">class</span>)，这一类型的变量称为外部变量 (external variable)。</div><div class="line"></div><div class="line">把变量的定义声明放在所有函数之外，即创建了一个外部变量。为了使程序更加清晰，可以在使用外部变量的函数中通过使用`extern`关键字来再次声明它。</div><div class="line"></div><div class="line">如果变量是在别的文件中定义的，使用`extern`来声明该变量就是必须的。</div></pre></td></tr></table></figure></p>
+<p>int wontwork(static int flu); // 不允许<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## 具有外部链接的静态变量</div><div class="line">具有外部链接的静态变量具有文件作用域、外部链接和静态存储时期。这一类型被称为外部存储类 (external storage <span class="keyword">class</span>)，这一类型的变量称为外部变量 (external variable)。</div><div class="line"></div><div class="line">把变量的定义声明放在所有函数之外，即创建了一个外部变量。为了使程序更加清晰，可以在使用外部变量的函数中通过使用`extern`关键字来再次声明它。</div><div class="line"></div><div class="line">如果变量是在别的文件中定义的，使用`extern`来声明该变量就是必须的。</div></pre></td></tr></table></figure></p>
 <p>int Errupt;     // 外部定义的变量<br>double Up[100];        // 外部定义的数组</p>
 <p>// 必须的声明，因为 Coal 在其他文件中定义<br>extern char Coal; </p>
 <p>int main(void)<br>{<br>    …<br>}<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### 外部变量初始化</div><div class="line">如果不对外部变量进行初始化，它们将自动被赋初值 <span class="number">0</span>。这一原则也适用于外部定义的数组元素。**不同于自动变量，只可以用常量表达式来初始化文件作用域变量:**</div></pre></td></tr></table></figure></p>
