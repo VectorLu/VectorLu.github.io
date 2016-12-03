@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Vector">
 <meta property="og:description" content="虽然已经有了 Swift，但是还是有很多 Objective-C 的项目，这门语言还是有必要学一学。如果已经有 C 语言的基础，相信你能很快上手。OC 是完全兼容 C99 的，所以也会先回顾一下 C 语言的重要内容。
 如果还完全不会用 Xcode 创建项目和文件，可以看看 Xcode 使用笔记 0 新司机上路">
-<meta property="og:updated_time" content="2016-12-03T18:57:50.000Z">
+<meta property="og:updated_time" content="2016-12-03T19:02:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Objectiv-C 学习笔记">
 <meta name="twitter:description" content="虽然已经有了 Swift，但是还是有很多 Objective-C 的项目，这门语言还是有必要学一学。如果已经有 C 语言的基础，相信你能很快上手。OC 是完全兼容 C99 的，所以也会先回顾一下 C 语言的重要内容。
@@ -507,7 +507,7 @@
 <h5 id="在给出的程序基础上，思考："><a href="#在给出的程序基础上，思考：" class="headerlink" title="在给出的程序基础上，思考："></a>在给出的程序基础上，思考：</h5><p>如何判断首字母是否是大写，在<code>NSString</code>的界面搜索<code>capital</code>，发现没有相关方法，于是搜索<code>index</code>，想着应该有用<code>index</code>获取某个字符的方法，搜索得</p>
 <figure class="highlight erlang"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- <span class="params">(unichar)</span>characterAtIndex:<span class="params">(NSUInteger)</span>index;</div></pre></td></tr></table></figure>
 <p>于是将获取的字符与<code>&#39;A&#39;</code> 和<code>&#39;Z&#39;</code>比较一下就好了。</p>
-<h5 id="读入文件并将数据保存在字符串中的方法"><a href="#读入文件并将数据保存在字符串中的方法" class="headerlink" title="读入文件并将数据保存在字符串中的方法"></a>读入文件并将数据保存在字符串中的方法</h5><p>```<br>NSString *nameString = [NSString stringWith</p>
+<h5 id="读入文件并将数据保存在字符串中的方法"><a href="#读入文件并将数据保存在字符串中的方法" class="headerlink" title="读入文件并将数据保存在字符串中的方法"></a>读入文件并将数据保存在字符串中的方法</h5><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 读入文件并将数据保存在字符串中</span></div><div class="line"><span class="comment">// 没有处理可能发生的错误</span></div><div class="line"><span class="built_in">NSString</span> *nameString = [<span class="built_in">NSString</span> stringWithContentsOfFile:</div><div class="line">            <span class="string">@"/usr/share/dict/words"</span> encoding:<span class="built_in">NSUTF8StringEncoding</span></div><div class="line">            error:<span class="literal">NULL</span>];</div></pre></td></tr></table></figure>
 
       
     </div>
