@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="macOS,C 语言,iOS,Xcode7,Xcode8,Objective-C," />
+  <meta name="keywords" content="C 语言,iOS,macOS,Xcode7,Xcode8,Objective-C," />
 
 
 
@@ -91,18 +91,18 @@
 
 
 <meta name="description" content="虽然已经有了 Swift，但是还是有很多 Objective-C 的项目，这门语言还是有必要学一学。如果已经有 C 语言的基础，相信你能很快上手。OC 是完全兼容 C99 的，所以也会先回顾一下 C 语言的重要内容。
-如果对 Xcode 还完全不会创建项目和文件，可以看看">
+如果还完全不会用 Xcode 创建项目和文件，可以看看 Xcode 使用笔记 0 新司机上路">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Objectiv-C 学习笔记">
 <meta property="og:url" content="http://vectorlu.com/2016/11/30/Objectiv-C-Program/index.html">
 <meta property="og:site_name" content="Vector">
 <meta property="og:description" content="虽然已经有了 Swift，但是还是有很多 Objective-C 的项目，这门语言还是有必要学一学。如果已经有 C 语言的基础，相信你能很快上手。OC 是完全兼容 C99 的，所以也会先回顾一下 C 语言的重要内容。
-如果对 Xcode 还完全不会创建项目和文件，可以看看">
-<meta property="og:updated_time" content="2016-12-03T18:08:18.000Z">
+如果还完全不会用 Xcode 创建项目和文件，可以看看 Xcode 使用笔记 0 新司机上路">
+<meta property="og:updated_time" content="2016-12-03T18:10:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Objectiv-C 学习笔记">
 <meta name="twitter:description" content="虽然已经有了 Swift，但是还是有很多 Objective-C 的项目，这门语言还是有必要学一学。如果已经有 C 语言的基础，相信你能很快上手。OC 是完全兼容 C99 的，所以也会先回顾一下 C 语言的重要内容。
-如果对 Xcode 还完全不会创建项目和文件，可以看看">
+如果还完全不会用 Xcode 创建项目和文件，可以看看 Xcode 使用笔记 0 新司机上路">
 
 
 
@@ -395,7 +395,7 @@
       
         <!--初学者要明白，目的不是学习一门语言，而是学会用一门语言编写程序。基础语法非常重要，但不要陷于其中，学着学着就丧失兴趣，没有成就感。所以语法需多次学习，不要一次吃下一个大胖子：在初学时浏览，写了程序出错后分析、再次仔细学习，总结时能将抽象的语法点与实践中遇到的问题融会贯通。-->
 <p>虽然已经有了 Swift，但是还是有很多 Objective-C 的项目，这门语言还是有必要学一学。如果已经有 C 语言的基础，相信你能很快上手。OC 是完全兼容 C99 的，所以也会先回顾一下 C 语言的重要内容。</p>
-<p>如果对 Xcode 还完全不会创建项目和文件，可以看看</p>
+<p>如果还完全不会用 Xcode 创建项目和文件，可以看看 <a href="http://www.vectorlu.com/2016/11/29/using-Xcode-0/" target="_blank" rel="external">Xcode 使用笔记 0 新司机上路</a></p>
 <a id="more"></a>
 <h1 id="C-语言基础回顾"><a href="#C-语言基础回顾" class="headerlink" title="C 语言基础回顾"></a>C 语言基础回顾</h1><h2 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h2><p>Xcode 支持 C99 标准</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">_BOOL a = <span class="literal">true</span>;</div></pre></td></tr></table></figure>
@@ -503,6 +503,7 @@
 <h3 id="旧式数组方法"><a href="#旧式数组方法" class="headerlink" title="旧式数组方法"></a>旧式数组方法</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSArray</span> *dateList = [<span class="built_in">NSArray</span> arrayWithObjects:now, tomorrow, yesterday, <span class="literal">nil</span>];</div></pre></td></tr></table></figure>
 <p>结束处的<code>nil</code> 告诉方法停止运行，所以，这个<code>NSDate</code>数列拥有三个指针对象。如果没有</p>
 <h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><h4 id="购物清单"><a href="#购物清单" class="headerlink" title="购物清单"></a>购物清单</h4><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#import &lt;Foundation/Foundation.h&gt;</span></div><div class="line"></div><div class="line">int main(int argc, const char * argv[])</div><div class="line">&#123;</div><div class="line">    @autoreleasepool</div><div class="line">    &#123;</div><div class="line">        NSString *<span class="keyword">bread= </span>@<span class="string">"Loaf of bread"</span><span class="comment">;</span></div><div class="line">        NSString *milk = @<span class="string">"Container of milk"</span><span class="comment">;</span></div><div class="line">        NSString *<span class="keyword">butter </span>= @<span class="string">"Stick of butter"</span><span class="comment">;</span></div><div class="line">        </div><div class="line">        NSMutableArray *<span class="keyword">shoppingList </span>= [NSMutableArray array]<span class="comment">;</span></div><div class="line">        </div><div class="line">        [<span class="keyword">shoppingList </span><span class="keyword">addObject:bread];</span></div><div class="line">        [<span class="keyword">shoppingList </span><span class="keyword">addObject:milk];</span></div><div class="line">        [<span class="keyword">shoppingList </span><span class="keyword">addObject:butter];</span></div><div class="line">        </div><div class="line">        for(NSString *s in <span class="keyword">shoppingList)</span></div><div class="line">        &#123;</div><div class="line">            NSLog(@<span class="string">"Don't forget to buy %@"</span>, s)<span class="comment">;</span></div><div class="line">        &#125;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">    return <span class="number">0</span><span class="comment">;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>#### </p>
 
       
     </div>
@@ -547,11 +548,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/macOS/" rel="tag"># macOS</a>
-          
             <a href="/tags/C-语言/" rel="tag"># C 语言</a>
           
             <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+            <a href="/tags/macOS/" rel="tag"># macOS</a>
           
             <a href="/tags/Xcode7/" rel="tag"># Xcode7</a>
           
