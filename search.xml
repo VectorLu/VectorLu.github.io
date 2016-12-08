@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[C 语言多文件注意事项]]></title>
+      <url>%2F2016%2F12%2F08%2FcMultipleFiles%2F</url>
+      <content type="text"><![CDATA[本文解决以下问题： 如何防止头文件被重复包含？ 已经防止头文件被重复包含，如何防止因全局变量重复定义而引起的链接错误，报错如 duplicate symbol _test in …？ 防止头文件被重复包含如果头文件 first.h 和 second.h 中都包含了头文件 duplicate.h，那么当同时引入前两个头文件时，]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Xcode 之版本管理]]></title>
       <url>%2F2016%2F12%2F08%2FXcode-git%2F</url>
       <content type="text"></content>
