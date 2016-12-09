@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[LaTex0Basic]]></title>
       <url>%2F2016%2F12%2F09%2FLaTex0Basic%2F</url>
-      <content type="text"><![CDATA[$T(n) = \Theta(n)$]]></content>
+      <content type="text"><![CDATA[$$T(n) = \Theta(n)$$]]></content>
     </entry>
 
     
