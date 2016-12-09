@@ -93,7 +93,7 @@
 <meta name="description" content="本文解决以下问题：
 
 如何防止头文件被重复包含？
-已经防止头文件被重复包含，如何防止因全局变量重复定义而引起的链接错误，报错如 duplicate symbol _test in …？">
+已经防止头文件被重复包含，如何防止因全局变量重复定义而引起的链接错误，报错如 duplicate symbol _test in …？ 如果想了解全局变量和局部变量的相关细节，可以看看这篇 C 语言存储类详解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C 语言多文件注意事项">
 <meta property="og:url" content="http://vectorlu.com/2016/12/08/cMultipleFiles/index.html">
@@ -101,14 +101,14 @@
 <meta property="og:description" content="本文解决以下问题：
 
 如何防止头文件被重复包含？
-已经防止头文件被重复包含，如何防止因全局变量重复定义而引起的链接错误，报错如 duplicate symbol _test in …？">
-<meta property="og:updated_time" content="2016-12-08T15:17:46.000Z">
+已经防止头文件被重复包含，如何防止因全局变量重复定义而引起的链接错误，报错如 duplicate symbol _test in …？ 如果想了解全局变量和局部变量的相关细节，可以看看这篇 C 语言存储类详解">
+<meta property="og:updated_time" content="2016-12-09T01:16:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C 语言多文件注意事项">
 <meta name="twitter:description" content="本文解决以下问题：
 
 如何防止头文件被重复包含？
-已经防止头文件被重复包含，如何防止因全局变量重复定义而引起的链接错误，报错如 duplicate symbol _test in …？">
+已经防止头文件被重复包含，如何防止因全局变量重复定义而引起的链接错误，报错如 duplicate symbol _test in …？ 如果想了解全局变量和局部变量的相关细节，可以看看这篇 C 语言存储类详解">
 
 
 
@@ -402,10 +402,19 @@
         <p>本文解决以下问题：</p>
 <ol>
 <li>如何防止头文件被重复包含？</li>
-<li>已经防止头文件被重复包含，如何防止因全局变量重复定义而引起的链接错误，报错如 duplicate symbol _test in …？ </li>
+<li>已经防止头文件被重复包含，如何防止因全局变量重复定义而引起的链接错误，报错如 duplicate symbol _test in …？ 如果想了解全局变量和局部变量的相关细节，可以看看这篇 <a href="http://www.vectorlu.com/2016/11/30/C-5-storage-class-specifiers/" target="_blank" rel="external">C 语言存储类详解</a></li>
 </ol>
 <a id="more"></a>
-<h1 id="防止头文件被重复包含"><a href="#防止头文件被重复包含" class="headerlink" title="防止头文件被重复包含"></a>防止头文件被重复包含</h1><p>如果头文件 <code>first.h</code> 和 <code>second.h</code> 中都包含了头文件 <code>duplicate.h</code>，那么当同时引入前两个头文件时，</p>
+<h1 id="防止头文件被重复包含"><a href="#防止头文件被重复包含" class="headerlink" title="防止头文件被重复包含"></a>防止头文件被重复包含</h1><p>如果头文件 <code>first.h</code> 和 <code>second.h</code> 中都包含了头文件 <code>duplicate.h</code>，那么当同时引入前两个头文件时，<code>duplicate.h</code> 会被隐式地包含两次。</p>
+<p>在大型的项目中，往往会引入很多头文件，为了防止上述问题，要在每一个头文件的程序头尾加上条件编译。</p>
+<figure class="highlight cpp"><figcaption><span>duplicate.h</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> headername_h</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> headername_h</span></div><div class="line"></div><div class="line"><span class="comment">// insert all code here</span></div><div class="line"><span class="comment">// 这里是你写的代码，下面还有一句预定义</span></div><div class="line"><span class="comment">// 注意下面这句预定义不要掉了</span></div><div class="line"><span class="comment">// 注意不要把代码写到下面那句定义的后面</span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div></pre></td></tr></table></figure>
+<h1 id="防止全局变量被重复定义"><a href="#防止全局变量被重复定义" class="headerlink" title="防止全局变量被重复定义"></a>防止全局变量被重复定义</h1><h2 id="全局变量重复定义的原因和报错内容"><a href="#全局变量重复定义的原因和报错内容" class="headerlink" title="全局变量重复定义的原因和报错内容"></a>全局变量重复定义的原因和报错内容</h2><p>虽然上述方法可以防止整个头文件被重复包含，但是编译器是按 .c 文件为单位编译成 .o 文件（ Linux 系统）或者 .obj 文件（ Windows 系统），然后将这些 .o 文件链接起来，最后与运行库链接形成可执行文件。</p>
+<p>在两个 .c 文件中包含同一个 .h 文件，跟条件编译没有关系。在头文件中定义了全局变量，而多个 .c 文件中引入这个头文件，每个 .c 文件中都有这个全局变量，在链接的时候就会报重复定义变量的错误。</p>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">duplicate</span> symbol _duplicateVariableName <span class="keyword">in</span> FileAddress</div></pre></td></tr></table></figure>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>在 .c 文件中声明并初始化全局变量，在 .h 文件中用<code>extern</code>声明这个全局变量，注意只是声明，不能初始化。在其他需要这个全局变量的 .c 文件中引入这个头文件，就会包含这个<code>extern</code>的变量声明，在生成目标代码的时候，编译器就会链接到定义该全局变量的 .c 文件。如下示例：</p>
+<figure class="highlight cpp"><figcaption><span>test_extern.c</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"test_extern.h"</span></span></div><div class="line"><span class="comment">// 定义全局变量 test</span></div><div class="line"><span class="keyword">double</span> test = <span class="number">0.0</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">test_extern_method</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">    test++;</div><div class="line">    <span class="keyword">return</span> test;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><figcaption><span>test_extern.h</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> test_extern_h</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> test_extern_h</span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="comment">// 声明外部链接</span></div><div class="line"><span class="keyword">extern</span> <span class="keyword">double</span> test; </div><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">test_extern_method</span><span class="params">(<span class="keyword">void</span>)</span></span>;</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* test_extern_h */</span></span></div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><figcaption><span>main.c</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"test_extern.h"</span></span></div><div class="line"><span class="comment">// 包含了以上头文件就声明了全局变量 test </span></div><div class="line"><span class="comment">// 编译器会链接到 test_extern.c 中的全局变量</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span> </span>&#123;</div><div class="line">    test+= <span class="number">1.0</span>;</div><div class="line">    test = test_extern_method();</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%lf\n"</span>, test);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -674,7 +683,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#防止头文件被重复包含"><span class="nav-number">1.</span> <span class="nav-text">防止头文件被重复包含</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#防止头文件被重复包含"><span class="nav-number">1.</span> <span class="nav-text">防止头文件被重复包含</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#防止全局变量被重复定义"><span class="nav-number">2.</span> <span class="nav-text">防止全局变量被重复定义</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局变量重复定义的原因和报错内容"><span class="nav-number">2.1.</span> <span class="nav-text">全局变量重复定义的原因和报错内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方法"><span class="nav-number">2.2.</span> <span class="nav-text">解决方法</span></a></li></ol></li></ol></div>
             
 
           </div>
