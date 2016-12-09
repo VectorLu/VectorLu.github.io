@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[LaTex0Basic]]></title>
       <url>%2F2016%2F12%2F09%2FLaTex0Basic%2F</url>
-      <content type="text"><![CDATA[$T(n) = \Theta(n)$Add $a$ squared and $b$ squaredto get $c$ squared. Or, usinga more mathematical approach:$c^{2}=a^{2}+b^{2}$ \TeX{} is pronounced as$\tau\epsilon\chi$.\[6pt] $100~m^{3}$ of water\[6pt]This comes from my $\heartsuit$ \begin{displaymath}\lim{n \to \infty}\sum{k=1}^n \frac{1}{k^2}= \frac{\pi^2}{6}\end{displaymath} \begin{displaymath}{n \choose k}\qquad {x \atop y+2}\end{displaymath}]]></content>
+      <content type="text"><![CDATA[$T(n) = \Theta(n)$Add $a$ squared and $b$ squaredto get $c$ squared. Or, usinga more mathematical approach:$c^{2}=a^{2}+b^{2}$ \TeX{} is pronounced as$\tau\epsilon\chi$.\[6pt] $100~m^{3}$ of water\[6pt]This comes from my $\heartsuit$ $$\lim{n \to \infty}\sum{k=1}^n \frac{1}{k^2}= \frac{\pi^2}{6}$$ $${n \choose k}\qquad {x \atop y+2}$$]]></content>
     </entry>
 
     
