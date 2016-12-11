@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[DBreview]]></title>
+      <url>%2F2016%2F12%2F11%2FDBreview%2F</url>
+      <content type="text"><![CDATA[绪论基本概念数据库 Database长期储存在计算机内、有组织的、可共享的大量数据集合。 数据库管理系统 DBMS位于用户与操作系统之间的一层数据管理软件。 数据管理的发展人工阶段文件系统阶段 记录内有结构； 数据的结构是靠程序定义和解释的； todo 数据只能是定长的；（可间接实现数据变长的要求，但是访问相应数据的应用程序复杂了） 数据的共享性差，冗余度大； 文件间相互独立，数据整体无结构；（可间接实现数据整体的有结构，但必须在应用程序中描述数据间的联系） 数据的最小存取单位是记录 todo。 数据库系统阶段 数据结构化 数据共享性高冗余度低易扩充 数据独立性高 物理独立性：用户的应用程序与存储在磁盘上的数据库中的数据是相互独立的。当数据的物理存储改变了，应用程序不用改变。 逻辑独立性：]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[C 语言多文件注意事项]]></title>
       <url>%2F2016%2F12%2F08%2FcMultipleFiles%2F</url>
       <content type="text"><![CDATA[本文解决以下问题： 如何防止头文件被重复包含？ 已经防止头文件被重复包含，如何防止因全局变量重复定义而引起的链接错误，报错如 duplicate symbol _test in …？ 如果想了解全局变量和局部变量的相关细节，可以看看这篇 C 语言存储类详解 防止头文件被重复包含如果头文件 first.h 和 second.h 中都包含了头文件 duplicate.h，那么当同时引入前两个头文件时，duplicate.h 会被隐式地包含两次。 在大型的项目中，往往会引入很多头文件，为了防止上述问题，要在每一个头文件的程序头尾加上条件编译。 duplicate.h123456789#ifndef headername_h#define headername_h// insert all code here// 这里是你写的代码，下面还有一句预定义// 注意下面这句预定义不要掉了// 注意不要把代码写到下面那句定义的后面#endif 防止全局变量被重复定义全局变量重复定义的原因和报错内容虽然上述方法可以防止整个头文件被重复包含，但是编译器是按 .c 文件为单位编译成 .o 文件（ Linux 系统）或者 .obj 文件（ Windows 系统），然后将这些 .o 文件链接起来，最后与运行库链接形成可执行文件。 在两个 .c 文件中包含同一个 .h 文件，跟条件编译没有关系。在头文件中定义了全局变量，而多个 .c 文件中引入这个头文件，每个 .c 文件中都有这个全局变量，在链接的时候就会报重复定义变量的错误。 1duplicate symbol _duplicateVariableName in FileAddress 解决方法在 .c 文件中声明并初始化全局变量，在 .h 文件中用extern声明这个全局变量，注意只是声明，不能初始化。在其他需要这个全局变量的 .c 文件中引入这个头文件，就会包含这个extern的变量声明，在生成目标代码的时候，编译器就会链接到定义该全局变量的 .c 文件。如下示例： test_extern.c123456789#include "test_extern.h"// 定义全局变量 testdouble test = 0.0;double test_extern_method(void)&#123; test++; return test;&#125; test_extern.h123456789#ifndef test_extern_h#define test_extern_h#include &lt;stdio.h&gt;// 声明外部链接extern double test; double test_extern_method(void);#endif /* test_extern_h */ main.c12345678910#include "test_extern.h"// 包含了以上头文件就声明了全局变量 test // 编译器会链接到 test_extern.c 中的全局变量int main(int argc, const char * argv[]) &#123; test+= 1.0; test = test_extern_method(); printf("%lf\n", test); return 0;&#125;]]></content>

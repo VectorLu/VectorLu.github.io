@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Compiler,编译器,C 语言," />
+  <meta name="keywords" content="Database,SQL," />
 
 
 
@@ -90,16 +90,37 @@
 
 
 
-<meta name="description" content="编译原理基础知识总结">
+<meta name="description" content="绪论基本概念数据库 Database长期储存在计算机内、有组织的、可共享的大量数据集合。
+数据库管理系统 DBMS位于用户与操作系统之间的一层数据管理软件。
+数据管理的发展人工阶段文件系统阶段
+记录内有结构；
+数据的结构是靠程序定义和解释的；
+todo 数据只能是定长的；（可间接实现数据变长的要求，但是访问相应数据的应用程序复杂了）
+数据的共享性差，冗余度大；
+文件间相互独立，数据整体无结构；（可">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C_Compiler_by_C">
-<meta property="og:url" content="http://vectorlu.com/2016/11/28/C-Compiler-by-C/index.html">
+<meta property="og:title" content="DBreview">
+<meta property="og:url" content="http://vectorlu.com/2016/12/11/DBreview/index.html">
 <meta property="og:site_name" content="Vector">
-<meta property="og:description" content="编译原理基础知识总结">
-<meta property="og:updated_time" content="2016-12-04T12:15:54.000Z">
+<meta property="og:description" content="绪论基本概念数据库 Database长期储存在计算机内、有组织的、可共享的大量数据集合。
+数据库管理系统 DBMS位于用户与操作系统之间的一层数据管理软件。
+数据管理的发展人工阶段文件系统阶段
+记录内有结构；
+数据的结构是靠程序定义和解释的；
+todo 数据只能是定长的；（可间接实现数据变长的要求，但是访问相应数据的应用程序复杂了）
+数据的共享性差，冗余度大；
+文件间相互独立，数据整体无结构；（可">
+<meta property="og:updated_time" content="2016-12-11T02:17:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C_Compiler_by_C">
-<meta name="twitter:description" content="编译原理基础知识总结">
+<meta name="twitter:title" content="DBreview">
+<meta name="twitter:description" content="绪论基本概念数据库 Database长期储存在计算机内、有组织的、可共享的大量数据集合。
+数据库管理系统 DBMS位于用户与操作系统之间的一层数据管理软件。
+数据管理的发展人工阶段文件系统阶段
+记录内有结构；
+数据的结构是靠程序定义和解释的；
+todo 数据只能是定长的；（可间接实现数据变长的要求，但是访问相应数据的应用程序复杂了）
+数据的共享性差，冗余度大；
+文件间相互独立，数据整体无结构；（可">
 
 
 
@@ -127,13 +148,13 @@
 
 
 
-  <link rel="canonical" href="http://vectorlu.com/2016/11/28/C-Compiler-by-C/"/>
+  <link rel="canonical" href="http://vectorlu.com/2016/12/11/DBreview/"/>
 
 
 
 
 
-  <title> C_Compiler_by_C | Vector </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> DBreview | Vector </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -287,7 +308,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/11/28/C-Compiler-by-C/">
+  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/12/11/DBreview/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="VectorLu">
@@ -311,7 +332,7 @@
             
             
               
-                C_Compiler_by_C
+                DBreview
               
             
           </h1>
@@ -324,8 +345,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-28T00:43:08+08:00">
-                2016-11-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-11T10:01:41+08:00">
+                2016-12-11
               </time>
             
 
@@ -358,8 +379,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/11/28/C-Compiler-by-C/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/28/C-Compiler-by-C/" itemprop="commentCount"></span>
+                <a href="/2016/12/11/DBreview/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/11/DBreview/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -390,130 +411,25 @@
       
 
       
-        <p>编译原理基础知识总结</p>
-<a id="more"></a>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="http://music.163.com/outchain/player?type=2&id=229271&auto=0&height=32"></iframe>
-
-<h1 id="CH1-编译概述"><a href="#CH1-编译概述" class="headerlink" title="CH1 编译概述"></a>CH1 编译概述</h1><p>TODO</p>
-<h1 id="CH2-文法和语法的基础知识"><a href="#CH2-文法和语法的基础知识" class="headerlink" title="CH2 文法和语法的基础知识"></a>CH2 文法和语法的基础知识</h1><h2 id="TODO-6-文法和语言的分类"><a href="#TODO-6-文法和语言的分类" class="headerlink" title="TODO:6 文法和语言的分类"></a>TODO:6 文法和语言的分类</h2><h3 id="0-型文法（无限制文法）"><a href="#0-型文法（无限制文法）" class="headerlink" title="0 型文法（无限制文法）"></a>0 型文法（无限制文法）</h3><p>关键在于<code>𝜷</code>可以为空</p>
-<h3 id="1-型文法（上下文有关文法）"><a href="#1-型文法（上下文有关文法）" class="headerlink" title="1 型文法（上下文有关文法）"></a>1 型文法（上下文有关文法）</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">𝜶𝑨𝜷 → 𝜶𝑢𝜷</div></pre></td></tr></table></figure>
-<h3 id="2型文法（上下文无关文法）"><a href="#2型文法（上下文无关文法）" class="headerlink" title="2型文法（上下文无关文法）"></a>2型文法（上下文无关文法）</h3><h1 id="CH3-词法分析与有穷自动机"><a href="#CH3-词法分析与有穷自动机" class="headerlink" title="CH3 词法分析与有穷自动机"></a>CH3 词法分析与有穷自动机</h1><h2 id="词法分析程序的功能"><a href="#词法分析程序的功能" class="headerlink" title="词法分析程序的功能"></a>词法分析程序的功能</h2><p>对<strong>字符串</strong>表示的源程序从左到右进行扫描和分解，根据语言的词法规则识别出一个一个具有独立意义的单词符号。</p>
-<h2 id="单词符号及输出单词的形式"><a href="#单词符号及输出单词的形式" class="headerlink" title="单词符号及输出单词的形式"></a>单词符号及输出单词的形式</h2><p>词法分析程序的：</p>
-<ul>
-<li>输入：字符串形式的源程序</li>
-<li>输出：单词符号 or 单词符号表示的源程序</li>
-</ul>
-<h3 id="语言的单词符号-token"><a href="#语言的单词符号-token" class="headerlink" title="语言的单词符号 token"></a>语言的单词符号 token</h3><p>语言中具有独立意义的最小语法单位，分为以下 5 种：</p>
-<ol>
-<li><p><strong>关键字</strong><code>if else while do</code> 等</p>
-</li>
-<li><p><strong>标识符</strong>,比如变量名、常量名、数组名、函数名等等</p>
-</li>
-<li><p><strong>常数</strong>，比如</p>
-<ul>
-<li>整型常数 125</li>
-<li>实型常数 0.718</li>
-<li><p>布尔型常数 <code>TRUE</code></p>
-<p>等等</p>
-</li>
-</ul>
-</li>
-<li><p><strong>运算符</strong><code>+ - * / &lt;</code> 等等</p>
-</li>
-<li><p><strong>界符</strong><br><code>, ; ( ) :</code> 等等</p>
-</li>
+        <h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="数据库-Database"><a href="#数据库-Database" class="headerlink" title="数据库 Database"></a>数据库 Database</h3><p>长期储存在计算机内、有组织的、可共享的大量数据集合。</p>
+<h3 id="数据库管理系统-DBMS"><a href="#数据库管理系统-DBMS" class="headerlink" title="数据库管理系统 DBMS"></a>数据库管理系统 DBMS</h3><p>位于用户与操作系统之间的一层数据管理软件。</p>
+<h2 id="数据管理的发展"><a href="#数据管理的发展" class="headerlink" title="数据管理的发展"></a>数据管理的发展</h2><h3 id="人工阶段"><a href="#人工阶段" class="headerlink" title="人工阶段"></a>人工阶段</h3><h3 id="文件系统阶段"><a href="#文件系统阶段" class="headerlink" title="文件系统阶段"></a>文件系统阶段</h3><ol>
+<li>记录内有结构；</li>
+<li>数据的结构是靠程序定义和解释的；</li>
+<li>todo 数据只能是定长的；（可间接实现数据变长的要求，但是访问相应数据的应用程序复杂了）</li>
+<li>数据的共享性差，冗余度大；</li>
+<li>文件间相互独立，数据整体无结构；（可间接实现数据整体的有结构，但必须在应用程序中描述数据间的联系）</li>
+<li>数据的最小存取单位是记录 todo。</li>
 </ol>
-<p>一个程序语言的关键字、运算符和界符的个数是确定的，而对于标识符或常数的使用个数通常是不确定的。</p>
-<h3 id="词法分析程序输出单词的形式"><a href="#词法分析程序输出单词的形式" class="headerlink" title="词法分析程序输出单词的形式"></a>词法分析程序输出单词的形式</h3><p>二元式：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">（单词种别，单词自身的值）</div></pre></td></tr></table></figure>
-<h4 id="单词种别"><a href="#单词种别" class="headerlink" title="单词种别"></a>单词种别</h4><p><strong>单词种别</strong>表示单词的种类，是<strong>语法分析</strong>需要的信息。</p>
-<p>一个语言的单词符号如何划分种类、分成几个种类、怎样编码，取决于处理方便。通常让每种单词对应一个整数码，最大限度地把各个单词区别开。</p>
-<ol>
-<li>关键字：全体视为一种，但一般一字一种（个数确定）</li>
-<li>运算符：同关键字</li>
-<li>界符：同关键字</li>
-<li>标识符：统归为一种</li>
-<li><p>常数：可按类型（整型、实型、布尔型等等），也可统归为一种，比如</p>
- <figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(+|<span class="string">-</span>|<span class="string">ɛ)dd*(.dd*</span>|<span class="string">ɛ)(e(+</span>|<span class="string">-</span>|<span class="string">ɛ)dd*</span>|<span class="string">ɛ)</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="单词自身的值"><a href="#单词自身的值" class="headerlink" title="单词自身的值"></a>单词自身的值</h4><p>单词自身的值是编译中其他阶段所需要的信息。</p>
-<p>用以下方法确定其值：</p>
-<ol>
-<li>如果一个种别只含一个单词符号，那么对于这个单词符号，种别编码完全代表其自身的值。</li>
-<li><p>如果一个种别又多个单词符号，那么对于它的每个单词符号，除了给出种别编码之外，还应</p>
-<ol>
-<li><p>给出单词符号的<strong>自身值</strong>，以便把同一种类的单词区分开来。</p>
-<blockquote>
-<p>标识符的自身值：标识符自身的字符串</p>
-<p>常数自身值：常数本身的二进制数值</p>
-</blockquote>
-</li>
-<li><p>用指向某类表格中一个特定项目的指针值来区分同类中不同单词</p>
-<blockquote>
-<p>标识符：在符号表的入口指针作为它自身的值</p>
-<p>常数：在常数表的入口指针作为自身值</p>
-</blockquote>
-</li>
+<h3 id="数据库系统阶段"><a href="#数据库系统阶段" class="headerlink" title="数据库系统阶段"></a>数据库系统阶段</h3><ol>
+<li>数据结构化</li>
+<li>数据共享性高冗余度低易扩充</li>
+<li>数据独立性高<ol>
+<li>物理独立性：用户的应用程序与存储在磁盘上的数据库中的数据是相互独立的。当数据的物理存储改变了，应用程序不用改变。</li>
+<li>逻辑独立性：</li>
 </ol>
 </li>
 </ol>
-<p>假设关键字、运算符和界符都是一符一种，标识符自身的值用自身的字符串表示，常数自身的值用标准二进制形式表示，则程序段<code>if (a &gt; 1) b = 100;</code>在经词法分析程序扫描后，它所输出的单词符号串是：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">二元式</th>
-<th style="text-align:left">表示的意义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">(2, )</td>
-<td style="text-align:left">基本字<code>if</code></td>
-</tr>
-<tr>
-<td style="text-align:left">(29, )</td>
-<td style="text-align:left">左括号<code>(</code></td>
-</tr>
-<tr>
-<td style="text-align:left">(10, ‘a’)</td>
-<td style="text-align:left">标识符<code>a</code></td>
-</tr>
-<tr>
-<td style="text-align:left">(11, ‘1’的二进制)</td>
-<td style="text-align:left">常数<code>1</code></td>
-</tr>
-<tr>
-<td style="text-align:left">(30, )</td>
-<td style="text-align:left">右括号<code>)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">(10, ‘b’)</td>
-<td style="text-align:left">标识符<code>b</code></td>
-</tr>
-<tr>
-<td style="text-align:left">(17, )</td>
-<td style="text-align:left">赋值号<code>=</code></td>
-</tr>
-<tr>
-<td style="text-align:left">(11, ‘100’的二进制)</td>
-<td style="text-align:left">常数<code>100</code></td>
-</tr>
-<tr>
-<td style="text-align:left">(26, )</td>
-<td style="text-align:left">分号<code>;</code></td>
-</tr>
-</tbody>
-</table>
-<p>其中，假设标识符种类编码为整数 10，常数的种类编码为整数 11，基本字<code>if</code>种类编码为 2，赋值号种类编码为……</p>
-<h2 id="语言单词符号的两种定义方式"><a href="#语言单词符号的两种定义方式" class="headerlink" title="语言单词符号的两种定义方式"></a>语言单词符号的两种定义方式</h2><ol>
-<li>正规文法</li>
-<li>正规式</li>
-</ol>
-<p>TODO</p>
-<h1 id="CH4-语法分析"><a href="#CH4-语法分析" class="headerlink" title="CH4 语法分析"></a>CH4 语法分析</h1><h3 id="文法的左递归性和回溯的消除"><a href="#文法的左递归性和回溯的消除" class="headerlink" title="文法的左递归性和回溯的消除"></a>文法的左递归性和回溯的消除</h3><p>在自上而下分析过程中，为了避免回溯，即要求描述语言的文法是 LL(1) 文法。</p>
-<h4 id="LL-1-文法的判断条件"><a href="#LL-1-文法的判断条件" class="headerlink" title="LL(1) 文法的判断条件"></a>LL(1) 文法的判断条件</h4><h5 id="1"><a href="#1" class="headerlink" title="1"></a>1</h5><p>设 <code>𝜶</code> </p>
-<p>TBC</p>
 
       
     </div>
@@ -558,11 +474,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Compiler/" rel="tag"># Compiler</a>
+            <a href="/tags/Database/" rel="tag"># Database</a>
           
-            <a href="/tags/编译器/" rel="tag"># 编译器</a>
-          
-            <a href="/tags/C-语言/" rel="tag"># C 语言</a>
+            <a href="/tags/SQL/" rel="tag"># SQL</a>
           
         </div>
       
@@ -571,8 +485,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/27/remove-long-pc-user-name/" rel="next" title="去掉 mac 终端下长长的电脑名和用户名">
-                <i class="fa fa-chevron-left"></i> 去掉 mac 终端下长长的电脑名和用户名
+              <a href="/2016/12/08/cMultipleFiles/" rel="next" title="C 语言多文件注意事项">
+                <i class="fa fa-chevron-left"></i> C 语言多文件注意事项
               </a>
             
           </div>
@@ -580,10 +494,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/29/using-Xcode-0/" rel="prev" title="Xcode 使用笔记 0 新司机上路">
-                Xcode 使用笔记 0 新司机上路 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -598,10 +508,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/11/28/C-Compiler-by-C/"
-     data-title="C_Compiler_by_C"
+        <div class="ds-share flat" data-thread-key="2016/12/11/DBreview/"
+     data-title="DBreview"
      data-content=""
-     data-url="http://vectorlu.com/2016/11/28/C-Compiler-by-C/">
+     data-url="http://vectorlu.com/2016/12/11/DBreview/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -631,8 +541,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/28/C-Compiler-by-C/"
-           data-title="C_Compiler_by_C" data-url="http://vectorlu.com/2016/11/28/C-Compiler-by-C/">
+      <div class="ds-thread" data-thread-key="2016/12/11/DBreview/"
+           data-title="DBreview" data-url="http://vectorlu.com/2016/12/11/DBreview/">
       </div>
     
   </div>
@@ -790,7 +700,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CH1-编译概述"><span class="nav-number">1.</span> <span class="nav-text">CH1 编译概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CH2-文法和语法的基础知识"><span class="nav-number">2.</span> <span class="nav-text">CH2 文法和语法的基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TODO-6-文法和语言的分类"><span class="nav-number">2.1.</span> <span class="nav-text">TODO:6 文法和语言的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0-型文法（无限制文法）"><span class="nav-number">2.1.1.</span> <span class="nav-text">0 型文法（无限制文法）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-型文法（上下文有关文法）"><span class="nav-number">2.1.2.</span> <span class="nav-text">1 型文法（上下文有关文法）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2型文法（上下文无关文法）"><span class="nav-number">2.1.3.</span> <span class="nav-text">2型文法（上下文无关文法）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CH3-词法分析与有穷自动机"><span class="nav-number">3.</span> <span class="nav-text">CH3 词法分析与有穷自动机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#词法分析程序的功能"><span class="nav-number">3.1.</span> <span class="nav-text">词法分析程序的功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单词符号及输出单词的形式"><span class="nav-number">3.2.</span> <span class="nav-text">单词符号及输出单词的形式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语言的单词符号-token"><span class="nav-number">3.2.1.</span> <span class="nav-text">语言的单词符号 token</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#词法分析程序输出单词的形式"><span class="nav-number">3.2.2.</span> <span class="nav-text">词法分析程序输出单词的形式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单词种别"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">单词种别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单词自身的值"><span class="nav-number">3.2.2.2.</span> <span class="nav-text">单词自身的值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语言单词符号的两种定义方式"><span class="nav-number">3.3.</span> <span class="nav-text">语言单词符号的两种定义方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CH4-语法分析"><span class="nav-number">4.</span> <span class="nav-text">CH4 语法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文法的左递归性和回溯的消除"><span class="nav-number">4.0.1.</span> <span class="nav-text">文法的左递归性和回溯的消除</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#LL-1-文法的判断条件"><span class="nav-number">4.0.1.1.</span> <span class="nav-text">LL(1) 文法的判断条件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1"><span class="nav-number">4.0.1.1.1.</span> <span class="nav-text">1</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库-Database"><span class="nav-number">1.1.1.</span> <span class="nav-text">数据库 Database</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库管理系统-DBMS"><span class="nav-number">1.1.2.</span> <span class="nav-text">数据库管理系统 DBMS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据管理的发展"><span class="nav-number">1.2.</span> <span class="nav-text">数据管理的发展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#人工阶段"><span class="nav-number">1.2.1.</span> <span class="nav-text">人工阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件系统阶段"><span class="nav-number">1.2.2.</span> <span class="nav-text">文件系统阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库系统阶段"><span class="nav-number">1.2.3.</span> <span class="nav-text">数据库系统阶段</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
