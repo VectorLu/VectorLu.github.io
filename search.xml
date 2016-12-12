@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[一些代码踩坑的总结]]></title>
       <url>%2F2016%2F12%2F12%2FCorrectCodeErrors%2F</url>
-      <content type="text"><![CDATA[2016 不要在如下的逻辑表达式中滥用 ++ 或 --，在判断的时候自增自减有时候会造成隐蔽的错误，特别是对于一些全部变量。 123456if (logicExpression1)&#123;...&#125;else if (logicExpression2)&#123;...&#125;...else]]></content>
+      <content type="text"><![CDATA[每个人在写代码时，都不可避免犯一些错误，记录下来，不再踩坑就是。 2016 不要在如下的逻辑表达式中滥用 ++ 或 --，在判断的时候自增自减有时候会造成隐蔽的错误，特别是对于一些全部变量。 123456if (logicExpression1)&#123;...&#125;else if (logicExpression2)&#123;...&#125;...else]]></content>
     </entry>
 
     
