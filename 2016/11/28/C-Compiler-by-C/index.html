@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Compiler,编译器,C 语言," />
+  <meta name="keywords" content="C 语言,Compiler,编译器," />
 
 
 
@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://vectorlu.com/2016/11/28/C-Compiler-by-C/index.html">
 <meta property="og:site_name" content="Vector">
 <meta property="og:description" content="编译原理基础知识总结">
-<meta property="og:updated_time" content="2016-12-04T12:15:54.000Z">
+<meta property="og:updated_time" content="2016-12-11T16:38:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C_Compiler_by_C">
 <meta name="twitter:description" content="编译原理基础知识总结">
@@ -514,6 +514,11 @@
 <h1 id="CH4-语法分析"><a href="#CH4-语法分析" class="headerlink" title="CH4 语法分析"></a>CH4 语法分析</h1><h3 id="文法的左递归性和回溯的消除"><a href="#文法的左递归性和回溯的消除" class="headerlink" title="文法的左递归性和回溯的消除"></a>文法的左递归性和回溯的消除</h3><p>在自上而下分析过程中，为了避免回溯，即要求描述语言的文法是 LL(1) 文法。</p>
 <h4 id="LL-1-文法的判断条件"><a href="#LL-1-文法的判断条件" class="headerlink" title="LL(1) 文法的判断条件"></a>LL(1) 文法的判断条件</h4><h5 id="1"><a href="#1" class="headerlink" title="1"></a>1</h5><p>设 <code>𝜶</code> </p>
 <p>TBC</p>
+<h3 id="预测分析法与预测分析表的构造"><a href="#预测分析法与预测分析表的构造" class="headerlink" title="预测分析法与预测分析表的构造"></a>预测分析法与预测分析表的构造</h3><h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ol>
+<li>计算文法 G 的每一非终结符的 FIRST 集和 FOLLOW 集。</li>
+<li>对文法的每个规则 𝑨⟶𝛼，若a ∈ FIRST(𝛼)，则置 M[A, a] = 𝑨⟶𝛼，显然其中 a 是终结符。</li>
+<li>若 𝜺 ∈ FIRST(𝛼)，则 ∀ b ∈ FOLLOW(A)，则置 M</li>
+</ol>
 
       
     </div>
@@ -558,11 +563,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/C-语言/" rel="tag"># C 语言</a>
+          
             <a href="/tags/Compiler/" rel="tag"># Compiler</a>
           
             <a href="/tags/编译器/" rel="tag"># 编译器</a>
-          
-            <a href="/tags/C-语言/" rel="tag"># C 语言</a>
           
         </div>
       
@@ -677,7 +682,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -694,7 +699,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -790,7 +795,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CH1-编译概述"><span class="nav-number">1.</span> <span class="nav-text">CH1 编译概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CH2-文法和语法的基础知识"><span class="nav-number">2.</span> <span class="nav-text">CH2 文法和语法的基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TODO-6-文法和语言的分类"><span class="nav-number">2.1.</span> <span class="nav-text">TODO:6 文法和语言的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0-型文法（无限制文法）"><span class="nav-number">2.1.1.</span> <span class="nav-text">0 型文法（无限制文法）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-型文法（上下文有关文法）"><span class="nav-number">2.1.2.</span> <span class="nav-text">1 型文法（上下文有关文法）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2型文法（上下文无关文法）"><span class="nav-number">2.1.3.</span> <span class="nav-text">2型文法（上下文无关文法）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CH3-词法分析与有穷自动机"><span class="nav-number">3.</span> <span class="nav-text">CH3 词法分析与有穷自动机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#词法分析程序的功能"><span class="nav-number">3.1.</span> <span class="nav-text">词法分析程序的功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单词符号及输出单词的形式"><span class="nav-number">3.2.</span> <span class="nav-text">单词符号及输出单词的形式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语言的单词符号-token"><span class="nav-number">3.2.1.</span> <span class="nav-text">语言的单词符号 token</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#词法分析程序输出单词的形式"><span class="nav-number">3.2.2.</span> <span class="nav-text">词法分析程序输出单词的形式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单词种别"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">单词种别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单词自身的值"><span class="nav-number">3.2.2.2.</span> <span class="nav-text">单词自身的值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语言单词符号的两种定义方式"><span class="nav-number">3.3.</span> <span class="nav-text">语言单词符号的两种定义方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CH4-语法分析"><span class="nav-number">4.</span> <span class="nav-text">CH4 语法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文法的左递归性和回溯的消除"><span class="nav-number">4.0.1.</span> <span class="nav-text">文法的左递归性和回溯的消除</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#LL-1-文法的判断条件"><span class="nav-number">4.0.1.1.</span> <span class="nav-text">LL(1) 文法的判断条件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1"><span class="nav-number">4.0.1.1.1.</span> <span class="nav-text">1</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CH1-编译概述"><span class="nav-number">1.</span> <span class="nav-text">CH1 编译概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CH2-文法和语法的基础知识"><span class="nav-number">2.</span> <span class="nav-text">CH2 文法和语法的基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TODO-6-文法和语言的分类"><span class="nav-number">2.1.</span> <span class="nav-text">TODO:6 文法和语言的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0-型文法（无限制文法）"><span class="nav-number">2.1.1.</span> <span class="nav-text">0 型文法（无限制文法）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-型文法（上下文有关文法）"><span class="nav-number">2.1.2.</span> <span class="nav-text">1 型文法（上下文有关文法）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2型文法（上下文无关文法）"><span class="nav-number">2.1.3.</span> <span class="nav-text">2型文法（上下文无关文法）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CH3-词法分析与有穷自动机"><span class="nav-number">3.</span> <span class="nav-text">CH3 词法分析与有穷自动机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#词法分析程序的功能"><span class="nav-number">3.1.</span> <span class="nav-text">词法分析程序的功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单词符号及输出单词的形式"><span class="nav-number">3.2.</span> <span class="nav-text">单词符号及输出单词的形式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语言的单词符号-token"><span class="nav-number">3.2.1.</span> <span class="nav-text">语言的单词符号 token</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#词法分析程序输出单词的形式"><span class="nav-number">3.2.2.</span> <span class="nav-text">词法分析程序输出单词的形式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单词种别"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">单词种别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单词自身的值"><span class="nav-number">3.2.2.2.</span> <span class="nav-text">单词自身的值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语言单词符号的两种定义方式"><span class="nav-number">3.3.</span> <span class="nav-text">语言单词符号的两种定义方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CH4-语法分析"><span class="nav-number">4.</span> <span class="nav-text">CH4 语法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文法的左递归性和回溯的消除"><span class="nav-number">4.0.1.</span> <span class="nav-text">文法的左递归性和回溯的消除</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#LL-1-文法的判断条件"><span class="nav-number">4.0.1.1.</span> <span class="nav-text">LL(1) 文法的判断条件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1"><span class="nav-number">4.0.1.1.1.</span> <span class="nav-text">1</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预测分析法与预测分析表的构造"><span class="nav-number">4.0.2.</span> <span class="nav-text">预测分析法与预测分析表的构造</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法"><span class="nav-number">4.0.2.1.</span> <span class="nav-text">方法</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>

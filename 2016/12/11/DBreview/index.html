@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://vectorlu.com/2016/12/11/DBreview/index.html">
 <meta property="og:site_name" content="Vector">
 <meta property="og:description" content="专业课——数据库系统原理的学习总结">
-<meta property="og:updated_time" content="2016-12-11T02:29:33.000Z">
+<meta property="og:updated_time" content="2016-12-11T09:01:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DBreview">
 <meta name="twitter:description" content="专业课——数据库系统原理的学习总结">
@@ -395,7 +395,7 @@
 <h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="数据库-Database"><a href="#数据库-Database" class="headerlink" title="数据库 Database"></a>数据库 Database</h3><p>长期储存在计算机内、有组织的、可共享的大量数据集合。</p>
 <h3 id="数据库管理系统-DBMS"><a href="#数据库管理系统-DBMS" class="headerlink" title="数据库管理系统 DBMS"></a>数据库管理系统 DBMS</h3><p>位于用户与操作系统之间的一层数据管理软件。</p>
 <h2 id="数据管理的发展"><a href="#数据管理的发展" class="headerlink" title="数据管理的发展"></a>数据管理的发展</h2><h3 id="人工阶段"><a href="#人工阶段" class="headerlink" title="人工阶段"></a>人工阶段</h3><h3 id="文件系统阶段"><a href="#文件系统阶段" class="headerlink" title="文件系统阶段"></a>文件系统阶段</h3><ol>
-<li>记录内有结构；</li>
+<li>记录内有结构；todo</li>
 <li>数据的结构是靠程序定义和解释的；</li>
 <li>todo 数据只能是定长的；（可间接实现数据变长的要求，但是访问相应数据的应用程序复杂了）</li>
 <li>数据的共享性差，冗余度大；</li>
@@ -404,16 +404,23 @@
 </ol>
 <h3 id="数据库系统阶段"><a href="#数据库系统阶段" class="headerlink" title="数据库系统阶段"></a>数据库系统阶段</h3><h4 id="1-数据结构化"><a href="#1-数据结构化" class="headerlink" title="1. 数据结构化"></a>1. 数据结构化</h4><h4 id="2-数据共享性高冗余度低易扩充"><a href="#2-数据共享性高冗余度低易扩充" class="headerlink" title="2. 数据共享性高冗余度低易扩充"></a>2. 数据共享性高冗余度低易扩充</h4><h4 id="3-数据独立性高-todo-由-DBMS-的二级映像功能"><a href="#3-数据独立性高-todo-由-DBMS-的二级映像功能" class="headerlink" title="3. 数据独立性高 todo 由 DBMS 的二级映像功能"></a>3. 数据独立性高 todo 由 DBMS 的二级映像功能</h4><ol>
 <li>物理独立性：用户的应用程序与存储在磁盘上的数据库中的数据是相互独立的。当数据的物理存储改变了，应用程序不用改变。</li>
-<li><p>逻辑独立性：用户的应用程序与数据库的逻辑结构是相互独立的。数据的逻辑结构改变了，用户程序也可以不变，从而简化了应用程序的编制，减少了应用程序的维护和修改。</p>
+<li>逻辑独立性：用户的应用程序与数据库的逻辑结构是相互独立的。数据的逻辑结构改变了，用户程序也可以不变，从而简化了应用程序的编制，减少了应用程序的维护和修改。</li>
+</ol>
 <h4 id="4-数据由-DBMS-统一管理和控制"><a href="#4-数据由-DBMS-统一管理和控制" class="headerlink" title="4. 数据由 DBMS 统一管理和控制"></a>4. 数据由 DBMS 统一管理和控制</h4><p>DBMS 提供的数据控制功能：</p>
-</li>
-<li><p>安全性 Security</p>
-</li>
+<ol>
+<li>安全性 Security</li>
 <li>完整性 Integrity</li>
 <li>并发控制 Concurrency</li>
-<li></li>
+<li>数据库恢复 Recovery</li>
 </ol>
-
+<h2 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h2><h3 id="概念模型"><a href="#概念模型" class="headerlink" title="概念模型"></a>概念模型</h3><h4 id="1-实体-Entity"><a href="#1-实体-Entity" class="headerlink" title="1. 实体 Entity"></a>1. 实体 Entity</h4><p>客观存在并可相互区别，可具体可抽象。</p>
+<h4 id="2-属性-Attribute"><a href="#2-属性-Attribute" class="headerlink" title="2. 属性 Attribute"></a>2. 属性 Attribute</h4><h4 id="3-码-Key"><a href="#3-码-Key" class="headerlink" title="3. 码 Key"></a>3. 码 Key</h4><p>唯一标识实体的属性集成为码。</p>
+<blockquote>
+<p>注意：属性集——属性的集合</p>
+</blockquote>
+<h4 id="4-域-Domain"><a href="#4-域-Domain" class="headerlink" title="4. 域 Domain"></a>4. 域 Domain</h4><p>属性的取值范围称为该属性的域。</p>
+<h4 id="5-实体型-Entity-Type"><a href="#5-实体型-Entity-Type" class="headerlink" title="5. 实体型 Entity Type"></a>5. 实体型 Entity Type</h4><p>用实体名极其属性名集合来抽象和刻画同类实体称为实体型。例如：顾客（编号，姓名，性别，年龄，住址）。</p>
+<h4 id="6-实体集-Entity-Set"><a href="#6-实体集-Entity-Set" class="headerlink" title="6. 实体集 Entity Set"></a>6. 实体集 Entity Set</h4><h4 id="7-联系-Relationship"><a href="#7-联系-Relationship" class="headerlink" title="7. 联系 Relationship"></a>7. 联系 Relationship</h4>
       
     </div>
 
@@ -477,6 +484,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/12/CorrectCodeErrors/" rel="prev" title="一些代码踩坑的总结">
+                一些代码踩坑的总结 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -570,7 +581,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -587,7 +598,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -683,7 +694,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库-Database"><span class="nav-number">1.1.1.</span> <span class="nav-text">数据库 Database</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库管理系统-DBMS"><span class="nav-number">1.1.2.</span> <span class="nav-text">数据库管理系统 DBMS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据管理的发展"><span class="nav-number">1.2.</span> <span class="nav-text">数据管理的发展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#人工阶段"><span class="nav-number">1.2.1.</span> <span class="nav-text">人工阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件系统阶段"><span class="nav-number">1.2.2.</span> <span class="nav-text">文件系统阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库系统阶段"><span class="nav-number">1.2.3.</span> <span class="nav-text">数据库系统阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-数据结构化"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">1. 数据结构化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-数据共享性高冗余度低易扩充"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">2. 数据共享性高冗余度低易扩充</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-数据独立性高-todo-由-DBMS-的二级映像功能"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">3. 数据独立性高 todo 由 DBMS 的二级映像功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-数据由-DBMS-统一管理和控制"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">4. 数据由 DBMS 统一管理和控制</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库-Database"><span class="nav-number">1.1.1.</span> <span class="nav-text">数据库 Database</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库管理系统-DBMS"><span class="nav-number">1.1.2.</span> <span class="nav-text">数据库管理系统 DBMS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据管理的发展"><span class="nav-number">1.2.</span> <span class="nav-text">数据管理的发展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#人工阶段"><span class="nav-number">1.2.1.</span> <span class="nav-text">人工阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件系统阶段"><span class="nav-number">1.2.2.</span> <span class="nav-text">文件系统阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库系统阶段"><span class="nav-number">1.2.3.</span> <span class="nav-text">数据库系统阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-数据结构化"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">1. 数据结构化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-数据共享性高冗余度低易扩充"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">2. 数据共享性高冗余度低易扩充</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-数据独立性高-todo-由-DBMS-的二级映像功能"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">3. 数据独立性高 todo 由 DBMS 的二级映像功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-数据由-DBMS-统一管理和控制"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">4. 数据由 DBMS 统一管理和控制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据模型"><span class="nav-number">1.3.</span> <span class="nav-text">数据模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念模型"><span class="nav-number">1.3.1.</span> <span class="nav-text">概念模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-实体-Entity"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">1. 实体 Entity</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-属性-Attribute"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">2. 属性 Attribute</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-码-Key"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">3. 码 Key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-域-Domain"><span class="nav-number">1.3.1.4.</span> <span class="nav-text">4. 域 Domain</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-实体型-Entity-Type"><span class="nav-number">1.3.1.5.</span> <span class="nav-text">5. 实体型 Entity Type</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-实体集-Entity-Set"><span class="nav-number">1.3.1.6.</span> <span class="nav-text">6. 实体集 Entity Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-联系-Relationship"><span class="nav-number">1.3.1.7.</span> <span class="nav-text">7. 联系 Relationship</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
