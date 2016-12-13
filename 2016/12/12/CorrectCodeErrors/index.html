@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://vectorlu.com/2016/12/12/CorrectCodeErrors/index.html">
 <meta property="og:site_name" content="Vector">
 <meta property="og:description" content="每个人在写代码时，都不可避免犯一些错误，记录下来，不再踩坑就是。">
-<meta property="og:updated_time" content="2016-12-12T13:26:45.000Z">
+<meta property="og:updated_time" content="2016-12-13T03:06:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些代码踩坑的总结">
 <meta name="twitter:description" content="每个人在写代码时，都不可避免犯一些错误，记录下来，不再踩坑就是。">
@@ -397,6 +397,12 @@
  <figure class="highlight nimrod"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (logicExpression1)</div><div class="line"><span class="meta">&#123;...&#125;</span></div><div class="line"><span class="keyword">else</span> <span class="keyword">if</span> (logicExpression2)</div><div class="line"><span class="meta">&#123;...&#125;</span></div><div class="line">...</div><div class="line"><span class="keyword">else</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
+<ol>
+<li><p>由于数组开始的索引是 0，往数组中填入值，希望最新放入的元素索引能够正确，如下是一种不太好但是正确的实现。</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">sum = <span class="number">0</span>;</div><div class="line">  key = <span class="number">0</span>;</div><div class="line">  is_const = <span class="literal">NULL</span>;</div><div class="line">  token_xy.x = <span class="number">0</span>;</div><div class="line">  token_xy.y = <span class="literal">NULL</span>;</div><div class="line">  p_token_xy = &amp;token_xy;</div><div class="line">   </div><div class="line">  <span class="built_in">printf</span>(<span class="string">"Please input string:\n"</span>);</div><div class="line">  <span class="keyword">do</span></div><div class="line">  &#123;</div><div class="line">      ch = getchar();</div><div class="line">      program[sum++] = ch;</div><div class="line">  &#125;<span class="keyword">while</span>(ch != <span class="string">'#'</span>);</div><div class="line">   </div><div class="line">  sum--;</div></pre></td></tr></table></figure>
+<p> 这种实现有点啰嗦，虽然 <code>sum</code> 的确表示元素总数，但是为了以下的一些操作，<code>sum--;</code>，这样就有点尴尬。直接一开始让 <code>sum = -1;</code>，注释掉 <code>sum--;</code>，然后 <code>(╯°□°）╯︵ ┻━┻</code>，程序就出错了。<br> 原因是数组的索引一开始就为 <code>-1</code> 了，<code>program[-1] = ch;</code> 导致了错误。应该改为 <code>program[++sum] = ch;</code> 。</p>
+</li>
+</ol>
 
       
     </div>
@@ -459,6 +465,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/13/SimpleCompilerByC/" rel="prev" title="手写一个 C 语言编译器">
+                手写一个 C 语言编译器 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -552,7 +562,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
