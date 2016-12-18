@@ -90,16 +90,22 @@
 
 
 
-<meta name="description" content="0输入与输出在写算法时，一定要充分考虑到输入数据的特征、可能存在的问题。不要天真地以为输入一定是某种特定的数据类型，大小排列方式">
+<meta name="description" content="0 输入与输出在写算法时，一定要充分考虑到输入数据的特征、可能存在的问题，还有是否需要保存数据。不要天真地以为输入一定是某种特定的数据类型，大小排列方式……
+然后尽量对数据做一些预处理，以免在程序运行中造成一些破坏，举个很简单的例子——求最大公约数和最小公倍数，为了防止第二个输入的数大于第一个数，做了一个判断和交换：
+123456789101112131415161718192021222324">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AlgorithmNotice">
 <meta property="og:url" content="http://vectorlu.com/2016/12/18/AlgorithmNotice/index.html">
 <meta property="og:site_name" content="Vector">
-<meta property="og:description" content="0输入与输出在写算法时，一定要充分考虑到输入数据的特征、可能存在的问题。不要天真地以为输入一定是某种特定的数据类型，大小排列方式">
-<meta property="og:updated_time" content="2016-12-18T08:52:32.000Z">
+<meta property="og:description" content="0 输入与输出在写算法时，一定要充分考虑到输入数据的特征、可能存在的问题，还有是否需要保存数据。不要天真地以为输入一定是某种特定的数据类型，大小排列方式……
+然后尽量对数据做一些预处理，以免在程序运行中造成一些破坏，举个很简单的例子——求最大公约数和最小公倍数，为了防止第二个输入的数大于第一个数，做了一个判断和交换：
+123456789101112131415161718192021222324">
+<meta property="og:updated_time" content="2016-12-18T11:12:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AlgorithmNotice">
-<meta name="twitter:description" content="0输入与输出在写算法时，一定要充分考虑到输入数据的特征、可能存在的问题。不要天真地以为输入一定是某种特定的数据类型，大小排列方式">
+<meta name="twitter:description" content="0 输入与输出在写算法时，一定要充分考虑到输入数据的特征、可能存在的问题，还有是否需要保存数据。不要天真地以为输入一定是某种特定的数据类型，大小排列方式……
+然后尽量对数据做一些预处理，以免在程序运行中造成一些破坏，举个很简单的例子——求最大公约数和最小公倍数，为了防止第二个输入的数大于第一个数，做了一个判断和交换：
+123456789101112131415161718192021222324">
 
 
 
@@ -390,7 +396,10 @@
       
 
       
-        <h1 id="0"><a href="#0" class="headerlink" title="0"></a>0</h1><h2 id="输入与输出"><a href="#输入与输出" class="headerlink" title="输入与输出"></a>输入与输出</h2><p>在写算法时，一定要充分考虑到输入数据的特征、可能存在的问题。不要天真地以为输入一定是某种特定的数据类型，大小排列方式</p>
+        <a id="more"></a>
+<h1 id="0-输入与输出"><a href="#0-输入与输出" class="headerlink" title="0 输入与输出"></a>0 输入与输出</h1><p>在写算法时，一定要充分考虑到输入数据的特征、可能存在的问题，还有是否需要保存数据。不要天真地以为输入一定是某种特定的数据类型，大小排列方式……</p>
+<p>然后尽量对数据做一些预处理，以免在程序运行中造成一些破坏，举个很简单的例子——求最大公约数和最小公倍数，为了防止第二个输入的数大于第一个数，做了一个判断和交换：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">int</span> main()</div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> <span class="built_in">max</span>, <span class="built_in">min</span>;</div><div class="line">    <span class="keyword">int</span> copy1, copy2;</div><div class="line">    <span class="keyword">int</span> temp;</div><div class="line">    printf(<span class="string">"请输入两个正整数：\n"</span>);</div><div class="line">    scanf(<span class="string">"%d %d"</span>, &amp;<span class="built_in">max</span>, &amp;<span class="built_in">min</span>);</div><div class="line"></div><div class="line">    copy1 = <span class="built_in">max</span>;</div><div class="line">    copy2 = <span class="built_in">min</span>;</div><div class="line">    </div><div class="line">    <span class="comment">// 如果 min &gt; max </span></div><div class="line">    <span class="comment">// 互换</span></div><div class="line">    <span class="built_in">if</span> (<span class="built_in">min</span> &gt; <span class="built_in">max</span>)</div><div class="line">    &#123;</div><div class="line">        temp = <span class="built_in">min</span>;</div><div class="line">        <span class="built_in">min</span> = <span class="built_in">max</span>;</div><div class="line">        <span class="built_in">max</span> = temp;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="built_in">while</span> (<span class="built_in">min</span> != <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        temp = <span class="built_in">min</span>;</div><div class="line">        <span class="built_in">min</span> = <span class="built_in">max</span> % <span class="built_in">min</span>;</div><div class="line">        <span class="built_in">max</span> = temp;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    printf(<span class="string">"它们的最大公约数为：%d\n"</span>, <span class="built_in">max</span>);</div><div class="line">    printf(<span class="string">"它们的最小公倍数为：%d\n"</span>, copy1*copy2/<span class="built_in">max</span>);</div><div class="line"></div><div class="line">    <span class="built_in">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -455,6 +464,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/18/newToGeneticAlgorithm/" rel="prev" title="遗传算法初探">
+                遗传算法初探 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -548,7 +561,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -661,7 +674,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0"><span class="nav-number">1.</span> <span class="nav-text">0</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入与输出"><span class="nav-number">1.1.</span> <span class="nav-text">输入与输出</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0-输入与输出"><span class="nav-number">1.</span> <span class="nav-text">0 输入与输出</span></a></li></ol></div>
             
 
           </div>
