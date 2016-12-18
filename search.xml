@@ -12,7 +12,7 @@
     <entry>
       <title><![CDATA[一些代码踩坑的总结]]></title>
       <url>%2F2016%2F12%2F12%2FCorrectCodeErrors%2F</url>
-      <content type="text"><![CDATA[每个人在写代码时，都不可避免犯一些错误，记录下来，不再踩坑就是。 2016 不要在如下的逻辑表达式中滥用 ++ 或 --，在判断的时候自增自减有时候会造成隐蔽的错误，特别是对于一些全部变量。 123456if (logicExpression1)&#123;...&#125;else if (logicExpression2)&#123;...&#125;...else 由于数组开始的索引是 0，往数组中填入值，希望最新放入的元素索引能够正确，如下是一种不太好但是正确的实现。 123456789101112131415sum = 0; key = 0; is_const = NULL; token_xy.x = 0; token_xy.y = NULL; p_token_xy = &amp;token_xy; printf("Please input string:\n"); do &#123; ch = getchar(); program[sum++] = ch; &#125;while(ch != '#'); sum--; 这种实现有点啰嗦，虽然 sum 的确表示元素总数，但是为了以下的一些操作，sum--;，这样就有点尴尬。直接一开始让 sum = -1;，注释掉 sum--;，然后 (╯°□°）╯︵ ┻━┻，程序就出错了。 原因是数组的索引一开始就为 -1 了，program[-1] = ch; 导致了错误。应该改为 program[++sum] = ch; 。]]></content>
+      <content type="text"><![CDATA[每个人在写代码时，都不可避免犯一些错误，而且往往会在上面花费不少时间，发现错误之后有时甚至觉得这简直智障。为了避免重复犯错，我将自己所犯过的错误记录下来，与读者（包括未来的自己）分享，希望能有所帮助。 2016 不要在如下的条件表达式（一般为逻辑表达式或关系表达式）中滥用 ++ 或 --，在判断的时候自增自减有时候会造成隐蔽的错误，特别是对于一些全部变量和有多个 else if 的情况。 123456if (Expression1)&#123;...&#125;else if (Expression2)&#123;...&#125;...else 由于数组开始的索引是 0，往数组中填入值，希望最新放入的元素索引能够正确，如下是一种不太好但是正确的实现。 123456789101112131415sum = 0; key = 0; is_const = NULL; token_xy.x = 0; token_xy.y = NULL; p_token_xy = &amp;token_xy; printf("Please input string:\n"); do &#123; ch = getchar(); program[sum++] = ch; &#125;while(ch != '#'); sum--; 这种实现有点啰嗦，虽然 sum 的确表示元素总数，但是为了以下的一些操作，sum--;，这样就有点尴尬。直接一开始让 sum = -1;，注释掉 sum--;，然后 (╯°□°）╯︵ ┻━┻，程序就出错了。 原因是数组的索引一开始就为 -1 了，program[-1] = ch; 导致了错误。应该改为 program[++sum] = ch; 。]]></content>
     </entry>
 
     

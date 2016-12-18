@@ -90,16 +90,16 @@
 
 
 
-<meta name="description" content="每个人在写代码时，都不可避免犯一些错误，记录下来，不再踩坑就是。">
+<meta name="description" content="每个人在写代码时，都不可避免犯一些错误，而且往往会在上面花费不少时间，发现错误之后有时甚至觉得这简直智障。为了避免重复犯错，我将自己所犯过的错误记录下来，与读者（包括未来的自己）分享，希望能有所帮助。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一些代码踩坑的总结">
 <meta property="og:url" content="http://vectorlu.com/2016/12/12/CorrectCodeErrors/index.html">
 <meta property="og:site_name" content="Vector">
-<meta property="og:description" content="每个人在写代码时，都不可避免犯一些错误，记录下来，不再踩坑就是。">
-<meta property="og:updated_time" content="2016-12-13T12:45:38.000Z">
+<meta property="og:description" content="每个人在写代码时，都不可避免犯一些错误，而且往往会在上面花费不少时间，发现错误之后有时甚至觉得这简直智障。为了避免重复犯错，我将自己所犯过的错误记录下来，与读者（包括未来的自己）分享，希望能有所帮助。">
+<meta property="og:updated_time" content="2016-12-18T08:35:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些代码踩坑的总结">
-<meta name="twitter:description" content="每个人在写代码时，都不可避免犯一些错误，记录下来，不再踩坑就是。">
+<meta name="twitter:description" content="每个人在写代码时，都不可避免犯一些错误，而且往往会在上面花费不少时间，发现错误之后有时甚至觉得这简直智障。为了避免重复犯错，我将自己所犯过的错误记录下来，与读者（包括未来的自己）分享，希望能有所帮助。">
 
 
 
@@ -390,11 +390,11 @@
       
 
       
-        <p>每个人在写代码时，都不可避免犯一些错误，记录下来，不再踩坑就是。</p>
+        <p>每个人在写代码时，都不可避免犯一些错误，而且往往会在上面花费不少时间，发现错误之后有时甚至觉得这简直智障。为了避免重复犯错，我将自己所犯过的错误记录下来，与读者（包括未来的自己）分享，希望能有所帮助。</p>
 <a id="more"></a>
 <h1 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h1><ol>
-<li><p>不要在如下的逻辑表达式中滥用 <code>++</code> 或 <code>--</code>，在判断的时候自增自减有时候会造成隐蔽的错误，特别是对于一些全部变量。</p>
- <figure class="highlight nimrod"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (logicExpression1)</div><div class="line"><span class="meta">&#123;...&#125;</span></div><div class="line"><span class="keyword">else</span> <span class="keyword">if</span> (logicExpression2)</div><div class="line"><span class="meta">&#123;...&#125;</span></div><div class="line">...</div><div class="line"><span class="keyword">else</span></div></pre></td></tr></table></figure>
+<li><p>不要在如下的条件表达式（一般为逻辑表达式或关系表达式）中滥用 <code>++</code> 或 <code>--</code>，在判断的时候自增自减有时候会造成隐蔽的错误，特别是对于一些全部变量和有多个 <code>else if</code> 的情况。</p>
+ <figure class="highlight nimrod"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="type">Expression1</span>)</div><div class="line"><span class="meta">&#123;...&#125;</span></div><div class="line"><span class="keyword">else</span> <span class="keyword">if</span> (<span class="type">Expression2</span>)</div><div class="line"><span class="meta">&#123;...&#125;</span></div><div class="line">...</div><div class="line"><span class="keyword">else</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
 <ol>
