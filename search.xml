@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[AlgorithmNotice]]></title>
       <url>%2F2016%2F12%2F18%2FAlgorithmNotice%2F</url>
-      <content type="text"></content>
+      <content type="text"><![CDATA[0输入与输出在写算法时，一定要充分考虑到输入数据的特征、可能存在的问题。不要天真地以为输入一定是某种特定的数据类型，大小排列方式]]></content>
     </entry>
 
     
