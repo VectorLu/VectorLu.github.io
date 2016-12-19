@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://vectorlu.com/2016/12/12/CorrectCodeErrors/index.html">
 <meta property="og:site_name" content="Vector">
 <meta property="og:description" content="每个人在写代码时，都不可避免犯一些错误，而且往往会在上面花费不少时间，发现错误之后有时甚至觉得这简直智障。为了避免重复犯错，我将自己所犯过的错误记录下来，与读者（包括未来的自己）分享，希望能有所帮助。">
-<meta property="og:updated_time" content="2016-12-18T08:40:59.000Z">
+<meta property="og:updated_time" content="2016-12-18T15:21:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些代码踩坑的总结">
 <meta name="twitter:description" content="每个人在写代码时，都不可避免犯一些错误，而且往往会在上面花费不少时间，发现错误之后有时甚至觉得这简直智障。为了避免重复犯错，我将自己所犯过的错误记录下来，与读者（包括未来的自己）分享，希望能有所帮助。">
@@ -399,7 +399,8 @@
 
 这种实现有点啰嗦，虽然 `sum` 的确表示元素总数，但是为了以下的一些操作，`sum--;`，这样就有点尴尬。直接一开始让 `sum = -1;`，注释掉 `sum--;`，然后 `(╯°□°）╯︵ ┻━┻`，程序就出错了。
 原因是数组的索引一开始就为 `-1` 了，`program[-1] = ch;` 导致了错误。应该改为 `program[++sum] = ch;` 。
-</code></pre><h3 id="Day-18"><a href="#Day-18" class="headerlink" title="Day 18"></a>Day 18</h3>
+</code></pre><h3 id="Day-18"><a href="#Day-18" class="headerlink" title="Day 18"></a>Day 18</h3><p>在 C 语言这样变量作用域十分麻烦的语言中，注意：在给函数的形式参数命名时，不要和全局变量重名。如果重名，当该函数希望修改全局变量时，</p>
+
       
     </div>
 
