@@ -90,25 +90,16 @@
 
 
 
-<meta name="description" content="疑惑：取址符在声明和语句中我在学习指针的时候，觉得声明 int *p = &amp;amp;i; 和语句 p = &amp;amp;i; 不一致。相信很多人也有同样的疑惑。
-造成困惑的根源在于，根据使用上下文的不同，C 语言中的 * 号可以有多种含义。
-在声明 int *p = &amp;amp;i; 中，* 号不是间接寻址运算符，其作用是告知编译器 p 是一个指向 int 类型变量的指针。
-而在语句中出现时，* 号（作">
+<meta name="description" content="指针是 C 语言的魅力所在，也是陷阱所在。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C 语言指针的难点总结">
 <meta property="og:url" content="http://vectorlu.com/2016/12/24/PointersOnC/index.html">
 <meta property="og:site_name" content="Vector">
-<meta property="og:description" content="疑惑：取址符在声明和语句中我在学习指针的时候，觉得声明 int *p = &amp;amp;i; 和语句 p = &amp;amp;i; 不一致。相信很多人也有同样的疑惑。
-造成困惑的根源在于，根据使用上下文的不同，C 语言中的 * 号可以有多种含义。
-在声明 int *p = &amp;amp;i; 中，* 号不是间接寻址运算符，其作用是告知编译器 p 是一个指向 int 类型变量的指针。
-而在语句中出现时，* 号（作">
-<meta property="og:updated_time" content="2016-12-25T03:10:06.000Z">
+<meta property="og:description" content="指针是 C 语言的魅力所在，也是陷阱所在。">
+<meta property="og:updated_time" content="2016-12-25T03:12:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C 语言指针的难点总结">
-<meta name="twitter:description" content="疑惑：取址符在声明和语句中我在学习指针的时候，觉得声明 int *p = &amp;amp;i; 和语句 p = &amp;amp;i; 不一致。相信很多人也有同样的疑惑。
-造成困惑的根源在于，根据使用上下文的不同，C 语言中的 * 号可以有多种含义。
-在声明 int *p = &amp;amp;i; 中，* 号不是间接寻址运算符，其作用是告知编译器 p 是一个指向 int 类型变量的指针。
-而在语句中出现时，* 号（作">
+<meta name="twitter:description" content="指针是 C 语言的魅力所在，也是陷阱所在。">
 
 
 
@@ -399,7 +390,9 @@
       
 
       
-        <h1 id="疑惑：取址符在声明和语句中"><a href="#疑惑：取址符在声明和语句中" class="headerlink" title="疑惑：取址符在声明和语句中"></a>疑惑：取址符在声明和语句中</h1><p>我在学习指针的时候，觉得声明 <code>int *p = &amp;i;</code> 和语句 <code>p = &amp;i;</code> 不一致。相信很多人也有同样的疑惑。</p>
+        <p>指针是 C 语言的魅力所在，也是陷阱所在。</p>
+<a id="more"></a>
+<h1 id="疑惑：取址符在声明和语句中"><a href="#疑惑：取址符在声明和语句中" class="headerlink" title="疑惑：取址符在声明和语句中"></a>疑惑：取址符在声明和语句中</h1><p>我在学习指针的时候，觉得声明 <code>int *p = &amp;i;</code> 和语句 <code>p = &amp;i;</code> 不一致。相信很多人也有同样的疑惑。</p>
 <p>造成困惑的根源在于，根据使用上下文的不同，C 语言中的 <code>*</code> 号可以有多种含义。</p>
 <p>在声明 <code>int *p = &amp;i;</code> 中，<code>*</code> 号不是间接寻址运算符，其作用是告知编译器 <code>p</code> 是一个指向 <code>int</code> 类型变量的指针。</p>
 <p>而在语句中出现时，<code>*</code> 号（作为一元运算符使用时）会执行间接寻址。</p>

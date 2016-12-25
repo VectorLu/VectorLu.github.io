@@ -390,29 +390,14 @@
 
       
         
-          
-            <h1 id="疑惑：取址符在声明和语句中"><a href="#疑惑：取址符在声明和语句中" class="headerlink" title="疑惑：取址符在声明和语句中"></a>疑惑：取址符在声明和语句中</h1><p>我在学习指针的时候，觉得声明 <code>int *p = &amp;i;</code> 和语句 <code>p = &amp;i;</code> 不一致。相信很多人也有同样的疑惑。</p>
-<p>造成困惑的根源在于，根据使用上下文的不同，C 语言中的 <code>*</code> 号可以有多种含义。</p>
-<p>在声明 <code>int *p = &amp;i;</code> 中，<code>*</code> 号不是间接寻址运算符，其作用是告知编译器 <code>p</code> 是一个指向 <code>int</code> 类型变量的指针。</p>
-<p>而在语句中出现时，<code>*</code> 号（作为一元运算符使用时）会执行间接寻址。</p>
-<h1 id="打印"><a href="#打印" class="headerlink" title="打印"></a>打印</h1><p>任何指针使用转换说明符 <code>%p</code> 来显示。</p>
-<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>可以把指针指向数组元素。</p>
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">int a[<span class="number">10</span>]<span class="comment">;</span></div><div class="line">int *p<span class="comment">;</span></div><div class="line">p = &amp;a[<span class="number">0</span>]<span class="comment">;</span></div><div class="line">*p = <span class="number">5</span><span class="comment">;</span></div></pre></td></tr></table></figure>
-<p>通过在 <code>p</code> 上执行指针算术运算（或者地址算术运算）可以访问数组 <code>a</code> 的其他所有元素。C 语言支持 3 种格式的指针算术运算：</p>
-<ul>
-<li>指针 + 整数</li>
-<li>指针 - 整数（只有在两个指针指向同一个数组时，把它们相减才有意义）</li>
-<li>两个指针相减</li>
-</ul>
-<h1 id="指针与地址"><a href="#指针与地址" class="headerlink" title="指针与地址"></a>指针与地址</h1><p>指针通常是地址，但是指针不是真正的内存地址，CPU 必须把它和存储在专用寄存器中的段值结合起来，来表示“偏移量”。</p>
-<h1 id="const-与指针"><a href="#const-与指针" class="headerlink" title="const 与指针"></a>const 与指针</h1><p>当某个函数使用指针时，可能只是为了检查其中的某个值，而不改变它。可以用 <code>const</code> 保护参数。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> *p)</span></span></div><div class="line">&#123;</div><div class="line">	*p = <span class="number">0</span>;	<span class="comment">// WRONG</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这一用法表明 <code>p</code> 是指向“常整数”的指针。试图改变 <code>*p</code> 是编译器会检查的一种错误。</p>
-<h1 id="指针作为返回值"><a href="#指针作为返回值" class="headerlink" title="指针作为返回值"></a>指针作为返回值</h1><p>可以作为函数的返回值。但是永远不要返回指向自动局部变量的指针：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> *<span class="title">f</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;	</div><div class="line">	<span class="keyword">int</span> i;</div><div class="line">	...</div><div class="line">	<span class="keyword">return</span> &amp;i;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>一旦 <code>f()</code> 返回，变量 <code>i</code> 就不存在了，所以指向变量 <code>i</code> 的指针将是无效的。有的编译器会在这种情况下给出类似 “function returns address of local variable” 的警告。</p>
-
-          
+          <p>指针是 C 语言的魅力所在，也是陷阱所在。</p>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/24/PointersOnC/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
