@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://vectorlu.com/2016/12/24/PointersOnC/index.html">
 <meta property="og:site_name" content="Vector">
 <meta property="og:description" content="指针是 C 语言的魅力所在，也是陷阱所在。">
-<meta property="og:updated_time" content="2016-12-25T03:12:28.000Z">
+<meta property="og:updated_time" content="2016-12-25T05:07:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C 语言指针的难点总结">
 <meta name="twitter:description" content="指针是 C 语言的魅力所在，也是陷阱所在。">
@@ -402,15 +402,34 @@
 <p>通过在 <code>p</code> 上执行指针算术运算（或者地址算术运算）可以访问数组 <code>a</code> 的其他所有元素。C 语言支持 3 种格式的指针算术运算：</p>
 <ul>
 <li>指针 + 整数</li>
-<li>指针 - 整数（只有在两个指针指向同一个数组时，把它们相减才有意义）</li>
-<li>两个指针相减</li>
+<li>指针 - 整数</li>
+<li>两个指针相减（只有在两个指针指向同一个数组时，把它们相减才有意义）</li>
 </ul>
+<p>指向同一数组的指针可以用关系运算符进行比较。</p>
+<p>虽然可以把数组名 <code>int a[10]</code> 用作指针，但是不能给数组名赋新的值。试图使数组名指向其他地方是错误的。</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> <span class="comment">(*a != 0)</span></div><div class="line">&#123;</div><div class="line">	a++;	<span class="comment">// WRONG</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以将 <code>a</code> 复制给一个指针变量，然后改变该指针变量。</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">p</span> = a;</div><div class="line"><span class="attribute">while</span> <span class="comment">(*p != 0)</span></div><div class="line">&#123;p++;&#125;</div></pre></td></tr></table></figure>
 <h1 id="指针与地址"><a href="#指针与地址" class="headerlink" title="指针与地址"></a>指针与地址</h1><p>指针通常是地址，但是指针不是真正的内存地址，CPU 必须把它和存储在专用寄存器中的段值结合起来，来表示“偏移量”。</p>
 <h1 id="const-与指针"><a href="#const-与指针" class="headerlink" title="const 与指针"></a>const 与指针</h1><p>当某个函数使用指针时，可能只是为了检查其中的某个值，而不改变它。可以用 <code>const</code> 保护参数。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> *p)</span></span></div><div class="line">&#123;</div><div class="line">	*p = <span class="number">0</span>;	<span class="comment">// WRONG</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这一用法表明 <code>p</code> 是指向“常整数”的指针。试图改变 <code>*p</code> 是编译器会检查的一种错误。</p>
-<h1 id="指针作为返回值"><a href="#指针作为返回值" class="headerlink" title="指针作为返回值"></a>指针作为返回值</h1><p>可以作为函数的返回值。但是永远不要返回指向自动局部变量的指针：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> *<span class="title">f</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;	</div><div class="line">	<span class="keyword">int</span> i;</div><div class="line">	...</div><div class="line">	<span class="keyword">return</span> &amp;i;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>再来仔细学习一下 <code>const</code>。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> <span class="keyword">const</span> a;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> a;</div></pre></td></tr></table></figure>
+<p>两种方式一样，a 的值无法修改，要让它一开始就拥有一个值</p>
+<ol>
+<li>声明时初始化 <figure class="highlight plain"><figcaption><span>const a = 1;```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">2. 在函数中声明为 ```const``` 的形参在函数被调用的时候会获得实参的值</div><div class="line"></div><div class="line">然而 `const` 和 指针一起使用时——有两样东西有可能成为常量——指针变量和它指向的实体，示例（这里是《C和指针》里的实例，变量名取得非常有意义）</div></pre></td></tr></table></figure></li>
+</ol>
+<p>//pi是一个普通的指向整型的指针<br>int <em>pi;<br>/</em><br><strong> pci 是一个指向整型常量的指针
+</strong> 怎样理解？<br><strong> 理解为对pci进行间接访问操作后得到的是一个整型常量
+</strong> 是不是超简单<br><strong> 可以修改指针的值，但是不能修改它指向的整型数<br><em>/<br>int const </em>pci;<br>/*
+</strong> 指向整型的常量指针<br><strong> 指针是常量，无法修改，但是可以修改它指向的值
+</strong> 理解为对某个常量进行间接访问得到的是一个整型<br><em>* 而这个常量是一个指向整型的指针
+</em>/<br>int * const cpi;</p>
+<p>/<em><br>** 指针本身和它指向的变量都不允许修改
+</em>/<br>int const * const cpci;<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">为了指明数组型形式参数不会被改变，可以在其声明中包含单词 `const`：</div></pre></td></tr></table></figure></p>
+<p>int findLargest(const int a[], int n)<br>{<br>    …<br>}<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">主要是看 ```const``` 右边是什么。</div><div class="line"></div><div class="line"># 指针作为返回值</div><div class="line">可以作为函数的返回值。但是永远不要返回指向自动局部变量的指针：</div></pre></td></tr></table></figure></p>
+<p>int *f(void)<br>{<br>    int i;<br>    …<br>    return &i;<br>}<br>```</p>
 <p>一旦 <code>f()</code> 返回，变量 <code>i</code> 就不存在了，所以指向变量 <code>i</code> 的指针将是无效的。有的编译器会在这种情况下给出类似 “function returns address of local variable” 的警告。</p>
 
       
@@ -474,6 +493,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/25/multipleCFiles/" rel="prev" title="用 C 语言编写大型程序">
+                用 C 语言编写大型程序 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -567,7 +590,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -680,7 +703,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#疑惑：取址符在声明和语句中"><span class="nav-number">1.</span> <span class="nav-text">疑惑：取址符在声明和语句中</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#打印"><span class="nav-number">2.</span> <span class="nav-text">打印</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组"><span class="nav-number">3.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指针与地址"><span class="nav-number">4.</span> <span class="nav-text">指针与地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#const-与指针"><span class="nav-number">5.</span> <span class="nav-text">const 与指针</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指针作为返回值"><span class="nav-number">6.</span> <span class="nav-text">指针作为返回值</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#疑惑：取址符在声明和语句中"><span class="nav-number">1.</span> <span class="nav-text">疑惑：取址符在声明和语句中</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#打印"><span class="nav-number">2.</span> <span class="nav-text">打印</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组"><span class="nav-number">3.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指针与地址"><span class="nav-number">4.</span> <span class="nav-text">指针与地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#const-与指针"><span class="nav-number">5.</span> <span class="nav-text">const 与指针</span></a></li></ol></div>
             
 
           </div>
