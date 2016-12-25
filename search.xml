@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[指针的高级应用]]></title>
+      <url>%2F2016%2F12%2F25%2FPointersOnCApply%2F</url>
+      <content type="text"></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[用 C 语言编写大型程序]]></title>
       <url>%2F2016%2F12%2F25%2FmultipleCFiles%2F</url>
       <content type="text"><![CDATA[C 语言造就了操作系统这样伟大的程序，但是要如何用 C 语言写一个庞大的程序呢？ 头文件include12345678910111213#include &lt;header.h&gt; // 用于属于 C 语言自身库的头文件#include "myHeader.h" // 自己编写的头文件/******** 用宏来定义文件名 ************/#if defined(IA32) #define CPU_FILE "ia32.h"#elif defined(IA64) #define CPU_FILE "ia64.h"#elif defined(AMD64) #define CPU_FILE "amd64.h"#endif#include CPU_FILE 为了防止文件多次包含，用 ifndef 和 #endif 指令来封闭文件的内容。 12345678#ifndef BOOLEAN_H#define BOOLEAN_H#define TRUE 1#define FALSE 0typedef int Bool;#endif d]]></content>
@@ -10,7 +17,7 @@
 
     
     <entry>
-      <title><![CDATA[C 语言指针的难点总结]]></title>
+      <title><![CDATA[C 语言指针的基础总结]]></title>
       <url>%2F2016%2F12%2F24%2FPointersOnC%2F</url>
       <content type="text"><![CDATA[指针是 C 语言的魅力所在，也是陷阱所在。 疑惑：取址符在声明和语句中我在学习指针的时候，觉得声明 int *p = &amp;i; 和语句 p = &amp;i; 不一致。相信很多人也有同样的疑惑。 造成困惑的根源在于，根据使用上下文的不同，C 语言中的 * 号可以有多种含义。 在声明 int *p = &amp;i; 中，* 号不是间接寻址运算符，其作用是告知编译器 p 是一个指向 int 类型变量的指针。 而在语句中出现时，* 号（作为一元运算符使用时）会执行间接寻址。 打印任何指针使用转换说明符 %p 来显示。 数组可以把指针指向数组元素。 1234int a[10];int *p;p = &amp;a[0];*p = 5; 通过在 p 上执行指针算术运算（或者地址算术运算）可以访问数组 a 的其他所有元素。C 语言支持 3 种格式的指针算术运算： 指针 + 整数 指针 - 整数 两个指针相减（只有在两个指针指向同一个数组时，把它们相减才有意义） 指向同一数组的指针可以用关系运算符进行比较。 虽然可以把数组名 int a[10] 用作指针，但是不能给数组名赋新的值。试图使数组名指向其他地方是错误的。 1234while (*a != 0)&#123; a++; // WRONG&#125; 可以将 a 复制给一个指针变量，然后改变该指针变量。 123p = a;while (*p != 0)&#123;p++;&#125; 指针与地址指针通常是地址，但是指针不是真正的内存地址，CPU 必须把它和存储在专用寄存器中的段值结合起来，来表示“偏移量”。 const 与指针当某个函数使用指针时，可能只是为了检查其中的某个值，而不改变它。可以用 const 保护参数。 1234void f(const int *p)&#123; *p = 0; // WRONG&#125; 这一用法表明 p 是指向“常整数”的指针。试图改变 *p 是编译器会检查的一种错误。 再来仔细学习一下 const。 12int const a;const int a; 两种方式一样，a 的值无法修改，要让它一开始就拥有一个值 声明时初始化 const a = 1;```1232. 在函数中声明为 ```const``` 的形参在函数被调用的时候会获得实参的值然而 `const` 和 指针一起使用时——有两样东西有可能成为常量——指针变量和它指向的实体，示例（这里是《C和指针》里的实例，变量名取得非常有意义） //pi是一个普通的指向整型的指针int pi;/ pci 是一个指向整型常量的指针 怎样理解？ 理解为对pci进行间接访问操作后得到的是一个整型常量 是不是超简单 可以修改指针的值，但是不能修改它指向的整型数/int const pci;/* 指向整型的常量指针 指针是常量，无法修改，但是可以修改它指向的值 理解为对某个常量进行间接访问得到的是一个整型* 而这个常量是一个指向整型的指针 /int * const cpi; /** 指针本身和它指向的变量都不允许修改 /int const * const cpci;12为了指明数组型形式参数不会被改变，可以在其声明中包含单词 `const`： int findLargest(const int a[], int n){ …}12345主要是看 ```const``` 右边是什么。# 指针作为返回值可以作为函数的返回值。但是永远不要返回指向自动局部变量的指针： int *f(void){ int i; … return &i;}``` 一旦 f() 返回，变量 i 就不存在了，所以指向变量 i 的指针将是无效的。有的编译器会在这种情况下给出类似 “function returns address of local variable” 的警告。]]></content>
     </entry>
