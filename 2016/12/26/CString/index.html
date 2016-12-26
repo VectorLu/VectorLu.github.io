@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://vectorlu.com/2016/12/26/CString/index.html">
 <meta property="og:site_name" content="Vector">
 <meta property="og:description" content="C 语言没有专门的字符串类型，要如何对字符串进行操作呢？其中又有哪些陷阱呢？">
-<meta property="og:updated_time" content="2016-12-26T12:49:41.000Z">
+<meta property="og:updated_time" content="2016-12-26T13:37:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C 语言中的字符串详解">
 <meta name="twitter:description" content="C 语言没有专门的字符串类型，要如何对字符串进行操作呢？其中又有哪些陷阱呢？">
@@ -404,6 +404,13 @@
 <p>如果指针没有初始化，我们不知道它指向哪里，将其作为字符串时非常严重的错误。</p>
 <figure class="highlight prolog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">char *p;</div><div class="line"></div><div class="line"><span class="comment">/*****WRONG******/</span></div><div class="line">p[<span class="number">0</span>] = <span class="string">'a'</span>;</div><div class="line">p[<span class="number">1</span>] = <span class="string">'b'</span>;</div><div class="line">p[<span class="number">2</span>] = <span class="string">'\0'</span>;</div></pre></td></tr></table></figure>
 <h1 id="字符串的读写"><a href="#字符串的读写" class="headerlink" title="字符串的读写"></a>字符串的读写</h1><p>换行符、空格符或制表符等会使 <code>scanf()</code> 停止读入，用 <code>scanf()</code> 读入的字符串永远不会包含空白字符。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">char</span> str[<span class="number">10</span>];</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>, str);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n\n"</span>, str);</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 执行结果</span></div><div class="line">bash-3.2$ gcc basic.c</div><div class="line">bash-3.2$ ./a.out</div><div class="line">hi str</div><div class="line">hi</div><div class="line"></div><div class="line">bash-3.2$</div><div class="line">*/</div></pre></td></tr></table></figure>
+<h2 id="设计自己的输入函数"><a href="#设计自己的输入函数" class="headerlink" title="设计自己的输入函数"></a>设计自己的输入函数</h2><p>考虑如下问题：</p>
+<ol>
+<li>在开始存储字符串之前，函数应该跳过空白字符吗？</li>
+<li>什么字符会导致函数停止读取：换行符、任意空白字符还是其他某种字符？需要存储这类字符还是忽略掉？</li>
+<li>如果输入的字符串太长以致无法存储，那么函数应该做些什么：忽略额外的字符还是把它们留给下一次输入操作？</li>
+</ol>
 
       
     </div>
@@ -674,7 +681,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串常量"><span class="nav-number">1.</span> <span class="nav-text">字符串常量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">1.1.</span> <span class="nav-text">注意</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串变量"><span class="nav-number">2.</span> <span class="nav-text">字符串变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串的读写"><span class="nav-number">3.</span> <span class="nav-text">字符串的读写</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串常量"><span class="nav-number">1.</span> <span class="nav-text">字符串常量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">1.1.</span> <span class="nav-text">注意</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串变量"><span class="nav-number">2.</span> <span class="nav-text">字符串变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串的读写"><span class="nav-number">3.</span> <span class="nav-text">字符串的读写</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设计自己的输入函数"><span class="nav-number">3.1.</span> <span class="nav-text">设计自己的输入函数</span></a></li></ol></li></ol></div>
             
 
           </div>
