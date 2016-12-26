@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[C 语言中的字符串详解]]></title>
+      <url>%2F2016%2F12%2F26%2FCString%2F</url>
+      <content type="text"><![CDATA[疑点概览123456789101112131415161718192021222324252627282930313233343536373839404142#include &lt;stdio.h&gt;// 字符串字面值的操作char digit_to_hex_char(int digit);// 惯用的字符串声明方法#define STR_LEN 80char str[STR_LEN+1];int main(void)&#123; /* * 字符串拼接 * 当两个或更多个字符串相邻时 * 仅用空白字符分割（不用逗号） * 编译器会把它们合并成一个字符串 * 执行结果： * hen you come to a fork in the road, take it. --Yogi Berra */ printf("When you come to a fork in the road, " "take it. " "--Yogi Berra\n"); printf("%d\n", digit_to_hex_char(12)); /* * 下面是两种相似的声明，均可作为字符串 * 但是两者不能互换 * 1. 声明为数组时，就像任意数组中的元素，可以修改 dateArray 中 * 的字符 */ char dateArray[] = "June 14"; char *datePtr = "June 14"; return 0;&#125;char digit_to_hex_char(int digit)&#123; // 把 0-15 的数转换成等价的 16 进制数 return "012345689ABCDEF"[digit];&#125;]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[指针的高级应用]]></title>
       <url>%2F2016%2F12%2F25%2FPointersOnCApply%2F</url>
       <content type="text"></content>
@@ -12,7 +19,7 @@
     <entry>
       <title><![CDATA[用 C 语言编写大型程序]]></title>
       <url>%2F2016%2F12%2F25%2FmultipleCFiles%2F</url>
-      <content type="text"><![CDATA[C 语言造就了操作系统这样伟大的程序，但是要如何用 C 语言写一个庞大的程序呢？ 头文件include12345678910111213#include &lt;header.h&gt; // 用于属于 C 语言自身库的头文件#include "myHeader.h" // 自己编写的头文件/******** 用宏来定义文件名 ************/#if defined(IA32) #define CPU_FILE "ia32.h"#elif defined(IA64) #define CPU_FILE "ia64.h"#elif defined(AMD64) #define CPU_FILE "amd64.h"#endif#include CPU_FILE 为了防止文件多次包含，用 ifndef 和 #endif 指令来封闭文件的内容。 12345678#ifndef BOOLEAN_H#define BOOLEAN_H#define TRUE 1#define FALSE 0typedef int Bool;#endif d]]></content>
+      <content type="text"><![CDATA[C 语言不是为开发大型程序设计的，但是有很多的大型程序都是用 C 语言写的。 头文件include12345678910111213#include &lt;header.h&gt; // 用于属于 C 语言自身库的头文件#include "myHeader.h" // 自己编写的头文件/******** 用宏来定义文件名 ************/#if defined(IA32) #define CPU_FILE "ia32.h"#elif defined(IA64) #define CPU_FILE "ia64.h"#elif defined(AMD64) #define CPU_FILE "amd64.h"#endif#include CPU_FILE 为了防止文件多次包含，用 ifndef 和 #endif 指令来封闭文件的内容。 12345678#ifndef BOOLEAN_H#define BOOLEAN_H#define TRUE 1#define FALSE 0typedef int Bool;#endif]]></content>
     </entry>
 
     
