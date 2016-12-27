@@ -390,29 +390,14 @@
 
       
         
-          
-            <h1 id="预处理器"><a href="#预处理器" class="headerlink" title="预处理器"></a>预处理器</h1><ul>
-<li>用 gcc -E program.c 就能看到预处理器的输出</li>
-<li>预处理器仅知道很少的 C 语言规则</li>
-<li>所以很容易出现错误</li>
-<li>对于复杂的程序，</li>
-<li>检查预处理器的输出是找到这类错误的很好的办法</li>
-</ul>
-<h1 id="预处理器指令"><a href="#预处理器指令" class="headerlink" title="预处理器指令"></a>预处理器指令</h1><p>大多数预处理指令属于下面 3 种类型之一：</p>
-<ul>
-<li><strong>宏定义</strong>。<code>#define</code> 定义一个宏，<code>#undef</code> 删除一个宏定义。</li>
-<li><strong>文件包含</strong>。<code>#include</code></li>
-<li><strong>条件编译</strong>。<code>#if</code>, <code>#ifdef</code>, <code>#ifndef</code>, <code>#elif</code> 和 <code>#endif</code> 指令可以让预处理器以测试的条件来确定是否将一段文本段包含到程序中。</li>
-</ul>
-<p>剩下 <code>#error</code>, <code>#line</code>, <code>#pragma</code> 较少用到。</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
-<li>指令都以 <code>#</code> 开头</li>
-<li><p>指令总是在第一个换行符处结束，除非明确地指明要延续——在行末使用 <code>\</code>。例如，下面的指令定义了一个宏来表示硬盘的容量（按字节算）：</p>
- <figure class="highlight livescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#define DISK_CAPACITY(SIDES *    \</span></div><div class="line">							TRACKS_PER_SIDE *    <span class="string">\</span></div><div class="line">							SECTORS_PER_TRACK *    <span class="string">\</span></div><div class="line">							BYTES_PER_SECTOR)</div></pre></td></tr></table></figure>
-</li>
-</ol>
-
-          
+          <p>C 处理器可以是强大的工具，也可以成为不易发现的错误之源。</p>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/27/preprocessorOfC/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
