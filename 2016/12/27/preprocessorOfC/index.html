@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://vectorlu.com/2016/12/27/preprocessorOfC/index.html">
 <meta property="og:site_name" content="Vector">
 <meta property="og:description" content="C 处理器可以是强大的工具，也可以成为不易发现的错误之源。">
-<meta property="og:updated_time" content="2016-12-27T01:54:30.000Z">
+<meta property="og:updated_time" content="2016-12-27T01:57:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C 语言预处理器">
 <meta name="twitter:description" content="C 处理器可以是强大的工具，也可以成为不易发现的错误之源。">
@@ -409,7 +409,7 @@
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
 <li>指令都以 <code>#</code> 开头</li>
 <li><p>指令总是在第一个换行符处结束，除非明确地指明要延续——在行末使用 <code>\</code>。例如，下面的指令定义了一个宏来表示硬盘的容量（按字节算）：</p>
- <figure class="highlight livescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#define DISK_CAPACITY(SIDES *    \</span></div><div class="line">							TRACKS_PER_SIDE *    <span class="string">\</span></div><div class="line">							SECTORS_PER_TRACK *    <span class="string">\</span></div><div class="line">							BYTES_PER_SECTOR)</div></pre></td></tr></table></figure>
+ <figure class="highlight livescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#define DISK_CAPACITY(SIDES *    \</span></div><div class="line">			TRACKS_PER_SIDE *    <span class="string">\</span></div><div class="line">			SECTORS_PER_TRACK *    <span class="string">\</span></div><div class="line">			BYTES_PER_SECTOR)</div></pre></td></tr></table></figure>
 </li>
 <li><p>指令可以出程序中的任何地方，甚至函数定义的中间。但是我们通常将 <code>#define</code> 和 <code>#include</code> 指令放在文件的开始。</p>
 </li>
@@ -435,10 +435,11 @@
   <figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">n = MAX(<span class="name">i++</span>, j)<span class="comment">;</span></div><div class="line">// n = ((<span class="name">i++</span>)&gt;(<span class="name">j</span>)?(<span class="name">i++</span>):(<span class="name">j</span>))<span class="comment">;</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
-<pre><code>**为了自我保护，最好避免使用带有副作用的参数。**
+<pre><code>为了自我保护，最好避免使用带有副作用的参数。
 </code></pre><p>带参数的宏不仅适用于模拟函数调用，还经常用作需要重复书写的代码段模式。例如：</p>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#define</span> <span class="selector-tag">PRINT_INT</span>(n)		<span class="selector-tag">printf</span>(<span class="string">"%d\n"</span>, n)</div></pre></td></tr></table></figure>
-<h2 id="运算符"><a href="#运算符" class="headerlink" title="# 运算符"></a><code>#</code> 运算符</h2>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="# 运算符"></a><code>#</code> 运算符</h2><p>将宏的一个参数转换为字符串字面量。</p>
+
       
     </div>
 
