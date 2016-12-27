@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://vectorlu.com/2016/12/27/preprocessorOfC/index.html">
 <meta property="og:site_name" content="Vector">
 <meta property="og:description" content="C 处理器可以是强大的工具，也可以成为不易发现的错误之源。">
-<meta property="og:updated_time" content="2016-12-27T00:07:12.000Z">
+<meta property="og:updated_time" content="2016-12-27T01:08:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C 语言预处理器">
 <meta name="twitter:description" content="C 处理器可以是强大的工具，也可以成为不易发现的错误之源。">
@@ -411,7 +411,19 @@
 <li><p>指令总是在第一个换行符处结束，除非明确地指明要延续——在行末使用 <code>\</code>。例如，下面的指令定义了一个宏来表示硬盘的容量（按字节算）：</p>
  <figure class="highlight livescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#define DISK_CAPACITY(SIDES *    \</span></div><div class="line">							TRACKS_PER_SIDE *    <span class="string">\</span></div><div class="line">							SECTORS_PER_TRACK *    <span class="string">\</span></div><div class="line">							BYTES_PER_SECTOR)</div></pre></td></tr></table></figure>
 </li>
+<li><p>指令可以出程序中的任何地方，甚至函数定义的中间。但是我们通常将 <code>#define</code> 和 <code>#include</code> 指令放在文件的开始。</p>
+</li>
+<li>注释可以与指令放在同一行。</li>
 </ol>
+<h1 id="宏定义"><a href="#宏定义" class="headerlink" title="宏定义"></a>宏定义</h1><h2 id="不需要使用等号"><a href="#不需要使用等号" class="headerlink" title="不需要使用等号"></a>不需要使用等号</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 样式：</span></div><div class="line"><span class="comment">// #define 标识符 替换列表</span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> STR_LEN 80</span></div></pre></td></tr></table></figure>
+<h2 id="对-C-语言做小的修改"><a href="#对-C-语言做小的修改" class="headerlink" title="对 C 语言做小的修改"></a>对 C 语言做小的修改</h2><p>虽然这通常不是个好主意。比如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> BEGIN &#123;</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> END &#125;</span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LOOP for(; ; )</span></div></pre></td></tr></table></figure>
+<h2 id="对类型重命名"><a href="#对类型重命名" class="headerlink" title="对类型重命名"></a>对类型重命名</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> BOOL int</span></div></pre></td></tr></table></figure>
+<h2 id="带参数的宏"><a href="#带参数的宏" class="headerlink" title="带参数的宏"></a>带参数的宏</h2><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 格式：</span></div><div class="line"><span class="comment">// #define 标识符(x1, x2, ..., xn)    替换列表</span></div><div class="line"><span class="comment">// x1-xn 是宏的参数</span></div><div class="line"><span class="comment">// 在宏的名字和左括号间必须没有空格</span></div><div class="line"></div><div class="line"><span class="selector-id">#define</span> <span class="selector-tag">MAX</span>(x, y)		((x)&gt;(y)?(x):(y))</div><div class="line"><span class="selector-id">#define</span> <span class="selector-tag">IS_EVEN</span>(n)		((n)%<span class="number">2</span> == <span class="number">0</span>)</div><div class="line"><span class="selector-id">#define</span> <span class="selector-tag">IS_ODD</span>(n)		((n)%<span class="number">2</span> != <span class="number">0</span>)</div></pre></td></tr></table></figure>
+<p>如果后面的程序中有如下语句：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">i</span> = MAX(<span class="built_in">j</span>+k, m-n);</div><div class="line"><span class="keyword">if</span> (IS_EVEN(<span class="built_in">i</span>))&#123;i++;&#125;</div></pre></td></tr></table></figure>
+<p>预处理器会将这些行替换为：</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">i = <span class="comment">((j+k)</span>&gt;<span class="comment">(m-n)</span>?<span class="comment">(j+k)</span>:<span class="comment">(m-n)</span>);</div><div class="line"><span class="keyword">if</span> <span class="comment">(((i)</span><span class="meta">%</span><span class="number">2</span>==<span class="number">0</span>)) &#123;i++;&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -680,7 +692,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#预处理器"><span class="nav-number">1.</span> <span class="nav-text">预处理器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#预处理器指令"><span class="nav-number">2.</span> <span class="nav-text">预处理器指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">2.1.</span> <span class="nav-text">注意</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#预处理器"><span class="nav-number">1.</span> <span class="nav-text">预处理器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#预处理器指令"><span class="nav-number">2.</span> <span class="nav-text">预处理器指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">2.1.</span> <span class="nav-text">注意</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#宏定义"><span class="nav-number">3.</span> <span class="nav-text">宏定义</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不需要使用等号"><span class="nav-number">3.1.</span> <span class="nav-text">不需要使用等号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对-C-语言做小的修改"><span class="nav-number">3.2.</span> <span class="nav-text">对 C 语言做小的修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对类型重命名"><span class="nav-number">3.3.</span> <span class="nav-text">对类型重命名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带参数的宏"><span class="nav-number">3.4.</span> <span class="nav-text">带参数的宏</span></a></li></ol></li></ol></div>
             
 
           </div>
