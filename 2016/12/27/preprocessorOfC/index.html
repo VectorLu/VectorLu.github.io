@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="C,指针," />
+  <meta name="keywords" content="C," />
 
 
 
@@ -90,16 +90,49 @@
 
 
 
-<meta name="description" content="C 语言没有专门的字符串类型，要如何对字符串进行操作呢？其中又有哪些陷阱呢？">
+<meta name="description" content="预处理器
+用 gcc -E program.c 就能看到预处理器的输出
+预处理器仅知道很少的 C 语言规则
+所以很容易出现错误
+对于复杂的程序，
+检查预处理器的输出是找到这类错误的很好的办法
+
+预处理器指令大多数预处理指令属于下面 3 种类型之一：
+
+宏定义。#define 定义一个宏，#undef 删除一个宏定义。
+文件包含。#include
+条件编译。#if, #ifdef, #ifndef,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C 语言中的字符串详解">
-<meta property="og:url" content="http://vectorlu.com/2016/12/26/CString/index.html">
+<meta property="og:title" content="C 语言预处理器">
+<meta property="og:url" content="http://vectorlu.com/2016/12/27/preprocessorOfC/index.html">
 <meta property="og:site_name" content="Vector">
-<meta property="og:description" content="C 语言没有专门的字符串类型，要如何对字符串进行操作呢？其中又有哪些陷阱呢？">
-<meta property="og:updated_time" content="2016-12-26T23:32:33.000Z">
+<meta property="og:description" content="预处理器
+用 gcc -E program.c 就能看到预处理器的输出
+预处理器仅知道很少的 C 语言规则
+所以很容易出现错误
+对于复杂的程序，
+检查预处理器的输出是找到这类错误的很好的办法
+
+预处理器指令大多数预处理指令属于下面 3 种类型之一：
+
+宏定义。#define 定义一个宏，#undef 删除一个宏定义。
+文件包含。#include
+条件编译。#if, #ifdef, #ifndef,">
+<meta property="og:updated_time" content="2016-12-27T00:05:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C 语言中的字符串详解">
-<meta name="twitter:description" content="C 语言没有专门的字符串类型，要如何对字符串进行操作呢？其中又有哪些陷阱呢？">
+<meta name="twitter:title" content="C 语言预处理器">
+<meta name="twitter:description" content="预处理器
+用 gcc -E program.c 就能看到预处理器的输出
+预处理器仅知道很少的 C 语言规则
+所以很容易出现错误
+对于复杂的程序，
+检查预处理器的输出是找到这类错误的很好的办法
+
+预处理器指令大多数预处理指令属于下面 3 种类型之一：
+
+宏定义。#define 定义一个宏，#undef 删除一个宏定义。
+文件包含。#include
+条件编译。#if, #ifdef, #ifndef,">
 
 
 
@@ -127,13 +160,13 @@
 
 
 
-  <link rel="canonical" href="http://vectorlu.com/2016/12/26/CString/"/>
+  <link rel="canonical" href="http://vectorlu.com/2016/12/27/preprocessorOfC/"/>
 
 
 
 
 
-  <title> C 语言中的字符串详解 | Vector </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> C 语言预处理器 | Vector </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -287,7 +320,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/12/26/CString/">
+  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/12/27/preprocessorOfC/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="VectorLu">
@@ -311,7 +344,7 @@
             
             
               
-                C 语言中的字符串详解
+                C 语言预处理器
               
             
           </h1>
@@ -324,8 +357,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-26T18:50:41+08:00">
-                2016-12-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-27T07:55:01+08:00">
+                2016-12-27
               </time>
             
 
@@ -358,8 +391,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/12/26/CString/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/26/CString/" itemprop="commentCount"></span>
+                <a href="/2016/12/27/preprocessorOfC/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/27/preprocessorOfC/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -390,32 +423,26 @@
       
 
       
-        <p>C 语言没有专门的字符串类型，要如何对字符串进行操作呢？其中又有哪些陷阱呢？</p>
-<a id="more"></a>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=2&id=432430774&auto=0&height=32"></iframe>
-
-
-<h1 id="字符串字面量"><a href="#字符串字面量" class="headerlink" title="字符串字面量"></a>字符串字面量</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="comment">// 把字符串当作数组的操作</span></div><div class="line"><span class="function"><span class="keyword">char</span> <span class="title">digit_to_hex_char</span><span class="params">(<span class="keyword">int</span> digit)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">// 把 0-15 的数转换成等价的 16 进制数</span></div><div class="line">    <span class="keyword">return</span> <span class="string">"012345689ABCDEF"</span>[digit];</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">   <span class="comment">/*</span></div><div class="line">     * 字符串拼接</div><div class="line">     * 当两个或更多个字符串相邻时</div><div class="line">     * 仅用空白字符分割（不用逗号）</div><div class="line">     * 编译器会把它们合并成一个字符串</div><div class="line">     * 执行结果：</div><div class="line">     * hen you come to a fork in the road, take it. --Yogi Berra</div><div class="line">     */</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"When you come to a fork in the road, "</span></div><div class="line">    <span class="string">"take it. "</span> <span class="string">"--Yogi Berra\n"</span>);</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%c\n"</span>, digit_to_hex_char(<span class="number">12</span>));</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>不能改变字符串字面量的值，如下程序执行时产生错误 <code>Bus error: 10</code>。字符串字面量可能存在只读的区域。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">char</span> *p = <span class="string">"abc"</span>;</div><div class="line">    *p = <span class="string">'d'</span>;</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="字符串变量"><a href="#字符串变量" class="headerlink" title="字符串变量"></a>字符串变量</h1><p>C 中，只要保证字符串是以空字符结尾的，任何一维的字符数组都可以用来存储字符串。有时很难辨别是否把字符数组作为字符串来使用。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="comment">// 惯用的字符串声明方法</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> STR_LEN 80</span></div><div class="line"><span class="keyword">char</span> str[STR_LEN+<span class="number">1</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/*</span></div><div class="line">    * 下面是两种相似的声明，均可作为字符串</div><div class="line">    * 但是两者不能互换</div><div class="line">    * 1. 声明为数组时，就像任意数组中的元素，可以修改 dateArray 中</div><div class="line">    *    的字符，dateArray 是数组名。</div><div class="line">    * 2. 声明为指针时，datePtr 指向字符串字面量，</div><div class="line">    * 	 字符串字面量是不可以修改的，datePtr 是变量，</div><div class="line">    * 	 可以在程序执行期间指向其他字符串。</div><div class="line">    * 如果希望可以修改字符串，那么就要建立字符数组来存储字符串</div><div class="line">    */</div><div class="line">    <span class="keyword">char</span> dateArray[] = <span class="string">"June 14"</span>;</div><div class="line">    <span class="keyword">char</span> *datePtr = <span class="string">"June 14"</span>;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>另外，注意使用指针作为字符串变量之前必须把指针指向字符数组。或者让指针指向一个动态分配的字符串。</p>
-<p>如果指针没有初始化，我们不知道它指向哪里，将其作为字符串时非常严重的错误。</p>
-<figure class="highlight prolog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">char *p;</div><div class="line"></div><div class="line"><span class="comment">/*****WRONG******/</span></div><div class="line">p[<span class="number">0</span>] = <span class="string">'a'</span>;</div><div class="line">p[<span class="number">1</span>] = <span class="string">'b'</span>;</div><div class="line">p[<span class="number">2</span>] = <span class="string">'\0'</span>;</div></pre></td></tr></table></figure>
-<h1 id="字符串的读写"><a href="#字符串的读写" class="headerlink" title="字符串的读写"></a>字符串的读写</h1><p>换行符、空格符或制表符等会使 <code>scanf()</code> 停止读入，用 <code>scanf()</code> 读入的字符串永远不会包含空白字符。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">char</span> str[<span class="number">10</span>];</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>, str);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n\n"</span>, str);</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 执行结果</span></div><div class="line">bash-3.2$ gcc basic.c</div><div class="line">bash-3.2$ ./a.out</div><div class="line">hi str</div><div class="line">hi</div><div class="line"></div><div class="line">bash-3.2$</div><div class="line">*/</div></pre></td></tr></table></figure>
-<h2 id="设计自己的输入函数"><a href="#设计自己的输入函数" class="headerlink" title="设计自己的输入函数"></a>设计自己的输入函数</h2><p>考虑如下问题：</p>
-<ol>
-<li>在开始存储字符串之前，函数应该跳过空白字符吗？</li>
-<li>什么字符会导致函数停止读取：换行符、任意空白字符还是其他某种字符？需要存储这类字符还是忽略掉？</li>
-<li>如果输入的字符串太长以致无法存储，那么函数应该做些什么：忽略额外的字符还是把它们留给下一次输入操作？</li>
+        <h1 id="预处理器"><a href="#预处理器" class="headerlink" title="预处理器"></a>预处理器</h1><ul>
+<li>用 gcc -E program.c 就能看到预处理器的输出</li>
+<li>预处理器仅知道很少的 C 语言规则</li>
+<li>所以很容易出现错误</li>
+<li>对于复杂的程序，</li>
+<li>检查预处理器的输出是找到这类错误的很好的办法</li>
+</ul>
+<h1 id="预处理器指令"><a href="#预处理器指令" class="headerlink" title="预处理器指令"></a>预处理器指令</h1><p>大多数预处理指令属于下面 3 种类型之一：</p>
+<ul>
+<li><strong>宏定义</strong>。<code>#define</code> 定义一个宏，<code>#undef</code> 删除一个宏定义。</li>
+<li><strong>文件包含</strong>。<code>#include</code></li>
+<li><strong>条件编译</strong>。<code>#if</code>, <code>#ifdef</code>, <code>#ifndef</code>, <code>#elif</code> 和 <code>#endif</code> 指令可以让预处理器以测试的条件来确定是否将一段文本段包含到程序中。</li>
+</ul>
+<p>剩下 <code>#error</code>, <code>#line</code>, <code>#pragma</code> 较少用到。</p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
+<li>指令都以 <code>#</code> 开头</li>
+<li><p>指令总是在第一个换行符处结束，除非明确地指明要延续——在行末使用 <code>\</code>。例如，下面的指令定义了一个宏来表示硬盘的容量（按字节算）：</p>
+ <figure class="highlight livescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#define DISK_CAPACITY(SIDES *    \</span></div><div class="line">							TRACKS_PER_SIDE *    <span class="string">\</span></div><div class="line">							SECTORS_PER_TRACK *    <span class="string">\</span></div><div class="line">							BYTES_PER_SECTOR)</div></pre></td></tr></table></figure>
+</li>
 </ol>
-<p>注意手动加上 <code>&#39;\0&#39;</code>。</p>
-<figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> read_line(<span class="keyword">char</span> <span class="keyword">str</span>[], <span class="keyword">int</span> n)</div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> ch, i = <span class="number">0</span>;</div><div class="line">	</div><div class="line">	<span class="keyword">while</span>((ch=getchar())!=<span class="string">'\n'</span> &amp;&amp; ch!=EOF)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">if</span> (i &lt; n)</div><div class="line">		&#123;<span class="keyword">str</span>[i++] = ch;&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">str</span>[i] = <span class="string">'\0'</span>;</div><div class="line">	<span class="keyword">return</span> i;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="使用-C-语言的字符串库"><a href="#使用-C-语言的字符串库" class="headerlink" title="使用 C 语言的字符串库"></a>使用 C 语言的字符串库</h1><h2 id="strcpy"><a href="#strcpy" class="headerlink" title="strcpy()"></a>strcpy()</h2><p>在 <code>&lt;string.h&gt;</code> 中的原型如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">char</span> *<span class="title">strcpy</span><span class="params">(<span class="keyword">char</span>* s1, <span class="keyword">const</span> <span class="keyword">char</span> * s2)</span></span>;</div></pre></td></tr></table></figure>
-<p>函数把 <code>s2</code> 指向的字符串复制到 <code>s1</code> 指向的数组中。</p>
 
       
     </div>
@@ -462,8 +489,6 @@
           
             <a href="/tags/C/" rel="tag"># C</a>
           
-            <a href="/tags/指针/" rel="tag"># 指针</a>
-          
         </div>
       
 
@@ -471,8 +496,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/25/PointersOnCApply/" rel="next" title="指针的高级应用">
-                <i class="fa fa-chevron-left"></i> 指针的高级应用
+              <a href="/2016/12/26/CString/" rel="next" title="C 语言中的字符串详解">
+                <i class="fa fa-chevron-left"></i> C 语言中的字符串详解
               </a>
             
           </div>
@@ -480,10 +505,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/27/preprocessorOfC/" rel="prev" title="C 语言预处理器">
-                C 语言预处理器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -498,10 +519,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/12/26/CString/"
-     data-title="C 语言中的字符串详解"
+        <div class="ds-share flat" data-thread-key="2016/12/27/preprocessorOfC/"
+     data-title="C 语言预处理器"
      data-content=""
-     data-url="http://vectorlu.com/2016/12/26/CString/">
+     data-url="http://vectorlu.com/2016/12/27/preprocessorOfC/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -531,8 +552,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/12/26/CString/"
-           data-title="C 语言中的字符串详解" data-url="http://vectorlu.com/2016/12/26/CString/">
+      <div class="ds-thread" data-thread-key="2016/12/27/preprocessorOfC/"
+           data-title="C 语言预处理器" data-url="http://vectorlu.com/2016/12/27/preprocessorOfC/">
       </div>
     
   </div>
@@ -690,7 +711,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串字面量"><span class="nav-number">1.</span> <span class="nav-text">字符串字面量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">1.1.</span> <span class="nav-text">注意</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串变量"><span class="nav-number">2.</span> <span class="nav-text">字符串变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串的读写"><span class="nav-number">3.</span> <span class="nav-text">字符串的读写</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设计自己的输入函数"><span class="nav-number">3.1.</span> <span class="nav-text">设计自己的输入函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用-C-语言的字符串库"><span class="nav-number">4.</span> <span class="nav-text">使用 C 语言的字符串库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#strcpy"><span class="nav-number">4.1.</span> <span class="nav-text">strcpy()</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#预处理器"><span class="nav-number">1.</span> <span class="nav-text">预处理器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#预处理器指令"><span class="nav-number">2.</span> <span class="nav-text">预处理器指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">2.1.</span> <span class="nav-text">注意</span></a></li></ol></li></ol></div>
             
 
           </div>
