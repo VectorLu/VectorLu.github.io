@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="C,iOS,macOS,Xcode7,Xcode8,Objective-C," />
+  <meta name="keywords" content="macOS,C,iOS,Xcode7,Xcode8,Objective-C," />
 
 
 
@@ -95,7 +95,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Objectiv-C 学习笔记">
 <meta property="og:url" content="http://vectorlu.com/2016/11/30/Objectiv-C-Program/index.html">
-<meta property="og:site_name" content="Vector">
+<meta property="og:site_name" content="VectorLu">
 <meta property="og:description" content="虽然已经有了 Swift，但是还是有很多 Objective-C 的项目，这门语言还是有必要学一学。如果已经有 C 语言的基础，相信你能很快上手。OC 是完全兼容 C99 的，所以也会先回顾一下 C 语言的重要内容。
 如果还完全不会用 Xcode 创建项目和文件，可以看看 Xcode 使用笔记 0 新司机上路">
 <meta property="og:image" content="https://dn-coding-net-production-pp.qbox.me/0cdd7418-dd80-46bf-9bfe-1a1aa5ebe2c4.png">
@@ -140,7 +140,7 @@
 
 
 
-  <title> Objectiv-C 学习笔记 | Vector </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> Objectiv-C 学习笔记 | VectorLu </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -171,7 +171,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Vector</span>
+      <span class="site-title">VectorLu</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -303,9 +303,9 @@
   </span>
 
   <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Vector">
+    <meta itemprop="name" content="VectorLu">
     <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Vector" src="">
+      <img style="display:none;" itemprop="url image" alt="VectorLu" src="">
     </span>
   </span>
 
@@ -471,7 +471,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> i = <span class="number">17</span>;</div><div class="line">    <span class="keyword">int</span> *addressOfI = &amp;i;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"i stores its value at %p\n"</span>, addressOfI);</div><div class="line">    *addressOfI = <span class="number">89</span>;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Now i is %d \n"</span>, i);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"An int is %zu bytes\n"</span>, <span class="keyword">sizeof</span>(<span class="keyword">int</span>));</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"A pointer is %zu bytes\n"</span>, <span class="keyword">sizeof</span>(<span class="keyword">int</span> *));</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>运行程序，如果指针长度是 4 个字节，那么该程序就是在 32 位环境下运行，8——64 位环境。</p>
 <h3 id="NULL"><a href="#NULL" class="headerlink" title="NULL"></a>NULL</h3><p><code>NULL</code>就是 0（地址也是数字）。在<code>if</code>的条件中，很方便判断指针是否为空：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">float</span> *myPointer;</div><div class="line">...</div><div class="line"><span class="comment">// myPointer 指针是否为空？</span></div><div class="line"><span class="function"><span class="title">if</span><span class="params">(myPointer)</span></span></div><div class="line">&#123;</div><div class="line">	...<span class="comment">// myPointer 非空</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">float</span> *myPointer;</div><div class="line">...</div><div class="line"><span class="comment">// myPointer 指针是否为空？</span></div><div class="line"><span class="function"><span class="title">if</span><span class="params">(myPointer)</span></span></div><div class="line">&#123;</div><div class="line">4...<span class="comment">// myPointer 非空</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>或者用较简洁的三元运算符</p>
 <figure class="highlight aspectj"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 如果 measureGravityPtr 是空值，则计算重力值</span></div><div class="line"></div><div class="line"><span class="keyword">float</span> actualGravity = measureGravityPtr? *measuredGravityPtr : estimatedGravity(planetRadius);</div></pre></td></tr></table></figure>
 <h2 id="通过引用传递"><a href="#通过引用传递" class="headerlink" title="通过引用传递"></a>通过引用传递</h2><p>通过一个实例来学习，其中调用<code>modf()</code>函数并传入一个<code>double</code>类型数，可以得到该浮点数的整数部分和小数部分。</p>
@@ -603,11 +603,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/macOS/" rel="tag"># macOS</a>
+          
             <a href="/tags/C/" rel="tag"># C</a>
           
             <a href="/tags/iOS/" rel="tag"># iOS</a>
-          
-            <a href="/tags/macOS/" rel="tag"># macOS</a>
           
             <a href="/tags/Xcode7/" rel="tag"># Xcode7</a>
           

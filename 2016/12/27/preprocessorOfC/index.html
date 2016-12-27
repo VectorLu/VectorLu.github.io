@@ -94,7 +94,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="C 语言预处理器">
 <meta property="og:url" content="http://vectorlu.com/2016/12/27/preprocessorOfC/index.html">
-<meta property="og:site_name" content="Vector">
+<meta property="og:site_name" content="VectorLu">
 <meta property="og:description" content="C 处理器可以是强大的工具，也可以成为不易发现的错误之源。">
 <meta property="og:updated_time" content="2016-12-27T03:07:36.000Z">
 <meta name="twitter:card" content="summary">
@@ -133,7 +133,7 @@
 
 
 
-  <title> C 语言预处理器 | Vector </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> C 语言预处理器 | VectorLu </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -164,7 +164,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Vector</span>
+      <span class="site-title">VectorLu</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -296,9 +296,9 @@
   </span>
 
   <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Vector">
+    <meta itemprop="name" content="VectorLu">
     <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Vector" src="">
+      <img style="display:none;" itemprop="url image" alt="VectorLu" src="">
     </span>
   </span>
 
@@ -409,7 +409,7 @@
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
 <li>指令都以 <code>#</code> 开头</li>
 <li><p>指令总是在第一个换行符处结束，除非明确地指明要延续——在行末使用 <code>\</code>。例如，下面的指令定义了一个宏来表示硬盘的容量（按字节算）：</p>
- <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> DISK_CAPACITY(SIDES *    \</span></div><div class="line">			TRACKS_PER_SIDE *    \</div><div class="line">			SECTORS_PER_TRACK *    \</div><div class="line">			BYTES_PER_SECTOR)</div></pre></td></tr></table></figure>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> DISK_CAPACITY(SIDES *    \</span></div><div class="line">444TRACKS_PER_SIDE *    \</div><div class="line">444SECTORS_PER_TRACK *    \</div><div class="line">444BYTES_PER_SECTOR)</div></pre></td></tr></table></figure>
 </li>
 <li><p>指令可以出程序中的任何地方，甚至函数定义的中间。但是我们通常将 <code>#define</code> 和 <code>#include</code> 指令放在文件的开始。</p>
 </li>
@@ -442,7 +442,7 @@
 <h2 id="运算符-1"><a href="#运算符-1" class="headerlink" title="## 运算符"></a><code>##</code> 运算符</h2><p>使两个记号（如标识符）“粘合”在一起</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#define MK_ID(n) i##n</div><div class="line"></div><div class="line">int MK_ID(1), MK_ID(2), MK_ID(3);</div><div class="line">// 预处理后</div><div class="line">// int i1, i2, i3;</div></pre></td></tr></table></figure>
 <p>一个更实用的例子：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> GENERIC_MAX(type)  \</span></div><div class="line">type type##_max(type x, type y)  \</div><div class="line">&#123;                                \</div><div class="line">	return x &gt; y ? x : y;         \</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> GENERIC_MAX(type)  \</span></div><div class="line">type type##_max(type x, type y)  \</div><div class="line">&#123;                                \</div><div class="line">4return x &gt; y ? x : y;         \</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>如果需要一个针对 <code>float</code> 值的 <code>max()</code>。下面是使用 <code>GENERIC_MAX</code> 宏来定义这一函数的方法：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">GENERIC_MAX(<span class="keyword">float</span>)</div><div class="line"></div><div class="line"><span class="comment">// 预处理将其展开为：</span></div><div class="line"><span class="comment">// float float_max(float x, float y) &#123; return x &gt; y ? x : y;&#125;</span></div></pre></td></tr></table></figure>
 <h2 id="宏的通用属性"><a href="#宏的通用属性" class="headerlink" title="宏的通用属性"></a>宏的通用属性</h2><h3 id="替换列表可以包含对其他宏的调用"><a href="#替换列表可以包含对其他宏的调用" class="headerlink" title="替换列表可以包含对其他宏的调用"></a>替换列表可以包含对其他宏的调用</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> PI 3.14159</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> TWO_PI (2*PI)</span></div></pre></td></tr></table></figure>
