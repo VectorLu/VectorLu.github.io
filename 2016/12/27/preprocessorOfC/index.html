@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://vectorlu.com/2016/12/27/preprocessorOfC/index.html">
 <meta property="og:site_name" content="Vector">
 <meta property="og:description" content="C 处理器可以是强大的工具，也可以成为不易发现的错误之源。">
-<meta property="og:updated_time" content="2016-12-27T01:08:21.000Z">
+<meta property="og:updated_time" content="2016-12-27T01:27:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C 语言预处理器">
 <meta name="twitter:description" content="C 处理器可以是强大的工具，也可以成为不易发现的错误之源。">
@@ -424,6 +424,17 @@
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">i</span> = MAX(<span class="built_in">j</span>+k, m-n);</div><div class="line"><span class="keyword">if</span> (IS_EVEN(<span class="built_in">i</span>))&#123;i++;&#125;</div></pre></td></tr></table></figure>
 <p>预处理器会将这些行替换为：</p>
 <figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">i = <span class="comment">((j+k)</span>&gt;<span class="comment">(m-n)</span>?<span class="comment">(j+k)</span>:<span class="comment">(m-n)</span>);</div><div class="line"><span class="keyword">if</span> <span class="comment">(((i)</span><span class="meta">%</span><span class="number">2</span>==<span class="number">0</span>)) &#123;i++;&#125;</div></pre></td></tr></table></figure>
+<p>使用带参数的宏替代真正的函数有两个优点：</p>
+<ul>
+<li><strong>程序可能稍微快些</strong>。程序执行时调用函数通常会有些额外开销——存储上下文信息、复制参数的值等，而调用宏则没有这些运行开销。（C99 中的内联函数为我们提供了不使用宏而避免这一开销的办法。）</li>
+<li><strong>宏更“通用”</strong>。与函数的参数不同，宏的参数没有类型。只要预处理后的程序依然是合法的，宏可以接受任何类型的参数。如上例，可以用 <code>MAX</code> 宏来选出较大的一个。数的类型可以是 <code>int</code>, <code>long</code>, <code>float</code>, <code>double</code> 等。</li>
+<li><strong>编译后的代码通常会变大</strong>。宏的使用越频繁，效果越明显。</li>
+<li><strong>宏参数没有类型检查</strong>。预处理器不会检查宏参数的类型，也不回进行类型转换。</li>
+<li><strong>无法用指针指向一个宏</strong>。</li>
+<li><p><strong>宏可能会不止一次地计算它的参数</strong>。函数对它的参数只会计算一次，而宏可能会计算两次甚至更多次。如果参数有副作用：</p>
+  <figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">n = MAX(<span class="name">i++</span>, j)<span class="comment">;</span></div><div class="line">// n = ((<span class="name">i++</span>)&gt;(<span class="name">j</span>)?(<span class="name">i++</span>):(<span class="name">j</span>))<span class="comment">;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
