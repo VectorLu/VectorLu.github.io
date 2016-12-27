@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://vectorlu.com/2016/12/27/preprocessorOfC/index.html">
 <meta property="og:site_name" content="Vector">
 <meta property="og:description" content="C 处理器可以是强大的工具，也可以成为不易发现的错误之源。">
-<meta property="og:updated_time" content="2016-12-27T02:28:50.000Z">
+<meta property="og:updated_time" content="2016-12-27T02:31:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C 语言预处理器">
 <meta name="twitter:description" content="C 处理器可以是强大的工具，也可以成为不易发现的错误之源。">
@@ -442,7 +442,7 @@
 <h2 id="运算符-1"><a href="#运算符-1" class="headerlink" title="## 运算符"></a><code>##</code> 运算符</h2><p>使两个记号（如标识符）“粘合”在一起</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#define MK_ID(n) i##n</div><div class="line"></div><div class="line">int MK_ID(1), MK_ID(2), MK_ID(3);</div><div class="line">// 预处理后</div><div class="line">// int i1, i2, i3;</div></pre></td></tr></table></figure>
 <p>一个更实用的例子：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> GENERIC_MAX(type)  \</span></div><div class="line">type type##_max(type x, type y)  \</div><div class="line">&#123;                                \</div><div class="line">	return x &gt; y ? x : y;		     \</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> GENERIC_MAX(type)  \</span></div><div class="line">type type##_max(type x, type y)  \</div><div class="line">&#123;                                \</div><div class="line">	return x &gt; y ? x : y;         \</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>如果需要一个针对 <code>float</code> 值的 <code>max()</code>。下面是使用 <code>GENERIC_MAX</code> 宏来定义这一函数的方法：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">GENERIC_MAX(<span class="keyword">float</span>)</div><div class="line"></div><div class="line"><span class="comment">// 预处理将其展开为：</span></div><div class="line"><span class="comment">// float float_max(float x, float y) &#123; return x &gt; y ? x : y;&#125;</span></div></pre></td></tr></table></figure>
 <h2 id="宏的通用属性"><a href="#宏的通用属性" class="headerlink" title="宏的通用属性"></a>宏的通用属性</h2>
