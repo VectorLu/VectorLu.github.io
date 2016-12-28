@@ -92,13 +92,13 @@
 
 <meta name="description" content="指针是 C 语言的魅力所在，也是陷阱所在。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C 语言指针的基础总结">
+<meta property="og:title" content="C 语言指针总结">
 <meta property="og:url" content="http://vectorlu.com/2016/12/24/PointersOnC/index.html">
 <meta property="og:site_name" content="VectorLu">
 <meta property="og:description" content="指针是 C 语言的魅力所在，也是陷阱所在。">
-<meta property="og:updated_time" content="2016-12-25T08:35:55.000Z">
+<meta property="og:updated_time" content="2016-12-28T10:02:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C 语言指针的基础总结">
+<meta name="twitter:title" content="C 语言指针总结">
 <meta name="twitter:description" content="指针是 C 语言的魅力所在，也是陷阱所在。">
 
 
@@ -133,7 +133,7 @@
 
 
 
-  <title> C 语言指针的基础总结 | VectorLu </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> C 语言指针总结 | VectorLu </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -311,7 +311,7 @@
             
             
               
-                C 语言指针的基础总结
+                C 语言指针总结
               
             
           </h1>
@@ -431,6 +431,15 @@
 <p>int findLargest(const int a[], int n)<br>{<br>    …<br>}<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">主要是看 ```const``` 右边是什么。</div><div class="line"></div><div class="line"># 指针作为返回值</div><div class="line">可以作为函数的返回值。但是永远不要返回指向自动局部变量的指针：</div></pre></td></tr></table></figure></p>
 <p>int *f(void)<br>{<br>    int i;<br>    …<br>    return &i;<br>}<br>```</p>
 <p>一旦 <code>f()</code> 返回，变量 <code>i</code> 就不存在了，所以指向变量 <code>i</code> 的指针将是无效的。有的编译器会在这种情况下给出类似 “function returns address of local variable” 的警告。</p>
+<h1 id="动态存储分配"><a href="#动态存储分配" class="headerlink" title="动态存储分配"></a>动态存储分配</h1><h2 id="内存分配函数"><a href="#内存分配函数" class="headerlink" title="内存分配函数"></a>内存分配函数</h2><p>为了动态地分配存储空间，需要调用三种内存分配函数的一种，这些函数都是声明在 <code>&lt;stdlib.h&gt;</code> 头中的。</p>
+<ul>
+<li><code>malloc()</code> ——分配内存块，但是不对内存进行初始化。</li>
+<li><code>calloc()</code> ——分配内存块，并且对内存块进行清零。</li>
+<li><code>realloc()</code> ——调整先前分配的内存块大小。</li>
+</ul>
+<blockquote>
+<p>当为申请内存块而调用内存分配函数时，由于函数无法知道存储在内存块中的数据是什么类型的，所以它不能返回 <code>int</code> 类型、<code>char</code> 类型等普通类型的指针。取而代之的，函数会返回 <code>void *</code> 类型的值，<code>void *</code> 类型的值是“通用”指针，本质上它只是内存地址。</p>
+</blockquote>
 
       
     </div>
@@ -514,7 +523,7 @@
     <div class="post-spread">
       
         <div class="ds-share flat" data-thread-key="2016/12/24/PointersOnC/"
-     data-title="C 语言指针的基础总结"
+     data-title="C 语言指针总结"
      data-content=""
      data-url="http://vectorlu.com/2016/12/24/PointersOnC/">
   <div class="ds-share-inline">
@@ -547,7 +556,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/12/24/PointersOnC/"
-           data-title="C 语言指针的基础总结" data-url="http://vectorlu.com/2016/12/24/PointersOnC/">
+           data-title="C 语言指针总结" data-url="http://vectorlu.com/2016/12/24/PointersOnC/">
       </div>
     
   </div>
@@ -705,7 +714,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#疑惑：取址符在声明和语句中"><span class="nav-number">1.</span> <span class="nav-text">疑惑：取址符在声明和语句中</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#打印"><span class="nav-number">2.</span> <span class="nav-text">打印</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组"><span class="nav-number">3.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指针与地址"><span class="nav-number">4.</span> <span class="nav-text">指针与地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#const-与指针"><span class="nav-number">5.</span> <span class="nav-text">const 与指针</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#疑惑：取址符在声明和语句中"><span class="nav-number">1.</span> <span class="nav-text">疑惑：取址符在声明和语句中</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#打印"><span class="nav-number">2.</span> <span class="nav-text">打印</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组"><span class="nav-number">3.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指针与地址"><span class="nav-number">4.</span> <span class="nav-text">指针与地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#const-与指针"><span class="nav-number">5.</span> <span class="nav-text">const 与指针</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动态存储分配"><span class="nav-number">6.</span> <span class="nav-text">动态存储分配</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内存分配函数"><span class="nav-number">6.1.</span> <span class="nav-text">内存分配函数</span></a></li></ol></li></ol></div>
             
 
           </div>
