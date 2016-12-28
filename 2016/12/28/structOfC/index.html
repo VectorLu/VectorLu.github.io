@@ -92,29 +92,20 @@
 
 <meta name="description" content="函数延迟绑定；数据结构导致绑定。记住：在编程过程后期再结构化数据。
 
-声明时：struct 和 union 的每个成员用分号隔开，enum 的每个成员用逗号隔开。
-结构变量每个结构都为它的成员设置了独立的 name space。
-将点号和成员名称的组合称为指示符，可用指示符进行指定初始化 (C99)：
-12345struct  &amp;#123;  int number;  char name[NAM">
+声明时：struct 和 union 的每个成员用分号隔开，enum 的每个成员用逗号隔开。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="结构、联合和枚举">
 <meta property="og:url" content="http://vectorlu.com/2016/12/28/structOfC/index.html">
 <meta property="og:site_name" content="VectorLu">
 <meta property="og:description" content="函数延迟绑定；数据结构导致绑定。记住：在编程过程后期再结构化数据。
 
-声明时：struct 和 union 的每个成员用分号隔开，enum 的每个成员用逗号隔开。
-结构变量每个结构都为它的成员设置了独立的 name space。
-将点号和成员名称的组合称为指示符，可用指示符进行指定初始化 (C99)：
-12345struct  &amp;#123;  int number;  char name[NAM">
-<meta property="og:updated_time" content="2016-12-28T12:20:01.000Z">
+声明时：struct 和 union 的每个成员用分号隔开，enum 的每个成员用逗号隔开。">
+<meta property="og:updated_time" content="2016-12-28T12:45:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="结构、联合和枚举">
 <meta name="twitter:description" content="函数延迟绑定；数据结构导致绑定。记住：在编程过程后期再结构化数据。
 
-声明时：struct 和 union 的每个成员用分号隔开，enum 的每个成员用逗号隔开。
-结构变量每个结构都为它的成员设置了独立的 name space。
-将点号和成员名称的组合称为指示符，可用指示符进行指定初始化 (C99)：
-12345struct  &amp;#123;  int number;  char name[NAM">
+声明时：struct 和 union 的每个成员用分号隔开，enum 的每个成员用逗号隔开。">
 
 
 
@@ -409,6 +400,7 @@
 <p>函数延迟绑定；数据结构导致绑定。<br>记住：在编程过程后期再结构化数据。</p>
 </blockquote>
 <p>声明时：<code>struct</code> 和 <code>union</code> 的每个成员用分号隔开，<code>enum</code> 的每个成员用逗号隔开。</p>
+<a id="more"></a>
 <h1 id="结构变量"><a href="#结构变量" class="headerlink" title="结构变量"></a>结构变量</h1><p>每个结构都为它的成员设置了独立的 name space。</p>
 <p>将点号和成员名称的组合称为<strong>指示符</strong>，可用指示符进行指定初始化 (C99)：</p>
 <figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">struct  &#123;</div><div class="line">  int <span class="built_in">number</span>;</div><div class="line">  char <span class="built_in">name</span>[NAME_LEN+<span class="number">1</span>];</div><div class="line">  int <span class="keyword">on</span>, hand;</div><div class="line">&#125; part1 = &#123;.<span class="built_in">number</span> = <span class="number">528</span>, .<span class="built_in">name</span> = <span class="string">"Disk drive"</span>, .on_hand = <span class="number">10</span>&#125;;</div></pre></td></tr></table></figure>
