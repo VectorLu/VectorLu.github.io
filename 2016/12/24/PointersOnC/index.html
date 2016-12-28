@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://vectorlu.com/2016/12/24/PointersOnC/index.html">
 <meta property="og:site_name" content="VectorLu">
 <meta property="og:description" content="指针是 C 语言的魅力所在，也是陷阱所在。">
-<meta property="og:updated_time" content="2016-12-28T12:45:07.000Z">
+<meta property="og:updated_time" content="2016-12-28T12:48:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C 语言指针总结">
 <meta name="twitter:description" content="指针是 C 语言的魅力所在，也是陷阱所在。">
@@ -407,12 +407,12 @@
 </ul>
 <p>指向同一数组的指针可以用关系运算符进行比较。</p>
 <p>虽然可以把数组名 <code>int a[10]</code> 用作指针，但是不能给数组名赋新的值。试图使数组名指向其他地方是错误的。</p>
-<figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> <span class="comment">(*a != 0)</span></div><div class="line">&#123;</div><div class="line">4a++;	<span class="comment">// WRONG</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> <span class="comment">(*a != 0)</span></div><div class="line">&#123;</div><div class="line">  a++;	<span class="comment">// WRONG</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>可以将 <code>a</code> 复制给一个指针变量，然后改变该指针变量。</p>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">p</span> = a;</div><div class="line"><span class="attribute">while</span> <span class="comment">(*p != 0)</span></div><div class="line">&#123;p++;&#125;</div></pre></td></tr></table></figure>
 <h1 id="指针与地址"><a href="#指针与地址" class="headerlink" title="指针与地址"></a>指针与地址</h1><p>指针通常是地址，但是指针不是真正的内存地址，CPU 必须把它和存储在专用寄存器中的段值结合起来，来表示“偏移量”。</p>
 <h1 id="const-与指针"><a href="#const-与指针" class="headerlink" title="const 与指针"></a>const 与指针</h1><p>当某个函数使用指针时，可能只是为了检查其中的某个值，而不改变它。可以用 <code>const</code> 保护参数。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> *p)</span></span></div><div class="line">&#123;</div><div class="line">4*p = <span class="number">0</span>;	<span class="comment">// WRONG</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> *p)</span></span></div><div class="line">&#123;</div><div class="line">  *p = <span class="number">0</span>;	<span class="comment">// WRONG</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这一用法表明 <code>p</code> 是指向“常整数”的指针。试图改变 <code>*p</code> 是编译器会检查的一种错误。</p>
 <p>再来仔细学习一下 <code>const</code>。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> <span class="keyword">const</span> a;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> a;</div></pre></td></tr></table></figure>
@@ -436,16 +436,10 @@
 <p>reminds[i] = (char *)malloc(2+strlen(msg_str)+1);<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### `calloc()`</div></pre></td></tr></table></figure></p>
 <p>void *calloc(size_t nmemb, size_t size);<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">`calloc()` 函数会将内存初始化为 <span class="number">0</span>（清除分配的内存）</div></pre></td></tr></table></figure></p>
 <p>struct point (int x; int y;} *p;<br>p = calloc (1, sizeof (struct point));<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### `realloc()`</div></pre></td></tr></table></figure></p>
-<p>void <em>realloc(void </em>ptr, size_t size);<br>```</p>
+<p>void <em>realloc(void </em>ptr, size_t size);<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">**要确定传递给 realloc 函数的指针来自于先前 malloc, calloc 或 realloc 的调用。否则，程序可能行为异常。**</div><div class="line"></div><div class="line">- 当扩展内存块时，`realloc()` 不回对添加进内存块的字节进行初始化。</div><div class="line">- 如果 `realloc()` 不能按要求扩大内存块，那么它会返回空指针，并且在原有内存块中的数据不会改变。</div><div class="line">- 如果 `realloc()` 被调用时以 <span class="number">0</span> 作为第二个实际参数，那么它会释放掉内存块。</div><div class="line"></div><div class="line"></div><div class="line">**一旦 realloc 函数返回，一定要对指向内存块的所有指针进行更新，因为 realloc 函数可能会使内存块移动到了其他地方。**</div><div class="line"></div><div class="line">## 释放存储空间</div><div class="line">对于程序而言，不可再访问到的内存块被称为是**垃圾 (garbage)**。</div><div class="line"></div><div class="line">### `free()`</div></pre></td></tr></table></figure></p>
+<p>void free(void *ptr);<br>```</p>
 <p><strong>要确定传递给 realloc 函数的指针来自于先前 malloc, calloc 或 realloc 的调用。否则，程序可能行为异常。</strong></p>
-<ul>
-<li>当扩展内存块时，<code>realloc()</code> 不回对添加进内存块的字节进行初始化。</li>
-<li>如果 <code>realloc()</code> 不能按要求扩大内存块，那么它会返回空指针，并且在原有内存块中的数据不会改变。</li>
-<li>如果 <code>realloc()</code> 被调用时以 0 作为第二个实际参数，那么它会释放掉内存块。</li>
-</ul>
-<p><strong>一旦 realloc 函数返回，一定要对指向内存块的所有指针进行更新，因为 realloc 函数可能会使内存块移动到了其他地方。</strong></p>
-<h2 id="释放存储空间"><a href="#释放存储空间" class="headerlink" title="释放存储空间"></a>释放存储空间</h2><p>对于程序而言，不可再访问到的内存块被称为是<strong>垃圾 (garbage)</strong>。</p>
-<h3 id="free"><a href="#free" class="headerlink" title="free()"></a><code>free()</code></h3>
+
       
     </div>
 
@@ -719,7 +713,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#疑惑：取址符在声明和语句中"><span class="nav-number">1.</span> <span class="nav-text">疑惑：取址符在声明和语句中</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#打印"><span class="nav-number">2.</span> <span class="nav-text">打印</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组"><span class="nav-number">3.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指针与地址"><span class="nav-number">4.</span> <span class="nav-text">指针与地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#const-与指针"><span class="nav-number">5.</span> <span class="nav-text">const 与指针</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#释放存储空间"><span class="nav-number">5.1.</span> <span class="nav-text">释放存储空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#free"><span class="nav-number">5.1.1.</span> <span class="nav-text">free()</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#疑惑：取址符在声明和语句中"><span class="nav-number">1.</span> <span class="nav-text">疑惑：取址符在声明和语句中</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#打印"><span class="nav-number">2.</span> <span class="nav-text">打印</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组"><span class="nav-number">3.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指针与地址"><span class="nav-number">4.</span> <span class="nav-text">指针与地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#const-与指针"><span class="nav-number">5.</span> <span class="nav-text">const 与指针</span></a></li></ol></div>
             
 
           </div>
