@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://vectorlu.com/2016/12/24/PointersOnC/index.html">
 <meta property="og:site_name" content="VectorLu">
 <meta property="og:description" content="指针是 C 语言的魅力所在，也是陷阱所在。">
-<meta property="og:updated_time" content="2016-12-28T10:02:29.000Z">
+<meta property="og:updated_time" content="2016-12-28T12:24:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C 语言指针总结">
 <meta name="twitter:description" content="指针是 C 语言的魅力所在，也是陷阱所在。">
@@ -429,18 +429,14 @@
 <p>/<em><br>** 指针本身和它指向的变量都不允许修改
 </em>/<br>int const * const cpci;<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">为了指明数组型形式参数不会被改变，可以在其声明中包含单词 `const`：</div></pre></td></tr></table></figure></p>
 <p>int findLargest(const int a[], int n)<br>{<br>    …<br>}<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">主要是看 ```const``` 右边是什么。</div><div class="line"></div><div class="line"># 指针作为返回值</div><div class="line">可以作为函数的返回值。但是永远不要返回指向自动局部变量的指针：</div></pre></td></tr></table></figure></p>
-<p>int *f(void)<br>{<br>    int i;<br>    …<br>    return &i;<br>}<br>```</p>
-<p>一旦 <code>f()</code> 返回，变量 <code>i</code> 就不存在了，所以指向变量 <code>i</code> 的指针将是无效的。有的编译器会在这种情况下给出类似 “function returns address of local variable” 的警告。</p>
-<h1 id="动态存储分配"><a href="#动态存储分配" class="headerlink" title="动态存储分配"></a>动态存储分配</h1><h2 id="内存分配函数"><a href="#内存分配函数" class="headerlink" title="内存分配函数"></a>内存分配函数</h2><p>为了动态地分配存储空间，需要调用三种内存分配函数的一种，这些函数都是声明在 <code>&lt;stdlib.h&gt;</code> 头中的。</p>
-<ul>
-<li><code>malloc()</code> ——分配内存块，但是不对内存进行初始化。</li>
-<li><code>calloc()</code> ——分配内存块，并且对内存块进行清零。</li>
-<li><code>realloc()</code> ——调整先前分配的内存块大小。</li>
-</ul>
-<blockquote>
-<p>当为申请内存块而调用内存分配函数时，由于函数无法知道存储在内存块中的数据是什么类型的，所以它不能返回 <code>int</code> 类型、<code>char</code> 类型等普通类型的指针。取而代之的，函数会返回 <code>void *</code> 类型的值，<code>void *</code> 类型的值是“通用”指针，本质上它只是内存地址。</p>
-</blockquote>
-
+<p>int *f(void)<br>{<br>    int i;<br>    …<br>    return &i;<br>}<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">一旦 `f()` 返回，变量 `i` 就不存在了，所以指向变量 `i` 的指针将是无效的。有的编译器会在这种情况下给出类似 <span class="string">"function returns address of local variable"</span> 的警告。</div><div class="line"></div><div class="line"># 动态存储分配</div><div class="line">## 内存分配函数</div><div class="line">为了动态地分配存储空间，需要调用三种内存分配函数的一种，这些函数都是声明在 `&lt;stdlib.h&gt;` 头中的。</div><div class="line"></div><div class="line">- `malloc()` ——分配内存块，但是不对内存进行初始化。</div><div class="line">- `calloc()` ——分配内存块，并且对内存块进行清零。</div><div class="line">- `realloc()` ——调整先前分配的内存块大小。</div><div class="line"></div><div class="line">&gt; 当为申请内存块而调用内存分配函数时，由于函数无法知道存储在内存块中的数据是什么类型的，所以它不能返回 `int` 类型、`char` 类型等普通类型的指针。取而代之的，函数会返回 `void *` 类型的值，`void *` 类型的值是“通用”指针，本质上它只是内存地址。</div><div class="line"></div><div class="line">## 空指针</div><div class="line">当调用内存分配函数时，如果找不到满足需要的内存块，函数会返回**空指针**。把函数的返回值存储到指针变量中以后，需要判断该指针变量是否为空指针。如果为空，需要采取适当的动作。</div><div class="line"></div><div class="line"></div><div class="line">所有非空指针都为真，只有空指针为假。</div></pre></td></tr></table></figure></p>
+<p>if (!p)<br>// if (p == NULL)</p>
+<p>if (p)<br>// if (p != NULL)<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">与 `NULL` 进行显示的比较可读性更好</div><div class="line"></div><div class="line">## 动态分配字符串</div><div class="line">### 使用 `malloc()` 为字符串分配内存</div><div class="line">函数原型：</div></pre></td></tr></table></figure></p>
+<p>void *malloc(size_t size);<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">`size_t` 表示某块内存的大小，取值范围是目标平台下最大可能的数组尺寸。</div></pre></td></tr></table></figure></p>
+<p>reminds[i] = (char *)malloc(2+strlen(msg_str)+1);<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### `calloc()`</div></pre></td></tr></table></figure></p>
+<p>void *calloc(size_t nmemb, size_t size);<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">`calloc()` 函数会将内存初始化为 <span class="number">0</span>（清除分配的内存）</div></pre></td></tr></table></figure></p>
+<p>struct point (int x; int y;} *p;<br>p = calloc (1, sizeof (struct point));<br>```</p>
+<h3 id="realloc"><a href="#realloc" class="headerlink" title="realloc()"></a><code>realloc()</code></h3>
       
     </div>
 
@@ -601,7 +597,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -714,7 +710,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#疑惑：取址符在声明和语句中"><span class="nav-number">1.</span> <span class="nav-text">疑惑：取址符在声明和语句中</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#打印"><span class="nav-number">2.</span> <span class="nav-text">打印</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组"><span class="nav-number">3.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指针与地址"><span class="nav-number">4.</span> <span class="nav-text">指针与地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#const-与指针"><span class="nav-number">5.</span> <span class="nav-text">const 与指针</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动态存储分配"><span class="nav-number">6.</span> <span class="nav-text">动态存储分配</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内存分配函数"><span class="nav-number">6.1.</span> <span class="nav-text">内存分配函数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#疑惑：取址符在声明和语句中"><span class="nav-number">1.</span> <span class="nav-text">疑惑：取址符在声明和语句中</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#打印"><span class="nav-number">2.</span> <span class="nav-text">打印</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组"><span class="nav-number">3.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指针与地址"><span class="nav-number">4.</span> <span class="nav-text">指针与地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#const-与指针"><span class="nav-number">5.</span> <span class="nav-text">const 与指针</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#realloc"><span class="nav-number">5.0.1.</span> <span class="nav-text">realloc()</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
