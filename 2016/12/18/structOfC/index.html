@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Algorithm,Notice," />
+  <meta name="keywords" content="C," />
 
 
 
@@ -90,16 +90,22 @@
 
 
 
-<meta name="description" content="算法问题中需要注意些什么呢？">
+<meta name="description" content="函数延迟绑定；数据结构导致绑定。记住：在编程过程后期再结构化数据。
+
+声明时：struct 和 union 的每个成员用分号隔开，enum 的每个成员用逗号隔开。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AlgorithmNotice">
-<meta property="og:url" content="http://vectorlu.com/2016/12/18/AlgorithmNotice/index.html">
+<meta property="og:title" content="结构、联合和枚举">
+<meta property="og:url" content="http://vectorlu.com/2016/12/18/structOfC/index.html">
 <meta property="og:site_name" content="VectorLu">
-<meta property="og:description" content="算法问题中需要注意些什么呢？">
-<meta property="og:updated_time" content="2016-12-19T02:22:01.000Z">
+<meta property="og:description" content="函数延迟绑定；数据结构导致绑定。记住：在编程过程后期再结构化数据。
+
+声明时：struct 和 union 的每个成员用分号隔开，enum 的每个成员用逗号隔开。">
+<meta property="og:updated_time" content="2016-12-29T13:18:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AlgorithmNotice">
-<meta name="twitter:description" content="算法问题中需要注意些什么呢？">
+<meta name="twitter:title" content="结构、联合和枚举">
+<meta name="twitter:description" content="函数延迟绑定；数据结构导致绑定。记住：在编程过程后期再结构化数据。
+
+声明时：struct 和 union 的每个成员用分号隔开，enum 的每个成员用逗号隔开。">
 
 
 
@@ -127,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://vectorlu.com/2016/12/18/AlgorithmNotice/"/>
+  <link rel="canonical" href="http://vectorlu.com/2016/12/18/structOfC/"/>
 
 
 
 
 
-  <title> AlgorithmNotice | VectorLu </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> 结构、联合和枚举 | VectorLu </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -287,7 +293,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/12/18/AlgorithmNotice/">
+  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/12/18/structOfC/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="VectorLu">
@@ -311,7 +317,7 @@
             
             
               
-                AlgorithmNotice
+                结构、联合和枚举
               
             
           </h1>
@@ -324,7 +330,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-18T16:44:03+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-18T00:15:23+08:00">
                 2016-12-18
               </time>
             
@@ -358,8 +364,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/12/18/AlgorithmNotice/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/18/AlgorithmNotice/" itemprop="commentCount"></span>
+                <a href="/2016/12/18/structOfC/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/18/structOfC/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -390,11 +396,48 @@
       
 
       
-        <p>算法问题中需要注意些什么呢？</p>
+        <blockquote>
+<p>函数延迟绑定；数据结构导致绑定。<br>记住：在编程过程后期再结构化数据。</p>
+</blockquote>
+<p>声明时：<code>struct</code> 和 <code>union</code> 的每个成员用分号隔开，<code>enum</code> 的每个成员用逗号隔开。</p>
 <a id="more"></a>
-<h1 id="0-输入与输出"><a href="#0-输入与输出" class="headerlink" title="0 输入与输出"></a>0 输入与输出</h1><p>在写算法时，一定要充分考虑到输入数据的特征、可能存在的问题，还有是否需要保存数据。不要天真地以为输入一定是某种特定的数据类型，大小排列方式……</p>
-<p>然后尽量对数据做一些预处理，以免在程序运行中造成一些破坏，举个很简单的例子——求最大公约数和最小公倍数，为了防止第二个输入的数大于第一个数，做了一个判断和交换：</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">int</span> main()</div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> <span class="built_in">max</span>, <span class="built_in">min</span>;</div><div class="line">    <span class="keyword">int</span> copy1, copy2;</div><div class="line">    <span class="keyword">int</span> temp;</div><div class="line">    printf(<span class="string">"请输入两个正整数：\n"</span>);</div><div class="line">    scanf(<span class="string">"%d %d"</span>, &amp;<span class="built_in">max</span>, &amp;<span class="built_in">min</span>);</div><div class="line"></div><div class="line">    copy1 = <span class="built_in">max</span>;</div><div class="line">    copy2 = <span class="built_in">min</span>;</div><div class="line">    </div><div class="line">    <span class="comment">// 如果 min &gt; max </span></div><div class="line">    <span class="comment">// 互换</span></div><div class="line">    <span class="built_in">if</span> (<span class="built_in">min</span> &gt; <span class="built_in">max</span>)</div><div class="line">    &#123;</div><div class="line">        temp = <span class="built_in">min</span>;</div><div class="line">        <span class="built_in">min</span> = <span class="built_in">max</span>;</div><div class="line">        <span class="built_in">max</span> = temp;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="built_in">while</span> (<span class="built_in">min</span> != <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        temp = <span class="built_in">min</span>;</div><div class="line">        <span class="built_in">min</span> = <span class="built_in">max</span> % <span class="built_in">min</span>;</div><div class="line">        <span class="built_in">max</span> = temp;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    printf(<span class="string">"它们的最大公约数为：%d\n"</span>, <span class="built_in">max</span>);</div><div class="line">    printf(<span class="string">"它们的最小公倍数为：%d\n"</span>, copy1*copy2/<span class="built_in">max</span>);</div><div class="line"></div><div class="line">    <span class="built_in">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="结构变量"><a href="#结构变量" class="headerlink" title="结构变量"></a>结构变量</h1><p>每个结构都为它的成员设置了独立的 name space。</p>
+<p>将点号和成员名称的组合称为<strong>指示符</strong>，可用指示符进行指定初始化 (C99)：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">struct  &#123;</div><div class="line">  int <span class="built_in">number</span>;</div><div class="line">  char <span class="built_in">name</span>[NAME_LEN+<span class="number">1</span>];</div><div class="line">  int <span class="keyword">on</span>, hand;</div><div class="line">&#125; part1 = &#123;.<span class="built_in">number</span> = <span class="number">528</span>, .<span class="built_in">name</span> = <span class="string">"Disk drive"</span>, .on_hand = <span class="number">10</span>&#125;;</div></pre></td></tr></table></figure>
+<p>句点运算符的优先级和后缀 <code>++--</code> 一样，所以优先级几乎高于其他所有运算符。</p>
+<p>结构可以用 <code>=</code> 运算符进行复制（仅用于类型兼容的结构），而且对结构复制时，嵌在结构里的数组也得到了复制。可以利用这种性质来产生“空结构”，已封装稍候将进行复制的数组：</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">struct &#123; int a[<span class="number">10</span>]<span class="comment">; &#125; a1, a2;</span></div><div class="line"><span class="built_in">a1</span> = <span class="built_in">a2</span><span class="comment">;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>但是除了赋值运算，C 语言没有提供其他用于整个结构的操作。特别是不能使用运算符 <code>==</code> 和 <code>!=</code> 来判定两个结构相等还是不等。</p>
+</blockquote>
+<h1 id="联合"><a href="#联合" class="headerlink" title="联合"></a>联合</h1><h2 id="用联合来节省空间"><a href="#用联合来节省空间" class="headerlink" title="用联合来节省空间"></a>用联合来节省空间</h2><p>假设礼品册上只有三种商品：书籍、被子和衬衫，每种商品都含有库存量、价格一级与商品类型相关的其他信息：</p>
+<ul>
+<li>书籍：书名、作者、页数。</li>
+<li>杯子：设计。</li>
+<li>衬衫：设计、可选颜色、可选尺寸。</li>
+</ul>
+<p>最初的设计可能会得到如下结构：</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">catalog_item</span></span>&#123;</div><div class="line">  <span class="keyword">int</span> stock_number;</div><div class="line">  <span class="keyword">float</span> price;</div><div class="line">  <span class="keyword">int</span> item_type;</div><div class="line">  <span class="keyword">char</span> title[TITLE_LEN+<span class="number">1</span>];</div><div class="line">  <span class="keyword">char</span> author[AUTHOR_LEN+<span class="number">1</span>];</div><div class="line">  <span class="keyword">int</span> num_pages;</div><div class="line">  <span class="keyword">char</span> design[DESIGN_LEN+<span class="number">1</span>];</div><div class="line">  <span class="keyword">int</span> colors;</div><div class="line">  <span class="keyword">int</span> sizes;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>虽然上述结构十分好用，但是很浪费空间，因为只有结构中的部分信息是常用的。</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">catalog_item</span>&#123;</span></div><div class="line">  int stock_number;</div><div class="line">  float price;</div><div class="line">  int item_type;</div><div class="line">  <span class="class"><span class="keyword">union</span>&#123;</span></div><div class="line">    <span class="class"><span class="keyword">struct</span>&#123;</span></div><div class="line">      char title[TITLE_LEN+<span class="number">1</span>];</div><div class="line">      char author[AUTHOR_LEN+<span class="number">1</span>];</div><div class="line">      int num_pages;</div><div class="line">    &#125; book;</div><div class="line">    <span class="class"><span class="keyword">struct</span>&#123;</span></div><div class="line">      char design[DESIGN_LEN+<span class="number">1</span>];</div><div class="line">    &#125; mug;</div><div class="line">    <span class="class"><span class="keyword">struct</span>&#123;</span></div><div class="line">      char design[DESIGN_LEN+<span class="number">1</span>];</div><div class="line">      int colors;</div><div class="line">      int sizes;</div><div class="line">    &#125; shirt;</div><div class="line">  &#125; item;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>如果 <code>c</code> 是表示书籍的结构 <code>catalog_item</code>，那么刻意用下列方法显示书籍的名称：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">printf</span>("%<span class="selector-tag">s</span>", <span class="selector-tag">c</span><span class="selector-class">.item</span><span class="selector-class">.book</span><span class="selector-class">.title</span>);</div></pre></td></tr></table></figure>
+<h2 id="用联合来构造混合的数据结构"><a href="#用联合来构造混合的数据结构" class="headerlink" title="用联合来构造混合的数据结构"></a>用联合来构造混合的数据结构</h2><p>假设需要数组的元素是 <code>int</code> 值和 <code>double</code> 值的混合，因为数组的元素必须是相同的类型，所以要利用联合。</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">typedef <span class="class"><span class="keyword">union</span>&#123;</span></div><div class="line">  int i;</div><div class="line">  double d;</div><div class="line">&#125; Number;</div><div class="line"></div><div class="line">Number number_array[<span class="number">1000</span>];</div><div class="line"></div><div class="line">number_array[<span class="number">0</span>].i = <span class="number">5</span>;</div><div class="line">number_array[<span class="number">1</span>].f = <span class="number">8.295</span>;</div></pre></td></tr></table></figure>
+<h2 id="为联合添加“标记字段”"><a href="#为联合添加“标记字段”" class="headerlink" title="为联合添加“标记字段”"></a>为联合添加“标记字段”</h2><p>如果：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">print_number</span><span class="params">(Number n)</span></span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">if</span> (n 包含一个整数)</div><div class="line">  &#123;<span class="built_in">printf</span>(<span class="string">"%d"</span>, n.i);&#125;</div><div class="line">  <span class="keyword">else</span> &#123;<span class="built_in">printf</span>(<span class="string">"%g"</span>, n.d);&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>但是，没有办法可以帮助函数确定 n 包含到是整数还是浮点数。</p>
+<p>为了记录此信息，可以把联合嵌入一个结构中，且此结构还含有另一个成员：“标记字段”，它是用来提示当前存储在联合中的内容的。</p>
+<p>比如之前讨论的结构 <code>catalog_item</code> 中的 <code>item_type</code> 就是用于该目的。</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#define INT_KIND 0</span></div><div class="line"><span class="comment">#define DOUBLE_KIND 1</span></div><div class="line"></div><div class="line">typedef <span class="class"><span class="keyword">struct</span>&#123;</span></div><div class="line">  int kind;		<span class="regexp">//</span> tag field</div><div class="line">  <span class="class"><span class="keyword">union</span>&#123;</span></div><div class="line">    int i;</div><div class="line">    double d;</div><div class="line">  &#125; u;</div><div class="line">&#125; Number;</div></pre></td></tr></table></figure>
+<p><code>Number</code> 有两个成员 <code>kind</code> 和 <code>u</code>，<code>kind</code> 的值可能是 <code>INT_KIND</code> 或 <code>DOUBLE_KIND</code></p>
+<p>每次给 <code>u</code> 的成员赋值时，也会改变 <code>kind</code>，从而提示修改的是 <code>u</code> 的哪个成员。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Number n;</div><div class="line">n.kind = INT_KIND;</div><div class="line">n.u.i = <span class="number">82</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">print_number</span><span class="params">(Number n)</span></span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">if</span> (n.kind == INT_KIND)</div><div class="line">  &#123;<span class="built_in">printf</span>(<span class="string">"%d"</span>, n.u.i);&#125;</div><div class="line">  <span class="keyword">else</span></div><div class="line">  &#123;<span class="built_in">printf</span>(<span class="string">"%g"</span>, n.u.d);&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h1><p>枚举是整数，值（默认）从 0 开始逐渐增加，所以是很理想的下标。<br>在 C89 中，利用 <code>typedef</code> 来命名枚举是创建布尔类型的一种非常好的方法：</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">typedef <span class="class"><span class="keyword">enum</span> &#123;<span class="title">FALSE</span>, <span class="title">TRUE</span>&#125; <span class="title">Bool</span>;</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">suit</span> &#123;<span class="title">CLUSBS</span>, <span class="title">DIAMONDS</span>, <span class="title">HEARTS</span>, <span class="title">SPADES</span>&#125;;</span></div><div class="line">typedef <span class="class"><span class="keyword">enum</span> &#123;<span class="title">CLUBS</span>, <span class="title">DIAMONDS</span>, <span class="title">HEARTS</span>, <span class="title">SPADES</span>) <span class="title">Suit</span>;</span></div></pre></td></tr></table></figure>
+<h2 id="枚举作为整数"><a href="#枚举作为整数" class="headerlink" title="枚举作为整数"></a>枚举作为整数</h2><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">enum suit &#123;CLUBS = <span class="number">1</span>, DIAMONDS = <span class="number">2</span>, HEARTS = <span class="number">3</span>, SPADES = <span class="number">4</span>&#125;;</div></pre></td></tr></table></figure>
+<p>允许与普通整数混合使用。</p>
+<h2 id="用枚举声明“标记字段”"><a href="#用枚举声明“标记字段”" class="headerlink" title="用枚举声明“标记字段”"></a>用枚举声明“标记字段”</h2><figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">typedef <span class="class"><span class="keyword">struct</span>&#123;</span></div><div class="line">  <span class="class"><span class="keyword">enum</span> (<span class="title">INT_KIND</span>, <span class="title">DOUBLE_KIND</span>) <span class="title">kind</span>;</span></div><div class="line">  <span class="class"><span class="keyword">union</span> &#123;</span></div><div class="line">    int i;</div><div class="line">    double d;</div><div class="line">  &#125; u;</div><div class="line">&#125; Number;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -439,9 +482,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
-          
-            <a href="/tags/Notice/" rel="tag"># Notice</a>
+            <a href="/tags/C/" rel="tag"># C</a>
           
         </div>
       
@@ -450,8 +491,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/13/SimpleCompilerByC/" rel="next" title="手写一个 C 语言编译器">
-                <i class="fa fa-chevron-left"></i> 手写一个 C 语言编译器
+              <a href="/2016/12/17/preprocessorOfC/" rel="next" title="C 语言预处理器">
+                <i class="fa fa-chevron-left"></i> C 语言预处理器
               </a>
             
           </div>
@@ -477,10 +518,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/12/18/AlgorithmNotice/"
-     data-title="AlgorithmNotice"
+        <div class="ds-share flat" data-thread-key="2016/12/18/structOfC/"
+     data-title="结构、联合和枚举"
      data-content=""
-     data-url="http://vectorlu.com/2016/12/18/AlgorithmNotice/">
+     data-url="http://vectorlu.com/2016/12/18/structOfC/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -510,8 +551,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/12/18/AlgorithmNotice/"
-           data-title="AlgorithmNotice" data-url="http://vectorlu.com/2016/12/18/AlgorithmNotice/">
+      <div class="ds-thread" data-thread-key="2016/12/18/structOfC/"
+           data-title="结构、联合和枚举" data-url="http://vectorlu.com/2016/12/18/structOfC/">
       </div>
     
   </div>
@@ -669,7 +710,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0-输入与输出"><span class="nav-number">1.</span> <span class="nav-text">0 输入与输出</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#结构变量"><span class="nav-number">1.</span> <span class="nav-text">结构变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#联合"><span class="nav-number">2.</span> <span class="nav-text">联合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用联合来节省空间"><span class="nav-number">2.1.</span> <span class="nav-text">用联合来节省空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用联合来构造混合的数据结构"><span class="nav-number">2.2.</span> <span class="nav-text">用联合来构造混合的数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为联合添加“标记字段”"><span class="nav-number">2.3.</span> <span class="nav-text">为联合添加“标记字段”</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#枚举"><span class="nav-number">3.</span> <span class="nav-text">枚举</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#枚举作为整数"><span class="nav-number">3.1.</span> <span class="nav-text">枚举作为整数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用枚举声明“标记字段”"><span class="nav-number">3.2.</span> <span class="nav-text">用枚举声明“标记字段”</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -288,7 +288,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/12/29/ioOfC/">
+  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/12/25/SimpleCompilerByC/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="VectorLu">
@@ -313,8 +313,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/12/29/ioOfC/" itemprop="url">
-                  C 语言中的输入／输出
+                <a class="post-title-link" href="/2016/12/25/SimpleCompilerByC/" itemprop="url">
+                  手写一个 C 语言编译器
                 </a>
               
             
@@ -328,651 +328,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-29T12:19:22+08:00">
-                2016-12-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS-Basic/" itemprop="url" rel="index">
-                    <span itemprop="name">CS Basic</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/12/29/ioOfC/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/29/ioOfC/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="流-stream"><a href="#流-stream" class="headerlink" title="流 stream"></a>流 stream</h1><p>任意输入的源或任意输出的目的地。</p>
-<h2 id="文件指针"><a href="#文件指针" class="headerlink" title="文件指针"></a>文件指针</h2><p>C 程序中对流的访问是通过 <strong>文件指针</strong> 来实现的，如果程序除了标准流之外还需要两个流，可以包含如下声明：</p>
-<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">FILE <span class="strong">*fp1, *</span>fp2;</div></pre></td></tr></table></figure>
-<h2 id="标准流和重定向"><a href="#标准流和重定向" class="headerlink" title="标准流和重定向"></a>标准流和重定向</h2><p>可以直接使用的 3 个标准流：<code>stdin</code>, <code>stdout</code>, <code>stderr</code> 。</p>
-<h3 id="输入重定向"><a href="#输入重定向" class="headerlink" title="输入重定向"></a>输入重定向</h3><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">demo</span> &lt;<span class="keyword">in</span>.dat</div></pre></td></tr></table></figure>
-<h3 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h3><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">demo &gt;<span class="keyword">out</span>.dat</div></pre></td></tr></table></figure>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>把符号看成一个漏斗，大的是起点，小的是终点。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">demo &lt; <span class="keyword">in</span><span class="selector-class">.dat</span> &gt; out<span class="selector-class">.dat</span></div><div class="line">demo &gt; out<span class="selector-class">.dat</span> &lt; <span class="keyword">in</span><span class="selector-class">.dat</span></div><div class="line"><span class="comment">// 文件顺序无关紧要，以上效果一样</span></div><div class="line"><span class="comment">// &gt; &lt; 不需要于文件名相邻</span></div></pre></td></tr></table></figure>
-<h2 id="文本文件与二进制文件"><a href="#文本文件与二进制文件" class="headerlink" title="文本文件与二进制文件"></a>文本文件与二进制文件</h2><h3 id="文本文件"><a href="#文本文件" class="headerlink" title="文本文件"></a>文本文件</h3><p>字节表示字符。</p>
-<p>文本文件分为若干行。每一行通常以一两个特殊字符结尾。Windows 中，是回车和紧跟其后的换行符，分别为 <code>&#39;\x0d&#39;</code>, <code>&#39;\x0a&#39;</code></p>
-<p>在 类 UNIX 系统中，行末是单独的回行符，旧版 Mac OS 使用单独的回车符。</p>
-<p>包含特殊的“文件末尾”标记。在 Windows 中，标记为 <code>&#39;\x1a&#39;</code>(Ctrl+Z) </p>
-<h3 id="二进制文件"><a href="#二进制文件" class="headerlink" title="二进制文件"></a>二进制文件</h3><p>编写用来读写文件的程序时，需要考虑该文件是文本文件还是二进制文件。</p>
-<p>在屏幕上显示文件内容的程序可能要把文件视为文本文件。但是，文件复制程序就不能认为要复制的文件为文本文件。</p>
-<p><strong>如果那样做，就不能完全复制含有文件末尾字符的文本文件。在无法确定文件是文本形式还是二进制形式时，安全的做法是把文件假定为二进制文件。</strong></p>
-<h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><h2 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h2><p>Windows 中不要使用绝对路径分隔符 <code>\</code> （会被认为是转义字符），使用相对路径分隔符 <code>/</code></p>
-<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">fopen</span>(<span class="string">"c:/project/test1.dat"</span>, <span class="string">"r"</span>);</div></pre></td></tr></table></figure>
-<p><strong>永远不要假设每次都能打开文件，每次都必须要测试 fopen 函数的返回值以确保不是空指针。</strong></p>
-<h2 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h2><p>用于文本文件的模式字符串</p>
-<table>
-<thead>
-<tr>
-<th>模式字符串</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>“r”</td>
-<td>打开文件用于读</td>
-</tr>
-<tr>
-<td>“w”</td>
-<td>打开文件用于写（文件不需要存在）</td>
-</tr>
-<tr>
-<td>“a”</td>
-<td>打开文件用于追加（文件不需要存在）</td>
-</tr>
-<tr>
-<td>“r+”</td>
-<td>打开文件用于读和写，从文件头开始</td>
-</tr>
-<tr>
-<td>“w+”</td>
-<td>打开文件用于读和写，如果文件存在就截去</td>
-</tr>
-<tr>
-<td>“a+”</td>
-<td>打开文件用于读和写（如果文件存在就追加）</td>
-</tr>
-</tbody>
-</table>
-<p>二进制文件与之类似，但是需要在模式字符串中包含字母 <code>b</code>，例如 <code>&quot;rb&quot;</code></p>
-<h2 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a>关闭文件</h2><p><code>fclose()</code> 关闭不再使用的文件，参数是文件指针。如果成功关闭了文件，函数返回零，否则返回错误代码 <code>EOF</code>。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> FILE_NAME <span class="meta-string">"example.dat"</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">  FILE *fp;</div><div class="line">  </div><div class="line">  fp = fopen(FILE_NAME, <span class="string">"r"</span>);</div><div class="line">  <span class="keyword">if</span> (fp == <span class="literal">NULL</span>)</div><div class="line">  &#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Can't open %s\n"</span>, FILE_NAME);</div><div class="line">    <span class="built_in">exit</span>(EXIT_FAILURE);</div><div class="line">  &#125;</div><div class="line">  ...</div><div class="line">  fclose(fp);</div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>当然，也可以：</p>
-<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> ((fp = <span class="built_in">fopen</span>(FILE_NAME, <span class="string">"r"</span>)) == <span class="built_in">NULL</span>) ...</div></pre></td></tr></table></figure>
-<h3 id="从命令行获取文件名"><a href="#从命令行获取文件名" class="headerlink" title="从命令行获取文件名"></a>从命令行获取文件名</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="regexp">//</span> checks whether a file can be opened <span class="keyword">for</span> reading</div><div class="line"></div><div class="line"><span class="comment">#include &lt;stdio.h&gt;</span></div><div class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></div><div class="line"></div><div class="line">int main(int argc, char *argv[])</div><div class="line">&#123;</div><div class="line">  FILE *fp;</div><div class="line">  <span class="keyword">if</span> (argc != <span class="number">2</span>)</div><div class="line">  &#123;</div><div class="line">    printf(<span class="string">"usage: canopen filename\n"</span>);</div><div class="line">    <span class="keyword">exit</span>(EXIT_FAILURE);</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  <span class="keyword">if</span> ((fp = fopen(argv[<span class="number">1</span>],<span class="string">"r"</span>))==NULL)</div><div class="line">  &#123;</div><div class="line">    printf(<span class="string">"%s can't be opened\n"</span>, argv[<span class="number">1</span>]);</div><div class="line">    <span class="keyword">exit</span>(EXIT_FAILURE);</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  printf(<span class="string">"%s can be opened\n"</span>, argv[<span class="number">1</span>]);</div><div class="line">  fclose(fp);</div><div class="line">  return <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="临时文件"><a href="#临时文件" class="headerlink" title="临时文件"></a>临时文件</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function">FILE *<span class="title">tmpfile</span><span class="params">(<span class="keyword">void</span>)</span></span>;</div><div class="line"><span class="function"><span class="keyword">char</span> *<span class="title">tmpnam</span><span class="params">(<span class="keyword">char</span> *s)</span></span>;</div></pre></td></tr></table></figure>
-<p>不要过于频繁地调用 <code>tmpnam()</code> 。</p>
-<h2 id="文件缓冲"><a href="#文件缓冲" class="headerlink" title="文件缓冲"></a>文件缓冲</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">fflush</span><span class="params">(FILE *stream)</span></span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setbuf</span><span class="params">(FILE * <span class="keyword">restrict</span> stream, <span class="keyword">char</span> * <span class="keyword">restrict</span> buf)</span></span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">setvbuf</span><span class="params">(FILE * <span class="keyword">restrict</span> stream, <span class="keyword">char</span> * <span class="keyword">restrict</span> buf, <span class="keyword">int</span> mode, <span class="keyword">size_t</span> size)</span></span>;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/12/28/structOfC/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="VectorLu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="VectorLu">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="VectorLu" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/28/structOfC/" itemprop="url">
-                  结构、联合和枚举
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-28T00:15:23+08:00">
-                2016-12-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS-Basic/" itemprop="url" rel="index">
-                    <span itemprop="name">CS Basic</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/12/28/structOfC/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/28/structOfC/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>函数延迟绑定；数据结构导致绑定。<br>记住：在编程过程后期再结构化数据。</p>
-</blockquote>
-<p>声明时：<code>struct</code> 和 <code>union</code> 的每个成员用分号隔开，<code>enum</code> 的每个成员用逗号隔开。</p>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/28/structOfC/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/12/27/preprocessorOfC/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="VectorLu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="VectorLu">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="VectorLu" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/27/preprocessorOfC/" itemprop="url">
-                  C 语言预处理器
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-27T07:55:01+08:00">
-                2016-12-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS-Basic/" itemprop="url" rel="index">
-                    <span itemprop="name">CS Basic</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/12/27/preprocessorOfC/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/27/preprocessorOfC/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>C 处理器可以是强大的工具，也可以成为不易发现的错误之源。</p>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/27/preprocessorOfC/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/12/26/CString/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="VectorLu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="VectorLu">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="VectorLu" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/26/CString/" itemprop="url">
-                  C 语言中的字符串详解
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-26T18:50:41+08:00">
-                2016-12-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS-Basic/" itemprop="url" rel="index">
-                    <span itemprop="name">CS Basic</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/12/26/CString/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/26/CString/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>C 语言没有专门的字符串类型，要如何对字符串进行操作呢？其中又有哪些陷阱呢？</p>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/26/CString/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/12/25/multipleCFiles/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="VectorLu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="VectorLu">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="VectorLu" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/25/multipleCFiles/" itemprop="url">
-                  用 C 语言编写大型程序
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-25T16:05:33+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-25T10:04:59+08:00">
                 2016-12-25
               </time>
             
@@ -983,31 +339,13 @@
           </span>
 
           
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS-Basic/" itemprop="url" rel="index">
-                    <span itemprop="name">CS Basic</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/12/25/multipleCFiles/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/25/multipleCFiles/" itemprop="commentCount"></span>
+                <a href="/2016/12/25/SimpleCompilerByC/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/25/SimpleCompilerByC/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1034,14 +372,12 @@
 
       
         
-          <p>C 语言不是为开发大型程序设计的，但是有很多的大型程序都是用 C 语言写的。</p>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/25/multipleCFiles/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=2&id=29769321&auto=0&height=32"></iframe>
+
+
+
+          
         
       
     </div>
@@ -1078,7 +414,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/12/24/PointersOnC/">
+  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/12/23/AlgorithmNotice/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="VectorLu">
@@ -1103,8 +439,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/12/24/PointersOnC/" itemprop="url">
-                  C 语言指针总结
+                <a class="post-title-link" href="/2016/12/23/AlgorithmNotice/" itemprop="url">
+                  AlgorithmNotice
                 </a>
               
             
@@ -1118,153 +454,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-24T23:19:57+08:00">
-                2016-12-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS-Basic/" itemprop="url" rel="index">
-                    <span itemprop="name">CS Basic</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/12/24/PointersOnC/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/24/PointersOnC/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>指针是 C 语言的魅力所在，也是陷阱所在。</p>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/24/PointersOnC/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/12/23/nameAndCodeStyleOfC-md/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="VectorLu">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="VectorLu">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="VectorLu" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/23/nameAndCodeStyleOfC-md/" itemprop="url">
-                  C 语言命名和程序组织
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-23T02:49:18+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-23T16:44:03+08:00">
                 2016-12-23
               </time>
             
@@ -1298,8 +488,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/12/23/nameAndCodeStyleOfC-md/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/23/nameAndCodeStyleOfC-md/" itemprop="commentCount"></span>
+                <a href="/2016/12/23/AlgorithmNotice/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/23/AlgorithmNotice/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1326,10 +516,10 @@
 
       
         
-          <p>写程序的过程中，最难的事情之一就是命名。</p>
+          <p>算法问题中需要注意些什么呢？</p>
           <!--noindex-->
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/23/nameAndCodeStyleOfC-md/#more" rel="contents">
+            <a class="btn" href="/2016/12/23/AlgorithmNotice/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1481,6 +671,221 @@
             </a>
           </div>
           <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/12/20/ioOfC/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="VectorLu">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="VectorLu">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="VectorLu" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/20/ioOfC/" itemprop="url">
+                  C 语言中的输入／输出
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-20T12:19:22+08:00">
+                2016-12-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS-Basic/" itemprop="url" rel="index">
+                    <span itemprop="name">CS Basic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/20/ioOfC/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/20/ioOfC/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="流-stream"><a href="#流-stream" class="headerlink" title="流 stream"></a>流 stream</h1><p>任意输入的源或任意输出的目的地。</p>
+<h2 id="文件指针"><a href="#文件指针" class="headerlink" title="文件指针"></a>文件指针</h2><p>C 程序中对流的访问是通过 <strong>文件指针</strong> 来实现的，如果程序除了标准流之外还需要两个流，可以包含如下声明：</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">FILE <span class="strong">*fp1, *</span>fp2;</div></pre></td></tr></table></figure>
+<h2 id="标准流和重定向"><a href="#标准流和重定向" class="headerlink" title="标准流和重定向"></a>标准流和重定向</h2><p>可以直接使用的 3 个标准流：<code>stdin</code>, <code>stdout</code>, <code>stderr</code> 。</p>
+<h3 id="输入重定向"><a href="#输入重定向" class="headerlink" title="输入重定向"></a>输入重定向</h3><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">demo</span> &lt;<span class="keyword">in</span>.dat</div></pre></td></tr></table></figure>
+<h3 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h3><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">demo &gt;<span class="keyword">out</span>.dat</div></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>把符号看成一个漏斗，大的是起点，小的是终点。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">demo &lt; <span class="keyword">in</span><span class="selector-class">.dat</span> &gt; out<span class="selector-class">.dat</span></div><div class="line">demo &gt; out<span class="selector-class">.dat</span> &lt; <span class="keyword">in</span><span class="selector-class">.dat</span></div><div class="line"><span class="comment">// 文件顺序无关紧要，以上效果一样</span></div><div class="line"><span class="comment">// &gt; &lt; 不需要于文件名相邻</span></div></pre></td></tr></table></figure>
+<h2 id="文本文件与二进制文件"><a href="#文本文件与二进制文件" class="headerlink" title="文本文件与二进制文件"></a>文本文件与二进制文件</h2><h3 id="文本文件"><a href="#文本文件" class="headerlink" title="文本文件"></a>文本文件</h3><p>字节表示字符。</p>
+<p>文本文件分为若干行。每一行通常以一两个特殊字符结尾。Windows 中，是回车和紧跟其后的换行符，分别为 <code>&#39;\x0d&#39;</code>, <code>&#39;\x0a&#39;</code></p>
+<p>在 类 UNIX 系统中，行末是单独的回行符，旧版 Mac OS 使用单独的回车符。</p>
+<p>包含特殊的“文件末尾”标记。在 Windows 中，标记为 <code>&#39;\x1a&#39;</code>(Ctrl+Z) </p>
+<h3 id="二进制文件"><a href="#二进制文件" class="headerlink" title="二进制文件"></a>二进制文件</h3><p>编写用来读写文件的程序时，需要考虑该文件是文本文件还是二进制文件。</p>
+<p>在屏幕上显示文件内容的程序可能要把文件视为文本文件。但是，文件复制程序就不能认为要复制的文件为文本文件。</p>
+<p><strong>如果那样做，就不能完全复制含有文件末尾字符的文本文件。在无法确定文件是文本形式还是二进制形式时，安全的做法是把文件假定为二进制文件。</strong></p>
+<h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><h2 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h2><p>Windows 中不要使用绝对路径分隔符 <code>\</code> （会被认为是转义字符），使用相对路径分隔符 <code>/</code></p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">fopen</span>(<span class="string">"c:/project/test1.dat"</span>, <span class="string">"r"</span>);</div></pre></td></tr></table></figure>
+<p><strong>永远不要假设每次都能打开文件，每次都必须要测试 fopen 函数的返回值以确保不是空指针。</strong></p>
+<h2 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h2><p>用于文本文件的模式字符串</p>
+<table>
+<thead>
+<tr>
+<th>模式字符串</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“r”</td>
+<td>打开文件用于读</td>
+</tr>
+<tr>
+<td>“w”</td>
+<td>打开文件用于写（文件不需要存在）</td>
+</tr>
+<tr>
+<td>“a”</td>
+<td>打开文件用于追加（文件不需要存在）</td>
+</tr>
+<tr>
+<td>“r+”</td>
+<td>打开文件用于读和写，从文件头开始</td>
+</tr>
+<tr>
+<td>“w+”</td>
+<td>打开文件用于读和写，如果文件存在就截去</td>
+</tr>
+<tr>
+<td>“a+”</td>
+<td>打开文件用于读和写（如果文件存在就追加）</td>
+</tr>
+</tbody>
+</table>
+<p>二进制文件与之类似，但是需要在模式字符串中包含字母 <code>b</code>，例如 <code>&quot;rb&quot;</code></p>
+<h2 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a>关闭文件</h2><p><code>fclose()</code> 关闭不再使用的文件，参数是文件指针。如果成功关闭了文件，函数返回零，否则返回错误代码 <code>EOF</code>。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> FILE_NAME <span class="meta-string">"example.dat"</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">  FILE *fp;</div><div class="line">  </div><div class="line">  fp = fopen(FILE_NAME, <span class="string">"r"</span>);</div><div class="line">  <span class="keyword">if</span> (fp == <span class="literal">NULL</span>)</div><div class="line">  &#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Can't open %s\n"</span>, FILE_NAME);</div><div class="line">    <span class="built_in">exit</span>(EXIT_FAILURE);</div><div class="line">  &#125;</div><div class="line">  ...</div><div class="line">  fclose(fp);</div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当然，也可以：</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> ((fp = <span class="built_in">fopen</span>(FILE_NAME, <span class="string">"r"</span>)) == <span class="built_in">NULL</span>) ...</div></pre></td></tr></table></figure>
+<h3 id="从命令行获取文件名"><a href="#从命令行获取文件名" class="headerlink" title="从命令行获取文件名"></a>从命令行获取文件名</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="regexp">//</span> checks whether a file can be opened <span class="keyword">for</span> reading</div><div class="line"></div><div class="line"><span class="comment">#include &lt;stdio.h&gt;</span></div><div class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></div><div class="line"></div><div class="line">int main(int argc, char *argv[])</div><div class="line">&#123;</div><div class="line">  FILE *fp;</div><div class="line">  <span class="keyword">if</span> (argc != <span class="number">2</span>)</div><div class="line">  &#123;</div><div class="line">    printf(<span class="string">"usage: canopen filename\n"</span>);</div><div class="line">    <span class="keyword">exit</span>(EXIT_FAILURE);</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  <span class="keyword">if</span> ((fp = fopen(argv[<span class="number">1</span>],<span class="string">"r"</span>))==NULL)</div><div class="line">  &#123;</div><div class="line">    printf(<span class="string">"%s can't be opened\n"</span>, argv[<span class="number">1</span>]);</div><div class="line">    <span class="keyword">exit</span>(EXIT_FAILURE);</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  printf(<span class="string">"%s can be opened\n"</span>, argv[<span class="number">1</span>]);</div><div class="line">  fclose(fp);</div><div class="line">  return <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="临时文件"><a href="#临时文件" class="headerlink" title="临时文件"></a>临时文件</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function">FILE *<span class="title">tmpfile</span><span class="params">(<span class="keyword">void</span>)</span></span>;</div><div class="line"><span class="function"><span class="keyword">char</span> *<span class="title">tmpnam</span><span class="params">(<span class="keyword">char</span> *s)</span></span>;</div></pre></td></tr></table></figure>
+<p>不要过于频繁地调用 <code>tmpnam()</code> 。</p>
+<h2 id="文件缓冲"><a href="#文件缓冲" class="headerlink" title="文件缓冲"></a>文件缓冲</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">fflush</span><span class="params">(FILE *stream)</span></span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setbuf</span><span class="params">(FILE * <span class="keyword">restrict</span> stream, <span class="keyword">char</span> * <span class="keyword">restrict</span> buf)</span></span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">setvbuf</span><span class="params">(FILE * <span class="keyword">restrict</span> stream, <span class="keyword">char</span> * <span class="keyword">restrict</span> buf, <span class="keyword">int</span> mode, <span class="keyword">size_t</span> size)</span></span>;</div></pre></td></tr></table></figure>
+<h2 id="其他文件操作"><a href="#其他文件操作" class="headerlink" title="其他文件操作"></a>其他文件操作</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">remove</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *filename)</span></span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">rename</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *old, <span class="keyword">const</span> <span class="keyword">char</span> *<span class="keyword">new</span>)</span></span>;</div></pre></td></tr></table></figure>
+<p>以上两个函数对文件名而不是文件指针进行处理，如果调用成功，这两个函数都返回零；否则，都返回非零值。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">remove</span>(<span class="string">"foo.txt"</span>); 	<span class="comment">// delete the file named "foo.txt"</span></div><div class="line"></div><div class="line"><span class="selector-tag">rename</span>(<span class="string">"foo.txt"</span>, <span class="string">"bar.txt"</span>);</div></pre></td></tr></table></figure>
+<p>如果打开了要改名的文件，那么一定要保证在调用 <code>rename()</code> 之前关闭此文件。对打开的文件执行改名操作会失败。</p>
+<h1 id="格式化输入／输出"><a href="#格式化输入／输出" class="headerlink" title="格式化输入／输出"></a>格式化输入／输出</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// writes to fp</span></div><div class="line"><span class="built_in">fprintf</span>(fp, <span class="string">"Total: %d\n"</span>, total);</div><div class="line"></div><div class="line"><span class="comment">// fprintf() 可以用于任何输出流</span></div><div class="line"><span class="comment">// 最常用于</span></div><div class="line"><span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"Error: date file can't be opened.\n"</span>);</div><div class="line"></div><div class="line">fsanf(fp, <span class="string">"%d%d"</span>, &amp;i, &amp;j);</div></pre></td></tr></table></figure>
+<p>在 C 程序中测试 <code>scanf()</code> 的返回值的循环很普遍，如下，在首个遇到问题的符号处停止：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">while</span><span class="params">(scanf(<span class="string">"%d"</span>, &amp;i)</span></span> == <span class="number">1</span>)</div><div class="line">&#123;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="…scanf-格式串"><a href="#…scanf-格式串" class="headerlink" title="…scanf 格式串"></a>…scanf 格式串</h2><ol>
+<li>转换说明。大多数转换说明 (%c, %n 例外 ) 会跳过输入项开始处的空白字符。但是，转换说明不会跳过尾部的空白字符。但是，转换说明不会跳过尾部的空白字符。</li>
+<li>空白字符。该中函数格式串中的一个或多个连续的空白字符与输入流中的零个或多个空白字符相匹配。</li>
+</ol>
+<h1 id="字符的输入／输出"><a href="#字符的输入／输出" class="headerlink" title="字符的输入／输出"></a>字符的输入／输出</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">fputc</span><span class="params">(<span class="keyword">int</span> c, FILE *stream)</span></span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">putc</span><span class="params">(<span class="keyword">int</span> c, FILE *stream)</span></span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">putchar</span><span class="params">(<span class="keyword">int</span> c)</span></span>;	</div><div class="line"></div><div class="line"><span class="comment">// 向标准输出流 stdout 写一个字符</span></div><div class="line"><span class="built_in">putchar</span>(ch);</div><div class="line"></div><div class="line">fputc(ch, fp); <span class="comment">// 函数实现，速度较 putc() 慢</span></div><div class="line">putc(ch, fp);	<span class="comment">// 宏，也有函数实现</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">fgetc</span><span class="params">(FILE *stream)</span></span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getc</span><span class="params">(FILE *stream)</span></span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getchar</span><span class="params">(<span class="keyword">void</span>)</span></span>;		<span class="comment">// 从标准输入流 stdin 中读入一个字符</span></div></pre></td></tr></table></figure>
+
+          
         
       
     </div>
@@ -1769,6 +1174,593 @@
           <!--noindex-->
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/12/18/newToGeneticAlgorithm/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/12/18/structOfC/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="VectorLu">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="VectorLu">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="VectorLu" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/18/structOfC/" itemprop="url">
+                  结构、联合和枚举
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-18T00:15:23+08:00">
+                2016-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS-Basic/" itemprop="url" rel="index">
+                    <span itemprop="name">CS Basic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/18/structOfC/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/18/structOfC/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>函数延迟绑定；数据结构导致绑定。<br>记住：在编程过程后期再结构化数据。</p>
+</blockquote>
+<p>声明时：<code>struct</code> 和 <code>union</code> 的每个成员用分号隔开，<code>enum</code> 的每个成员用逗号隔开。</p>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/18/structOfC/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/12/17/preprocessorOfC/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="VectorLu">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="VectorLu">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="VectorLu" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/17/preprocessorOfC/" itemprop="url">
+                  C 语言预处理器
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-17T07:55:01+08:00">
+                2016-12-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS-Basic/" itemprop="url" rel="index">
+                    <span itemprop="name">CS Basic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/17/preprocessorOfC/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/17/preprocessorOfC/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>C 处理器可以是强大的工具，也可以成为不易发现的错误之源。</p>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/17/preprocessorOfC/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/12/16/CString/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="VectorLu">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="VectorLu">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="VectorLu" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/16/CString/" itemprop="url">
+                  C 语言中的字符串详解
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-16T18:50:41+08:00">
+                2016-12-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS-Basic/" itemprop="url" rel="index">
+                    <span itemprop="name">CS Basic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/16/CString/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/16/CString/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>C 语言没有专门的字符串类型，要如何对字符串进行操作呢？其中又有哪些陷阱呢？</p>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/16/CString/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/12/15/multipleCFiles/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="VectorLu">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="VectorLu">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="VectorLu" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/15/multipleCFiles/" itemprop="url">
+                  用 C 语言编写大型程序
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-15T16:05:33+08:00">
+                2016-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS-Basic/" itemprop="url" rel="index">
+                    <span itemprop="name">CS Basic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/15/multipleCFiles/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/15/multipleCFiles/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>C 语言不是为开发大型程序设计的，但是有很多的大型程序都是用 C 语言写的。</p>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/15/multipleCFiles/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
