@@ -98,7 +98,7 @@ C 语言基础回顾与思考。">
 <meta property="og:site_name" content="VectorLu">
 <meta property="og:description" content="C 语言是古老而强大的语言，时至今日，应该怎样写 C 程序呢？
 C 语言基础回顾与思考。">
-<meta property="og:updated_time" content="2016-12-29T14:39:02.000Z">
+<meta property="og:updated_time" content="2016-12-29T15:34:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C 语言 0 从入门到并不精通">
 <meta name="twitter:description" content="C 语言是古老而强大的语言，时至今日，应该怎样写 C 程序呢？
@@ -411,7 +411,10 @@ C 语言基础回顾与思考。">
 <li>因为每行前面都必须有 <code>//</code>，所以多行的注释更加醒目。</li>
 </ol>
 <h2 id="变量和赋值"><a href="#变量和赋值" class="headerlink" title="变量和赋值"></a>变量和赋值</h2><h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><p>每个变量都必须有一个类型 type</p>
-<h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><p>使用变量之前，必须先对其进行声明。</p>
+<h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><p>使用变量之前，必须先对其进行声明。<br><strong>注意：</strong><br>在 C 语言中，声明的语法并非</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">类型 标识符；</div></pre></td></tr></table></figure>
+<p>而是</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">基本类型 生成基本类型的东西</div></pre></td></tr></table></figure>
 <h3 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h3><h2 id="定义常量的名字"><a href="#定义常量的名字" class="headerlink" title="定义常量的名字"></a>定义常量的名字</h2><p>当程序含有常量时，建议给这些常量命名。建议使用<strong>宏定义</strong>的特性给常量命名：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> INCHES_PER_POUND 166</span></div></pre></td></tr></table></figure>
 <p>当宏包含运算符时，必须用括号把表达式括起来。示例：</p>
