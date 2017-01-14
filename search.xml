@@ -10,9 +10,9 @@
 
     
     <entry>
-      <title><![CDATA[Python3Notes]]></title>
+      <title><![CDATA[Python3 基础知识总结]]></title>
       <url>%2F2017%2F01%2F14%2FPython3Notes%2F</url>
-      <content type="text"><![CDATA[Python3 学习笔记，主要记录一些 Python 中与别的语言不同的地方，需要注意的一些语法或快捷技巧。 流程控制布尔值任何非零整数都是 True，0 是 False。条件也可以是字符串或列表。所有长度不为 0 的是 True，空序列或空字符串是 False。 布尔操作符12345678910# 三个布尔操作符：and, or, not&gt;&gt;&gt; True and FalseFalse&gt;&gt;&gt; True or FalseTrue&gt;&gt;&gt; not TrueFalse&gt;&gt;&gt; not not TrueTrue 优先级在所有算术和比较操作符求值后，Python 先求值 not操作符，然后是and 操作符，然后是 or 操作符。 not &gt; and &gt; or if 语句]]></content>
+      <content type="text"><![CDATA[Python3 学习笔记，主要记录一些 Python 中与别的语言不同的地方，需要注意的一些语法或快捷技巧。 流程控制布尔值任何非零整数都是 True，0 是 False。条件也可以是字符串或列表。所有长度不为 0 的是 True，空序列或空字符串是 False。 布尔操作符12345678910# 三个布尔操作符：and, or, not&gt;&gt;&gt; True and FalseFalse&gt;&gt;&gt; True or FalseTrue&gt;&gt;&gt; not TrueFalse&gt;&gt;&gt; not not TrueTrue 优先级在所有算术和比较操作符求值后，Python 先求值 not操作符，然后是and 操作符，然后是 or 操作符。 not &gt; and &gt; or if 语句杂print() 字符串转义如果不想让反斜杠 \ 及其后面的字符被当做转义字符，可以在第一个引号前加上 r，如下例： 1234567&gt;&gt;&gt; print('C:\some\\name')C:\some\name&gt;&gt;&gt; print('C:\some\name')C:\someame&gt;&gt;&gt; print(r'C:\some\name')C:\some\name 长字符串]]></content>
     </entry>
 
     
