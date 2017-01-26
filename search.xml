@@ -12,7 +12,7 @@
     <entry>
       <title><![CDATA[训练指南 CH1-算法设计基础]]></title>
       <url>%2F2017%2F01%2F26%2FAlgorithmCompetitionEx1%2F</url>
-      <content type="text"><![CDATA[设初始情况下，编号为 $i$ 的人有 $A_{i}$ 枚金币。设 $M$ 表示每个人最终拥有的金币数。 对于 1 号，给 4 号 $x_{1}$ 枚金币，余 $A_{1}-x_{1}$ 枚。2 号给其 $x_{2}$ 枚金币]]></content>
+      <content type="text"><![CDATA[设初始情况下，编号为 $i$ 的人有 $A_i$ 枚金币。设 $M$ 表示每个人最终拥有的金币数。 对于 1 号，给 4 号 $x_1$ 枚金币，余 $A_1-x_1$ 枚。2 号给其 $x_2$ 枚金币]]></content>
     </entry>
 
     
