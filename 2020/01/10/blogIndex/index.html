@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://vectorlu.com/2020/01/10/blogIndex/index.html">
 <meta property="og:site_name" content="VectorLu">
 <meta property="og:description" content="默认分类不能充分展现博客的结构，而博客一般是按日期由近及远排放，很多东西不方便索引，置顶博客地图，方便读者了解我的知识结构，更方便按图索骥。">
-<meta property="og:updated_time" content="2017-01-26T15:26:17.000Z">
+<meta property="og:updated_time" content="2017-02-01T12:36:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="［置顶］博客地图">
 <meta name="twitter:description" content="默认分类不能充分展现博客的结构，而博客一般是按日期由近及远排放，很多东西不方便索引，置顶博客地图，方便读者了解我的知识结构，更方便按图索骥。">
@@ -248,6 +248,157 @@
           </a>
         </li>
       
+
+        <li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+            function c() {
+                var e = document.createElement("link");
+                e.setAttribute("type", "text/css");
+                e.setAttribute("rel", "stylesheet");
+                e.setAttribute("href", f);
+                e.setAttribute("class", l);
+                document.body.appendChild(e)
+            }
+
+            function h() {
+                var e = document.getElementsByClassName(l);
+                for (var t = 0; t < e.length; t++) {
+                    document.body.removeChild(e[t])
+                }
+            }
+
+            function p() {
+                var e = document.createElement("div");
+                e.setAttribute("class", a);
+                document.body.appendChild(e);
+                setTimeout(function() {
+                    document.body.removeChild(e)
+                }, 100)
+            }
+
+            function d(e) {
+                return {
+                    height : e.offsetHeight,
+                    width : e.offsetWidth
+                }
+            }
+
+            function v(i) {
+                var s = d(i);
+                return s.height > e && s.height < n && s.width > t && s.width < r
+            }
+
+            function m(e) {
+                var t = e;
+                var n = 0;
+                while (!!t) {
+                    n += t.offsetTop;
+                    t = t.offsetParent
+                }
+                return n
+            }
+
+            function g() {
+                var e = document.documentElement;
+                if (!!window.innerWidth) {
+                    return window.innerHeight
+                } else if (e && !isNaN(e.clientHeight)) {
+                    return e.clientHeight
+                }
+                return 0
+            }
+
+            function y() {
+                if (window.pageYOffset) {
+                    return window.pageYOffset
+                }
+                return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+            }
+
+            function E(e) {
+                var t = m(e);
+                return t >= w && t <= b + w
+            }
+
+            function S() {
+                var e = document.createElement("audio");
+                e.setAttribute("class", l);
+                e.src = i;
+                e.loop = false;
+                e.addEventListener("canplay", function() {
+                    setTimeout(function() {
+                        x(k)
+                    }, 500);
+                    setTimeout(function() {
+                        N();
+                        p();
+                        for (var e = 0; e < O.length; e++) {
+                            T(O[e])
+                        }
+                    }, 15500)
+                }, true);
+                e.addEventListener("ended", function() {
+                    N();
+                    h()
+                }, true);
+                e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+                document.body.appendChild(e);
+                e.play()
+            }
+
+            function x(e) {
+                e.className += " " + s + " " + o
+            }
+
+            function T(e) {
+                e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+            }
+
+            function N() {
+                var e = document.getElementsByClassName(s);
+                var t = new RegExp("\\b" + s + "\\b");
+                for (var n = 0; n < e.length; ) {
+                    e[n].className = e[n].className.replace(t, "")
+                }
+            }
+
+            var e = 30;
+            var t = 30;
+            var n = 350;
+            var r = 350;
+            var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+            var s = "mw-harlem_shake_me";
+            var o = "im_first";
+            var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+            var a = "mw-strobe_light";
+            var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+            var l = "mw_added_css";
+            var b = g();
+            var w = y();
+            var C = document.getElementsByTagName("*");
+            var k = null;
+            for (var L = 0; L < C.length; L++) {
+                var A = C[L];
+                if (v(A)) {
+                    if (E(A)) {
+                        k = A;
+                        break
+                    }
+                }
+            }
+            if (A === null) {
+                console.warn("Could not find a node of the right size. Please try a different page.");
+                return
+            }
+            c();
+            S();
+            var O = [];
+            for (var L = 0; L < C.length; L++) {
+                var A = C[L];
+                if (v(A)) {
+                    O.push(A)
+                }
+            }
+        })()    '>High一下</a> </li>
     </ul>
   
 
@@ -382,8 +533,7 @@
 <h4 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h4><h3 id="我的内功心法"><a href="#我的内功心法" class="headerlink" title="我的内功心法"></a>我的内功心法</h3><h4 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a><a href="http://www.vectorlu.com/tags/Algorithm/" target="_blank" rel="external">数据结构与算法</a></h4><!--操作系统
 计算机网络、
 -->
-<h4 id="编译原理"><a href="#编译原理" class="headerlink" title="编译原理"></a><a href="http://www.vectorlu.com/tags/Compiler/" target="_blank" rel="external">编译原理</a></h4><p>数据库系统原理 </p>
-<h2 id="KIT"><a href="#KIT" class="headerlink" title="KIT"></a><a href="http://vectorlu.com/categories/KIT/">KIT</a></h2><p>工欲善其事，必先利其器。工具的使用就是“无他，唯手熟尔”，各种工具的使用笔记和技巧，希望能够提高学习、工作和生活的效率。</p>
+<h4 id="编程思想"><a href="#编程思想" class="headerlink" title="编程思想"></a>编程思想</h4><h5 id="面向过程编程"><a href="#面向过程编程" class="headerlink" title="面向过程编程"></a>面向过程编程</h5><h5 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h5><h5 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h5><h4 id="编译原理"><a href="#编译原理" class="headerlink" title="编译原理"></a><a href="http://www.vectorlu.com/tags/Compiler/" target="_blank" rel="external">编译原理</a></h4><h4 id="数据库系统原理"><a href="#数据库系统原理" class="headerlink" title="数据库系统原理"></a>数据库系统原理</h4><h2 id="KIT"><a href="#KIT" class="headerlink" title="KIT"></a><a href="http://vectorlu.com/categories/KIT/">KIT</a></h2><p>工欲善其事，必先利其器。工具的使用就是“无他，唯手熟尔”，各种工具的使用笔记和技巧，希望能够提高学习、工作和生活的效率。</p>
 <h2 id="AI"><a href="#AI" class="headerlink" title="AI"></a>AI</h2><h2 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h2><h2 id="一专多能的全栈之路"><a href="#一专多能的全栈之路" class="headerlink" title="一专多能的全栈之路"></a>一专多能的全栈之路</h2><h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><p>开发的主攻方向，一起踏上 Android 甜品之旅吧：）</p>
 <h3 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a><a href="http://www.vectorlu.com/categories/iOS/" target="_blank" rel="external">iOS</a></h3><p>开发的次要学习方向。</p>
 <h4 id="Design"><a href="#Design" class="headerlink" title="Design"></a>Design</h4><h4 id="Dev"><a href="#Dev" class="headerlink" title="Dev"></a>Dev</h4><h3 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h3><p>百家争鸣，莫衷一是。</p>
@@ -654,7 +804,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#专业知识体系"><span class="nav-number">1.</span> <span class="nav-text">专业知识体系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CS-Basic"><span class="nav-number">1.1.</span> <span class="nav-text">CS Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#我的外家功夫"><span class="nav-number">1.1.1.</span> <span class="nav-text">我的外家功夫</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-接近底层的高冷语言"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">C 接近底层的高冷语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-不可不会的胶水语言"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">Python 不可不会的胶水语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-成熟的跨平台工业语言"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">Java 成熟的跨平台工业语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-灵活的激发想象力的高冷语言"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">C++ 灵活的激发想象力的高冷语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScipt-立志要“一统天下”的语言"><span class="nav-number">1.1.1.5.</span> <span class="nav-text">JavaScipt 立志要“一统天下”的语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Swift-苹果家正在成长的优秀开源语言"><span class="nav-number">1.1.1.6.</span> <span class="nav-text">Swift 苹果家正在成长的优秀开源语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Objective-C-苹果家的奇怪语言"><span class="nav-number">1.1.1.7.</span> <span class="nav-text">Objective-C 苹果家的奇怪语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-微软家成熟的工业语言"><span class="nav-number">1.1.1.8.</span> <span class="nav-text">C# 微软家成熟的工业语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#matlab-这个数学工具算语言吗"><span class="nav-number">1.1.1.9.</span> <span class="nav-text">matlab 这个数学工具算语言吗</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shell-自动化工作必学语言"><span class="nav-number">1.1.1.10.</span> <span class="nav-text">shell 自动化工作必学语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#php-世界上最好的语言？"><span class="nav-number">1.1.1.11.</span> <span class="nav-text">php 世界上最好的语言？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML-CSS-标记语言和层叠样式"><span class="nav-number">1.1.1.12.</span> <span class="nav-text">HTML/CSS 标记语言和层叠样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LaTeX-排版系统"><span class="nav-number">1.1.1.13.</span> <span class="nav-text">LaTeX 排版系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XML-可扩展标记语言"><span class="nav-number">1.1.1.14.</span> <span class="nav-text">XML 可扩展标记语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSON"><span class="nav-number">1.1.1.15.</span> <span class="nav-text">JSON</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我的内功心法"><span class="nav-number">1.1.2.</span> <span class="nav-text">我的内功心法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据结构与算法"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">数据结构与算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编译原理"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">编译原理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KIT"><span class="nav-number">1.2.</span> <span class="nav-text">KIT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AI"><span class="nav-number">1.3.</span> <span class="nav-text">AI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data"><span class="nav-number">1.4.</span> <span class="nav-text">Data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一专多能的全栈之路"><span class="nav-number">1.5.</span> <span class="nav-text">一专多能的全栈之路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Android"><span class="nav-number">1.5.1.</span> <span class="nav-text">Android</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS"><span class="nav-number">1.5.2.</span> <span class="nav-text">iOS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Design"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">Design</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dev"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">Dev</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web"><span class="nav-number">1.5.3.</span> <span class="nav-text">Web</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hack"><span class="nav-number">1.6.</span> <span class="nav-text">Hack</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三省吾身"><span class="nav-number">2.</span> <span class="nav-text">三省吾身</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机专业相关"><span class="nav-number">2.1.</span> <span class="nav-text">计算机专业相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编程通用"><span class="nav-number">2.1.1.</span> <span class="nav-text">编程通用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特别的关心给特别的你"><span class="nav-number">2.1.2.</span> <span class="nav-text">特别的关心给特别的你</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">C</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CPP"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">CPP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java"><span class="nav-number">2.1.2.3.</span> <span class="nav-text">Java</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0-和-1-之外的大世界小生活"><span class="nav-number">2.2.</span> <span class="nav-text">0 和 1 之外的大世界小生活</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#专业知识体系"><span class="nav-number">1.</span> <span class="nav-text">专业知识体系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CS-Basic"><span class="nav-number">1.1.</span> <span class="nav-text">CS Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#我的外家功夫"><span class="nav-number">1.1.1.</span> <span class="nav-text">我的外家功夫</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-接近底层的高冷语言"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">C 接近底层的高冷语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-不可不会的胶水语言"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">Python 不可不会的胶水语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-成熟的跨平台工业语言"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">Java 成熟的跨平台工业语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-灵活的激发想象力的高冷语言"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">C++ 灵活的激发想象力的高冷语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScipt-立志要“一统天下”的语言"><span class="nav-number">1.1.1.5.</span> <span class="nav-text">JavaScipt 立志要“一统天下”的语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Swift-苹果家正在成长的优秀开源语言"><span class="nav-number">1.1.1.6.</span> <span class="nav-text">Swift 苹果家正在成长的优秀开源语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Objective-C-苹果家的奇怪语言"><span class="nav-number">1.1.1.7.</span> <span class="nav-text">Objective-C 苹果家的奇怪语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-微软家成熟的工业语言"><span class="nav-number">1.1.1.8.</span> <span class="nav-text">C# 微软家成熟的工业语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#matlab-这个数学工具算语言吗"><span class="nav-number">1.1.1.9.</span> <span class="nav-text">matlab 这个数学工具算语言吗</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shell-自动化工作必学语言"><span class="nav-number">1.1.1.10.</span> <span class="nav-text">shell 自动化工作必学语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#php-世界上最好的语言？"><span class="nav-number">1.1.1.11.</span> <span class="nav-text">php 世界上最好的语言？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML-CSS-标记语言和层叠样式"><span class="nav-number">1.1.1.12.</span> <span class="nav-text">HTML/CSS 标记语言和层叠样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LaTeX-排版系统"><span class="nav-number">1.1.1.13.</span> <span class="nav-text">LaTeX 排版系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XML-可扩展标记语言"><span class="nav-number">1.1.1.14.</span> <span class="nav-text">XML 可扩展标记语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSON"><span class="nav-number">1.1.1.15.</span> <span class="nav-text">JSON</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我的内功心法"><span class="nav-number">1.1.2.</span> <span class="nav-text">我的内功心法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据结构与算法"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">数据结构与算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编程思想"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">编程思想</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#面向过程编程"><span class="nav-number">1.1.2.2.1.</span> <span class="nav-text">面向过程编程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#面向对象编程"><span class="nav-number">1.1.2.2.2.</span> <span class="nav-text">面向对象编程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#函数式编程"><span class="nav-number">1.1.2.2.3.</span> <span class="nav-text">函数式编程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编译原理"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">编译原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库系统原理"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">数据库系统原理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KIT"><span class="nav-number">1.2.</span> <span class="nav-text">KIT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AI"><span class="nav-number">1.3.</span> <span class="nav-text">AI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data"><span class="nav-number">1.4.</span> <span class="nav-text">Data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一专多能的全栈之路"><span class="nav-number">1.5.</span> <span class="nav-text">一专多能的全栈之路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Android"><span class="nav-number">1.5.1.</span> <span class="nav-text">Android</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS"><span class="nav-number">1.5.2.</span> <span class="nav-text">iOS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Design"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">Design</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dev"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">Dev</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web"><span class="nav-number">1.5.3.</span> <span class="nav-text">Web</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hack"><span class="nav-number">1.6.</span> <span class="nav-text">Hack</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三省吾身"><span class="nav-number">2.</span> <span class="nav-text">三省吾身</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机专业相关"><span class="nav-number">2.1.</span> <span class="nav-text">计算机专业相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编程通用"><span class="nav-number">2.1.1.</span> <span class="nav-text">编程通用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特别的关心给特别的你"><span class="nav-number">2.1.2.</span> <span class="nav-text">特别的关心给特别的你</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">C</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CPP"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">CPP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java"><span class="nav-number">2.1.2.3.</span> <span class="nav-text">Java</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0-和-1-之外的大世界小生活"><span class="nav-number">2.2.</span> <span class="nav-text">0 和 1 之外的大世界小生活</span></a></li></ol></li></ol></div>
             
 
           </div>
