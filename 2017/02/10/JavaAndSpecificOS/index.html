@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://vectorlu.com/2017/02/10/JavaAndSpecificOS/index.html">
 <meta property="og:site_name" content="VectorLu">
 <meta property="og:description" content="Java 提供了 System 类和 Runtime 类来与程序的运行平台进行交互。">
-<meta property="og:updated_time" content="2017-02-10T07:14:48.000Z">
+<meta property="og:updated_time" content="2017-02-11T05:31:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 与特定操作系统">
 <meta name="twitter:description" content="Java 提供了 System 类和 Runtime 类来与程序的运行平台进行交互。">
@@ -544,11 +544,19 @@
         <p>Java 提供了 <code>System</code> 类和 <code>Runtime</code> 类来与程序的运行平台进行交互。</p>
 <a id="more"></a> 
 <h1 id="System-类"><a href="#System-类" class="headerlink" title="System 类"></a><code>System</code> 类</h1><p>代表当前 Java 程序的运行平台，程序不能创建 System 类的对象，可以直接通过 <code>System</code> 类来调用这些类变量和类方法。提供了代表标准输入、标准输出和错误输出的类变量，并提供了一些静态方法用于访问环境变量、系统属性的方法，还提供了加载文件和动态链接库的方法。</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>加载文件和动态链接库主要对 <code>native</code> 方法有用，对于一些特殊的功能（如访问操作系统底层硬件设备等）Java 程序无法实现，必须借助 C 语言来完成，此时需要使用 C 语言为 Java 方法提供实现。其实现步骤如下：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// SystemTest.java</span></div><div class="line"><span class="keyword">import</span> java.util.*;</div><div class="line"><span class="keyword">import</span> java.io.*;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> SystemTest &#123;</div><div class="line">  <span class="comment">// 注意要抛出异常</span></div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) throws Exception &#123;</div><div class="line">    <span class="comment">// 获取系统所有的环境变量</span></div><div class="line">    Map&lt;<span class="keyword">String</span>, <span class="keyword">String</span>&gt; env = System.getenv();</div><div class="line">    <span class="built_in">for</span> (<span class="keyword">String</span> name : env.keySet()) &#123;</div><div class="line">      System.out.<span class="built_in">println</span>(name + <span class="string">" ---&gt; "</span> + env.<span class="built_in">get</span>(name));</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 获取指定环境变量的值</span></div><div class="line">    System.out.<span class="built_in">println</span>(System.getenv(<span class="string">"JAVA_HOME"</span>));</div><div class="line">    <span class="comment">// 获取所有的系统属性</span></div><div class="line">    Properties props = System.getProperties();</div><div class="line">    <span class="comment">// 将所有的系统属性保存到 props.txt 文件中</span></div><div class="line">    props.store(<span class="keyword">new</span> FileOutputStream(<span class="string">"./props.txt"</span>),</div><div class="line">        <span class="string">"System Properties"</span>);</div><div class="line">    <span class="comment">// 输出特定的系统属性</span></div><div class="line">    System.out.<span class="built_in">println</span>(System.getProperty(<span class="string">"os.name"</span>));</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>TODO: Finish the dll compilation.</p>
+<p>加载文件和动态链接库主要对 <code>native</code> 方法有用，对于一些特殊的功能（如访问操作系统底层硬件设备等）Java 程序无法实现，必须借助 C 语言来完成，此时需要使用 C 语言为 Java 方法提供实现。其实现步骤如下：</p>
 <ol>
 <li>Java 程序中声明 <code>native</code> 修饰符的方法，类似于 <code>abstract</code> 方法，只有方法签名，没有实现。编译该 Java 程序，生成一个 class 文件。</li>
-<li>用 javah 编译第 1 步生成的</li>
+<li>用 javah 编译第 1 步生成的 class 文件，将产生一个 .h 文件。</li>
+<li>写一个 .cpp 文件实现 native 方法，这一步需要包含第 2 步产生的 .h 文件（这个 .h 文件中又包含了 JDK 带的 jni.h 文件）。</li>
+<li>将第 3 步的 .cpp 文件编译成动态链接库文件。</li>
+<li>在 Java 中用 System 类的 loadLibrary..() 方法或 Runtime 类的 loadLibrary() 方法加载第 4 步产生的动态链接库文件，Java 程序中就可以调用这个 native 方法。</li>
 </ol>
+<p>Syetem 类提供了一个 <code>identityHashCode(Object x)</code> 方法，该方法返回指定对象的精确 <code>hashCode</code> 值，也就是根据该对象的地址计算得到的 <code>hashCode</code> 值。当某个类的 <code>hashCode()</code> 方法被重写后，该类实例的 <code>hashCode()</code> 方法就不能惟一地标识该对象；但通过 <code>identityHashCode()</code> 方法返回的 <code>hashCode</code> 值，依然式根据该对象的地址计算得到的 <code>hashCode</code> 值。<strong>所以，如果两个对象的 <code>indentityHashCode</code> 值相同，则两个对象一定是同一个对象。这个值可以唯一地标识一个对象。</strong></p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">public</span> class IdentityHashCodeTest &#123;</div><div class="line">  public static void main(<span class="keyword">String[] </span>args) &#123;</div><div class="line">    // 下面程序中 <span class="built_in">s1</span> 和 <span class="built_in">s2</span> 是两个不同对象</div><div class="line">    <span class="keyword">String </span><span class="built_in">s1</span> = new <span class="keyword">String("Test");</span></div><div class="line">    <span class="keyword">String </span><span class="built_in">s2</span> = new <span class="keyword">String("Test");</span></div><div class="line"></div><div class="line">    // <span class="keyword">String </span>重写了 hashCode() 方法——改为根据字符序列计算 hashCode 值</div><div class="line">    // 因为 <span class="built_in">s1</span> 和 <span class="built_in">s2</span> 的字符序列相同，所以它们的 hashCode 方法返回值相同</div><div class="line">    System.out.println(<span class="built_in">s1</span>.hashCode()</div><div class="line">        + <span class="string">"----"</span> + <span class="built_in">s2</span>.hashCode())<span class="comment">;</span></div><div class="line"></div><div class="line">    // <span class="built_in">s1</span> 和 <span class="built_in">s2</span> 是不同的字符串对象，所以它们的 identityHashCode 不同</div><div class="line">    System.out.println(System.identityHashCode(<span class="built_in">s1</span>)</div><div class="line">        + <span class="string">"----"</span> + System.identityHashCode(<span class="built_in">s2</span>))<span class="comment">;</span></div><div class="line"></div><div class="line">    <span class="keyword">String </span><span class="built_in">s3</span> = <span class="string">"Java"</span><span class="comment">;</span></div><div class="line">    <span class="keyword">String </span><span class="built_in">s4</span> = <span class="string">"Java"</span><span class="comment">;</span></div><div class="line">    // <span class="built_in">s3</span> 和 <span class="built_in">s4</span> 是相同的字符串对象，所以它们的 identityHashCode 值相同</div><div class="line">    System.out.println(System.identityHashCode(<span class="built_in">s3</span>)</div><div class="line">        + <span class="string">"----"</span> + System.identityHashCode(<span class="built_in">s4</span>))<span class="comment">;</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="Runtime-类"><a href="#Runtime-类" class="headerlink" title="Runtime 类"></a><code>Runtime</code> 类</h1><p>Rumtime 类代表 Java 程序的运行时环境，每个 Java 程序都有一个与之对应的 Runtime 实例，可以访问 JVM 的相关信息，如处理器数量、内存信息等。<strong>应用程序不能创建自己的 <code>Runtime</code> 实例，但可以通过 <code>getRuntime()</code> 方法获取与之关联的 <code>Runtime</code> 对象。</strong></p>
 
       
     </div>
@@ -612,8 +620,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/01/10/blogIndex/" rel="prev" title="［置顶］博客地图">
-                ［置顶］博客地图 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/02/12/NewToJava8Lambda/" rel="prev" title="New To Java 8 Lambda 表达式">
+                New To Java 8 Lambda 表达式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -821,7 +829,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#System-类"><span class="nav-number">1.</span> <span class="nav-text">System 类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">1.1.</span> <span class="nav-text">注意</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#System-类"><span class="nav-number">1.</span> <span class="nav-text">System 类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">1.1.</span> <span class="nav-text">注意</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Runtime-类"><span class="nav-number">2.</span> <span class="nav-text">Runtime 类</span></a></li></ol></div>
             
 
           </div>
