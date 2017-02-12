@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://vectorlu.com/2017/02/03/JavaFromHelloWorldToOOP/index.html">
 <meta property="og:site_name" content="VectorLu">
 <meta property="og:description" content="Java 的基础知识和细节纪录。如有谬误，请不吝赐教。">
-<meta property="og:updated_time" content="2017-02-11T03:44:14.000Z">
+<meta property="og:updated_time" content="2017-02-11T12:17:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 从 Hello World 到面向对象">
 <meta name="twitter:description" content="Java 的基础知识和细节纪录。如有谬误，请不吝赐教。">
@@ -679,7 +679,8 @@
 <p>与表数范围最大的类型保持一致。</p>
 <h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h2><h3 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h3><p><code>switch</code> 语句后面的控制表达式的数据类型是 <code>byte</code>、<code>short</code>、<code>char</code>、<code>int</code> 4 种整数类型，枚举类型和 java.lang.String 类型（从 Java7 才允许），不能是 <code>boolean</code> 类型。</p>
 <p>其他与 C 语言完全类似。</p>
-<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><p>数组在 Java 里是一种类型（引用类型）</p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>Java 为工具类的命名习惯是添加一个字母 s，比如操作数组的工具类是 <code>Arrays</code>，操作集合的工具类是 <code>Collections</code>。</p>
+<h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><p>数组在 Java 里是一种类型（引用类型）</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 推荐声明方式：typeName arrayName</span></div><div class="line"><span class="keyword">int</span>[] intArray;</div><div class="line"></div><div class="line"><span class="comment">// 不推荐，这是 C 语言中的定义方式</span></div><div class="line"><span class="comment">// 越来越多的语言不支持这种定义方式，比如 C# </span></div><div class="line"><span class="keyword">int</span> intArray[];</div></pre></td></tr></table></figure>
 <h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>只是声明数组还不能使用它，用 <code>new</code> 运算符创建数组 </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[] intArray = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100</span>];</div></pre></td></tr></table></figure>
@@ -964,7 +965,7 @@
 <blockquote>
 <p>Java 8 将这个功能称为 “effectively final”。</p>
 </blockquote>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>学习自《疯狂 Java 讲义》第三版</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>《疯狂 Java 讲义》第三版</p>
 
       
     </div>
