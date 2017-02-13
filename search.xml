@@ -10,6 +10,13 @@
 
     
     <entry>
+      <title><![CDATA[经典算法之搜索]]></title>
+      <url>%2F2017%2F02%2F13%2FSearch-ClassicAlogorithms%2F</url>
+      <content type="text"></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[New To Java 8 Lambda 表达式]]></title>
       <url>%2F2017%2F02%2F12%2FNewToJava8Lambda%2F</url>
       <content type="text"><![CDATA[Java 8 中加入了 Lambda 表达式。 组成及写法组成： 形参列表。形参列表允许省略形参类型。如果形参列表中只有一个参数，甚至连形参列表的圆括号也可以省略。 箭头 -&gt;。 代码块。 几种写法如下： 1234567891011121314151617181920212223242526272829303132333435363738394041424344interface Eatable &#123; void taste();&#125;interface Flyalbe &#123; void fly(String weather);&#125;interface Multipliable &#123; int multiply(int a, int b);&#125;public class LambdasShow &#123; public void eat(Eatable e) &#123; System.out.println(e); e.taste(); &#125; public void fly(Flyalbe f) &#123; System.out.println("I'm flying: " + f); f.fly("[sunny]"); &#125; public void multiply(Multipliable multi) &#123; System.out.println("5 x 3 = " + multi.multiply(5, 3)); &#125; public static void main(String[] args) &#123; LambdasShow ls = new LambdasShow(); // Lambda 表达式的代码块只有一条语句，可以省略花括号。 ls.eat(()-&gt; System.out.println("This apple tastes good!")); // Lambda 表达式的形参列表只有一个形参，省略圆括号 ls.fly(weather -&gt; &#123; System.out.println("It is " + weather + " today."); System.out.println("The helicopter condition is good"); &#125;); // Lambda 表达式的代码块只有一条语句，省略花括号 // 代码块中只有一条语句，即使该表达式需要返回值，也可以省略 return ls.multiply((a, b)-&gt;a * b); &#125;&#125; 函数式接口Lambda 表达式有如下两个限制： Lambda 表达式的目标类型必须是明确的函数式接口。 Lambda 表达式只能为函数式接口创建对象。Lambda 表达式只能实现一个方法，因此它只能为只有一个抽象方法的函数式接口创建对象。 Lambda 表达式的目标类型完全可能是变化的——唯一的要求是，Lambda 表达式实现的匿名方法与目标类型（函数式接口）中惟一的抽象方法有相同的形参列表。 Java 8 在 java.util.function 包下预定义了大量函数式接口，典型地包含如下 4 种接口： XxxFunction 通常包含一个 apply() 抽象方法，该方法通常用于对指定数据进行转换处理。 XxxConsumer 通常包含一个 accept() 抽象方法，与上一个的作用基本相似，只是该方法不会返回处理结果。 XxxxPredicate 通常包含一个 test() 抽象方法，该方法通常用来对参数进行某种判断，然后返回一个 boolean 值。通常用于筛数据。 XxxSupplier 这类接口中通常包含一个 getAsXxx() 抽象方法，该方法不需要输入参数，该方法会按某种逻辑算法返回一个数据。 方法引用与构造器引用如果 Lambda 表达式的代码块只有一条代码，还可以在代码块中使用方法引用和构造器引用。 TODO: 引用类方法参考《疯狂 Java 讲义》第三版《Java 8 函数式编程》]]></content>
