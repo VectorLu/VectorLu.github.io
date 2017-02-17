@@ -10,6 +10,13 @@
 
     
     <entry>
+      <title><![CDATA[Solving a Sudoku with AI]]></title>
+      <url>%2F2017%2F02%2F17%2FSolving-a-Sudoku-with-AI%2F</url>
+      <content type="text"><![CDATA[Set the EnvironmentThe speed of downloading Anaconda may be very slow and the link may be weak. There’s a good mirror website powered by Tsinghua University.]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[经典算法之搜索]]></title>
       <url>%2F2017%2F02%2F13%2FSearch-ClassicAlogorithms%2F</url>
       <content type="text"><![CDATA[搜索]]></content>
