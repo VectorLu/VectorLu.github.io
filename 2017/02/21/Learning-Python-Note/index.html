@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Database,SQL," />
+  <meta name="keywords" content="Python3,Python2," />
 
 
 
@@ -90,16 +90,19 @@
 
 
 
-<meta name="description" content="专业课——数据库系统原理的学习总结">
+<meta name="description" content="Python 初学者的困惑之一就是——我应该学习 Python2 还是 Python3，听上去很可笑，但是的确如此——身边真的有同学因为 Python 有长期支持的两个版本而不知所措……
+当然是学习 Python3，但是也需要了解 Python2——去阅读一些历史遗留代码。其实这两者的区别并不大，学会了 Python3，只需要注意一些细节或者在需要时查看一下相关文档就很快能上手 Python2 的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DBreview">
-<meta property="og:url" content="http://vectorlu.com/2016/12/11/DBreview/index.html">
+<meta property="og:title" content="《Python 学习手册》笔记">
+<meta property="og:url" content="http://vectorlu.com/2017/02/21/Learning-Python-Note/index.html">
 <meta property="og:site_name" content="VectorLu">
-<meta property="og:description" content="专业课——数据库系统原理的学习总结">
-<meta property="og:updated_time" content="2016-12-11T09:01:02.000Z">
+<meta property="og:description" content="Python 初学者的困惑之一就是——我应该学习 Python2 还是 Python3，听上去很可笑，但是的确如此——身边真的有同学因为 Python 有长期支持的两个版本而不知所措……
+当然是学习 Python3，但是也需要了解 Python2——去阅读一些历史遗留代码。其实这两者的区别并不大，学会了 Python3，只需要注意一些细节或者在需要时查看一下相关文档就很快能上手 Python2 的">
+<meta property="og:updated_time" content="2017-02-23T06:09:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DBreview">
-<meta name="twitter:description" content="专业课——数据库系统原理的学习总结">
+<meta name="twitter:title" content="《Python 学习手册》笔记">
+<meta name="twitter:description" content="Python 初学者的困惑之一就是——我应该学习 Python2 还是 Python3，听上去很可笑，但是的确如此——身边真的有同学因为 Python 有长期支持的两个版本而不知所措……
+当然是学习 Python3，但是也需要了解 Python2——去阅读一些历史遗留代码。其实这两者的区别并不大，学会了 Python3，只需要注意一些细节或者在需要时查看一下相关文档就很快能上手 Python2 的">
 
 
 
@@ -127,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://vectorlu.com/2016/12/11/DBreview/"/>
+  <link rel="canonical" href="http://vectorlu.com/2017/02/21/Learning-Python-Note/"/>
 
 
 
 
 
-  <title> DBreview | VectorLu </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> 《Python 学习手册》笔记 | VectorLu </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -438,7 +441,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2016/12/11/DBreview/">
+  <link itemprop="mainEntityOfPage" href="http://vectorlu.com/2017/02/21/Learning-Python-Note/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="VectorLu">
@@ -462,7 +465,7 @@
             
             
               
-                DBreview
+                《Python 学习手册》笔记
               
             
           </h1>
@@ -475,8 +478,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-11T10:01:41+08:00">
-                2016-12-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-21T00:36:37+08:00">
+                2017-02-21
               </time>
             
 
@@ -509,8 +512,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/12/11/DBreview/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/11/DBreview/" itemprop="commentCount"></span>
+                <a href="/2017/02/21/Learning-Python-Note/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/21/Learning-Python-Note/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -541,37 +544,29 @@
       
 
       
-        <p>专业课——数据库系统原理的学习总结</p>
+        <p>Python 初学者的困惑之一就是——我应该学习 Python2 还是 Python3，听上去很可笑，但是的确如此——身边真的有同学因为 Python 有长期支持的两个版本而不知所措……</p>
+<p>当然是学习 Python3，但是也需要了解 Python2——去阅读一些历史遗留代码。其实这两者的区别并不大，学会了 Python3，只需要注意一些细节或者在需要时查看一下相关文档就很快能上手 Python2 的代码。</p>
+<p>动物出版社的《Python 学习手册》并不是一本广受推荐的 Python 学习书籍——因为它介绍了 Python2/3 中的不同，并将 Python 与许多其他编程语言比较，显得过于啰嗦，中文版有一千多页。不过如果有编程基础，其实能浏览得很快，比较集中地获取到 Python 的基础知识。</p>
 <a id="more"></a>
-<h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="数据库-Database"><a href="#数据库-Database" class="headerlink" title="数据库 Database"></a>数据库 Database</h3><p>长期储存在计算机内、有组织的、可共享的大量数据集合。</p>
-<h3 id="数据库管理系统-DBMS"><a href="#数据库管理系统-DBMS" class="headerlink" title="数据库管理系统 DBMS"></a>数据库管理系统 DBMS</h3><p>位于用户与操作系统之间的一层数据管理软件。</p>
-<h2 id="数据管理的发展"><a href="#数据管理的发展" class="headerlink" title="数据管理的发展"></a>数据管理的发展</h2><h3 id="人工阶段"><a href="#人工阶段" class="headerlink" title="人工阶段"></a>人工阶段</h3><h3 id="文件系统阶段"><a href="#文件系统阶段" class="headerlink" title="文件系统阶段"></a>文件系统阶段</h3><ol>
-<li>记录内有结构；todo</li>
-<li>数据的结构是靠程序定义和解释的；</li>
-<li>todo 数据只能是定长的；（可间接实现数据变长的要求，但是访问相应数据的应用程序复杂了）</li>
-<li>数据的共享性差，冗余度大；</li>
-<li>文件间相互独立，数据整体无结构；（可间接实现数据整体的有结构，但必须在应用程序中描述数据间的联系）</li>
-<li>数据的最小存取单位是记录 todo。</li>
-</ol>
-<h3 id="数据库系统阶段"><a href="#数据库系统阶段" class="headerlink" title="数据库系统阶段"></a>数据库系统阶段</h3><h4 id="1-数据结构化"><a href="#1-数据结构化" class="headerlink" title="1. 数据结构化"></a>1. 数据结构化</h4><h4 id="2-数据共享性高冗余度低易扩充"><a href="#2-数据共享性高冗余度低易扩充" class="headerlink" title="2. 数据共享性高冗余度低易扩充"></a>2. 数据共享性高冗余度低易扩充</h4><h4 id="3-数据独立性高-todo-由-DBMS-的二级映像功能"><a href="#3-数据独立性高-todo-由-DBMS-的二级映像功能" class="headerlink" title="3. 数据独立性高 todo 由 DBMS 的二级映像功能"></a>3. 数据独立性高 todo 由 DBMS 的二级映像功能</h4><ol>
-<li>物理独立性：用户的应用程序与存储在磁盘上的数据库中的数据是相互独立的。当数据的物理存储改变了，应用程序不用改变。</li>
-<li>逻辑独立性：用户的应用程序与数据库的逻辑结构是相互独立的。数据的逻辑结构改变了，用户程序也可以不变，从而简化了应用程序的编制，减少了应用程序的维护和修改。</li>
-</ol>
-<h4 id="4-数据由-DBMS-统一管理和控制"><a href="#4-数据由-DBMS-统一管理和控制" class="headerlink" title="4. 数据由 DBMS 统一管理和控制"></a>4. 数据由 DBMS 统一管理和控制</h4><p>DBMS 提供的数据控制功能：</p>
-<ol>
-<li>安全性 Security</li>
-<li>完整性 Integrity</li>
-<li>并发控制 Concurrency</li>
-<li>数据库恢复 Recovery</li>
-</ol>
-<h2 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h2><h3 id="概念模型"><a href="#概念模型" class="headerlink" title="概念模型"></a>概念模型</h3><h4 id="1-实体-Entity"><a href="#1-实体-Entity" class="headerlink" title="1. 实体 Entity"></a>1. 实体 Entity</h4><p>客观存在并可相互区别，可具体可抽象。</p>
-<h4 id="2-属性-Attribute"><a href="#2-属性-Attribute" class="headerlink" title="2. 属性 Attribute"></a>2. 属性 Attribute</h4><h4 id="3-码-Key"><a href="#3-码-Key" class="headerlink" title="3. 码 Key"></a>3. 码 Key</h4><p>唯一标识实体的属性集成为码。</p>
-<blockquote>
-<p>注意：属性集——属性的集合</p>
-</blockquote>
-<h4 id="4-域-Domain"><a href="#4-域-Domain" class="headerlink" title="4. 域 Domain"></a>4. 域 Domain</h4><p>属性的取值范围称为该属性的域。</p>
-<h4 id="5-实体型-Entity-Type"><a href="#5-实体型-Entity-Type" class="headerlink" title="5. 实体型 Entity Type"></a>5. 实体型 Entity Type</h4><p>用实体名极其属性名集合来抽象和刻画同类实体称为实体型。例如：顾客（编号，姓名，性别，年龄，住址）。</p>
-<h4 id="6-实体集-Entity-Set"><a href="#6-实体集-Entity-Set" class="headerlink" title="6. 实体集 Entity Set"></a>6. 实体集 Entity Set</h4><h4 id="7-联系-Relationship"><a href="#7-联系-Relationship" class="headerlink" title="7. 联系 Relationship"></a>7. 联系 Relationship</h4>
+<h1 id="介绍-Python-对象类型"><a href="#介绍-Python-对象类型" class="headerlink" title="介绍 Python 对象类型"></a>介绍 Python 对象类型</h1><p>Python 中各种类型的简介。</p>
+<p>Python 是<strong>动态类型</strong>——它自动跟踪变量类型而不要求声明类型（实际上，如果你像大多数的语言中 <code>int i = 0</code> 专门声明变量的语言，Python 会报错）。但 Python 也是强类型语言——只能对一个对象进行适合该类型的有效的操作。一旦创建了一个对象，它就和操作集合绑定了。</p>
+<h2 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h2><p><code>math</code> 模块中包含一些常用的数学工具</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;</span>&gt; import math</div><div class="line"><span class="meta">&gt;&gt;</span>&gt; math.pi</div><div class="line"><span class="number">3.141592653589793</span></div><div class="line"><span class="meta">&gt;&gt;</span>&gt; math.sqrt(<span class="number">81</span>)</div><div class="line"><span class="number">9.0</span></div><div class="line"><span class="meta">&gt;&gt;</span>&gt; math.sqrt(<span class="number">7</span>)</div><div class="line"><span class="number">2.6457513110645907</span></div></pre></td></tr></table></figure>
+<p><code>random</code> 模块可以作为随机数字的生成器和随机选择器（从 Python 列表中选择）</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;</span>&gt; import random</div><div class="line"><span class="meta">&gt;&gt;</span>&gt; random.random()</div><div class="line"><span class="number">0</span>.<span class="number">34685948620203444</span></div><div class="line"><span class="meta">&gt;&gt;</span>&gt; random.choice([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]) </div><div class="line"><span class="number">2</span></div></pre></td></tr></table></figure>
+<p>访问序列时，负的索引号会简单地与长度相加——就是这样实现逆序访问的。</p>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;</span>&gt; S = <span class="string">'spam'</span></div><div class="line"><span class="meta">&gt;&gt;</span>&gt; S.find(<span class="string">'pa'</span>)    <span class="comment"># Find the offset of a substring</span></div><div class="line"><span class="number">1</span></div><div class="line"><span class="meta">&gt;&gt;</span>&gt; S = <span class="string">'spams'</span></div><div class="line"><span class="meta">&gt;&gt;</span>&gt; S.replace(<span class="string">'s'</span>, <span class="string">'XYZ'</span>) <span class="comment"># Replace occurrences of a substring with another</span></div><div class="line"><span class="string">'XYZpamXYZ'</span></div></pre></td></tr></table></figure>
+<p>从 Python2.6 和 Python3.0 开始支持格式化的高级替换操作：</p>
+<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; <span class="string">'%s, eggs, and %s'</span> % (<span class="string">'spam'</span>, <span class="string">'SPAM!'</span>)    # Formatting expre</div><div class="line">ssion(all)</div><div class="line"><span class="string">'spam, eggs, and SPAM!'</span></div><div class="line">&gt;&gt;&gt; <span class="string">'&#123;0&#125;, eggs, and &#123;1&#125;'</span>.format(<span class="string">'spam'</span>, <span class="string">'SPAM!'</span>)    # Formatting</div><div class="line"> <span class="function"><span class="keyword">method</span><span class="params">(2.6, 3.0)</span></span></div><div class="line">'<span class="title">spam</span>, <span class="title">eggs</span>, <span class="title">and</span> <span class="title">SPAM</span>!'</div></pre></td></tr></table></figure>
+<h2 id="寻求帮助"><a href="#寻求帮助" class="headerlink" title="寻求帮助"></a>寻求帮助</h2><p>可用作多种类型的通用型操作都是以内置函数存在，例如 <a href="http://python.usyiyi.cn/translate/python_352/library/functions.html" target="_blank" rel="external">Python3 内置函数</a>。但是类型特定的操作是以方法调用的形式出现的，例如 <code>aString.upper()</code>。</p>
+<p><strong><code>help()</code> 和 <code>dir()</code> 是寻求帮助的好方法。</strong></p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; aString = <span class="string">'string'</span></div><div class="line">&gt;&gt;&gt; help(aString.replace)</div><div class="line"></div><div class="line">Help <span class="literal">on</span> built-<span class="keyword">in</span> <span class="keyword">function</span> replace:</div><div class="line"></div><div class="line">replace(...) method <span class="keyword">of</span> builtins.str instance</div><div class="line">    S.replace<span class="function"><span class="params">(old, <span class="keyword">new</span>[, count])</span> -&gt;</span> str</div><div class="line"></div><div class="line">    Return a copy <span class="keyword">of</span> S <span class="keyword">with</span> all occurrences <span class="keyword">of</span> substring</div><div class="line">    old replaced <span class="keyword">by</span> <span class="keyword">new</span>.  If the optional argument count <span class="keyword">is</span></div><div class="line">    given, only the first count occurrences are replaced.</div><div class="line">    </div><div class="line">&gt;&gt;&gt; dir(aString)</div><div class="line">[<span class="string">'__add__'</span>, <span class="string">'__class__'</span>, <span class="string">'__contains__'</span>, <span class="string">'__delattr__'</span>, <span class="string">'__dir__</span></div><div class="line">', <span class="string">'__doc__'</span>, <span class="string">'__eq__'</span>, <span class="string">'__format__'</span>, <span class="string">'__ge__'</span>, <span class="string">'__getattribute_</span></div><div class="line">_', <span class="string">'__getitem__'</span>, <span class="string">'__getnewargs__'</span>, <span class="string">'__gt__'</span>, <span class="string">'__hash__'</span>, <span class="string">'__in</span></div><div class="line">it__', <span class="string">'__init_subclass__'</span>, <span class="string">'__iter__'</span>, <span class="string">'__le__'</span>, <span class="string">'__len__'</span>, <span class="string">'__</span></div><div class="line">lt__', <span class="string">'__mod__'</span>, <span class="string">'__mul__'</span>, <span class="string">'__ne__'</span>, <span class="string">'__new__'</span>, <span class="string">'__reduce__'</span>,</div><div class="line"><span class="string">'__reduce_ex__'</span>, <span class="string">'__repr__'</span>, <span class="string">'__rmod__'</span>, <span class="string">'__rmul__'</span>, <span class="string">'__setattr_</span></div><div class="line">_', <span class="string">'__sizeof__'</span>, <span class="string">'__str__'</span>, <span class="string">'__subclasshook__'</span>, <span class="string">'capitalize'</span>, <span class="string">'</span></div><div class="line">casefold', <span class="string">'center'</span>, <span class="string">'count'</span>, <span class="string">'encode'</span>, <span class="string">'endswith'</span>, <span class="string">'expandtabs'</span></div><div class="line">, <span class="string">'find'</span>, <span class="string">'format'</span>, <span class="string">'format_map'</span>, <span class="string">'index'</span>, <span class="string">'isalnum'</span>, <span class="string">'isalpha'</span>,</div><div class="line"> <span class="string">'isdecimal'</span>, <span class="string">'isdigit'</span>, <span class="string">'isidentifier'</span>, <span class="string">'islower'</span>, <span class="string">'isnumeric'</span>,</div><div class="line"> <span class="string">'isprintable'</span>, <span class="string">'isspace'</span>, <span class="string">'istitle'</span>, <span class="string">'isupper'</span>, <span class="string">'join'</span>, <span class="string">'ljust'</span></div><div class="line">, <span class="string">'lower'</span>, <span class="string">'lstrip'</span>, <span class="string">'maketrans'</span>, <span class="string">'partition'</span>, <span class="string">'replace'</span>, <span class="string">'rfind</span></div><div class="line">', <span class="string">'rindex'</span>, <span class="string">'rjust'</span>, <span class="string">'rpartition'</span>, <span class="string">'rsplit'</span>, <span class="string">'rstrip'</span>, <span class="string">'split'</span>,</div><div class="line"> <span class="string">'splitlines'</span>, <span class="string">'startswith'</span>, <span class="string">'strip'</span>, <span class="string">'swapcase'</span>, <span class="string">'title'</span>, <span class="string">'tran</span></div><div class="line">slate', <span class="string">'upper'</span>, <span class="string">'zfill'</span>]</div></pre></td></tr></table></figure>
+<h2 id="列表解析式"><a href="#列表解析式" class="headerlink" title="列表解析式"></a>列表解析式</h2><p>实际中的列表解析式可能会更复杂。</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; M = [</div><div class="line"></div><div class="line">... [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</div><div class="line">... [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>],</div><div class="line">... [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]]</div><div class="line">&gt;&gt;&gt; M</div><div class="line">[[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]]</div><div class="line">&gt;&gt;&gt; [row[<span class="number">1</span>] + <span class="number">1</span> for row in M]</div><div class="line">[<span class="number">3</span>, <span class="number">6</span>, <span class="number">9</span>]</div><div class="line">&gt;&gt;&gt; [row[<span class="number">1</span>] for row in M if row[<span class="number">1</span>]%<span class="number">2</span>==<span class="number">0</span>] # Filter out odd items</div><div class="line">[<span class="number">2</span>, <span class="number">8</span>]</div><div class="line">&gt;&gt;&gt; diag = [M[i][i] for i in [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>]] # Collect a diagonal fro</div><div class="line">m matrix</div><div class="line">&gt;&gt;&gt; diag</div><div class="line">[<span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>]</div><div class="line">&gt;&gt;&gt; doubles = [c * <span class="number">2</span> for c in 'spam']</div><div class="line">&gt;&gt;&gt; doubles</div><div class="line">['ss', 'pp', 'aa', 'mm']</div></pre></td></tr></table></figure>
+<p>在 Python3.0 之后，列表、集合、字典都可以用解析创建。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>[ord(x) <span class="keyword">for</span> x <span class="keyword">in</span> <span class="string">'spaam'</span>]    <span class="comment"># List of character ordinals</span></div><div class="line">[<span class="number">115</span>, <span class="number">112</span>, <span class="number">97</span>, <span class="number">97</span>, <span class="number">109</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>&#123;ord(x) <span class="keyword">for</span> x <span class="keyword">in</span> <span class="string">'spaam'</span>&#125; <span class="comment"># Sets remove duplicates</span></div><div class="line">&#123;<span class="number">112</span>, <span class="number">97</span>, <span class="number">115</span>, <span class="number">109</span>&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>&#123;x: ord(x) <span class="keyword">for</span> x <span class="keyword">in</span> <span class="string">'spam'</span>&#125; <span class="comment"># Dictionary keys are unique</span></div><div class="line">&#123;<span class="string">'s'</span>: <span class="number">115</span>, <span class="string">'p'</span>: <span class="number">112</span>, <span class="string">'a'</span>: <span class="number">97</span>, <span class="string">'m'</span>: <span class="number">109</span>&#125;</div></pre></td></tr></table></figure>
+<p>列表解析和相关函数工具，如 <code>map</code> 和 <code>filter</code>，通常运行得比 <code>for</code> 循环快。</p>
+<h1 id="数字-1"><a href="#数字-1" class="headerlink" title="数字"></a>数字</h1>
       
     </div>
 
@@ -615,9 +610,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Database/" rel="tag"># Database</a>
+            <a href="/tags/Python3/" rel="tag"># Python3</a>
           
-            <a href="/tags/SQL/" rel="tag"># SQL</a>
+            <a href="/tags/Python2/" rel="tag"># Python2</a>
           
         </div>
       
@@ -626,8 +621,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/08/cMultipleFiles/" rel="next" title="C 语言多文件注意事项">
-                <i class="fa fa-chevron-left"></i> C 语言多文件注意事项
+              <a href="/2017/02/17/Solving-a-Sudoku-with-AI/" rel="next" title="Win Any Sudoku with AI">
+                <i class="fa fa-chevron-left"></i> Win Any Sudoku with AI
               </a>
             
           </div>
@@ -636,8 +631,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/12/12/CorrectCodeErrors/" rel="prev" title="一些代码踩坑的总结">
-                一些代码踩坑的总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/01/10/blogIndex/" rel="prev" title="［置顶］博客地图">
+                ［置顶］博客地图 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -653,10 +648,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/12/11/DBreview/"
-     data-title="DBreview"
+        <div class="ds-share flat" data-thread-key="2017/02/21/Learning-Python-Note/"
+     data-title="《Python 学习手册》笔记"
      data-content=""
-     data-url="http://vectorlu.com/2016/12/11/DBreview/">
+     data-url="http://vectorlu.com/2017/02/21/Learning-Python-Note/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -686,8 +681,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/12/11/DBreview/"
-           data-title="DBreview" data-url="http://vectorlu.com/2016/12/11/DBreview/">
+      <div class="ds-thread" data-thread-key="2017/02/21/Learning-Python-Note/"
+           data-title="《Python 学习手册》笔记" data-url="http://vectorlu.com/2017/02/21/Learning-Python-Note/">
       </div>
     
   </div>
@@ -845,7 +840,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库-Database"><span class="nav-number">1.1.1.</span> <span class="nav-text">数据库 Database</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库管理系统-DBMS"><span class="nav-number">1.1.2.</span> <span class="nav-text">数据库管理系统 DBMS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据管理的发展"><span class="nav-number">1.2.</span> <span class="nav-text">数据管理的发展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#人工阶段"><span class="nav-number">1.2.1.</span> <span class="nav-text">人工阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件系统阶段"><span class="nav-number">1.2.2.</span> <span class="nav-text">文件系统阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库系统阶段"><span class="nav-number">1.2.3.</span> <span class="nav-text">数据库系统阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-数据结构化"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">1. 数据结构化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-数据共享性高冗余度低易扩充"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">2. 数据共享性高冗余度低易扩充</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-数据独立性高-todo-由-DBMS-的二级映像功能"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">3. 数据独立性高 todo 由 DBMS 的二级映像功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-数据由-DBMS-统一管理和控制"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">4. 数据由 DBMS 统一管理和控制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据模型"><span class="nav-number">1.3.</span> <span class="nav-text">数据模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念模型"><span class="nav-number">1.3.1.</span> <span class="nav-text">概念模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-实体-Entity"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">1. 实体 Entity</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-属性-Attribute"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">2. 属性 Attribute</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-码-Key"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">3. 码 Key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-域-Domain"><span class="nav-number">1.3.1.4.</span> <span class="nav-text">4. 域 Domain</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-实体型-Entity-Type"><span class="nav-number">1.3.1.5.</span> <span class="nav-text">5. 实体型 Entity Type</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-实体集-Entity-Set"><span class="nav-number">1.3.1.6.</span> <span class="nav-text">6. 实体集 Entity Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-联系-Relationship"><span class="nav-number">1.3.1.7.</span> <span class="nav-text">7. 联系 Relationship</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#介绍-Python-对象类型"><span class="nav-number">1.</span> <span class="nav-text">介绍 Python 对象类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数字"><span class="nav-number">1.1.</span> <span class="nav-text">数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串"><span class="nav-number">1.2.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#寻求帮助"><span class="nav-number">1.3.</span> <span class="nav-text">寻求帮助</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表解析式"><span class="nav-number">1.4.</span> <span class="nav-text">列表解析式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数字-1"><span class="nav-number">2.</span> <span class="nav-text">数字</span></a></li></ol></div>
             
 
           </div>
