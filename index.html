@@ -593,7 +593,7 @@
               
                 
                 <a class="post-title-link" href="/2017/03/29/PythonAlgorithm/" itemprop="url">
-                  Algorithm in Python
+                  Algorithm in Python Notes
                 </a>
               
             
@@ -651,19 +651,14 @@
 
       
         
-          
-            <h1 id="Linear-Structures"><a href="#Linear-Structures" class="headerlink" title="Linear Structures"></a>Linear Structures</h1><p>What distinguishes one linear structure from another is the way in which items are added and removed, in particular the location where these additions and removals occur.</p>
-<h2 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h2><h2 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h2><h3 id="Hot-Potatoes-Josephus-Question"><a href="#Hot-Potatoes-Josephus-Question" class="headerlink" title="Hot Potatoes (Josephus) Question"></a>Hot Potatoes (Josephus) Question</h3><p>To simulate the circle, we will use a queue. Assume that the child holding the potato will be at the front of the queue. Upon passing the potato, the simulation will simply dequeue and then immediately enqueue that child, putting her at the end of the line. She will then wait until all the others have been at the front before it will be her turn again. After num dequeue/enqueue operations, the child at the front will be removed permanently and another cycle will begin. This process will continue until only one name remains.</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Queue</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        <span class="keyword">self</span>.items = []</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isEmpty</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">self</span>.items == []</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">enqueue</span><span class="params">(<span class="keyword">self</span>, item)</span></span>:</div><div class="line">        <span class="keyword">self</span>.items.insert(<span class="number">0</span>, item)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dequeue</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">self</span>.items.pop()</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">size</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        <span class="keyword">return</span> len(<span class="keyword">self</span>.items)</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">hotPotato</span><span class="params">(nameList, num)</span></span>:</div><div class="line">    simuQueue = Queue()</div><div class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> <span class="symbol">nameList:</span></div><div class="line">        simuQueue.enqueue(name)</div><div class="line">    <span class="keyword">while</span> simuQueue.size() &gt; <span class="number">1</span>:</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(num):</div><div class="line">            simuQueue.enqueue(simuQueue.dequeue())</div><div class="line">        simuQueue.dequeue()</div><div class="line">    <span class="keyword">return</span> simuQueue.dequeue()</div><div class="line"></div><div class="line">print(hotPotato([<span class="string">'Bill'</span>, <span class="string">'David'</span>, <span class="string">'Susan'</span>, <span class="string">'Jane'</span>, <span class="string">'Kent'</span>, <span class="string">'Brad'</span>], <span class="number">7</span>))</div></pre></td></tr></table></figure>
-<h1 id="Recursion"><a href="#Recursion" class="headerlink" title="Recursion"></a>Recursion</h1><h2 id="The-Three-Laws-of-Recursion"><a href="#The-Three-Laws-of-Recursion" class="headerlink" title="The Three Laws of Recursion"></a>The Three Laws of Recursion</h2><ol>
-<li>A recursion algorithm must have a base case.</li>
-<li>A recursion algorithm must change its state and move toward the base case.</li>
-<li>A recursion algorithm must call itself, recursively.</li>
-</ol>
-<p><strong>A base case</strong> is the condition that allows the algorithm to stop recusing. A base case is typically a problem that is small enough to solve directly.</p>
-<p>To obey the second law, we must arrange for a change of state that moves the algorithm toward the base case. A change of state means that some data that the algorithm is using is modified. Usually the data that represents our problem gets smaller in some way.</p>
-
-          
+          <p>Learning <a href="https://interactivepython.org/runestone/static/pythonds/index.html">Python Algorithm</a> Notes</p>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/03/29/PythonAlgorithm/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
