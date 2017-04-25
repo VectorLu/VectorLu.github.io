@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://vectorlu.com/2017/04/21/Python2LearningNotes/index.html">
 <meta property="og:site_name" content="VectorLu">
 <meta property="og:description" content="《Python 基础教程》学习笔记，要点整理。">
-<meta property="og:updated_time" content="2017-04-25T15:11:46.000Z">
+<meta property="og:updated_time" content="2017-04-25T15:38:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python2 学习笔记">
 <meta name="twitter:description" content="《Python 基础教程》学习笔记，要点整理。">
@@ -800,6 +800,10 @@
 </blockquote>
 <h2 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h2><h3 id="迭代器规则"><a href="#迭代器规则" class="headerlink" title="迭代器规则"></a>迭代器规则</h3><p>迭代——重复做一些事很多次。到现在为止只是在 <code>for</code> 循环中对序列和字典进行迭代，但实际上也能对其他的对象进行迭代：实现 <code>__iter__()</code> 方法的对象。</p>
 <p><code>__iter__()</code> 返回一个迭代器 <em>iterator</em>，所谓的迭代器就是具有 <code>next()</code> 的对象。在调用 <code>next()</code> 时，迭代器会返回它的下一个值。如果 <code>next()</code> 方法被调用，但迭代器没有值可以返回，就会引发 <code>StopIteration</code> 异常。</p>
+<blockquote>
+<p>在 Python3.0 之后，迭代器对象应该实现 <code>__next__()</code>，而不是 <code>next()</code>。</p>
+</blockquote>
+<p><strong>一个实现了 <code>__iter__()</code> 方法的对象是可迭代的，一个实现了 <code>next()</code> 方法的对象则是迭代器。</strong></p>
 
       
     </div>
