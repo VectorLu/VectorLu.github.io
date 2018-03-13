@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Compiler,编译器,C," />
+  <meta name="keywords" content="C,Compiler,编译器," />
 
 
 
@@ -507,6 +507,13 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/11/28/C-Compiler-by-C/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/11/28/C-Compiler-by-C/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -705,11 +712,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/C/" rel="tag"># C</a>
+          
             <a href="/tags/Compiler/" rel="tag"># Compiler</a>
           
             <a href="/tags/编译器/" rel="tag"># 编译器</a>
-          
-            <a href="/tags/C/" rel="tag"># C</a>
           
         </div>
       
@@ -759,6 +766,13 @@
           
   <div class="comments" id="comments">
     
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
   </div>
 
 
@@ -801,7 +815,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">41</span>
+              <span class="site-state-item-count">42</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -818,7 +832,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1054,10 +1068,35 @@
 
   
 
+    <script type="text/javascript">
+      var disqus_shortname = 'Vector';
+      var disqus_identifier = '2016/11/28/C-Compiler-by-C/';
+
+      var disqus_title = "C_Compiler_by_C";
 
 
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
 
-	
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
 
 
 
